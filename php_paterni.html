@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="sr">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Paterni - teorija i praksa</title>
+
+    <meta name="description" content="Php paterni u teoriji i praksi">
+    <meta name="author" content="Milan Popović">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write('<link rel="stylesheet" href="css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+    <h1>Paterni u teoriji i praksi</h1>
+
+    <h3>Factory, Strategy, Bridge, Visitor</h3>
+
+    <p>
+        <small><a href="http://www.milanpopovic.me">Milan Popović</a> / <a href="http://twitter.com/komita1981">@komita1981</a>
+        </small>
+    </p>
+</section>
+
+<section>
+    <h2>Osnove</h2>
+
+    <p class="fragment">
+        <a href="#" class="image navigate-down">
+            <img height="373px" src="http://www.portablelearner.com/img/posts/christopher-alexander.png"
+                 alt="Christopher Alexander">
+            <img height="373px"
+                 src="http://upload.wikimedia.org/wikipedia/en/thumb/e/e6/A_Pattern_Language.jpg/250px-A_Pattern_Language.jpg"
+                 alt="Pattern language">
+        </a><br/>
+        Christopher Alexander
+    </p>
+
+    <p class="fragment">
+        <q>
+            &ldquo;Svaki uzor je trodelno pravilo, koje uspostavlja relaciju između nekog problema, njegovog rešenja i
+            njihovog konteksta.&rdquo;
+        </q>
+    </p>
+
+    <aside class="notes">
+        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the
+        speaker notes window (hit 's' on your keyboard).
+    </aside>
+</section>
+
+<!-- Example of nested vertical slides -->
+<section>
+    <section>
+        <h2>Oblici predstavljanja uzora</h2>
+        <ul>
+            <li>Aleksanderov oblik</li>
+            <li>GOF oblik</li>
+            <li>Coplienov oblik</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Coplienov oblik</h2>
+
+        <p class="fragment">
+            Naziv paterna
+        </p>
+
+        <p class="fragment">
+            Problem
+        </p>
+
+        <p class="fragment">
+            Kontekst
+        </p>
+
+        <p class="fragment">
+            Sile
+        </p>
+
+        <p class="fragment">
+            Rešenje
+        </p>
+
+        <p class="fragment">
+            Obrazloženje
+        </p>
+
+        <p class="fragment">
+            Rezultujući kontekst
+        </p>
+    </section>
+</section>
+<section>
+    <h2>Klasifikacija paterna</h2>
+    <ul>
+        <li>Tronivojski paterni</li>
+        <ul>
+            <li>
+                Idiomi
+            </li>
+            <li>
+                Paterni projektovanja
+            </li>
+            <li>
+                Idiomi
+            </li>
+        </ul>
+        <li>Antipaterni</li>
+        <li>Aleksanderovo skaliranje</li>
+        <li>Meta paterni</li>
+        <li>Drugi skalirajući pristupi</li>
+    </ul>
+</section>
+
+<section>
+    <section>
+        <h2>Paterni projektovanja</h2>
+        <ul>
+            <li>
+                Kreacioni
+            </li>
+            <li>
+                Strukturni
+            </li>
+            <li>
+                Paterni ponašanja
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>Kreacioni paterni</h2>
+        <ul>
+            <li>
+                Singleton
+            </li>
+            <li>
+                Factory
+            </li>
+            <li>
+                Factory Method
+            </li>
+            <li>
+                Abstract Factory
+            </li>
+            <li>
+                Builder
+            </li>
+            <li>
+                Prototype
+            </li>
+            <li>
+                Object Pool
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>Strukturni paterni</h2>
+        <ul>
+            <li>
+                Adapter
+            </li>
+            <li>
+                Bridge
+            </li>
+            <li>
+                Composite
+            </li>
+            <li>
+                Decorator
+            </li>
+            <li>
+                Flyweight
+            </li>
+            <li>
+                Proxy
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>Paterni ponašanja</h2>
+        <ul>
+            <li>
+                Chain of Responsibility
+            </li>
+            <li>
+                Command
+            </li>
+            <li>
+                Interpreter
+            </li>
+            <li>
+                Iterator
+            </li>
+            <li>
+                Mediator
+            </li>
+            <li>
+                Memento
+            </li>
+            <li>
+                Observer
+            </li>
+            <li>
+                Strategy
+            </li>
+            <li>
+                Template Method
+            </li>
+            <li>
+                Visitor
+            </li>
+            <li>
+                Null Object
+            </li>
+        </ul>
+    </section>
+</section>
+<section>
+    <h2>Zašto koristiti paterne projektovanja</h2>
+
+    <p class="fragment">
+        Definišu problem
+    </p>
+
+    <p class="fragment">
+        Definišu rešenje
+    </p>
+
+    <p class="fragment">
+        Nezavisni od jezika
+    </p>
+
+    <p class="fragment">
+        Poboljšavaju komunikaciju
+    </p>
+
+    <p class="fragment">
+        Isprobani i testirani
+    </p>
+
+    <p class="fragment">
+        Otvoreni za saradnju
+    </p>
+
+    <p class="fragment">
+        Promovišu dobar dizajn
+    </p>
+</section>
+<section>
+    <h2>Factory patern</h2>
+
+    <p class="fragment">
+        Jedan od najčešće korišćenih paterna
+    </p>
+
+    <p class="fragment">
+        Objekti se kreiraju bez otkrivanja logike kreiranja klijentu
+    </p>
+
+    <p class="fragment">
+        <img height="373px"
+             src="http://www.oodesign.com/images/stories/factory%20implementation.gif"
+             alt="Factory pattern">
+    </p>
+</section>
+<section>
+    <h2>Factory klasa</h2>
+        <pre>
+            <code data-trim contenteditable>
+class Mailbox_Display_Factory
+{
+    /**
+    * Returns new instance of inbox display printer
+    *
+    * @param string $type
+    * @param array $config
+    */
+    public static function forgeDisplayPrinter($type, array $config = array())
+    {
+        $class_name = '\\Application\\Message\\Mailbox_Display_'.ucfirst($type);
+
+        return new $class_name($config);
+    }
+}
+            </code>
+        </pre>
+</section>
+<section>
+    <h2>Strategy patern</h2>
+
+    <p class="fragment">
+        Familija međusobno zamenljivih algoritama
+    </p>
+
+    <p class="fragment">
+        Klijenti biraju algoritam
+    </p>
+
+    <p class="fragment">
+        <img height="373px"
+             src="http://www.oodesign.com/images/design_patterns/behavioral/strategy_implementation_-_uml_class_diagram.gif"
+             alt="Strategy pattern">
+    </p>
+</section>
+<section>
+    <h2>Strategy klase</h2>
+        <pre>
+            <code data-trim contenteditable>
+class Mailbox_Display_Abstract
+{
+    public function __construct(array $config = array())
+    {
+        $this->config = $config;
+    }
+
+    public function render()
+    {
+        $this->prepare_data();
+        $this->view = View::forge('messages/templates/messages/wrapper/'.$this->view_name, $this->view_data, false);
+
+        return $this->view->render();
+    }
+
+    protected function prepareData()
+    {
+        return false;
+    }
+}
+            </code>
+        </pre>
+</section>
+<section>
+    <h2>Strategy klase</h2>
+        <pre>
+            <code data-trim contenteditable>
+class Mailbox_Display_Inbox extends Mailbox_Display_Abstract
+{
+    protected function prepareData()
+    {
+       // some code
+    }
+}
+            </code>
+        </pre>
+</section>
+
+<section>
+    <h2>Visitor patern</h2>
+    <img
+         src="http://www.oodesign.com/images/behavioral/visitor-pattern.png"
+         alt="Strategy pattern">
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+        ## Markdown support
+
+        For those of you who like that sort of thing. Instructions and a bit more info available
+        [here](https://github.com/hakimel/reveal.js#markdown).
+
+        ```
+        <section data-markdown>
+            ## Markdown support
+
+            For those of you who like that sort of thing.
+            Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
+        </section>
+        ```
+    </script>
+</section>
+
+<section id="transitions">
+    <h2>Transition Styles</h2>
+
+    <p>
+        You can select from different transitions, like: <br>
+        <a href="?transition=cube#/transitions">Cube</a> -
+        <a href="?transition=page#/transitions">Page</a> -
+        <a href="?transition=concave#/transitions">Concave</a> -
+        <a href="?transition=zoom#/transitions">Zoom</a> -
+        <a href="?transition=linear#/transitions">Linear</a> -
+        <a href="?transition=fade#/transitions">Fade</a> -
+        <a href="?transition=none#/transitions">None</a> -
+        <a href="?#/transitions">Default</a>
+    </p>
+</section>
+
+<section id="themes">
+    <h2>Themes</h2>
+
+    <p>
+        Reveal.js comes with a few themes built in: <br>
+        <a href="?theme=sky#/themes">Sky</a> -
+        <a href="?theme=beige#/themes">Beige</a> -
+        <a href="?theme=simple#/themes">Simple</a> -
+        <a href="?theme=serif#/themes">Serif</a> -
+        <a href="?theme=night#/themes">Night</a> -
+        <a href="?#/themes">Default</a>
+    </p>
+
+    <p>
+        <small>
+            * Theme demos are loaded after the presentation which leads to flicker. In production you should load your
+            theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
+        </small>
+    </p>
+</section>
+
+<section>
+    <section data-state="alert">
+        <h2>Global State</h2>
+
+        <p>
+            Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+            will be added as a class to the document element when the slide is open. This lets you
+            apply broader style changes, like switching the background.
+        </p>
+        <a href="#" class="image navigate-down">
+            <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png"
+                 alt="Down arrow">
+        </a>
+    </section>
+    <section data-state="blackout">
+        <h2>"blackout"</h2>
+        <a href="#" class="image navigate-down">
+            <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png"
+                 alt="Down arrow">
+        </a>
+    </section>
+    <section data-state="soothe">
+        <h2>"soothe"</h2>
+        <a href="#" class="image navigate-next">
+            <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow"
+                 style="-webkit-transform: rotate(-90deg);">
+        </a>
+    </section>
+</section>
+
+<section data-state="customevent">
+    <h2>Custom Events</h2>
+
+    <p>
+        Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+    </p>
+					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+                        Reveal.addEventListener( 'customevent', function() {
+                        console.log( '"customevent" has fired' );
+                        } );
+                    </code></pre>
+</section>
+
+<section>
+    <h2>Clever Quotes</h2>
+
+    <p>
+        These guys come in two forms, inline: <q
+            cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+        &ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+    </p>
+    <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+        &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters
+        would
+        reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+    </blockquote>
+</section>
+
+<section>
+    <h2>Pretty Code</h2>
+					<pre><code data-trim contenteditable>
+                        function linkify( selector ) {
+                        if( supports3DTransforms ) {
+
+                        var nodes = document.querySelectorAll( selector );
+
+                        for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+                        var node = nodes[i];Objekti se kreiraju bez otkrivanja logike kreiranja klijentu
+
+                        if( !node.className ) ) {
+                        node.className += ' roll';
+                        }
+                        };
+                        }
+                        }
+                    </code></pre>
+    <p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+</section>
+
+<section>
+    <h2>Intergalactic Interconnections</h2>
+
+    <p>
+        You can link between slides internally,
+        <a href="#/2/3">like this</a>.
+    </p>
+</section>
+
+<section>
+    <section>
+        <h2>Fragmented Views</h2>
+
+        <p>Hit the next arrow...</p>
+
+        <p class="fragment">... to step through ...</p>
+        <ol>
+            <li class="fragment"><code>any type</code></li>
+            <li class="fragment"><em>of view</em></li>
+            <li class="fragment"><strong>fragments</strong></li>
+        </ol>
+
+        <aside class="notes">
+            This slide has fragments which are also stepped through in the notes window.
+        </aside>
+    </section>
+    <section>
+        <h2>Fragment Styles</h2>
+
+        <p>There's a few styles of fragments, like:</p>
+
+        <p class="fragment grow">grow</p>
+
+        <p class="fragment shrink">shrink</p>
+
+        <p class="fragment roll-in">roll-in</p>
+
+        <p class="fragment fade-out">fade-out</p>
+
+        <p class="fragment highlight-red">highlight-red</p>
+
+        <p class="fragment highlight-green">highlight-green</p>
+
+        <p class="fragment highlight-blue">highlight-blue</p>
+    </section>
+</section>
+
+<section>
+    <h2>Spectacular image!</h2>
+    <a class="image" href="http://lab.hakim.se/meny/" target="_blank">
+        <img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
+    </a>
+</section>
+
+<section>
+    <h2>Export to PDF</h2>
+
+    <p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an
+        example that's been uploaded to SlideShare.</p>
+    <iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356"
+            style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px"
+            allowfullscreen></iframe>
+    <script>
+        document.getElementById('slideshare').attributeName = 'allowfullscreen';
+    </script>
+</section>
+
+<section>
+    <h2>Take a Moment</h2>
+
+    <p>
+        Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take
+        distracting slides off the screen
+        during a presentation.
+    </p>
+</section>
+
+<section>
+    <h2>Stellar Links</h2>
+    <ul>
+        <li><a href="http://slid.es">Try the online editor</a></li>
+        <li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
+        <li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
+    </ul>
+</section>
+
+<section>
+    <h1>THE END</h1>
+
+    <h3>BY Hakim El Hattab / hakim.se</h3>
+</section>
+
+</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        mouseWheel: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            } },
+            { src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            } },
+            { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () {
+                return !!document.body.classList;
+            } },
+            { src: 'plugin/notes/notes.js', async: true, condition: function () {
+                return !!document.body.classList;
+            } }
+            // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+            // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+    });
+
+</script>
+
+</body>
+</html>
