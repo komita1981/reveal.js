@@ -115,12 +115,29 @@
         </p>
 
         <p class="fragment">
-            Podaci se nalaze u memoriji - memory is new disk, disk is new tape
+            Podaci se nalaze u memoriji
         </p>
 
         <p class="fragment">
             Ekstremno brz - 100K operacija u sekundi
         </p>
+
+        <p class="fragment">
+            Nema indeksa i nema šeme
+        </p>
+
+        <p class="fragment">
+            Radi sa komandama
+        </p>
+
+        <p class="fragment">
+            Atomske operacije
+        </p>
+
+        <p class="fragment">
+            6379 text based tcp protocol
+        </p>
+
         <aside class="notes">
             Uzmite jednostavnost memcache, dodajte još tipova podataka, postojanost, još komandi i još mnogo mnogo toga
             i
@@ -130,8 +147,6 @@
 
             Salvatore S. - Vidim Redis pre kao fleksibilan alat nego kao resenje specijalizovano za neki specificni
             problem
-
-            Nema indeksa i nema šeme
 
             Naglasak na ključevima pre nego na vrednostima
 
@@ -197,11 +212,7 @@
             512 MB binary safe
         </p>
 
-        <p class="fragment">
-            Atomske operacije
-        </p>
-
-        <p class="fragment">
+        <p>
             Primeri stringova:<br>
             post_counter    -  9888<br>
             current_mode    - "Maximum"<br>
@@ -254,6 +265,10 @@
         </p>
 
         <p>
+            Niz field->value parova
+        </p>
+
+        <p>
             Zauzimaju malo prostora
         </p>
 
@@ -261,7 +276,7 @@
             Do 2<sup>32</sup>-1 field->value parova
         </p>
 
-        <p class="fragment">
+        <p>
             Primer hash-a:<br>
             user:2<br>
                 username    - komita1981<br>
@@ -300,7 +315,7 @@
         </p>
 
         <p>
-            Do 2<sup>32</sup>-1 field-> elemenata
+            Do 2<sup>32</sup>-1 elemenata
         </p>
 
         <p class="fragment">
@@ -339,16 +354,16 @@
         </p>
 
         <p>
-            Do 2<sup>32</sup>-1 field-> elemenata
+            Do 2<sup>32</sup>-1 elemenata
         </p>
 
-        <p class="fragment">
-            Primer sorted seta:<br>
-            score_board:
-                Partizan   -  65
-                Rad        -  50
-                Vojvodina  -  55
-                Radnički   -  45
+        <p>
+            Primer sorted seta:<br/>
+            score_board:<br/>
+                Partizan   -  65<br/>
+                Rad        -  50<br/>
+                Vojvodina  -  55<br/>
+                Radnički   -  45<br/>
         </p>
 
     </section>
@@ -393,7 +408,7 @@
         </p>
 
         <p>
-            Do 2<sup>32</sup>-1 field-> elemenata
+            Do 2<sup>32</sup>-1 elemenata
         </p>
 
         <p class="fragment">
