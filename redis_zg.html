@@ -102,41 +102,44 @@
     <section>
         <h2>Šta je Redis</h2>
 
-        <p class="fragment">
-            <b>RE</b>mote <b>DIctionary</b> <b>S</b>erver
-        </p>
+        <ul>
+            <li class="fragment">
+                <strong class="highlight-cyan">RE</strong>mote <strong class="highlight-cyan">DI</strong>ctionary
+                <strong class="highlight-cyan">S</strong>erver
+            </li>
 
-        <p class="fragment">
-            Napredna key value baza
-        </p>
+            <li class="fragment">
+                Napredna key value baza
+            </li>
 
-        <p class="fragment">
-            Server struktura podataka - string, set, sorted set, list i hash
-        </p>
+            <li class="fragment">
+                Server struktura podataka - string, set, sorted set, list i hash
+            </li>
 
-        <p class="fragment">
-            Podaci se nalaze u memoriji
-        </p>
+            <li class="fragment">
+                Podaci se nalaze u memoriji
+            </li>
 
-        <p class="fragment">
-            Ekstremno brz - 100K operacija u sekundi
-        </p>
+            <li class="fragment">
+                Ekstremno brz - 100K operacija u sekundi
+            </li>
 
-        <p class="fragment">
-            Nema indeksa i nema šeme
-        </p>
+            <li class="fragment">
+                Nema indeksa i nema šeme
+            </li>
 
-        <p class="fragment">
-            Radi sa komandama
-        </p>
+            <li class="fragment">
+                Radi sa komandama
+            </li>
 
-        <p class="fragment">
-            Atomske operacije
-        </p>
+            <li class="fragment">
+                Atomske operacije
+            </li>
 
-        <p class="fragment">
-            6379 text based tcp protocol
-        </p>
+            <li class="fragment">
+                Radi na 6379 text based tcp protokolu
+            </li>
+        </ul>
 
         <aside class="notes">
             Uzmite jednostavnost memcache, dodajte još tipova podataka, postojanost, još komandi i još mnogo mnogo toga
@@ -153,38 +156,36 @@
             100k operacija za upis - set i 80k za citanje - get
 
             Nije RDBMS
-
-            6379 text based tcp protocol
         </aside>
     </section>
     <section>
         <h2>Šta je Redis</h2>
+        <ul>
+            <li class="fragment">
+                Jednostavna instalacija <br/>
+                <code class="highlight-cyan">$sudo apt-get install redis-server</code>
+            </li>
 
-        <p class="fragment">
-            Jednostavna instalacija <br/>
-            sudo apt-get install redis-server
-        </p>
+            <li class="fragment">
+                Podesiva postojanost podataka
+            </li>
 
-        <p class="fragment">
-            Podesiva postojanost podataka
-        </p>
+            <li class="fragment">
+                Master-slave replication
+            </li>
 
-        <p class="fragment">
-            Master-slave replication
-        </p>
+            <li class="fragment">
+                Particioniranje
+            </li>
 
-        <p class="fragment">
-            Particioniranje
-        </p>
+            <li class="fragment">
+                Lua scripting - stored procedures
+            </li>
 
-        <p class="fragment">
-            Lua scripting - stored procedures
-        </p>
-
-        <p class="fragment">
-            Redis-CLI i Redis Sentinel
-        </p>
-
+            <li class="fragment">
+                Redis-CLI i Redis Sentinel
+            </li>
+        </ul>
     </section>
 </section>
 
@@ -203,22 +204,28 @@
 <section>
     <section>
         <h2>Strings</h2>
+        <ul>
+            <li>
+                Predstavlja osnovnu strukturu
+            </li>
 
-        <p>
-            Osnovna struktura
-        </p>
+            <li>
+                Može da sučuva podatke veličine do 512 MB
+            </li>
+        </ul>
+        <br>
+        <br>
 
-        <p>
-            512 MB binary safe
-        </p>
-
-        <p>
+        <p class="highlight-cyan">
             Primeri stringova:<br>
-            post_counter    -  9888<br>
-            current_mode    - "Maximum"<br>
-            bitcode         - 0101<br>
-            average_points  - 15.5<br>
         </p>
+
+        <ul>
+            <li>post_counter - 9888</li>
+            <li>current_mode - "Maximum"</li>
+            <li>bitcode - 0101</li>
+            <li>average_points - 15.5</li>
+        </ul>
 
         <aside class="notes">
             Ako se koristi samo ova struktura redis je kao memcache sa postojanoscu podataka
@@ -228,27 +235,27 @@
         <h2>Komande nad stringovima</h2>
 
         <p class="fragment">
-            Osnovne komande (SET, GET, MSET, MGET, GETSET)
+            <span class="highlight-cyan">Osnovne komande</span> (SET, GET, MSET, MGET, GETSET)
         </p>
 
         <p class="fragment">
-            Integer&Float (INCR, INCRBY, DECR, DECRBY, INCRBYFLOAT)
+            <span class="highlight-cyan">Integer&Float</span> (INCR, INCRBY, DECR, DECRBY, INCRBYFLOAT)
         </p>
 
         <p class="fragment">
-            String (APPEND, SETRANGE, GETRANGE, STRLEN)
+            <span class="highlight-cyan">String</span> (APPEND, SETRANGE, GETRANGE, STRLEN)
         </p>
 
         <p class="fragment">
-            Expiring (SETEX, PSETEX)
+            <span class="highlight-cyan">Expiring</span> (SETEX, PSETEX)
         </p>
 
         <p class="fragment">
-            Locking (SETNX, PSETNX)
+            <span class="highlight-cyan">Locking</span> (SETNX, PSETNX)
         </p>
 
         <p class="fragment">
-            Bit (BITCOUNT, BITOP, SETBIT)
+            <span class="highlight-cyan">Bit</span> (BITCOUNT, BITOP, SETBIT)
         </p>
 
     </section>
@@ -259,47 +266,91 @@
         <h2>
             Hashes
         </h2>
+        <ul>
+            <li>
+                Predstavljaju niz <span class="highlight-cyan">field</span>-><span class="highlight-cyan">value</span>
+                parova
+            </li>
 
-        <p>
-            Asocijativni nizovi
-        </p>
+            <li>
+                Pandam asocijativnim nizovima u PHP-u
+            </li>
 
-        <p>
-            Niz field->value parova
-        </p>
+            <li>
+                Zauzimaju malo prostora
+            </li>
 
-        <p>
-            Zauzimaju malo prostora
-        </p>
+            <li>
+                Do 2
+                <sup>32</sup>
+                -1 <span class="highlight-cyan">field</span>-><span class="highlight-cyan">value</span> parova
+            </li>
 
-        <p>
-            Do 2<sup>32</sup>-1 field->value parova
-        </p>
+        </ul>
+        <br/>
+        <br/>
 
-        <p>
+        <p class="highlight-cyan">
             Primer hash-a:<br>
-            user:2<br>
-                username    - komita1981<br>
-                first_name  - Milan<br>
-                second_name - Popović<br>
-                age         - 32<br>
         </p>
 
+        <p>
+        <table>
+            <tr>
+                <td colspan="2">
+                    user:2
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    username
+                </td>
+                <td>
+                    komita1981
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    first_name
+                </td>
+                <td>
+                    Milan
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    second_name
+                </td>
+                <td>
+                    Popović
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    age
+                </td>
+                <td>
+                    32
+                </td>
+            </tr>
+        </table>
+        </p>
     </section>
     <section>
         <h2>
             Komande nad hash-evima
         </h2>
+
         <p class="fragment">
-            Osnovne komande (HSET, HGET, HMSET, HMGET, HGETALL, HKEYS, HVALS, HDEL)
+            <span class="highlight-cyan">Osnovne komande</span> (HSET, HGET, HMSET, HMGET, HGETALL, HKEYS, HVALS, HDEL)
         </p>
 
         <p class="fragment">
-            Field komande (HEXISTS, HLEN)
+            <span class="highlight-cyan">Field komande</span> (HEXISTS, HLEN)
         </p>
 
         <p class="fragment">
-            Integer & Float (HINCRBY, HINCRBYFLOAT)
+            <span class="highlight-cyan">Integer & Float</span> (HINCRBY, HINCRBYFLOAT)
         </p>
 
     </section>
@@ -309,20 +360,29 @@
         <h2>
             Sets
         </h2>
+        <ul>
+            <li>
+                Predstavlja neuređenu strukturu jedinstvenih elemenata
+            </li>
 
-        <p>
-            Neuređena struktura jedinstvenih elemenata
-        </p>
+            <li>
+                Pandam numeričkim nizovima u PHP-u
+            </li>
 
-        <p>
-            Do 2<sup>32</sup>-1 elemenata
-        </p>
+            <li>
+                Do 2<sup>32</sup>-1 elemenata
+            </li>
+        </ul>
+        <br/>
+        <br/>
 
-        <p class="fragment">
+        <p class="highlight-cyan">
             Primer seta:<br>
-            even_numbers {2, 4, 6, 8, 10...}
         </p>
-
+        <ul>
+            <li>even_numbers {2, 4, 6, 8, 10...}</li>
+            <li>group_members {'John', 'Mike', 'Bob', 'Alice'...}</li>
+        </ul>
     </section>
     <section>
         <h2>
@@ -330,15 +390,16 @@
         </h2>
 
         <p class="fragment">
-            Osnovne komande (SADD, SREM, SMEMBERS, SCARD, SISMEMBER)
+            <span class="highlight-cyan">Osnovne komande</span> (SADD, SREM, SMEMBERS, SCARD, SISMEMBER)
         </p>
 
         <p class="fragment">
-            Pomoćne komande (SRANDMEMBER, SPOP, SMOVE)
+            <span class="highlight-cyan">Pomoćne komande</span> (SRANDMEMBER, SPOP, SMOVE)
         </p>
 
         <p class="fragment">
-            Skupovne operacije (SINTER, SUNION, SDIFF, SINTERSTORE, SUNIONSTORE, SDIFFSTORE)
+            <span class="highlight-cyan">Komande skupovnih operacija</span> (SINTER, SUNION, SDIFF, SINTERSTORE,
+            SUNIONSTORE, SDIFFSTORE)
         </p>
 
     </section>
@@ -357,13 +418,50 @@
             Do 2<sup>32</sup>-1 elemenata
         </p>
 
-        <p>
+        <p class="highlight-cyan">
             Primer sorted seta:<br/>
-            score_board:<br/>
-                Partizan   -  65<br/>
-                Rad        -  50<br/>
-                Vojvodina  -  55<br/>
-                Radnički   -  45<br/>
+        </p>
+
+        <p>
+        <table>
+            <tr>
+                <td colspan="2">
+                    score_board:
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Partizan
+                </td>
+                <td>
+                    65
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Rad
+                </td>
+                <td>
+                    50
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Vojvodina
+                </td>
+                <td>
+                    55
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Radnički
+                </td>
+                <td>
+                    45
+                </td>
+            </tr>
+        </table>
         </p>
 
     </section>
@@ -373,23 +471,23 @@
         </h2>
 
         <p class="fragment">
-            Osnovne komande (ZADD, ZREM, ZCARD, ZSCORE, ZCOUNT, ZINCRBY)
+            <span class="highlight-cyan">Osnovne komande</span> (ZADD, ZREM, ZCARD, ZSCORE, ZCOUNT, ZINCRBY)
         </p>
 
         <p class="fragment">
-            Skupovne operacije (ZINTERSTORE, ZUNIONSTORE)
+            <span class="highlight-cyan">Komande skupovnih operacija</span> (ZINTERSTORE, ZUNIONSTORE)
         </p>
 
         <p class="fragment">
-            Komande ranga (ZRANK, ZREVRANK, ZREMRANGEBYRANK)
+            <span class="highlight-cyan">Komande ranga</span> (ZRANK, ZREVRANK, ZREMRANGEBYRANK)
         </p>
 
         <p class="fragment">
-            Komande opsega (ZRANGE, ZREVRANGE, ZREMRANGEBYRANK)
+            <span class="highlight-cyan">Komande opsega</span> (ZRANGE, ZREVRANGE, ZREMRANGEBYRANK)
         </p>
 
         <p class="fragment">
-            Komande bodova (ZRANGEBYSCORE, ZREVRANGEBYSCORE, ZREMRANGEBYSCORE)
+            <span class="highlight-cyan">Komande bodova</span> (ZRANGEBYSCORE, ZREVRANGEBYSCORE, ZREMRANGEBYSCORE)
         </p>
     </section>
 </section>
@@ -400,7 +498,7 @@
         </h2>
 
         <p>
-            Niz stringova
+            Predstavlja niz stringova
         </p>
 
         <p>
@@ -411,10 +509,11 @@
             Do 2<sup>32</sup>-1 elemenata
         </p>
 
-        <p class="fragment">
+        <p class="highlight-cyan">
             Primer liste:<br>
-            last_registered_users:
-            [tasmaniski, djuki, komita1981]
+        </p>
+        <p>
+            last_registered_users: [tasmaniski, djuki, komita1981]
         </p>
     </section>
     <section>
@@ -423,14 +522,15 @@
         </h2>
 
         <p class="fragment">
-            Osnovne komande (LPUSH, RPUSH, LPOP, RPOP, LLEN)
+            <span class="highlight-cyan">Osnocne operacije</span> (LPUSH, RPUSH, LPOP, RPOP, LLEN)
         </p>
 
         <p class="fragment">
-            Blok komande (BRPOP, BLPOP)
+            <span class="highlight-cyan">Blok komande</span> (BRPOP, BLPOP)
         </p>
+
         <p class="fragment">
-            Pomoćne komande (LINDEX, LRANGE, LSET, LPUSH, RPUSH...)
+            <span class="highlight-cyan">Pomoćne komande</span> (LINDEX, LRANGE, LSET, LPUSH, RPUSH...)
         </p>
 
     </section>
@@ -454,22 +554,14 @@
 <section>
     <h2>PUB/SUB</h2>
 
-    <p class="fragment">
+    <p>
         Publish/Subscribe messaging paradigm
     </p>
 
-    <p class="fragment">PUBLISH
-        <span class="green_font">channel</span>
-        <span class="red_font">message</span>
+    <p>
+        PUBLISH, SUBSCRIBE, UNSUBSCRIBE, PSUBSCRIBE, PUNSUBSCRIBE
     </p>
 
-    <p class="fragment">SUBSCRIBE
-        <span class="green_font">channel</span>
-    </p>
-
-    <p class="fragment">UNSUBSCRIBE
-        <span class="green_font">channel</span>
-    </p>
 </section>
 <section>
     <h2>Postojanost podataka</h2>
@@ -492,18 +584,23 @@
 <section>
     <h2>Transakcije</h2>
 
-        <p>
+    <ul>
+        <li>
             Redis transakcije != RDBMS transakcije
-        </p>
-        <p>
+        </li>
+
+        <li>
             Atomske operacije
-        </p>
-        <p>
+        </li>
+
+        <li>
             MULTI - EXEC
-        </p>
-        <p>
+        </li>
+
+        <li>
             WATCH - UNWATCH - DISCARD
-        </p>
+        </li>
+    </ul>
 </section>
 <section>
     <h2>Organizacija podataka</h2>
@@ -511,6 +608,7 @@
     <p class="fragment">
         Relacione baze : Koje odgovore imam?
     </p>
+
     <p class="fragment">
         Redis : Koja pitanja imam?
     </p>
@@ -520,7 +618,7 @@
     </p>
 
     <p class="fragment">
-        Separatori u nazivu - najčešće ":"
+        Separatori u nazivu - najčešće <span class="highlight-cyan">":"</span>
     </p>
 
 </section>
@@ -542,6 +640,7 @@
     <p class="fragment">
         <a href="https://github.com/nicolasff/phpredis/" target="_blank">PhpRedis</a>
     </p>
+
     <p class="fragment">
         <a href="https://github.com/nrk/predis">Predis</a>
     </p>
@@ -569,12 +668,15 @@
 </section>
 <section>
     <h2>Hoćete da naučite Redis</h2>
+
     <p class="fragment">
         <a href="http://try.redis.io/">http://try.redis.io/</a>
     </p>
+
     <p class="fragment">
         <a href="https://github.com/karlseguin/the-little-redis-book">The Little Redis Book</a>
     </p>
+
     <p class="fragment">
         <a href="http://www.manning.com/carlson/">Redis in action</a>
     </p>
