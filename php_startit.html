@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>PHP</title>
+
+    <meta name="description" content="System overview">
+    <meta name="author" content="Milan Popović">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="css/print/pdf.css" id="print" media="print">
+    <link rel="stylesheet" href="css/presentation/php_startit.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write('<link rel="stylesheet" href="css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+    <h1>PHP</h1>
+
+    <p>
+        <img src="img/php_startit/double_claw.jpg" alt="Double Claw" title="Double Claw">
+    </p>
+
+    <p>
+        <small><a target="_blank" href="http://www.phpsrbija.rs">PHP Srbija</a> / <a target="_blank"
+                                                                                           href="http://twitter.com/phpsrbija">@phpsrbija</a>
+        </small>
+    </p>
+</section>
+
+<section>
+    <h2>Agenda</h2>
+
+    <ul>
+        <li>PHP Srbija</li>
+        <li>History of PHP</li>
+        <li>PHP statistics</li>
+        <li>Composer</li>
+        <li>PSR 0,1,2,3...</li>
+        <li>Frameworks</li>
+        <li>Symfony 2</li>
+        <li>Laravel 4</li>
+        <li>Zend 2</li>
+    </ul>
+
+</section>
+
+<section>
+    <h2>History of PHP</h2>
+
+    <p class="fragment">
+        Created in 1994 by Rasmus Lerdorf - <a target="_blank" href="http://twitter.com/rasmus">@rasmus</a>
+    </p>
+
+    <p class="fragment">
+        Written in C
+    </p>
+
+    <p class="fragment">
+        Personal Home Page Tools
+    </p>
+
+    <p class="fragment">
+    Timeline
+    <ul class="fragment">
+        <li>PHP 1 - 1995</li>
+        <li>PHP 1 - 1996</li>
+        <li>PHP 3 - 1998 - popularity gained<br></li>
+        <li>PHP 4 - 2000 - wannabe object</li>
+        <li>PHP 5 - 2004 - OO support</li>
+        <li>PHP 5.3 - 2009 <br></li>
+        <li>PHP 5.4 - 2012</li>
+        <li>PHP 5.5 - 2013</li>
+    </ul>
+    </p>
+</section>
+<section>
+
+    <p class="fragment">
+        Andi Gutmans and Zeev Suraski
+    </p>
+
+    <p class="fragment">
+        PHP - Hypertext Preprocessor
+    </p>
+    <p class="fragment">
+        <img src="img/php_startit/php_repo.jpg" alt="PHP Repo statistics" title="PHP Repo statistics">
+    </p>
+</section>
+<section>
+    <h1>WHY PHP???</h1>
+</section>
+<section>
+    <h2>Hosting</h2>
+    <p class="fragment">Shared</p>
+    <p class="fragment">VPS</p>
+    <p class="fragment">Dedicated servers</p>
+    <p class="fragment">Heroku</p>
+    <p class="fragment">Google App Engine</p>
+    <p class="fragment">Azure</p>
+</section>
+<section>
+    <section>
+        <h2>Popularity - TIOBE index</h2>
+        <p class="fragment">
+            <img width="800" height="600" src="img/php_startit/php_tiobe.png" alt="PHP Tiobe index" title="PHP Tiobe index">
+        </p>
+    </section>
+    <section>
+        <h2>Popularity - usage of languages</h2>
+        <p class="fragment">
+            <img width="800" height="600" src="img/php_startit/usage_of_server_side_prog_lang.png" alt="Server side language usage" title="Server side language usage">
+        </p>
+    </section>
+    <section>
+        <h2>Popularity - number of developers</h2>
+        <p class="fragment">
+            More than 5 millions PHP developers worldwide
+        </p>
+        <p class="fragment">
+            Up to one thousand PHP developers in Serbia
+        </p>
+    </section>
+    <section>
+        <p>
+            <img width="800" height="600" src="img/php_startit/github_new_repos-custom.png" alt="Github new repos stats" title="Github new repos stats">
+        </p>
+    </section>
+    <section>
+        <p>
+            <img width="800" height="600" src="img/php_startit/github_new_users_repos_issues_multiplot_composite_simple.png" alt="Github stats" title="Github stats">
+        </p>
+    </section>
+</section>
+<section>
+    <h1>PHP RENAISSANCE</h1>
+</section>
+<section>
+    <h2>PHP FIG & PSR</h2>
+</section>
+<section>
+    <h2>Composer</h2>
+</section>
+<section>
+    <h2>Best framework</h2>
+    <p class="fragment">
+        <img src="img/php_startit/which_one_is_the_best.jpg" alt="Best PHP FW" title="Best PHP FW">
+    </p>
+</section>
+<section>
+    <h1>Symfony2</h1>
+    <h3>PHP Framework for Web projects</h3>
+    <p>
+        <small>Created by <a href="http://web-development-php.com">Vladimir Popov</a> / <a href="http://twitter.com/vladapopov">@vladapopov</a></small>
+    </p>
+</section>
+
+<section>
+    <h2>Symfony info</h2>
+    <ul>
+        <li>Currently in version 2.4.4</li>
+        <li>Sensio Labs</li>
+        <li><a href="http://fabien.potencier.org/">Fabian Potencier</a></li>
+        <li><a href="http://symfony.com/">symfony.com</a></li>
+    </ul>
+</section>
+
+<section>
+    <h1>Why Symfony?</h1>
+</section>
+
+<section>
+    <h2>Framework characteristics</h2>
+    <ul>
+        <li>Modular by using Bundles</li>
+        <li>MVC structure</li>
+        <li>High performance</li>
+        <li>Component oriented</li>
+        <li>Community driven</li>
+        <li>Tuned with PHP</li>
+        <li>Great documentation. The Book, Cookbook.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Main differences</h2>
+    <ul>
+        <li>Symfony is a project. Components, Silex, full stack ...</li>
+        <li>Used widely</li>
+        <li>Huge community and large number of contributors</li>
+        <li>Over 2200 ready to use bundles</li>
+        <li>Don't reinvent the wheel philosophy, Twig, Doctrine, Monolog ...</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Components</h2>
+    <ul>
+        <li>Easy install via composer</li>
+        <li>Form</li>
+        <li>Dependency Injection</li>
+        <li>EventDispatcher</li>
+        <li>HttpFoundation</li>
+        <li>Console</li>
+        <li><a href="http://symfony.com/components">Other components</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Working environments</h2>
+    <ul>
+        <li>Development</li>
+        <li>Production</li>
+        <li>Custom</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Web Developer Toolbar</h2>
+    <p><small>Available in dev working environment</small></p>
+    <a class="image" href="http://symfony.com/doc/2.0/quick_tour/the_big_picture.html#working-with-environments" target="_blank">
+        <img width="600" height="321" src="http://symfony.com/doc/2.0/_images/web_debug_toolbar.png" alt="Meny">
+    </a>
+</section>
+
+<section>
+    <h2>Request & Response</h2>
+    <p><small>How it works?</small></p>
+    <a class="image" href="http://symfony.com/doc/current/book/http_fundamentals.html" target="_blank">
+        <img width="600" height="321" src="http://symfony.com/doc/current/_images/http-xkcd.png">
+    </a>
+</section>
+
+<section>
+    ```
+    <section data-markdown>
+        <script type="text/template">
+            ## Build around HTTP protocol
+
+            It is all about Request and Response
+
+            ```
+            $kernel = new AppKernel('dev', true);
+            $kernel->loadClassCache();
+            $request = Request::createFromGlobals();
+            $response = $kernel->handle($request);
+            $response->send();
+            $kernel->terminate($request, $response);
+            ```
+        </script>
+    </section>
+</section>
+
+<section>
+    <h2>The Symfony Application Flow</h2>
+    <p><small>From request to response</small></p>
+    <a class="image" href="http://symfony.com/doc/current/book/http_fundamentals.html" target="_blank">
+        <img width="690" height="273" src="http://symfony.com/doc/current/_images/request-flow.png">
+    </a>
+</section>
+
+<section>
+    <h2>Robust</h2>
+    <p>Recommended for large projects</p>
+</section>
+
+<section>
+    <h2>Not very easy to learn</h2>
+    <ul>
+        <li>Steep learning curve</li>
+        <li>Good documentation on the other hand</li>
+    </ul>
+</section>
+
+<section>
+    <h1>Questions?</h1>
+</section>
+
+<section>
+    <h1>The end</h1>
+</section>
+</div>
+
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        mouseWheel: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            } },
+            { src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            } },
+            { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () {
+                return !!document.body.classList;
+            } },
+            { src: 'plugin/notes/notes.js', async: true, condition: function () {
+                return !!document.body.classList;
+            } }
+            // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+            // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+    });
+
+</script>
+
+</body>
+</html>
