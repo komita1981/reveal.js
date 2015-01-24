@@ -292,30 +292,47 @@
                 </section>
 
                 <section>
-                    <h2>
-                        PHPUnit
-                    </h2>
+                    <section>
+                        <h2>
+                            PHPUnit
+                        </h2>
 
-                    <p>
-                        Member of xUnit family
-                    </p>
+                        <p>
+                            Member of xUnit family
+                        </p>
 
-                    <p>
-                        Created by Sebastian Bergmann
-                    </p>
+                        <p>
+                            Created by Sebastian Bergmann
+                        </p>
 
-                    <p>
-                        Integrated/Supported by all modern frameworks
-                    </p>
+                        <p>
+                            Integrated/Supported by all modern frameworks
+                        </p>
 
-                    <p>
-                        Integrated in most IDE (PHPStorm, Netbeans, Eclipse, Zend Studio)
-                    </p>
+                        <p>
+                            Integrated in most IDE (PHPStorm, Netbeans, Eclipse, Zend Studio)
+                        </p>
 
-                    <p>
+                        <p>
+
+                    </section>
+                    <section>
+                        <p>
+                            Written for PHP 5.x
+                        </p>
+                        <p>
                         Install using composer or phar
-                    </p>
 
+                    <pre><code data-trim contenteditable>
+"require-dev": {
+    "phpunit/phpunit": "4.2.*"
+},
+                    </code></pre>
+                        </p>
+                        <p>
+                            PEAR install - not supported from 1.1.2015
+                        </p>
+                    </section>
                 </section>
 
                 <section>
@@ -691,6 +708,11 @@ public function testSuccessfulComplex()
                         <p>
                             Install through Composer
                         </p>
+                        <pre><code data-trim contenteditable>
+"require-dev": {
+    "mockery/mockery": "0.9.*@dev"
+},
+                        </code></pre>
                     </section>
 
                     <section>
@@ -982,6 +1004,36 @@ public function testUnsuccessfulStore()
 				    </section>
 				</section>
 
+                <section>
+                    <section>
+                        <h2>Programming sins</h2>
+                        <p class="fragment">
+                            <span class="red_text">New Operators - new ClassName()</span>
+                        </p>
+                        <p class="fragment">
+                            <span class="red_text">Using statics</span> - SomeClass::someMethod()
+                        </p>
+                        <p class="fragment">
+                            <span class="red_text">Endless "anding"</span> - Break SRP
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Programming sins</h2>
+
+                        <p class="fragment">
+                            <span class="red_text">Logic in constructor</span> - only assign variables
+                        </p>
+
+                        <p class="fragment">
+                            <span class="red_text">Using switch-case often</span> - use design patterns instead
+                        </p>
+
+                        <p class="fragment">
+                            <span class="red_text">Too many dependencies</span> - max 4 dependencies
+                        </p>
+                    </section>
+                </section>
                 <section>
                     <section>
                         <h2>Advices</h2>
