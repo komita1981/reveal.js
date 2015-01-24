@@ -131,7 +131,7 @@
 
                 <section>
                     <h2>&nbsp;</h2>
-                    <p class="fragment">
+                    <p>
                         Prove you've done your work
                     </p>
                     <p class="fragment">
@@ -465,7 +465,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase
         parent::setUp();
     }
 
-    public function testAdd()
+    public function testSuccessfulAdd()
     {
         $this->assertEquals(9, $this->calculator->add(3, 6));
     }
@@ -485,6 +485,286 @@ class CalculatorTest extends PHPUnit_Framework_TestCase
                     </p>
                 </section>
 
+                <section>
+                    <pre><code data-trim contenteditable>
+/**
+* @dataProvider getSuccessfulAddData
+*/
+public function testSuccessfulAdd($data)
+{
+    $this->assertEquals($data['result'],
+                        $this->calculator->add($data['a'], $data['b']));
+}
+
+public function getSuccessfulAddData()
+{
+    return array(
+        array(
+            array('a' => 1, 'b' => 2, 'result' => 3),
+            array('a' => 2, 'b' => 1, 'result' => 3),
+            array('a' => 0, 'b' => 1, 'result' => 1),
+            array('a' => 1, 'b' => 0, 'result' => 1),
+        )
+    );
+}
+                    </code></pre>
+
+                </section>
+                <section>
+                    <pre><code data-trim contenteditable>
+/**
+* @dataProvider getUnsuccessfulAddData
+*/
+public function testUnsuccessfulAdd($data)
+{
+    $this->setExpectedException($data['expectedException']);
+    $this->calculator->add($data['a'], $data['b']);
+}
+
+public function getUnsuccessfulAddData()
+{
+    return array(
+        array(
+            array('a' => 'string', 'b' => 2, 'result' => 2, 'expectedException' => 'Exception'),
+            array('a' => 2, 'b' => 'string', 'expectedException' => 'Exception'),
+            array('a' => 'string', 'b' => 'string', 'expectedException' => 'Exception'),
+        )
+    );
+}
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <p>
+                        <img class="noframes" src="img/l4testing/test_2.png">
+                    </p>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable>
+class Calculator
+{
+    public function add($a, $b)
+    {
+        if (! is_int($a) or ! is_int($b)){
+            throw new Exception('Only integers allowed');
+        }
+
+        return $a + $b;
+    }
+}
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <p>
+                        <img class="noframes" src="img/l4testing/test_3.png">
+                    </p>
+                </section>
+
+
+                <section>
+                    <pre><code data-trim contenteditable>
+class ScientificCalculator
+{
+    public function complex($a)
+    {
+        return "Too complex $a";
+    }
+}
+
+class Calculator
+{
+    public function complex($a)
+    {
+        $scientificCalculator = new ScientificCalculator();
+
+        return $scientificCalculator->complex($a);
+    }
+}
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <p>
+                        <img class="noframes" src="img/l4testing/wrong.jpg">
+                    </p>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable>
+class ScientificCalculator
+{
+    public function complex($a)
+    {
+        return "Too complex $a";
+    }
+}
+
+class Calculator
+{
+    protected $scientificCalculator;
+
+    public function __construct(ScientificCalculator $scientificCalculator)
+    {
+        $this->scientificCalculator = $scientificCalculator;
+    }
+
+    public function complex($a)
+    {
+        return $this->scientificCalculator->complex($a);
+    }
+}
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable>
+class CalculatorTest extends PHPUnit_Framework_TestCase
+{
+    protected $calculator;
+
+    public function setUp()
+    {
+        $this->calculator = new Calculator(new ScientificCalculator());
+        parent::setUp();
+    }
+    ...
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <p>
+                        <img class="noframes" src="img/l4testing/wrong.jpg">
+                    </p>
+                </section>
+
+                <section>
+                    <pre><code data-trim contenteditable>
+class CalculatorTest extends PHPUnit_Framework_TestCase
+{
+    protected $calculator;
+    protected $scientificCalculatorMock;
+
+    public function setUp()
+    {
+        $this->scientificCalculatorMock = $this->getMockBuilder('ScientificCalculator')->getMock();
+        $this->calculator = new Calculator($this->scientificCalculatorMock);
+        parent::setUp();
+    }
+
+
+public function testSuccessfulComplex()
+{
+    $a = 1;
+    $returnValue = "Something";
+
+    $this->scientificCalculatorMock
+        ->expects($this->once())
+        ->method('complex')
+        ->with($this->equalTo($a))
+        ->will($this->returnValue($returnValue));
+
+    $this->assertEquals($returnValue, $this->calculator->complex($a));
+}
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <p>
+                        <img class="noframes" src="img/l4testing/test_4.png">
+                    </p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Mockery</h2>
+                        <p>
+                            Simple, powerful framework for creating Mock Objects
+                        </p>
+                        <p>
+                            Install through Composer
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>
+                            Mock method
+                        </h2>
+                        <p>
+                        <pre><code data-trim contenteditable>
+$mockedObject = Mockery::mock('\Show\ExampleClass');
+                        </code></pre>
+                        </p>
+                        <p>Partial mocks</p>
+                        <p>
+                            <pre><code data-trim contenteditable>
+                            $mockedObject = Mockery::mock('\Show\ExampleClass[save, send]');
+                            </code></pre>
+                        </p>
+                        <p>
+                            <pre><code data-trim contenteditable>
+                            $mockedObject = Mockery::mock('\Show\ExampleClass')->makePartial();
+                            </code></pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Should Receive</h2>
+                            <p>
+                            <pre><code data-trim contenteditable>
+$this->mock->shouldReceive('methodName');
+                            </code></pre>
+                            </p>
+                    </section>
+                    <section>
+                        <h2>Once, Twice, Times(n), Never</h2>
+                        <p>
+                            <pre><code data-trim contenteditable>
+$this->mock
+     ->shouldReceive('methodName')
+     ->once();
+                            </code></pre>
+                        </p>
+                        <p>
+                            <pre><code data-trim contenteditable>
+$this->mock
+     ->shouldReceive('methodName')
+     ->never();
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>With</h2>
+                        <p>
+                            <pre><code data-trim contenteditable>
+$this->mock
+     ->shouldReceive('methodName')
+     ->once()
+     ->with($params);
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>And Return</h2>
+                        <p>
+                            <pre><code data-trim contenteditable>
+$mockedObject = Mockery::mock('\Show\ExampleClass');
+$mockedObject
+    ->shouldReceive('all')
+    ->once()
+    ->with($param)
+    ->andReturn('foo');
+                            </code></pre>
+                        </p>
+                    </section>
+                </section>
 				<section>
 					<h2>Resources</h2>
 					<ul>
@@ -495,7 +775,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase
 						<li><a href="http://www.slideshare.net/ChonlasithJucksripor/unit-test-39809217">http://www.slideshare.net/ChonlasithJucksripor/unit-test-39809217</a></li>
 						<li><a href="http://blog.typemock.com/2009/03/the-cost-of-test-driven-development.html">http://blog.typemock.com/2009/03/the-cost-of-test-driven-development.html</a></li>
 						<li><a href="http://lh3.ggpht.com/-X8LPVvE5BYE/UHaLknLmMmI/AAAAAAAABg0/HDu3iZAs2yg/s1600-h/image7.png">http://lh3.ggpht.com/-X8LPVvE5BYE/UHaLknLmMmI/AAAAAAAABg0/HDu3iZAs2yg/s1600-h/image7.png</a></li>
-						<li><a href=""></a></li>
+						<li><a href="http://lh5.ggpht.com/-jDpF-eS-6TE/UQo_mozEkkI/AAAAAAAAHUg/uu9F08Atq9I/wrong_thumb%25255B39%25255D.jpg?imgmax=800">http://lh5.ggpht.com/-jDpF-eS-6TE/UQo_mozEkkI/AAAAAAAAHUg/uu9F08Atq9I/wrong_thumb%25255B39%25255D.jpg?imgmax=800</a></li>
 						<li><a href=""></a></li>
 					</ul>
 				</section>
