@@ -766,7 +766,227 @@ $mockedObject
                     </section>
                 </section>
 				<section>
-					<h2>Resources</h2>
+                    <h2>
+                        Testing in Laravel 4
+                    </h2>
+
+                    <p>
+                        Built with unit testing in mind
+                    </p>
+
+                    <p>
+                        Utilizes the Symfony HttpKernel, DomCrawler, and BrowserKit components
+                    </p>
+
+                    <p>
+                        All tests inherit app/tests/TestCase.php file
+                    </p>
+				</section>
+                <section>
+                    <pre><code data-trim contenteditable>
+class TestCase extends Illuminate\Foundation\Testing\TestCase {
+    /**
+    * Creates the application.
+    *
+    * @return \Symfony\Component\HttpKernel\HttpKernelInterface
+    */
+    public function createApplication()
+    {
+        $unitTesting = true;
+        $testEnvironment = 'testing';
+        return require __DIR__.'/../../bootstrap/start.php';
+    }
+}
+                    </code></pre>
+                </section>
+                <section>
+                    <pre><code data-trim contenteditable>
+abstract class TestCase extends \PHPUnit_Framework_TestCase {
+
+use ApplicationTrait, AssertionsTrait;
+                        ...
+                    </code></pre>
+                </section>
+				<section>
+                    <p>
+                        <span class="red_text">ApplicationTrait</span>
+                    </p>
+                    <p class="left_align">
+                        <span class="red_text">cal(...)</span> - Call the given URI and return the Response
+                    </p>
+
+                    <p class="left_align">
+                        <span class="red_text">action(...)</span> - Call a controller action and return the Response
+                    </p>
+
+                    <p class="left_align">
+                        <span class="red_text">route(...)</span> - Call a named route and return the Response
+                    </p>
+
+                    <p class="left_align">
+                        <span class="red_text">seed($class = 'DatabaseSeeder')</span> - Seed a given database connection
+                    </p>
+
+                    <p class="left_align">
+                        <span class="red_text">be(...)</span> - Set the currently logged in user for the application
+                    </p>
+				</section>
+				<section>
+                    <p class="cc_logo_fix_50">
+                        <span class="red_text">AssertionsTrait</span>
+                    </p>
+                    <p class="left_align">
+                        <span class="red_text">assertResponseOk()</span> - Assert that the client response has an OK status code
+                    </p>
+
+                    <p class="left_align">
+                        <span class="red_text">assertResponseStatus($code)</span> - Assert that the client response has a given code
+                    </p>
+
+                    <p class="left_align">
+                        <span class="red_text">assertViewHas($key, $value = null)</span> - Assert that the response view has a given piece of bound data
+                    </p>
+
+                    <p class="left_align">
+                        <span class="red_text">assertRedirectedTo($uri, $with = array())</span> - Assert whether the client was redirected to a given URI
+                    </p>
+				</section>
+                <section>
+                    <h2>Mocking facades</h2>
+                    <pre><code data-trim contenteditable>
+public function crypt()
+{
+    Crypt::setKey('someKey');
+}
+
+                    </code></pre>
+                    <pre><code data-trim contenteditable>
+public function testCrypt()
+{
+    Crypt::shouldReceive('setKey')->once()->with($key);
+}
+                    </code></pre>
+                    <p>
+                        shouldReceive method called on the facade return an instance of a Mockery mock
+                    </p>
+                </section>
+				<section>
+                    <pre><code data-trim contenteditable>
+public function __construct(User $userModel)
+{
+    $this->userModel = $userModel;
+}
+public function store()
+{
+    $userData = Input::all();
+
+    if(! $this->userModel->validate($userData)){
+        throw new StoreResourceFailedException($this->userModel->getErrors());
+    }
+
+    try{
+        $userModel = $this->userModel->create($userData);
+
+        if (! $userModel instanceof User){
+            throw new StoreResourceFailedException();
+        }
+
+        return $userModel;
+    }catch (Exception $e){
+        throw new StoreResourceFailedException('Failed');
+    }
+}
+                        </code></pre>
+				</section>
+
+				<section>
+				    <section>
+                        <pre><code data-trim contenteditable>
+use Mockery as m;
+
+class UserControllerTest extends TestCase
+{
+    public function setUp()
+    {
+        parent::setUp();
+        $this->userModel = m::mock('Eloquent', 'Api\Models\User');
+    }
+
+
+    public function tearDown()
+    {
+        parent::tearDown();
+        m::close();
+    }
+                            ...
+                        </code></pre>
+				    </section>
+				    <section>
+                        <pre><code data-trim contenteditable>
+public function testSuccessfulStore()
+{
+    $data = ['first_name' => 'John', 'last_name' => 'Doe', 'email' => 'john@johndoe.com'];
+
+    $this->userModel
+        ->shouldReceive('validate')
+        ->once()
+        ->with($data)
+        ->andReturn(true);
+
+    $mockedUserModel = m::mock('Eloquent', 'Api\Models\User');
+
+    $this->userModel
+        ->shouldReceive('create')
+        ->once()
+        ->andReturn($mockedUserModel);
+
+    $this->app->instance('Models\User', $this->userModel);
+
+    $response = $this->call('POST', $this->createUri('users'));
+
+    $this->assertResponseOk();
+    $this->assertContains(json_encode($data), $response->getContent());
+}
+                        </code></pre>
+				    </section>
+				    <section>
+                        <pre><code data-trim contenteditable>
+public function testUnsuccessfulStore()
+{
+    $data = ['first_name' => 'John', 'last_name' => 'Doe'];
+    $errorMessage = 'Error';
+
+    $this->userModel
+        ->shouldReceive('validate')
+        ->once()
+        ->with($data)
+        ->andReturn(false);
+
+    $this->userModel
+        ->shouldReceive('getErrors')
+        ->once()
+        ->andReturn($errorMessage);
+
+    $this->userModel
+        ->shouldReceive('create')
+        ->never();
+
+    $this->app->instance('Models\User', $this->userModel);
+
+    $response = $this->call('POST', $this->createUri('users'));
+
+    $this->assertResponseStatus(422);
+    $this->assertContains($errorMesage, $response->getContent());
+}
+                        </code></pre>
+				    </section>
+				</section>
+                <section>
+                    <p>
+                        <img class="noframes" src="img/l4testing/laravel_testing_decoded.jpg">
+                    </p>
+                </section>
+				<section>
 					<ul>
 						<li><a href="http://images.sodahead.com/polls/001599249/4445136897_Question_Mark_000007651615XSmall_answer_101_xlarge.jpeg">http://images.sodahead.com/polls/001599249/4445136897_Question_Mark_000007651615XSmall_answer_101_xlarge.jpeg</a></li>
 						<li><a href="https://lh4.ggpht.com/W3DVtNTVIAvZfJ99kDT2hP5cxklxZfLMGehfox8WFCzVk49LOUW-exgVXifFxDKkPts=w300">https://lh4.ggpht.com/W3DVtNTVIAvZfJ99kDT2hP5cxklxZfLMGehfox8WFCzVk49LOUW-exgVXifFxDKkPts=w300</a></li>
@@ -780,12 +1000,12 @@ $mockedObject
 					</ul>
 				</section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
+				<section>
+					<h1>THANK YOU</h1>
+				</section>
+
+				<section>
+					<h1>QUESTIONS?</h1>
 				</section>
 
 			</div>
