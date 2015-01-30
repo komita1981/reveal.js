@@ -1,0 +1,24 @@
+html body {
+    background:url("../../img/l4testing/background.png");
+    background-position:center;
+    background-size: 100%;
+}
+.noframes{
+    border: none !important;
+    box-shadow: none !important;
+}
+.left_align{
+    text-align: left !important;
+}
+
+.red_text{
+    color: red;
+}
+
+.cc_logo_fix_50{
+    margin-top: 50px !important;
+}
+
+.cc_logo_fix_100{
+    margin-top: 100px !important;
+}
