@@ -87,19 +87,33 @@
                 </section>
 
 				<section>
-                    <p>What is programming?</p>
+                    <h2>What is programming?</h2>
                     <p class="fragment red_text">
                         Specifying requirements in such details that machine can execute it
                     </p>
-                    <p class="fragment">What is code?</p>
+                    <aside class="notes">
+                        Programming definition is taken from Clean Code book
+                    </aside>
+                </section>
+                <section>
+                    <h2 class="fragment">What is code?</h2>
                     <p class="fragment red_text">
                         Code is programming statement.
                     </p>
                     <p class="fragment red_text">
+                        A sequence of stored instructions
+                    </p>
+                    <p class="fragment red_text">
                         Language in which we express the requirements
                     </p>
+                    <p class="fragment red_text">
+                        A piece of creative art
+                    </p>
+                    <p class="fragment red_text">
+                        Represent your understanding of requirements
+                    </p>
                     <aside class="notes">
-                        Programming definition is taken from Clean Code book
+                        2. and 4. definition taken from python course
                     </aside>
 				</section>
 
@@ -108,9 +122,10 @@
                         Whose code is that?
                     </h2>
                     <p class="fragment">
-                        It's always belongs to whole <span class="red_text">TEAM</span>
+                        Code always belongs to whole <span class="red_text">TEAM</span>
                     </p>
                     <p class="fragment">
+                        <span class="red_text">Gold rule:</span><br/>
                         Leave the code cleaner than you found it
                     </p>
                     <aside class="notes">
@@ -138,6 +153,8 @@
                             never reach that deadline. The only way to go fast is to keep code clean as much as possible
                             all the time. Imagine you code is building. What happens with building when you stop caring
                             about it. The same happens to the code.
+                            Code is getting worse as time passes. We should not wait - fix it all the time. That's
+                            the only way you can prevent degradation.
                         </aside>
                     </section>
                     <section>
@@ -165,15 +182,9 @@
                         </p>
                     </section>
                 </section>
-                <section>
-                    <aside class="notes">
-                        Code is getting worse as time passes. We should not wait - fix it all the time. That's
-                        the only way you can prevent degradation.
-                    </aside>
-                </section>
 
 				<section>
-                    <p>Kent Beck's rules of simple code</p>
+                    <h2>Kent Beck's rules of simple code</h2>
                     <p class="fragment">
                         Runs all the tests
                     </p>
@@ -244,6 +255,85 @@
                         it's not. Talented football player is not the best football player. The best player is one who
                         trained a lot every day.
                     </aside>
+				</section>
+				<section>
+                    <h2>Power of good names</h2>
+                    <p class="fragment">
+                        <span class="red_text">Clarity is king</span>
+                    </p>
+                    <p class="fragment">
+                        Names should reveal intent
+                    </p>
+                    <p class="fragment">
+                        Good names does not require comments
+                    </p>
+                    <p class="fragment">
+                        Should be explicit not implicit
+                    </p>
+                    <p class="fragment">
+                        Be pragmatic - no (too) smart programmer
+                    </p>
+                    <aside class="notes">
+                        "Clarity is king" - taken from the book Clean code<br/><br/>
+                        You can easily understand code if you choose names carefully.
+                        Choosing good names takes time but it gives more value than it gets. Remember that
+                        code is 10x more read than written.<br/><br/>
+                        Read your when you finish writing - if it is funny or not clear to your colleagues
+                        do refactoring. <br/><br/>
+                    </aside>
+				</section>
+
+                <section>
+                    <h2>Do not use</h2>
+                    <p class="fragment">
+                        Unnecessary, unclear abbreviations
+                    </p>
+                    <p class="fragment">
+                        Big letter O and small letter L (similar to 0 and 1)
+                    </p>
+                    <p class="fragment">
+                        Short names (only i,j as part of loop are acceptable)
+                    </p>
+                    <p class="fragment">
+                        Too long similar names
+                    </p>
+                    <p class="fragment">
+                        Numbers as part of variable name (no a1, a2,...)
+                    </p>
+                    <p class="fragment">
+                        Words like Manager, Info, Data
+                    </p>
+                    <p class="fragment">
+                        Type (Int, String, Array) as part of the name
+                    </p>
+
+                    <asside class="notes">
+
+                    </asside>
+				</section>
+
+                <section>
+                    <h2>Use</h2>
+
+                    <p class="fragment">
+                        Noun as class name (Product, User...)
+                    </p>
+
+                    <p class="fragment">
+                        Verb or verb phrase as method name (compute, getPage)
+                    </p>
+
+                    <p class="fragment">
+                        Well known programmers terms (pattern names...)
+                    </p>
+
+                    <p class="fragment">
+                        Constants instead numbers
+                    </p>
+
+                    <asside class="notes">
+
+                    </asside>
 				</section>
 
 				<!-- Example of nested vertical slides -->
