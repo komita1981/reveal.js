@@ -107,7 +107,7 @@
                         Time consuming
                     </p>
                     <p class="fragment">
-                        Don’t make anybody any money.
+                        Don’t make anybody any money
                     </p>
                 </section>
 
@@ -130,8 +130,8 @@
                 </section>
 
                 <section>
-                    <h2>&nbsp;</h2>
-                    <p>
+                    <h2>What testing really is?</h2>
+                    <p class="fragment">
                         Prove you've done your work
                     </p>
                     <p class="fragment">
@@ -221,7 +221,9 @@
                         What is to be tested?
                     </p>
                     <h2 class="fragment">
-                        EVERYTHING
+                        <span class="red_text">
+                            EVERYTHING
+                        </span>
                     </h2>
                 </section>
 
@@ -237,6 +239,9 @@
                     </p>
                     <p class="fragment">
                         Third party packages
+                    </p>
+                    <p class="fragment">
+                        Protected & private methods and properties
                     </p>
                 </section>
 
@@ -280,6 +285,51 @@
 
                 <section>
                     <img class="noframes" src="img/l4testing/ddt_circle_of_life.png">
+                </section>
+
+                <section>
+                    <section>
+                        <h2>
+                            Testing environment
+                        </h2>
+
+                        <p>
+                            Use Virtual Environments
+                        </p>
+
+                        <p>
+                            Create you development environment to be same as production
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                            <img class="noframes" src="img/l4testing/vagrant_docker.png">
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Testing doubles</h2>
+                    <ul>
+                        <li class="fragment">Dummy</li>
+                        <li class="fragment">Fake</li>
+                        <li class="fragment">Stub</li>
+                        <li class="fragment">Mock</li>
+                        <li class="fragment">Spy</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Generation doubles doubles</h2>
+                    <ul>
+                        <li>phpunit/phpunit-mock-object</li>
+                        <li>phpspec/prophecy</li>
+                        <li>mockery/mockery</li>
+                        <li>phake/phake</li>
+                        <li>codeception/aspect-mock</li>
+                        <li>php-vci/php-vci</li>
+                    </ul>
                 </section>
 
                 <section>
@@ -333,72 +383,71 @@
                             PEAR install - not supported from 1.1.2015
                         </p>
                     </section>
-                </section>
 
-                <section>
-                    <h2 class="cc_logo_fix_50">
-                        PHPUnit's test goals
-                    </h2>
+                    <section>
+                        <h2 class="cc_logo_fix_50">
+                            PHPUnit's test goals
+                        </h2>
 
-                    <p class="fragment">
-                        Easy to learn to write
-                    </p>
+                        <p class="fragment">
+                            Easy to learn to write
+                        </p>
 
-                    <p class="fragment">
-                        Easy to write
-                    </p>
+                        <p class="fragment">
+                            Easy to write
+                        </p>
 
-                    <p class="fragment">
-                        Easy to read
-                    </p>
+                        <p class="fragment">
+                            Easy to read
+                        </p>
 
-                    <p class="fragment">
-                        Easy to execute
-                    </p>
+                        <p class="fragment">
+                            Easy to execute
+                        </p>
 
-                    <p class="fragment">
-                        Quick to execute
-                    </p>
+                        <p class="fragment">
+                            Quick to execute
+                        </p>
 
-                    <p class="fragment">
-                        Isolated
-                    </p>
+                        <p class="fragment">
+                            Isolated
+                        </p>
 
-                    <p class="fragment">
-                        Composable
-                    </p>
+                        <p class="fragment">
+                            Composable
+                        </p>
 
-                </section>
+                    </section>
 
-                <section>
-                    <h2>
-                        Test config & structure
-                    </h2>
+                    <section>
+                        <h2>
+                            Test config & structure
+                        </h2>
 
-                    <p>
-                        Configured in <span class="red_text">phpunit.xml</span>  file
-                    </p>
+                        <p>
+                            Configured in <span class="red_text">phpunit.xml</span>  file
+                        </p>
 
-                    <p>
-                        The tests for a class <span class="red_text">Class</span> go into a class <span class="red_text">ClassTest</span>
-                    </p>
+                        <p>
+                            The tests for a class <span class="red_text">Class</span> go into a class <span class="red_text">ClassTest</span>
+                        </p>
 
-                    <p>
-                        ClassTest inherits (most of the time) from <span class="red_text">PHPUnit_Framework_TestCase</span>
-                    </p>
+                        <p>
+                            ClassTest inherits (most of the time) from <span class="red_text">PHPUnit_Framework_TestCase</span>
+                        </p>
 
-                    <p>
-                        The tests are public methods that are named <span class="red_text">test*</span>
-                    </p>
+                        <p>
+                            The tests are public methods that are named <span class="red_text">test*</span>
+                        </p>
 
-                    <p>
-                        Inside the test methods assertion methods are used - <span class="red_text">assert*</span>
-                    </p>
+                        <p>
+                            Inside the test methods assertion methods are used - <span class="red_text">assert*</span>
+                        </p>
 
-                </section>
+                    </section>
 
-                <section>
-                    <pre><code data-trim contenteditable>
+                    <section>
+                        <pre><code data-trim contenteditable>
 <phpunit backupGlobals="false"
          backupStaticAttributes="false"
          bootstrap="bootstrap/autoload.php"
@@ -425,39 +474,41 @@
         </testsuite>
     </testsuites>
 </phpunit>
-                </code></pre>
+                    </code></pre>
 
+                    </section>
+
+                    <section>
+                        <h2 class="cc_logo_fix_50">
+                            Assertion methods examples
+                        </h2>
+
+                        <p>
+                            <span class="red_text">AssertTrue</span> - Check the input to verify it equals true
+                        </p>
+
+                        <p>
+                            <span class="red_text">AssertFalse</span> - Check the input to verify it equals false
+                        </p>
+
+                        <p>
+                            <span class="red_text">AssertEquals</span> - Check the result against another input for a match
+                        </p>
+
+                        <p>
+                            <span class="red_text">AssertContains</span> - Check that the input contains a certain value
+                        </p>
+
+                        <p>
+                            Many more asserts - official documentation...
+                        </p>
+
+                    </section>
                 </section>
 
                 <section>
-                    <h2 class="cc_logo_fix_50">
-                        Assertion methods examples
-                    </h2>
-
-                    <p>
-                        <span class="red_text">AssertTrue</span> - Check the input to verify it equals true
-                    </p>
-
-                    <p>
-                        <span class="red_text">AssertFalse</span> - Check the input to verify it equals false
-                    </p>
-
-                    <p>
-                        <span class="red_text">AssertEquals</span> - Check the result against another input for a match
-                    </p>
-
-                    <p>
-                        <span class="red_text">AssertContains</span> - Check that the input contains a certain value
-                    </p>
-
-                    <p>
-                        Many more asserts - official documentation...
-                    </p>
-
-                </section>
-
-                <section>
-                    <pre><code data-trim contenteditable>
+                    <section>
+                        <pre><code data-trim contenteditable>
 
 class Calculator
 {
@@ -466,11 +517,11 @@ class Calculator
         return $a + $b;
     }
 }
-                    </code></pre>
+                        </code></pre>
 
-                </section>
+                    </section>
 
-                <section>
+                    <section>
                     <pre><code data-trim contenteditable>
 class CalculatorTest extends PHPUnit_Framework_TestCase
 {
@@ -492,18 +543,18 @@ class CalculatorTest extends PHPUnit_Framework_TestCase
     parent::tearDown();
     }
 }
-                    </code></pre>
+                        </code></pre>
 
-                </section>
+                    </section>
 
-                <section>
-                    <p>
-                        <img class="noframes" src="img/l4testing/test_1.png">
-                    </p>
-                </section>
+                    <section>
+                        <p>
+                            <img class="noframes" src="img/l4testing/test_1.png">
+                        </p>
+                    </section>
 
-                <section>
-                    <pre><code data-trim contenteditable>
+                    <section>
+                        <pre><code data-trim contenteditable>
 /**
 * @dataProvider getSuccessfulAddData
 */
@@ -524,11 +575,11 @@ public function getSuccessfulAddData()
         )
     );
 }
-                    </code></pre>
+                        </code></pre>
 
-                </section>
-                <section>
-                    <pre><code data-trim contenteditable>
+                    </section>
+                    <section>
+                        <pre><code data-trim contenteditable>
 /**
 * @dataProvider getUnsuccessfulAddData
 */
@@ -548,18 +599,18 @@ public function getUnsuccessfulAddData()
         )
     );
 }
-                    </code></pre>
+                        </code></pre>
 
-                </section>
+                    </section>
 
-                <section>
-                    <p>
-                        <img class="noframes" src="img/l4testing/test_2.png">
-                    </p>
-                </section>
+                    <section>
+                        <p>
+                            <img class="noframes" src="img/l4testing/test_2.png">
+                        </p>
+                    </section>
 
-                <section>
-                    <pre><code data-trim contenteditable>
+                    <section>
+                        <pre><code data-trim contenteditable>
 class Calculator
 {
     public function add($a, $b)
@@ -571,19 +622,19 @@ class Calculator
         return $a + $b;
     }
 }
-                    </code></pre>
+                        </code></pre>
 
-                </section>
+                    </section>
 
-                <section>
-                    <p>
-                        <img class="noframes" src="img/l4testing/test_3.png">
-                    </p>
-                </section>
+                    <section>
+                        <p>
+                            <img class="noframes" src="img/l4testing/test_3.png">
+                        </p>
+                    </section>
 
 
-                <section>
-                    <pre><code data-trim contenteditable>
+                    <section>
+                        <pre><code data-trim contenteditable>
 class ScientificCalculator
 {
     public function complex($a)
@@ -601,18 +652,18 @@ class Calculator
         return $scientificCalculator->complex($a);
     }
 }
-                    </code></pre>
+                        </code></pre>
 
-                </section>
+                    </section>
 
-                <section>
-                    <p>
-                        <img class="noframes" src="img/l4testing/wrong.jpg">
-                    </p>
-                </section>
+                    <section>
+                        <p>
+                            <img class="noframes" src="img/l4testing/wrong.jpg">
+                        </p>
+                    </section>
 
-                <section>
-                    <pre><code data-trim contenteditable>
+                    <section>
+                        <pre><code data-trim contenteditable>
 class ScientificCalculator
 {
     public function complex($a)
@@ -635,12 +686,12 @@ class Calculator
         return $this->scientificCalculator->complex($a);
     }
 }
-                    </code></pre>
+                        </code></pre>
 
-                </section>
+                    </section>
 
-                <section>
-                    <pre><code data-trim contenteditable>
+                    <section>
+                        <pre><code data-trim contenteditable>
 class CalculatorTest extends PHPUnit_Framework_TestCase
 {
     protected $calculator;
@@ -651,18 +702,18 @@ class CalculatorTest extends PHPUnit_Framework_TestCase
         parent::setUp();
     }
     ...
-                    </code></pre>
+                        </code></pre>
 
-                </section>
+                    </section>
 
-                <section>
-                    <p>
-                        <img class="noframes" src="img/l4testing/wrong.jpg">
-                    </p>
-                </section>
+                    <section>
+                        <p>
+                            <img class="noframes" src="img/l4testing/wrong.jpg">
+                        </p>
+                    </section>
 
-                <section>
-                    <pre><code data-trim contenteditable>
+                    <section>
+                        <pre><code data-trim contenteditable>
 class CalculatorTest extends PHPUnit_Framework_TestCase
 {
     protected $calculator;
@@ -689,19 +740,29 @@ public function testSuccessfulComplex()
 
     $this->assertEquals($returnValue, $this->calculator->complex($a));
 }
-                    </code></pre>
+                        </code></pre>
 
+                    </section>
+
+                    <section>
+                        <p>
+                            <img class="noframes" src="img/l4testing/test_4.png">
+                        </p>
+                    </section>
                 </section>
 
                 <section>
                     <p>
-                        <img class="noframes" src="img/l4testing/test_4.png">
+                        <img class="noframes" src="img/l4testing/code-coverage.png">
                     </p>
                 </section>
 
                 <section>
                     <section>
                         <h2>Mockery</h2>
+                        <p>
+                            Created by Pádraic Brady
+                        </p>
                         <p>
                             Simple, powerful framework for creating Mock Objects
                         </p>
@@ -1073,7 +1134,7 @@ public function testUnsuccessfulStore()
 
                 <section>
                     <p>
-                        <img class="noframes" src="img/l4testing/laravel_testing_decoded.jpg">
+                        <img height="680" class="noframes" src="img/l4testing/laravel_testing_decoded.jpg">
                     </p>
                 </section>
 				<section>
@@ -1086,7 +1147,8 @@ public function testUnsuccessfulStore()
 						<li><a href="http://blog.typemock.com/2009/03/the-cost-of-test-driven-development.html">http://blog.typemock.com/2009/03/the-cost-of-test-driven-development.html</a></li>
 						<li><a href="http://lh3.ggpht.com/-X8LPVvE5BYE/UHaLknLmMmI/AAAAAAAABg0/HDu3iZAs2yg/s1600-h/image7.png">http://lh3.ggpht.com/-X8LPVvE5BYE/UHaLknLmMmI/AAAAAAAABg0/HDu3iZAs2yg/s1600-h/image7.png</a></li>
 						<li><a href="http://lh5.ggpht.com/-jDpF-eS-6TE/UQo_mozEkkI/AAAAAAAAHUg/uu9F08Atq9I/wrong_thumb%25255B39%25255D.jpg?imgmax=800">http://lh5.ggpht.com/-jDpF-eS-6TE/UQo_mozEkkI/AAAAAAAAHUg/uu9F08Atq9I/wrong_thumb%25255B39%25255D.jpg?imgmax=800</a></li>
-						<li><a href=""></a></li>
+						<li><a href="http://postd.cc/wp/wp-content/uploads/2014/07/vagrant_docker.png"></a>http://postd.cc/wp/wp-content/uploads/2014/07/vagrant_docker.png</li>
+						<li><a href="http://blog.stuartherbert.com/php/wp-content/uploads/2011/03/ishot-23.png"></a>http://blog.stuartherbert.com/php/wp-content/uploads/2011/03/ishot-23.png</li>
 					</ul>
 				</section>
 
@@ -1134,10 +1196,5 @@ public function testUnsuccessfulStore()
 </html>
 <!--
 @todo
-Dodaj mockery foundera
-Dodaj code coverage
-Dodaj primer gubitka novca zbog netestiranja
-Istaci znacaj testnog okruzenja - vagrant
-Naglasiti da se testne metode ne testiraju
-Dodati jos neki primer za L4
+Dodati jos neki primer za L4 - integration testing
 -->
