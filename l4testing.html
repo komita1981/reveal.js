@@ -42,7 +42,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Test your Laravel 4 applications</h1>
+					<h1>Test your (Laravel 4) applications</h1>
 					<p>
 						<small>Presented by <a href="http://milanpopovic.me">Milan Popović</a> / <a href="http://twitter.com/komita1981">@komita1981</a></small>
 					</p>
@@ -125,7 +125,7 @@
 
                 <section>
                     <p>
-                        <img class="noframes" src="img/l4testing/what_it_is.jpeg">
+                        <img class="noframes" src="img/l4testing/code_without_tests.jpeg">
                     </p>
                 </section>
 
@@ -156,19 +156,16 @@
                         Free documentation
                     </p>
                 </section>
-
                 <section>
-                    <p>
-                        <img class="noframes" src="img/l4testing/test_statistics.png">
+                    <h2>Automated testing</h2>
+                    <p class="red_text">
+                        When I say testing I mean AUTOMATED testing
                     </p>
                     <p>
-                        IBM & Microsoft - TDD -  20-40% longer to complete but 40-90% fewer bugs in production
+                        Manual testing is time consuming and boring
                     </p>
-                </section>
-
-                <section>
                     <p>
-                        By 2022 it will be not be possible to get a professional programming job if you do not practice TDD routinely
+                        Automated testing is fun and a key point for software quality
                     </p>
                 </section>
 
@@ -213,6 +210,9 @@
                     </h2>
                     <p class="fragment">
                         A software testing method to test individual unit of source code - a method in class or a piece of code
+                    </p>
+                    <p class="fragment">
+                        A real unit test verifies the behavior of a single code unit isolated from its dependencies
                     </p>
                 </section>
 
@@ -288,6 +288,21 @@
                 </section>
 
                 <section>
+                    <p>
+                        <img class="noframes" src="img/l4testing/test_statistics.png">
+                    </p>
+                    <p>
+                        IBM & Microsoft - TDD -  20-40% longer to complete but 40-90% fewer bugs in production
+                    </p>
+                </section>
+
+                <section>
+                    <p>
+                        By 2022 it will be not be possible to get a professional programming job if you do not practice TDD routinely
+                    </p>
+                </section>
+
+                <section>
                     <section>
                         <h2>
                             Testing environment
@@ -352,7 +367,7 @@
                         </p>
 
                         <p>
-                            Created by Sebastian Bergmann
+                            Created by Sebastian Bergmann and contributors
                         </p>
 
                         <p>
@@ -381,6 +396,9 @@
                         </p>
                         <p>
                             PEAR install - not supported from 1.1.2015
+                        </p>
+                        <p>
+                            Result can be ., F, E, I, S
                         </p>
                     </section>
 
@@ -761,7 +779,7 @@ public function testSuccessfulComplex()
                     <section>
                         <h2>Mockery</h2>
                         <p>
-                            Created by Pádraic Brady
+                            Created by Pádraic Brady and contributors
                         </p>
                         <p>
                             Simple, powerful framework for creating Mock Objects
@@ -1108,10 +1126,10 @@ public function testUnsuccessfulStore()
                             Do not duplicate test code
                         <p>
                         <p class="fragment">
-                            Treat test like your code
+                            Be descriptive about what you are testing
                         <p>
                         <p class="fragment">
-                            When you get confidence try to write tests before the code
+                            Treat test like your code
                         <p>
                     </section>
 
@@ -1129,6 +1147,10 @@ public function testUnsuccessfulStore()
                         <p class="fragment">
                             Use continuous integration server
                         <p>
+
+                        <p class="fragment">
+                            When you get confidence try to write tests before the code
+                        <p>
                     </section>
                 </section>
 
@@ -1140,6 +1162,7 @@ public function testUnsuccessfulStore()
 				<section>
 					<ul>
 						<li><a href="http://images.sodahead.com/polls/001599249/4445136897_Question_Mark_000007651615XSmall_answer_101_xlarge.jpeg">http://images.sodahead.com/polls/001599249/4445136897_Question_Mark_000007651615XSmall_answer_101_xlarge.jpeg</a></li>
+						<li><a href="https://image-store.slidesharecdn.com/ebe9e374-6d3e-4f1a-8051-9591ef7ea7a3-original.jpeg">https://image-store.slidesharecdn.com/ebe9e374-6d3e-4f1a-8051-9591ef7ea7a3-original.jpeg</a></li>
 						<li><a href="https://lh4.ggpht.com/W3DVtNTVIAvZfJ99kDT2hP5cxklxZfLMGehfox8WFCzVk49LOUW-exgVXifFxDKkPts=w300">https://lh4.ggpht.com/W3DVtNTVIAvZfJ99kDT2hP5cxklxZfLMGehfox8WFCzVk49LOUW-exgVXifFxDKkPts=w300</a></li>
 						<li><a href="http://www.redbubble.com/people/fitbys/works/10613559-results-or-excuses-fitness-slogan-retro?p=art-print">http://www.redbubble.com/people/fitbys/works/10613559-results-or-excuses-fitness-slogan-retro?p=art-print</a></li>
 						<li><a href="http://www.slideshare.net/damiansromek/php-tests-tips">http://www.slideshare.net/damiansromek/php-tests-tips</a></li>
@@ -1149,6 +1172,7 @@ public function testUnsuccessfulStore()
 						<li><a href="http://lh5.ggpht.com/-jDpF-eS-6TE/UQo_mozEkkI/AAAAAAAAHUg/uu9F08Atq9I/wrong_thumb%25255B39%25255D.jpg?imgmax=800">http://lh5.ggpht.com/-jDpF-eS-6TE/UQo_mozEkkI/AAAAAAAAHUg/uu9F08Atq9I/wrong_thumb%25255B39%25255D.jpg?imgmax=800</a></li>
 						<li><a href="http://postd.cc/wp/wp-content/uploads/2014/07/vagrant_docker.png"></a>http://postd.cc/wp/wp-content/uploads/2014/07/vagrant_docker.png</li>
 						<li><a href="http://blog.stuartherbert.com/php/wp-content/uploads/2011/03/ishot-23.png"></a>http://blog.stuartherbert.com/php/wp-content/uploads/2011/03/ishot-23.png</li>
+						<li><a href="https://vimeo.com/63492364"></a>Sebastian Bergmann in Atlanta</li>
 					</ul>
 				</section>
 
