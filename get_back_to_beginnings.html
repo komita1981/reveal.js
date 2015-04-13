@@ -244,6 +244,10 @@
                         will try to make mess in that code.
 
                         Tell story about fire in beautiful house
+
+                        Good code is solid, well written, tested and documented.
+
+                        Clever is the enemy of clear.
                     </aside>
 
                 </section>
@@ -259,10 +263,10 @@
                     <aside class="notes">
                         Knowledge<br/>
 
-                        You have to learn basics of software architecture and design patterns, follow good good practice
-                        and principles. You have to read a lot, you have to read every day. Follow people with high
-                        knowledge, listen to them, read their books. Go to conferences, speak about programming with your
-                        colleagues. Do it as often as it possible.
+                        As developer we collect, organize and maintain knowledge. You have to learn basics of software
+                        architecture and design patterns, follow good good practice and principles. You have to read a
+                        lot, you have to read every day. Follow people with high knowledge, listen to them, read their books.
+                        Go to conferences, speak about programming with your colleagues. Do it as often as it possible.
                         <br/><br/>
 
                         Hard work<br/>
@@ -301,6 +305,14 @@
                         code is 10x more read than written.<br/><br/>
                         Read your when you finish writing - if it is funny or not clear to your colleagues
                         do refactoring. <br/><br/>
+
+                        You will read code many many times but write only once.
+
+                        Worse than meaningless name is misleading name.
+
+                        It’s impossible to write clean and easily understandable code unless you are good at naming
+                        variables, methods, classes, and anything else that you create which requires a name.
+                        http://simpleprogrammer.com/2015/02/16/joel-test-programmers-simple-programmer-test/
                     </aside>
 				</section>
 
@@ -409,6 +421,52 @@
 				    </section>
 				</section>
 				<section>
+                    <section>
+                        <h2>Comments</h2>
+                        <p>Good code has lots of comments</p>
+                        <p class="fragment red_text">OH NO NO NO!!!</p>
+                        <p class="fragment">Bad code code requires lot of comments</p>
+                    </section>
+                    <section>
+                        <p class="fragment">Knowledge should be in your code not comments</p>
+                        <p class="fragment">Express your thoughts through code not comments</p>
+                    </section>
+                    <section>
+                        <p>&ldquo;<q>Good comment is the comment you found a way not to write</q>&rdquo;</p>
+                    </section>
+                    <aside class="notes">
+                        Use comments for high level explanation.
+                        "Don't comment bad code - rewrite it." - B. Kernighan i Plaugher
+                        Comments are, at best, necessary evil - Clean Code
+                        We failed to express using code so we are using comments instead.
+                        Every time you start to write a comment - think once more and try to make your code better.
+                        They are often source of lie. That's because if you have a lot of comments you have to maintain
+                        them as you maintain your .
+
+                        Types of comments
+                        - informative (providing some basic information)
+                        - clarification (why programmer do something)
+                        - warnings (warnings of consequences)
+                        - TODO comments
+
+                        Code should have comments, but having too much comments is as bad as too few. Comments discuss
+                        why something is done but it' already explained in code - it DRY break
+
+                        Speak about using PHPdoc and writing comments in files describing variables and methods
+                        Speak about my preferable way of documenting even it is not pragmatic - writing doc block
+                        for protected methods and variables and header in every file
+
+                        DO NOT leave commented out piece of code NEVER. Please never - if you do not do this it will
+                        stay there forever. You will write it better next time trust me :-)
+
+                        Comments should only really be written when it’s not possible to clearly communicate the intent
+                        of a variable or method by using a name. The comment then serves an actual purpose that could
+                        not be easily expressed in the code. - simpleprogrammer.com/2015/03/16/11-rules-all-programmers-should-live-by/
+
+
+                    </aside>
+				</section>
+				<section>
                     <h2>Refactoring</h2>
 
                     <aside class="notes">
@@ -420,6 +478,20 @@
                         make it dry, make it more readable
                     </aside>
 
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Debugging</h2>
+                        <aside>
+                            Some developers spend more time debugging than writing new code. They should do this
+                            efficiently.
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Testing</h2>
                 </section>
 
 				<section style="text-align: left;">

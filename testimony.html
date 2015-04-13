@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Testimony for developers</title>
+
+		<meta name="description" content="A short guide how to test your Laravel 4 application">
+		<meta name="author" content="Milan Popovic">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/presentation/testimony.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Test(imony)</h1>
+					<p>
+						<small>Presented by <a href="http://milanpopovic.me">Milan Popović</a> / <a href="http://twitter.com/komita1981">@komita1981</a></small>
+					</p>
+				</section>
+
+                <section>
+                    <section>
+                        <h2>Prophecy</h2>
+                        <p>
+                            Highly opinionated mocking framework for PHP 5.3+
+                        </p>
+                        <p>
+                            Created by Konstantin Kudryashov and contributors
+                        </p>
+                        <p>
+                            Initially it was created to fulfil phpspec2 needs
+                        </p>
+                        <p>
+                            <pre><code data-trim contenteditable>
+"require-dev": {
+    "phpspec/prophecy": "~1.0"
+},
+                            </code></pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Winds in the back</h2>
+                        <p>
+                            From version 4.5 PHPUnit is the out-of-the-box support for Prophecy
+                        </p>
+                        <p>
+                            Developers will be encouraged to use Prophecy's API instead of the "classic" PHPUnit API
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                            Every word has a logical meaning, even the name of the library itself (Prophecy)
+                        </p>
+                        <blockquote cite="https://github.com/phpspec/prophecy">
+                            &ldquo;Prophecy has been named that way because it concentrates on describing the future
+                            behavior of objects with very limited knowledge about them. But as with any other prophecy,
+                            those object prophecies can't create themselves - there should be a Prophet&rdquo;
+                        </blockquote>
+
+                        <p>
+                            <pre><code data-trim contenteditable>
+$prophet = new Prophecy\Prophet;
+                            </code></pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <blockquote cite="http://thephp.cc/news/2015/02/phpunit-4-5-and-prophecy">
+                            &ldquo;The prophet creates prophecies by prophesizing them. Test double objects are then
+                            created by revealing their respective prophecy. You can think of a prophecy as the
+                            configuration for a test double that is stored in an object separate from the object
+                            (revelation) that acts as the test double.&rdquo;
+                        </blockquote>
+                        <p class="fragment">
+                            <span class="red_text">
+                                Confused?
+                            </span>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <pre><code data-trim contenteditable>
+interface Reader
+{
+    public function read();
+}
+
+class Processor
+{
+    public function process(Reader $reader)
+    {
+        $reader->read('123');
+
+        // ...
+    }
+}
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Dummy</h2>
+                        <p>
+                            <pre><code data-trim contenteditable>
+class ProcessorTest extends PHPUnit_Framework_TestCase
+{
+    public function testDataFromReaderCanBeProcessed()
+    {
+        $reader = $this->prophesize('Reader');
+
+        $processor = new Processor;
+        $processor->process($reader->reveal());
+
+        // ...
+    }
+}
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Stub</h2>
+                        <p>
+                            <pre><code data-trim contenteditable>
+class ProcessorTest extends PHPUnit_Framework_TestCase
+{
+    public function testDataFromReaderCanBeProcessed()
+    {
+        $reader = $this->prophesize('Reader');
+        $reader->read('123')->willReturn('value');
+
+        $processor = new Processor;
+        $processor->process($reader->reveal());
+
+        // ...
+    }
+}
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Mock</h2>
+                        <p>
+                            <pre><code data-trim contenteditable>
+class ProcessorTest extends PHPUnit_Framework_TestCase
+{
+    public function testDataFromReaderCanBeProcessed()
+    {
+        $reader = $this->prophesize('Reader');
+        $reader->read('123')->willReturn('value')->shouldBeCalled();
+
+        $processor = new Processor;
+        $processor->process($reader->reveal());
+
+        // ...
+    }
+}
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Spies</h2>
+                        <p>
+                            <pre><code data-trim contenteditable>
+$em = $prophet->prophesize('Doctrine\ORM\EntityManager');
+
+$controller->createUser($em->reveal());
+
+$em->flush()->shouldHaveBeenCalled();
+                            </code></pre>
+                        </p>
+                    </section>
+                </section>
+
+				<section>
+				    <section>
+                        <h2>Prophecy vs Mockery</h2>
+                        <p class="fragment">
+                            Conceptual difference between Mockery and Prophecy
+                        </p>
+                        <p class="fragment">
+                            Prophecy puts messaging  before structure
+                        </p>
+                        <p class="fragment">
+                            <span class="red_text">WHAT?</span>
+                        </p>
+                        <p class="fragment">
+                            How objects communicate <span class="red_text">vs</span> When objects communicate
+                        </p>
+				    </section>
+
+                    <section>
+                        <h2>Packagist statistics</h2>
+                        <p class="fragment">
+                            Mockery - 1 524 884 total dowloads - 138 776 in last 30 days
+                        </p>
+                        <p class="fragment">
+                            Mockery - 681 238 total dowloads - 153 463 in last 30 days
+                        </p>
+				    </section>
+
+                    <section>
+                        <p>
+                                <pre><code data-trim contenteditable>
+interface User
+{
+    public function getRating();
+    public function setRating($rating);
+}
+
+class UserRatingCalculator
+{
+    public function increaseUserRating(User $user, $add = 1)
+    {
+        $user->setRating($user->getRating() + $add);
+    }
+}
+                                </code></pre>
+                    </section>
+
+                    <section>
+                        <p>
+                                <pre><code data-trim contenteditable>
+$user = Mockery::mock('User');
+$user->shouldReceive('getRating')->andReturn(2);
+$user->shouldReceive('setRating')->with(4)->once();
+
+$calc = new UserRatingCalculator();
+$calc->increaseUserRating($user->mock(), 2);
+                                </code></pre>
+                    </section>
+
+                    <section>
+                        <p>
+                                <pre><code data-trim contenteditable>
+$user = $prophet->prophesize('User');
+$user->getRating()->willReturn(2);
+$user->setRating(4)->shouldBeCalled();
+
+$calc = new UserRatingCalculator();
+$calc->increaseUserRating($user->reveal(), 2);
+                                </code></pre>
+                    </section>
+
+                    <section>
+                        <p>
+                                <pre><code data-trim contenteditable>
+class UserRatingCalculator
+{
+    private $dispatcher;
+
+    public function __construct(EventDispatcher $dispatcher)
+    {
+        $this->dispatcher = $dispatcher;
+    }
+
+    public function increaseUserRating(User $user, $add = 1)
+    {
+        $this->dispatcher->userRatingIncreasing($user->getRating());
+        $user->setRating($user->getRating() + $add);
+        $this->dispatcher->userRatingIncreased($user->getRating());
+    }
+}
+                                </code></pre>
+                    </section>
+
+                    <section>
+                        <p>
+                                <pre><code data-trim contenteditable>
+$user = Mockery::mock('User');
+$user->shouldReceive('getRating')->andReturn(2, 2, 4);
+$user->shouldReceive('setRating')->with(4)->once();
+
+$disp = Mockery::mock('EventDispatcher');
+$disp->shouldReceive('userRatingIncreasing')->with(2)->once();
+$disp->shouldReceive('userRatingIncreased')->with(4)->once();
+
+$calc = new UserRatingCalculator($disp->mock());
+$calc->increaseUserRating($user->mock(), 2);
+                                </code></pre>
+                    </section>
+
+                    <section>
+                        <p>
+                            Structure binding - it means your test is now bound to the way your code is structured
+                        </p>
+                        <p>
+                            That there are 3 consequent getRating() calls in specific order
+                        </p>
+                    </section>
+
+
+                    <section>
+                        <p>
+                                    <pre><code data-trim contenteditable>
+$user = $prophet->prophesize('User');
+$user->getRating()->willReturn(2);
+$user->setRating(Argument::type('integer'))->will(function($args) {
+    $this->getRating()->willReturn($args[0]);
+});
+
+$disp = $prophet->prophesize('EventDispatcher');
+$disp->userRatingIncreasing(2)->shouldBeCalled();
+$disp->userRatingIncreased(4)->shouldBeCalled();
+
+$calc = new UserRatingCalculator($disp->reveal());
+$calc->increaseUserRating($user->reveal(), 2);
+                                    </code></pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                            Message binding - it means that behaviour of the method does not change over time, but
+                            rather is changed by the other method.
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                            <pre><code data-trim contenteditable>
+public function increaseUserRating(User $user, $add = 1)
+{
+    $initialRating = $user->getRating();
+    $this->dispatcher->userRatingIncreasing($initialRating);
+
+    $user->setRating($initialRating + $add);
+
+    $resultingRating = $user->getRating();
+    $this->dispatcher->userRatingIncreased($resultingRating);
+}
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <p class="fragment">What happened with test?</p>
+                        <p class="fragment">Mockery tests failed - Prophecy test still pass</p>
+                        <p class="fragment">Why</p>
+                        <p class="fragment">Test was bound purely on communicational behaviour</p>
+                    </section>
+                    <section>
+                        <h2>Review</h2>
+                        <p>
+                            conceptual difference is not in how you write tests, but when you fix them
+                        </p>
+                        <p>
+                            Mockery sometimes could put you into the situation, where you would write tests that will
+                            inevitably fail because of the private structural refactoring
+                        </p>
+                        <p>
+                            Prophecy postulates that there is no failure in this case - because the actual behaviour stayed the same.
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Can Mockery do the same?</h2>
+                        <p class="fragment">Yes</p>
+                        <p>
+                            <pre><code data-trim contenteditable>
+$user->shouldReceive("getRating")->andReturn(2)->byDefault();
+$user->shouldReceive("setRating")->with(4)->andReturnUsing(function ($rating) use ($user) {
+$user->shouldReceive("getRating")->andReturn($rating);
+})->once();
+                            </code></pre>
+                        </p>
+                    </section>
+                </section>
+
+				<section>
+					<ul>
+						<li><a href=""></a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>THANK YOU</h1>
+				</section>
+
+				<section>
+					<h1>QUESTIONS?</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
+<!--
+@todo
+Dodati jos neki primer za L4 - integration testing
+-->
