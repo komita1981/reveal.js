@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>PHP your perfect tool</title>
+
+    <meta name="description" content="A short guide how to test your Laravel 4 application">
+    <meta name="author" content="Milan Popovic">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/presentation/php_your_perfect_tool.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <p>
+                <img src="img/php_your_perfect_tool/double_claw.jpg" alt="Double Claw" title="Double Claw">
+            </p>
+
+            <h1>Your perfect tool</h1>
+
+            <p>
+                <small>Presented by <a href="http://milanpopovic.me">Milan Popović</a> / <a href="http://twitter.com/komita1981">@komita1981</a></small>
+            </p>
+        </section>
+
+        <section>
+            <h2>Me</h2>
+            <p>
+                PHP developer
+            </p>
+            <p>
+                7 years in PHP development
+            </p>
+            <p>
+                Work for 12 Mnkys
+            </p>
+            <p>
+                I like to learn and share knowledge
+            </p>
+            <p>
+                Active member of PHP Srbija
+            </p>
+        </section>
+
+        <section>
+            <h2>You?</h2>
+            <p class="fragment">
+                Who are you?
+            </p>
+            <p class="fragment">
+                What's your experience in programming?
+            </p>
+            <p class="fragment">
+                What do you think about PHP?
+            </p>
+        </section>
+
+        <section>
+            <blockquote>
+                &ldquo;There are only two kinds of programming languages: those people always bitch about and those nobody uses.&rdquo;
+            </blockquote>
+            <p>
+                Bjarne Stroustrup
+            </p>
+        </section>
+        <section>
+            <img src="img/php_your_perfect_tool/rasmus_lerdorf.png" alt="Rasmus" title="Rasmus">
+        </section>
+
+        <section>
+            <section>
+                <h2>History of PHP</h2>
+
+                <p class="fragment">
+                    Created in 1994 by Rasmus Lerdorf - <a target="_blank" href="http://twitter.com/rasmus">@rasmus</a>
+                </p>
+
+                <p class="fragment">
+                    Written in C
+                </p>
+
+                <p class="fragment">
+                    Personal Home Page Tools
+                </p>
+
+                <p class="fragment">
+                    ZEND - Andi Gutmans and Zeev Suraski
+                </p>
+
+                <p class="fragment">
+                    PHP - Hypertext Preprocessor
+                </p>
+            </section>
+
+            <section>
+                <h2>Timeline</h2>
+                <ul class="fragment">
+                    <li>PHP 1 - 1995</li>
+                    <li>PHP 2 - 1996</li>
+                    <li>PHP 3 - 1998 - popularity gained<br></li>
+                    <li>PHP 4 - 2000 - wannabe object</li>
+                    <li>PHP 5 - 2004 - OO support</li>
+                    <li>PHP 5.3 - 2009 - Namespaces <br></li>
+                    <li>PHP 5.4 - 2012 - Traits, []</li>
+                    <li>PHP 5.5 - 2013 - OPcache, Finally</li>
+                    <li>PHP 5.6 - 2014 - Constant Scalar Expressions</li>
+                    <li>PHP 7 - October 2015</li>
+                </ul>
+                <aside class="notes">
+                    PHP 7 is based on PHPNG project - PHP Next Gen led by Zend to speed up apps
+                    Performance gains are huge - 25% to 70% improvements - on current codebase
+
+                    PHP 7 we can now define that we are expecting Strings, Floats, Ints or Bools
+                </aside>
+            </section>
+
+            <section>
+                <p>
+                    May 2014 - PHP github repo
+                <p>
+                    <img src="img/php_your_perfect_tool/php_repo_may_2014.jpg" alt="PHP Repo statistics" title="PHP Repo statistics">
+                </p>
+                </p>
+                <p class="fragment">
+                    April 2015 - PHP github repo
+                <p class="fragment">
+                    <img src="img/php_your_perfect_tool/php_repo_april_2015.png" alt="PHP Repo statistics" title="PHP Repo statistics">
+                </p>
+                </p>
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/about_php7_1.png" alt="About PHP" title="About PHP">
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/about_php7_2.png" alt="About PHP" title="About PHP">
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/about_php7_3.png" alt="About PHP" title="About PHP">
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/about_php7_4.png" alt="About PHP" title="About PHP">
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/about_php7_5.png" alt="About PHP" title="About PHP">
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/about_php7_6.png" alt="About PHP" title="About PHP">
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/about_php7_7.png" alt="About PHP" title="About PHP">
+            </section>
+
+        </section>
+        <section>
+            <section>
+                <h2>
+                    Why you should choose PHP?
+                </h2>
+            </section>
+            <section>
+                <h2>Hosting</h2>
+                <p class="fragment">Shared</p>
+                <p class="fragment">VPS</p>
+                <p class="fragment">Dedicated servers</p>
+                <p class="fragment">Heroku</p>
+                <p class="fragment">Google App Engine</p>
+                <p class="fragment">Azure</p>
+            </section>
+            <section>
+                <h2>Popularity - TIOBE index</h2>
+                <p class="fragment">
+                    <img width="800" height="600" src="img/php_your_perfect_tool/php_tiobe.png" alt="PHP Tiobe index" title="PHP Tiobe index">
+                </p>
+            </section>
+
+            <section>
+                <p>
+                    <img width="800" height="600" src="img/php_your_perfect_tool/usage_of_server_side_prog_lang.png" alt="Server side language usage" title="Server side language usage">
+                    Popularity - usage of languages on web
+                </p>
+            </section>
+
+            <section>
+                <h2>Community</h2>
+                <p class="fragment">
+                    More than 5 millions PHP developers worldwide
+                </p>
+                <p class="fragment">
+                    Up to thousand PHP developers in Serbia
+                </p>
+            </section>
+
+            <section>
+                <h2>Activity</h2>
+                <p>
+                    <img src="img/php_your_perfect_tool/zf2_stats.png" alt="ZF2 github stats" title="ZF2 github stats">
+                    <img src="img/php_your_perfect_tool/laravel_stats.png" alt="Laravel github stats" title="Laravel github stats">
+                </p>
+            </section>
+
+            <section>
+                <p>
+                    <img src="img/php_your_perfect_tool/symfony_stats.png" alt="Symfony github stats" title="Symfony github stats">
+                    <img src="img/php_your_perfect_tool/silex_stats.png" alt="Silex github stats" title="Silex github stats">
+                </p>
+            </section>
+
+            <section>
+                <p>
+                    <img width="800" height="600" src="img/php_your_perfect_tool/github_new_repos-custom.png" alt="Github new repos stats" title="Github new repos stats">
+                </p>
+            </section>
+
+            <section>
+                <p>
+                    Simplicity - Highly learnable <br/>
+                    <span class="red_text">The easiest language to learn for non-technical people</span>
+                </p>
+                <p class="fragment">
+                    Fast and reliable
+                </p>
+                <p class="fragment">
+                    Platform independent
+                </p>
+                <p class="fragment">
+                    Bunch of good tools
+                </p>
+                <p class="fragment">
+                    Bunch of extensions
+                </p>
+                <p class="fragment">
+                    Good (and extensive) documentation
+                </p>
+                <p class="fragment">
+                    Big players involved (FB...)
+                </p>
+                <p class="fragment">
+                    Open source
+                </p>
+                <p class="fragment red_text">
+                    Lets you get things done
+                </p>
+                <aside class="notes">
+                    Big players - A lot of software that has changed the world is written in PHP - Wordpress, Drupal,
+                    FB, MediaWiki
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Prejudice</h2>
+    <pre>
+        <code>
+<html>
+    <head>
+        <?php
+            $db = connect_mysql('192.168.1.1', 'root' , 'secretPassword123' );
+            $item = get_mysql_data('SELECT * FROM my_table WHERE id= $_GET['id']);
+        ?>
+        <title><?php echo $item['title'];?></title>
+    </head>
+    <body>
+        <div>
+            <?php
+                $users = get_mysql_data('SELECT * FROM users WHERE bla = '.$item[ 'id2'] );
+            ?>
+            <?php
+                foreach($users as $user){
+            ?>
+                <p><?php echo $user[</p>
+            <?php
+                }
+            ?>
+        </div>
+    </body>
+</html>
+        </code>
+    </pre>
+            </section>
+
+            <section>
+                <blockquote>
+                    &ldquo;All the PHP code I’ve seen in that experience has been messy, unmaintainable crap. Spaghetti SQL wrapped in spaghetti PHP wrapped in spaghetti HTML, replicated in slightly-varying form in dozens of places&rdquo;
+                </blockquote>
+                Tim Bray
+            </section>
+
+            <section>
+    <pre>
+        <code>
+namespace League\Flysystem;
+
+use LogicException;
+use InvalidArgumentException;
+
+class Filesystem implements FilesystemInterface
+{
+    // variable declaration hidden in this example
+
+    /**
+     * Constructor
+     *
+     * @param AdapterInterface $adapter
+     * @param mixed            $config
+     */
+    public function __construct(AdapterInterface $adapter, $config = null)
+    {
+        $this->adapter = $adapter;
+        $this->config = Util::ensureConfig($config);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function write($path, $contents, array $config = [])
+    {
+        $path = Util::normalizePath($path);
+        $this->assertAbsent($path);
+        $config = $this->prepareConfig($config);
+        return (bool) $this->adapter->write($path, $contents, $config);
+    }
+        </code>
+    </pre>
+                <aside class="notes">
+                    You can write really bad code & applications in PHP
+                    but THEY will still work
+
+                    But PHP drives many of the most popular websites and it’s usage keeps growing
+
+                    If we follow a good set of standards and patterns
+                    High-quality PHP apps
+                    Less prone to breaking and safer
+                    Easier to maintain
+
+
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Education</h2>
+            </section>
+
+            <section>
+                <h2>PHP the right way</h2>
+                <img src="img/php_your_perfect_tool/phptherightway.png" alt="Php the right way" title="Php the right way">
+            </section>
+
+            <section>
+                <h2>Laracast</h2>
+                <img src="img/php_your_perfect_tool/laracast.jpg" alt="Laracast" title="Laracast">
+            </section>
+
+            <section>
+                <h2>Books</h2>
+                <p class="fragment">
+                    <a href="http://php-books.com/">http://php-books.com/</a>
+                </p>
+                <p class="fragment">
+
+                </p>
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/code-complete-2.jpg" alt="Code complete" title="Code complete">
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/clean_code.jpg" alt="Clean code" title="Clean code">
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/the_pragmatic_programmer.jpg" alt="Pragmatic programmer" title="Pragmatic programmer">
+            </section>
+
+            <section>
+                <h2>Conferences</h2>
+                <img src="img/php_your_perfect_tool/soliday2015.png" alt="Soliday" title="Soliday">
+            </section>
+
+            <section>
+                <h2>FORGET <span  class="red_text">w3schools.com</span></h2>
+                <p class="fragment">
+                    Why?
+                </p>
+            </section>
+
+            <section>
+
+                <p>
+                    <img src="img/php_your_perfect_tool/w3school.png" alt="W3 school" title="W3 school">
+                </p>
+
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>PHP FIG</h2>
+                <p class="fragment">
+                    PHP Framework Interop Group
+                </p>
+                <p class="fragment">
+                    <img width="800" height="600" src="img/php_your_perfect_tool/fig_members.png" alt="Fig members" title="Fig members">
+                </p>
+            </section>
+            <section>
+                <h2>PSR</h2>
+                <p class="fragment">
+                    Php Standard Recommendation
+                </p>
+                <p class="fragment">
+                    Autoloading standard - PSR-0
+                </p>
+                <p class="fragment">
+                    Basic coding standard - PSR-1
+                </p>
+                <p class="fragment">
+                    Coding style guide - PSR-2
+                </p>
+                <p class="fragment">
+                    Logger interface - PSR-3
+                </p>
+                <p class="fragment">
+                    Improved autoloading - PSR-4
+                </p>
+                <p class="fragment">
+                    PHPDoc - PSR-5
+                </p>
+                <p class="fragment">
+                    Cache interface - PSR-6
+                </p>
+                <p class="fragment">
+                    HTTP message implementation - PSR-7
+                </p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Composer</h2>
+                <p>
+                    <img src="img/php_your_perfect_tool/logo-composer-transparent.png" alt="Composer logo" title="Composer logo">
+                </p>
+                <p>
+                    Dependency Manager for PHP
+                </p>
+                <p>
+                    Created by Jordi Boggiano and Nils Adermann
+                </p>
+                <p class="red_text">
+                    Thank you guys!
+                </p>
+            </section>
+
+            <section>
+                <p>
+                    <blockquote>
+                        &ldquo;PHP has a better dependency manager than any other languages&rdquo;
+                    </blockquote>
+                    Fabien Potencier
+                </p>
+            </section>
+
+            <section>
+                <p class="red_text">
+                    curl -sS https://getcomposer.org/installer | php
+                </p>
+                <p>
+                    Can be installed globally and locally
+                </p>
+            </section>
+
+            <section>
+                <p>
+                    The problem that Composer solves is this:
+                </p>
+                <ul>
+                    <li>
+                        You have a project that depends on a number of libraries
+                    </li>
+                    <li>
+                        Some of those libraries depend on other libraries
+                    </li>
+                    <li>
+                        You declare the things you depend on
+                    </li>
+                    <li>
+                        Composer finds out which versions of which packages need to be installed, and installs them (meaning it downloads them into your project)
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <p>
+                    Declaring dependencies
+                </p>
+                <p>
+                    composer.json
+                </p>
+        <pre>
+            <code>
+{
+    "name": "zendframework/skeleton-application",
+    "description": "Skeleton Application for ZF2",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "zf2"
+    ],
+    "homepage": "http://framework.zend.com/",
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.2.*",
+        "aws/aws-sdk-php-zf2": "1.2.1",
+        "league/flysystem": "0.4.*@dev"
+    }
+}
+            </code>
+        </pre>
+            </section>
+
+            <section>
+                <p>
+                    <img src="img/php_your_perfect_tool/composer_install.png" alt="Composer install" title="Composer install">
+                </p>
+            </section>
+
+            <section>
+                <h2>Semantic versioning</h2>
+                <img src="img/php_your_perfect_tool/semantic_versioning_number.png" alt="Semantic number" title="Semantic number">
+                <img src="img/php_your_perfect_tool/semantic_versioning_explanation.png" alt="Semantic explanation" title="Semantic explanation">
+                <p class="fragment">
+                    more info -
+                    <a href="http://semver.org/">
+                        http://semver.org/
+                    </a>
+                </p>
+            </section>
+
+            <section>
+                <h2>Version constraints</h2>
+            </section>
+            <section>
+                <h3>Exact match</h3>
+                <p class="red_text">
+                    1.0.0, dev-master
+                </p>
+            </section>
+            <section>
+                <h3>Wildcard range</h3>
+                <p class="red_text">
+                    1.0.*, 2.*
+                </p>
+            </section>
+            <section>
+                <h3>Hyphen range</h3>
+                <p class="red_text">
+                    1.0 - 2.0     ===  >=1.0.0 < 2.1
+                </p>
+                <p class="red_text">
+                    1.0.0 - 2.1.0 ===  >=1.0.0 <= 2.1.0
+                </p>
+            </section>
+            <section>
+                <h3>Unbounded range</h3>
+                <p class="red_text">
+                    >= 1.0
+                </p>
+                <p class="fragment red_text">
+                    DO NOT USE THIS
+                </p>
+            </section>
+            <section>
+                <h3>Next Significant Release</h3>
+                <p class="red_text">
+                        ~1.2  &nbsp;&nbsp;&nbsp;&nbsp;===&nbsp;&nbsp;&nbsp;   >=1.2.0 <2.0.0
+                </p>
+                <p class="red_text">
+                        ~1.2.3  &nbsp;&nbsp;&nbsp;===&nbsp;&nbsp;&nbsp;   >=1.2.3 <1.3.0
+                </p>
+            </section>
+            <section>
+                <h3>Caret / Semver Operator</h3>
+                <p class="red_text">
+                        ^1.2.3 ===   >=1.2.3 <2.0.0
+                </p>
+                <p class="red_text">
+                        ^  0.3 ===   >=0.3.0 <0.4.0
+                </p>
+                <p class="red_text">
+                    Libraries should use ^ and you should too!
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    The Lock File
+                </h2>
+
+                <p class="fragment">
+                    composer.lock
+                </p>
+
+                <p class="fragment">
+                    Provide fast installs with low memory usage
+                </p>
+
+                <p class="fragment">
+                    Reproducible installs
+                </p>
+
+                <p class="fragment">
+                    Do you add it to .gitignore?
+                </p>
+
+                <p class="fragment">
+                    Commit it and use it with composer install
+                </p>
+            </section>
+
+            <section>
+                <p class="fragment">
+                    DO NOT DEPLOY IT
+                </p>
+
+                <p class="fragment">
+                    <img src="img/php_your_perfect_tool/public_lock_file.png" alt="Public lock file" title="Public lock file">
+                </p>
+
+            </section>
+
+            <section>
+                <h2>Autoloading</h2>
+                <p>
+                    You don’t have to maintain your own autoloader
+                <p>
+                <p>
+                    Ability to load your code automatically
+                </p>
+                <p class="red_text">
+                    include "vendor/autoload.php";
+                </p>
+            </section>
+
+            <section>
+                <pre>
+                    <code>
+"autoload": {
+    "psr-0" : {
+        "Application": "src/"
+    }
+}
+                    </code>
+                </pre>
+            </section>
+            <section>
+
+                <pre>
+                    <code>
+"autoload": {
+    "psr-4" : {
+        "Application\\": "src/"
+    }
+}
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <pre>
+                    <code>
+"autoload": {
+    "classmap" : [
+        "src/"
+    ]
+}
+                    </code>
+                </pre>
+                <aside class="notes">
+                    A classmap is a Composer feature that iterates through a directory and pulls the classes out of the
+                    files in that directory, and adds them to a classmap.
+                </aside>
+            </section>
+            <section>
+                <pre>
+                    <code>
+<?php
+
+// autoload_classmap.php @generated by Composer
+
+$vendorDir = dirname(dirname(__FILE__));
+$baseDir = dirname($vendorDir);
+
+return array(
+    'Application\\Controller\\Dashboard' => $baseDir . '/src/Application/Controller/Dashboard.php',
+    'Application\\Controller\\Defaults' => $baseDir . '/src/Application/Controller/Defaults.php',
+    'Application\\Controller\\Entry' => $baseDir . '/src/Application/Controller/Entry.php',
+    'Application\\Controller\\Logbook' => $baseDir . '/src/Application/Controller/Logbook.php',
+    'Application\\Controller\\RequiresAuth' => $baseDir . '/src/Application/Controller/RequiresAuth.php',
+    'Application\\Controller\\User' => $baseDir . '/src/Application/Controller/User.php',
+    'Application\\Model\\LogEntry\\Defaults' => $baseDir . '/src/Application/Model/LogEntry/Defaults.php',
+    'Application\\Model\\LogEntry\\Gateway' => $baseDir . '/src/Application/Model/LogEntry/Gateway.php',
+    'Application\\Model\\LogEntry\\HourReports' => $baseDir . '/src/Application/Model/LogEntry/HourReports.php',
+    'Application\\Model\\LogEntry\\LogEntry' => $baseDir . '/src/Application/Model/LogEntry/LogEntry.php',
+    'Application\\Model\\LogEntry\\LogEntryCollection' => $baseDir . '/src/Application/Model/LogEntry/LogEntryCollection.php',
+    'Application\\Model\\LogEntry\\Storage' => $baseDir . '/src/Application/Model/LogEntry/Storage.php',
+    'Application\\Model\\User\\Gateway' => $baseDir . '/src/Application/Model/User/Gateway.php',
+    'Application\\Model\\User\\Storage' => $baseDir . '/src/Application/Model/User/Storage.php',
+    'Application\\Model\\User\\User' => $baseDir . '/src/Application/Model/User/User.php',
+    / ...
+);
+                    </code>
+                </pre>
+
+
+            </section>
+
+            <section>
+                <h2>
+                    <img src="img/php_your_perfect_tool/packagist-logo.png" alt="Packagist logo" title="Packagist logo">
+                </h2>
+        <pre>
+            <code>
+{
+    "require": {
+        "vendor/package": "1.3.2",
+        "vendor/package2": "1.*",
+        "vendor/package3": ">=2.0.3"
+    }
+}
+            </code>
+        </pre>
+            </section>
+            <section>
+                <h2>
+                    Packagist statistics - may 2014
+                </h2>
+                <p>
+                <ul>
+                    <li>29 908 packages registered</li>
+
+                    <li>110 247 versions available</li>
+
+                    <li>207 357 630 packages installed (since 2012-04-13)</li>
+                </ul>
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Packagist statistics - april 2015
+                </h2>
+                <p>
+                <ul>
+                    <li>56 164 packages registered</li>
+
+                    <li>246 789 versions available</li>
+
+                    <li>687 988 359 packages installed (since 2012-04-13)</li>
+                </ul>
+                </p>
+            </section>
+            <section>
+                <p>
+                    <img src="img/php_your_perfect_tool/packagist_graph.png" alt="Packagist graph" title="Packagist graph">
+                </p>
+            </section>
+            <section>
+                <p>
+                    <a href="https://github.com/ziadoz/awesome-php">
+                        https://github.com/ziadoz/awesome-php
+                    </a>
+                </p>
+            </section>
+            <section>
+                <img src="img/php_your_perfect_tool/awesome_php.png" alt="Awesome PHP" title="Awesome PHP">
+            </section>
+            <section>
+                <img src="img/php_your_perfect_tool/awesome_php_testing.png" alt="Awesome PHP testing" title="Awesome PHP testing">
+            </section>
+            <section>
+                <h2>Before you choose package</h2>
+                <p class="fragment">
+                    Check if it is properly tested
+                </p>
+                <p class="fragment">
+                    Check documentation (README.md)
+                </p>
+                <p class="fragment">
+                    Check Stability <br/>
+                    <span class="red_text">dev -> alpha -> beta -> RC -> stable</span>
+                </p>
+                <p class="fragment">
+                    Check number of downloads
+                </p>
+                <p class="fragment">
+                    Check when it was last authored
+                </p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Best framework</h2>
+                <p class="fragment">
+                    <img src="img/php_your_perfect_tool/which_one_is_the_best.jpg" alt="Best PHP FW" title="Best PHP FW">
+                </p>
+            </section>
+            <section>
+                <ul>
+                    <li>
+                        Zend Framework 2
+                    </li>
+                    <li>
+                        Symfony 2
+                    </li>
+                    <li>
+                        Laravel 4, 5
+                    </li>
+                    <li>
+                        Yii 2
+                    </li>
+                    <li>
+                        CakePHP 3
+                    </li>
+                    <li>
+                        Aura
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>
+                        PhalconPhp
+                    </li>
+                    <li>
+                        Slim
+                    </li>
+                    <li>
+                        Silex
+                    </li>
+                    <li>
+                        Lumen
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/ent_fw_search.png" alt="Ent FW" title="Ent FW">
+                <img src="img/php_your_perfect_tool/ent_fw_legend.png" alt="Ent FW" title="Ent FW">
+            </section>
+
+            <section>
+                <h2>
+                    Take care about this
+                </h2>
+                <ul>
+                    <li>
+                        What do you want to build?
+                    </li>
+
+                    <li>
+                        Is good documentation available?
+                    </li>
+
+                    <li>
+                        Is it worth the investment?
+                    </li>
+
+                    <li>
+                        Community
+                    </li>
+
+                    <li>
+                        Comparing with other FW
+                    </li>
+
+                    <li>
+                        Security
+                    </li>
+                </ul>
+                <aside class="notes">
+                    What do I need from the framework?
+
+                    Zend FW example
+
+                    Will that FW still be useful a year, two or three from now?
+
+                    Is the framework actively developed, and does it have an active user base?
+
+                    Where your FW of choice stands comparing to your choice
+
+                    Always take care about it
+                </aside>
+            </section>
+            <section>
+                <h2>Laravel</h2>
+                <p class="fragment">
+                    The Swiss-Knife of Startup world
+                </p>
+                <p class="fragment">
+                    The Most Popular Framework of 2015
+                </p>
+            </section>
+            <section>
+                <h2>Symfony 2</h2>
+
+                <blockquote>
+                    &ldquo;If you have a PHP problem the Symfony community has already solved it&rdquo;
+                </blockquote>
+            </section>
+
+        </section>
+
+        <section>
+            <h2>PHP is not for</h2>
+            <p>
+                Building command line apps
+            </p>
+            <p>
+                Doing heavy calculation
+            </p>
+            <p>
+                Calculate statistics
+            </p>
+            <p>
+                You need all the performance you can get
+            </p>
+        </section>
+        
+        <section>
+            <h1>THANK YOU</h1>
+        </section>
+
+        <section>
+            <h1>QUESTIONS?</h1>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+        ]
+    });
+
+</script>
+
+</body>
+</html>
+<!--
+@todo
+Dodati jos neki primer za L4 - integration testing
+-->
