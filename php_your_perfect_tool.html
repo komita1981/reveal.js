@@ -391,11 +391,8 @@ class Filesystem implements FilesystemInterface
 
             <section>
                 <h2>Books</h2>
-                <p class="fragment">
+                <p>
                     <a href="http://php-books.com/">http://php-books.com/</a>
-                </p>
-                <p class="fragment">
-
                 </p>
             </section>
 
@@ -415,21 +412,6 @@ class Filesystem implements FilesystemInterface
                 <h2>Conferences</h2>
                 <img src="img/php_your_perfect_tool/soliday2015.png" alt="Soliday" title="Soliday">
             </section>
-
-            <section>
-                <h2>FORGET <span  class="red_text">w3schools.com</span></h2>
-                <p class="fragment">
-                    Why?
-                </p>
-            </section>
-
-            <section>
-
-                <p>
-                    <img src="img/php_your_perfect_tool/w3school.png" alt="W3 school" title="W3 school">
-                </p>
-
-            </section>
         </section>
         <section>
             <section>
@@ -447,28 +429,28 @@ class Filesystem implements FilesystemInterface
                     Php Standard Recommendation
                 </p>
                 <p class="fragment">
-                    Autoloading standard - PSR-0
+                    PSR-0 - Autoloading standard
                 </p>
                 <p class="fragment">
-                    Basic coding standard - PSR-1
+                    PSR-1 - Basic coding standard
                 </p>
                 <p class="fragment">
-                    Coding style guide - PSR-2
+                    PSR-2 - Coding style guide
                 </p>
                 <p class="fragment">
-                    Logger interface - PSR-3
+                    PSR-3 - Logger interface
                 </p>
                 <p class="fragment">
-                    Improved autoloading - PSR-4
+                    PSR-4 - Improved autoloading
                 </p>
                 <p class="fragment">
-                    PHPDoc - PSR-5
+                    PSR-5 - PHPDoc
                 </p>
                 <p class="fragment">
-                    Cache interface - PSR-6
+                    PSR-6 - Cache interface
                 </p>
                 <p class="fragment">
-                    HTTP message implementation - PSR-7
+                    PSR-7 - HTTP message implementation
                 </p>
             </section>
         </section>
@@ -565,7 +547,7 @@ class Filesystem implements FilesystemInterface
                 <h2>Semantic versioning</h2>
                 <img src="img/php_your_perfect_tool/semantic_versioning_number.png" alt="Semantic number" title="Semantic number">
                 <img src="img/php_your_perfect_tool/semantic_versioning_explanation.png" alt="Semantic explanation" title="Semantic explanation">
-                <p class="fragment">
+                <p>
                     more info -
                     <a href="http://semver.org/">
                         http://semver.org/
@@ -830,14 +812,14 @@ return array(
                 <p class="fragment">
                     Check when it was last authored
                 </p>
+                <p class="fragment">
+                    Check the licence
+                </p>
             </section>
         </section>
         <section>
             <section>
-                <h2>Best framework</h2>
-                <p class="fragment">
-                    <img src="img/php_your_perfect_tool/which_one_is_the_best.jpg" alt="Best PHP FW" title="Best PHP FW">
-                </p>
+                <h2>PHP frameworks</h2>
             </section>
             <section>
                 <ul>
@@ -910,38 +892,207 @@ return array(
                     </li>
 
                     <li>
+                        Check the licence
+                    </li>
+
+                    <li>
                         Security
                     </li>
                 </ul>
                 <aside class="notes">
-                    What do I need from the framework?
+                    1. What do I need from the framework?  Whats the primary focus of your application?
+                    <br/>
+                    <br/>
+                    2. Zend FW example. Check official docs, books, tutorials, api documentation.
+                    Even source code documentation. Googling for an issue should result in answers quite easily
+                    <br/>
+                    <br/>
+                    3. Will that FW still be useful a year, two or three from now?
+                    <br/>
+                    <br/>
+                    4. Is the framework actively developed, and does it have an active user base?
+                    Check community size (irc channels, source code contributors/bug reporters/watchers,
+                    stack overflow questions & answers etc).Check repository activity (new/closed pull requests,
+                    number of commits and authors, files and lines of code changes, top contributors activity
+                    <br/>
+                    <br/>
+                    5. Where your FW of choice stands comparing to your choice
+                    <br/>
+                    <br/>
+                    6. Does it allow building an distributing commercial applications?
 
-                    Zend FW example
-
-                    Will that FW still be useful a year, two or three from now?
-
-                    Is the framework actively developed, and does it have an active user base?
-
-                    Where your FW of choice stands comparing to your choice
 
                     Always take care about it
                 </aside>
             </section>
+
             <section>
-                <h2>Laravel</h2>
-                <p class="fragment">
-                    The Swiss-Knife of Startup world
-                </p>
-                <p class="fragment">
-                    The Most Popular Framework of 2015
-                </p>
+                <h2>3 DONT's</h2>
+                <ul>
+                    <li>
+                        Don't spend countless hours in search of the „best“ framework.
+                        <span class="red_text">There is no such thing!</span>
+                    </li>
+                    <li>
+                        Don't get religious with a language / framework / whatever!
+                    </li>
+                    <li>
+                        Don't decide based on stupid „hello world“ benchmarks.
+                    </li>
+                </ul>
+                <aside class="notes">
+                    3. Don't -
+                    Speed matters when projects scale. In any case you'll probably rewrite your app if it's a
+                    huge success
+                </aside>
             </section>
+
             <section>
                 <h2>Symfony 2</h2>
 
                 <blockquote>
                     &ldquo;If you have a PHP problem the Symfony community has already solved it&rdquo;
                 </blockquote>
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/symfony2_activity.png" alt="Symfony activity" title="Symfony activity">
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/symfony2_roadmap.png" alt="Symfony roadmap" title="Symfony roadmap">
+            </section>
+
+            <section>
+                <ul>
+                    <li>
+                        There is bundle for everything
+                    </li>
+                    <li>
+                        Integrates with Doctrine, Propel, PHPUnit ...
+                    </li>
+                    <li>
+                        Aims to speed up the creation and maintenance of web applications
+                    </li>
+                    <li>
+                        Aim at building enterprise-level applications, giving developers full control over the configuration
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/symfony2_projects.png" alt="Symfony projects" title="Symfony projects">
+            </section>
+
+            <section>
+                <h2>Laravel</h2>
+                <img src="img/php_your_perfect_tool/laravel_logo.png" alt="Laravel logo" title="Laravel logo">
+                <p class="fragment">
+                    The Swiss-Knife of Startup world
+                </p>
+                <p class="fragment">
+                    The Most Popular FW of 2015
+                </p>
+                <p class="fragment">
+                    FW with the best marketing
+                </p>
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/symfony_components_in_laravel.png" alt="Symfony components in Laravel" title="Symfony components in Laravel">
+                <p>
+                    Symfony components used by Laravel
+                </p>
+            </section>
+
+            <section>
+                <p>
+                    Database agnostic migrations and schema builder
+                </p>
+                <p>
+                    Great ORM - Eloquent
+                </p>
+                <p>
+                    Painless routing
+                </p>
+
+                <p>
+                    Blade Templating Engine
+                </p>
+                <p>
+                    Powerful queue library
+                </p>
+                <p>
+                    Validation
+                </p>
+                <p>
+                    Built with testing in mind
+                </p>
+            </section>
+
+            <section>
+                <h2>Laravel ecosystem</h2>
+                <p>
+                    Forge
+                </p>
+                <p>
+                    Homestead
+                </p>
+                <p>
+                    Elixir
+                </p>
+                <p>
+                    Envoyer
+                </p>
+                <p>
+                    Laracast
+                </p>
+
+                <aside class="notes">
+                    Forge
+                    Instant PHP Platforms On Linode, DigitalOcean, and more. Push to deploy, PHP 5.6, HHVM, queues, and everything you need to launch and deploy amazing Laravel applications.
+                    Launch your application in minutes!
+                    <br/>
+                    <br/>
+                    The official Laravel local development environment. Powered by Vagrant, Homestead gets your entire team on the same page with the latest PHP, MySQL, Postgres, Redis, and more.
+                    <br/>
+                    <br/>
+                    Laravel Elixir provides a clean, fluent API for defining basic Gulp tasks for your Laravel application. Elixir supports several common CSS and JavaScript pre-processors, and even testing tools.
+                    If you've ever been confused about how to get started with Gulp and asset compilation, you will love Laravel Elixir!
+                    <br/>
+                    <br/>
+                    Zero Downtime PHP Deployment - GitHub / Bitbucket Integration, Seamless Deployment Rollbacks...
+                </aside>
+            </section>
+
+            <section>
+                <h2>PhalconPHP</h2>
+                <img src="img/php_your_perfect_tool/phalcon-php-logo.png" alt="Phalcon logo" title="Phalcon logo">
+                <p>
+                    "The fastest framework"
+                </p>
+            </section>
+
+            <section>
+                <p>
+                    Implemented as a C extension
+                </p>
+                <p>
+                    Learning curve is pretty easy
+                </p>
+                <p>
+                    Support Micro and Macro application
+                </p>
+                <p>
+                    Loosely coupled to allow developers to use the whole framework or selected objects
+                </p>
+                <p>
+                    Neat and clean intuitive API with solid code written on powerful design patterns
+                </p>
+            </section>
+
+            <section>
+                <img src="img/php_your_perfect_tool/ZF3-announcement.jpg" alt="ZF3 announcement" title="ZF3 announcement">
             </section>
 
         </section>
