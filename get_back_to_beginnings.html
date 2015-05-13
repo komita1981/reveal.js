@@ -132,11 +132,24 @@
                         It's always teams responsibility when something goes wrong. With code is the same.
                         Last team member who was working on some part of the should fix everything that should be fixed
                         That change doesn't mean big change always - that can be smaller fix - variable name, extract some
-                        functions... whatever - just improve your code. Imagine the got gets better as times passes.
+                        functions, reformat... whatever - just improve your code. Imagine the got gets better as times
+                        passes. Successive refiment is key
                     </aside>
                 </section>
 
                 <section>
+                    <section>
+                        <p>
+                            &ldquo;
+                            <q>
+                            Any fool can write code that a computer can understand. Good programmers write code
+                            that humans can understand.
+                            </q>
+                            &rdquo;
+                            Martin Fowler
+                        </p>
+                    </section>
+
                     <section>
                         <h2>
                             Bad code
@@ -164,7 +177,7 @@
 
                             Take care about all parts of your application - bugs are often hidden in ignored parts
 
-                            Entropy hits us hart. Entropy is ammount of disorder in system.
+                            Entropy hits us hart. Entropy is amount of disorder in system.
 
                             Speak about broken window problem
 
@@ -173,6 +186,7 @@
                             Dont let entropy wins - clean your code - clean it now
                         </aside>
                     </section>
+
                     <section>
                         <h2>
                             Bad code properties
@@ -197,26 +211,79 @@
                             Hard dependencies
                         </p>
                     </section>
+
+                    <section>
+                        <h2>The cost of bad code</h2>
+                        <ol>
+                            <li>Time</li>
+                            <li>Productivity</li>
+                            <li>Nerves</li>
+                            <li>Projects</li>
+                        </ol>
+                        <aside class="notes">
+                            It all about money
+                        </aside>
+                    </section>
+
                 </section>
 
 				<section>
-                    <h2>Kent Beck's rules of simple code</h2>
-                    <p class="fragment">
-                        Runs all the tests
-                    </p>
-                    <p class="fragment">
-                        Contains no duplication
-                    </p>
-                    <p class="fragment">
-                        Express all designs ideas that are in system
-                    </p>
-                    <p class="fragment">
-                        Minimizes the number of entities such as classes, methods, functions, and the like
-                    </p>
-                    <aside class="notes">
+                    <section>
+                        <h2>Clean code</h2>
 
-                    </aside>
-				</section>
+                        <p class="fragment">
+                            Why should we write it?
+                        </p>
+
+                        <p class="fragment">
+                            Everyone wants to write code that other people can understand
+                        </p>
+
+                        <p class="fragment">
+                            We strive to be better programmer
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Kent Beck's rules of simple code</h2>
+
+                        <ul>
+                            <ol>
+                                1. Runs all the tests
+                            </ol>
+                            <ol>
+                                2. Contains no duplication
+                            </ol>
+                            <ol>
+                                3. Express the intent of programmer
+                            </ol>
+                            <ol>
+                                4. Minimizes the number of classes and methods
+                            </ol>
+                        </ul>
+
+                        <p class="fragment red_text">
+                            Given in order of importance
+                        </p>
+                        <aside class="notes">
+                            1. Testable system passes all tests and is completely tested. System that are not testable should
+                            not be deployed because they can't be verified. Personal experience - when I started writing tests
+                            I also started writing better code because I could not test bad code and when you write piece of
+                            bad code and code that is not designed properly you will notice it immediately in your tests.
+                            Encourage SRP and DIP. "The fact that we have these tests eliminates the fear that cleaning up
+                            the code will break it". Good tests are also kind of good documentation
+                            <br/>
+                            2. Evil of every system. DRY - Dont repeat yourself
+                            <br/>
+                            3. Code should express all designs ideas that are in system. Think about maintenance - if your code
+                            reveal your intent people who work after you on that code will spend less time. Some desing patterns
+                            solve this problem - Every time you duplicate your code you should create some kind of abstraction
+                            Template, Strategy or Visitor pattern. Use if/else and switch case carefully
+                            <br/>
+                            4. Minimizes the number of entities such as classes, methods, functions, and the like.
+
+                        </aside>
+                    </section>
+                </section>
                 <section>
                     <h2>Good code should be...</h2>
                     <p class="fragment">
@@ -224,6 +291,18 @@
                     </p>
                     <p class="fragment">
                         Readable
+                    </p>
+                    <p class="fragment">
+                        Clean
+                    </p>
+                    <p class="fragment">
+                        Simple
+                    </p>
+                    <p class="fragment">
+                        Consistent
+                    </p>
+                    <p class="fragment">
+                        Maintainable
                     </p>
                     <p class="fragment">
                         Extendable
@@ -234,16 +313,41 @@
                     <p class="fragment">
                         Elegant - well designed
                     </p>
+                    <p class="fragment">
+                        Efficient
+                    </p>
 
                     <aside class="notes">
-                        Readable<br/>
+                        Testable
+                        <br/>
+                        Readable
+                        <br/>
                         Read 10x more than write. We are constantly reading old code. If you want to write code
                         more quickly that means that you have to make it more readable. Easy to read is easy to write.
+                        "It's OK to figure out murder mysteries, but you shouldn't need to figure out code. You should
+                        be able to read it" - Steve C McConnell. It has story to tell.
+                        <br/>
+                        Clean
+                        <br/>
+                        Someone cared about it
+                        <br/>
+                        Simple
+                        <br/>
+                        Understand what it does
+                        <br/>
+                        Extandable
+                        <br/>
+                        Able to solve upcoming problem
+                        <br/>
+                        Efficient
+                        <br/>
+                        Able to solve upcoming problem
 
                         If your code is well design, clean and elegant than everyone will take care of it also. No one
                         will try to make mess in that code.
 
-                        Tell story about fire in beautiful house
+                        Tell story about fire in beautiful house - fireman care about house - they pout something
+                        beneath hoses
 
                         Good code is solid, well written, tested and documented.
 
@@ -281,6 +385,36 @@
                         trained a lot every day.
                     </aside>
 				</section>
+
+                <section>
+                    <h2> 4 golden acronyms</h2>
+
+                    <p class="fragment">
+                        KISS
+                    </p>
+
+                    <p class="fragment">
+                        YAGNI
+                    </p>
+
+                    <p class="fragment">
+                        DRY
+                    </p>
+
+                    <p class="fragment">
+                        SOLID
+                    </p>
+				</section>
+
+                <section>
+                    <p>
+                        Design principles + Design patterns = Clean Code
+                    </p>
+                    <aside class="notes">
+                        Beside this we can also add ability to feel and discover code smells
+                    </aside>
+                </section>
+
 				<section>
                     <h2>Power of good names</h2>
                     <p class="fragment">
@@ -303,8 +437,16 @@
                         You can easily understand code if you choose names carefully.
                         Choosing good names takes time but it gives more value than it gets. Remember that
                         code is 10x more read than written.<br/><br/>
+                        Readability is top priority
+                        Code is written for humans to read and to be executed by machine. Machine will execute your code
+                        but ask yourself - can human understand this
                         Read your when you finish writing - if it is funny or not clear to your colleagues
-                        do refactoring. <br/><br/>
+                        do refactoring.
+                        When you read entity name you should not be surprised of it's responsibilities
+
+                        Name should be meaningful
+
+                        <br/><br/>
 
                         You will read code many many times but write only once.
 
@@ -319,7 +461,7 @@
                 <section>
                     <h2>Do not use</h2>
                     <p class="fragment">
-                        Unnecessary, unclear abbreviations
+                        Abbreviations ($tmpl, $crt...)
                     </p>
                     <p class="fragment">
                         Big letter O and small letter L (similar to 0 and 1)
@@ -331,7 +473,7 @@
                         Too long similar names
                     </p>
                     <p class="fragment">
-                        Numbers as part of variable name (no a1, a2,...)
+                       Incremental variable name (no a1, a2,...)
                     </p>
                     <p class="fragment">
                         Words like Manager, Info, Data
@@ -340,13 +482,27 @@
                         Type (Int, String, Array) as part of the name
                     </p>
 
-                    <asside class="notes">
+                    <aside class="notes">
+                        1. Do not use unnecessary, unclear abbreviations
 
-                    </asside>
+                        2. Do you really see difference each time
+
+                        3. Avoid this variables. For nested loops use subroutines
+
+                        4.
+                    </aside>
 				</section>
 
                 <section>
                     <h2>Use</h2>
+
+                    <p class="fragment">
+                        English all the time
+                    </p>
+
+                    <p class="fragment">
+                        Pronounceable names
+                    </p>
 
                     <p class="fragment">
                         Noun as class name (Product, User...)
@@ -361,12 +517,17 @@
                     </p>
 
                     <p class="fragment">
-                        Constants instead numbers
+                        Constants instead magic numbers
                     </p>
 
-                    <asside class="notes">
+                    <aside class="notes">
+                        1. English and only English no matter how much you love your language
+                        <br/>
+                        2. Avoid name like DtbRcrd12
+                        <br/>
+                        3&4. Be consistent use noun and verbs for class and methods
 
-                    </asside>
+                    </aside>
 				</section>
 				<section>
 				    <section>
@@ -381,25 +542,39 @@
                             find more definition for this section
                         </aside>
 				    </section>
+
 				    <section>
                         <h2>Functions should</h2>
+
+                        <p class="fragment">
+                          be verb
+                        </p>
+
                         <p class="fragment">
                           be small
                         </p>
+
                         <p class="fragment">
-                            do one thing
+                            do one thing - and do it well
                         </p>
+
                         <p class="fragment">
                             have descriptive name
                         </p>
+
                         <p class="fragment">
-                            have up to 3 arguments
+                            have up to 3 <arguments></arguments>
                         </p>
+
                         <p class="fragment">
                             not contain more than one or two indents
                         </p>
+
+                        <p class="fragment">
+                            not have side effects
+                        </p>
                         <aside class="notes">
-                            First is that functions should be small. The second is that should be smaller than that (Clean code)
+                            First rule is that functions should be small. The second is that should be smaller than that (Clean code)
                             Blocks within if-else and while statement should be one line long (Clean Code)
                             I also prefer this in all other loops
                             Functions should do one thing. They should do it well. They should do it only. (Clean Code)
@@ -410,64 +585,172 @@
                             You know you are working on clean code when each routine turns out to be pretty much what you expected
                             Long descriptive name is better than short enigmatic name, better than long descriptive comment
                             Choosing good nae is important - remember that you read 10x more than you write
-                            The ideal number of params is 0 - niladic functins
+                            The ideal number of params is 0 - niladic functions
                             Next come with 1 param - monadic
                             Followed by 2 - dyadic
                             3 - Triadic - should be avoided
                             4 and more params - Polyadic - Think about rewriting your function (T. Otwel)
                             Try to pass object instead creating polyadic functions
-                            Do not use flags in functions - create separate functions instead
+
+                            Side effects - do only one thing - described in name - not sudden effects
+
                         </aside>
 				    </section>
+
+                    <section>
+                        <h2>Few rules</h2>
+
+                        <p class="fragment">
+                            Do not use boolean flags as function param
+                        </p>
+
+                        <p class="fragment">
+                            Ask questions for booleans - isEmpty(), isEven()...
+                        </p>
+
+                        <p class="fragment">
+                            Avoid redundancy - sendMessage($message), addItem($item)
+                        </p>
+
+                        <p class="fragment">
+                            Kill dead functions
+                        </p>
+                        <aside class="notes">
+                            1.<br/>
+                            I mean Boolean flags create separate functions instead - when you set boolean value and than
+                            decide what function will do.
+
+                            2.<br/>
+                            Do not use empty() - use name like isEmpty() - you should ask question
+
+
+                            3. <br/>/
+
+                            4. <br/> Do not afraid - source control is your friend
+
+
+                        </aside>
+				    </section>
+
 				</section>
 				<section>
+                    <h2>Classes</h2>
+
+				</section>
+				<section>
+
                     <section>
                         <h2>Comments</h2>
                         <p>Good code has lots of comments</p>
                         <p class="fragment red_text">OH NO NO NO!!!</p>
                         <p class="fragment">Bad code code requires lot of comments</p>
+
+                        <aside class="notes">
+                            Use comments for high level explanation.
+                            "Don't comment bad code - rewrite it." - B. Kernighan i Plaugher
+                            Comments are, at best, necessary evil - Clean Code
+                            We failed to express using code so we are using comments instead.
+                            Every time you start to write a comment - think once more and try to make your code better.
+                            They are often source of lie. That's because if you have a lot of comments you have to maintain
+                            them as you maintain your .
+
+                            Code should have comments, but having too much comments is as bad as too few. Comments discuss
+                            why something is done but it' already explained in code - it DRY break
+
+                            Speak about using PHPdoc and writing comments in files describing variables and methods
+                            Speak about my preferable way of documenting even it is not pragmatic - writing doc block
+                            for protected methods and variables and header in every file
+
+                            Comments should only really be written when it’s not possible to clearly communicate the intent
+                            of a variable or method by using a name. The comment then serves an actual purpose that could
+                            not be easily expressed in the code. - simpleprogrammer.com/2015/03/16/11-rules-all-programmers-should-live-by/
+
+                        </aside>
                     </section>
+
                     <section>
                         <p class="fragment">Knowledge should be in your code not comments</p>
                         <p class="fragment">Express your thoughts through code not comments</p>
+                        <p class="fragment">Never explain what code does - explain why</p>
                     </section>
+
                     <section>
                         <p>&ldquo;<q>Good comment is the comment you found a way not to write</q>&rdquo;</p>
                     </section>
-                    <aside class="notes">
-                        Use comments for high level explanation.
-                        "Don't comment bad code - rewrite it." - B. Kernighan i Plaugher
-                        Comments are, at best, necessary evil - Clean Code
-                        We failed to express using code so we are using comments instead.
-                        Every time you start to write a comment - think once more and try to make your code better.
-                        They are often source of lie. That's because if you have a lot of comments you have to maintain
-                        them as you maintain your .
 
-                        Types of comments
-                        - informative (providing some basic information)
-                        - clarification (why programmer do something)
-                        - warnings (warnings of consequences)
-                        - TODO comments
+                    <section>
+                        <h2>
+                            Legal comments
+                        </h2>
+                        <ul>
+                            <ol>
+                                Informative (providing some basic information)
+                            </ol>
+                            <ol>
+                                Clarification (why programmer do something)
+                            </ol>
+                            <ol>
+                                Warnings (warnings of consequences)
+                            </ol>
+                            <ol>
+                                TODO comments
+                            </ol>
+                        </ul>
+                    </section>
 
-                        Code should have comments, but having too much comments is as bad as too few. Comments discuss
-                        why something is done but it' already explained in code - it DRY break
+                    <section>
 
-                        Speak about using PHPdoc and writing comments in files describing variables and methods
-                        Speak about my preferable way of documenting even it is not pragmatic - writing doc block
-                        for protected methods and variables and header in every file
+                        <h2>
+                            Illegal comments
+                        </h2>
+                        <ul>
+                            <ol>
+                                Inappropriate information
+                            </ol>
+                            <ol>
+                                Obsolete comments
+                            </ol>
+                            <ol>
+                                Redundant comment
+                            </ol>
+                            <ol>
+                                Poorly written comment
+                            </ol>
+                            <ol>
+                                Commented out code
+                            </ol>
+                        </ul>
 
-                        DO NOT leave commented out piece of code NEVER. Please never - if you do not do this it will
-                        stay there forever. You will write it better next time trust me :-)
+                        <aside class="notes">
+                            1. For example do not write comments about information that can be found in source control
+                            <br/>
+                            2. Comments tend to be obsolete - comments easily become old, non appropriate
+                            <br/>
+                            3. For example - $i++ - increment i
+                            <br/>
+                            4. If you really want to write comment than let it be worth and good. Let it be clear.
+                            <br/>
+                            5. DO NOT leave commented out piece of code NEVER. Please never - if you do not do this it
+                            will stay there forever. You will write it better next time trust me :-)
 
-                        Comments should only really be written when it’s not possible to clearly communicate the intent
-                        of a variable or method by using a name. The comment then serves an actual purpose that could
-                        not be easily expressed in the code. - simpleprogrammer.com/2015/03/16/11-rules-all-programmers-should-live-by/
+                        </aside>
+                    </section>
 
-
-                    </aside>
 				</section>
 				<section>
                     <h2>Refactoring</h2>
+
+                    <p>
+                        First make it work than make it wright
+                    </p>
+
+                    <p>
+                        Do not afraid to change your code to make it better - tests are your backbone
+                    </p>
+
+                    <p>
+                        Review your code on every commit/merge
+                    </p>
 
                     <aside class="notes">
                         Start with bunch of code and than refactor
@@ -475,7 +758,7 @@
                         Adam Culp - “I write a novel and I make news article later in refactoring"
 
                         First write code that works - than do refactoring. Refine your code, split out functions,
-                        make it dry, make it more readable
+                        make it dry, make it more readable. First make it work than make it wright.
                     </aside>
 
                 </section>
@@ -483,7 +766,7 @@
                 <section>
                     <section>
                         <h2>Debugging</h2>
-                        <aside>
+                        <aside class="notes">
                             Some developers spend more time debugging than writing new code. They should do this
                             efficiently.
                         </aside>
@@ -494,11 +777,61 @@
                     <h2>Testing</h2>
                 </section>
 
+                <section>
+                    <section>
+                        <h2>Philosophies for Effective Programming</h2>
+                        <ol>
+                            <li>
+                                Always write high quality, clean code
+                            </li>
+                            <li>
+                                Refactor ruthlessly
+                            </li>
+                            <li>
+                                Think before you code
+                            </li>
+                            <li>
+                                Develop in small steps
+                            </li>
+                            <li>
+                                Write understandable code
+                            </li>
+                            <li>
+                                Adopt and follow coding standards and guidelines
+                            </li>
+                            <li>
+                                Add documentation to improve code readability
+                            </li>
+                            <li>
+                                Write documentation before you write the code
+                            </li>
+                            <li>
+                                Follow the 30 seconds rule
+                            </li>
+                            <li>
+                                Smaller methods are usually better
+                            </li>
+                            <li>
+                                Optimize your code only as last resort
+                            </li>
+                        </ol>
+
+                        <aside class="notes">
+                            30 seconds rule - Another programmer should be able to look at the method, a class or an
+                            interface definition. Programmer should understand what it does, why it does it and how it does
+                            it in less than 30 seconds. This can be achieved if there is informative header documentation,
+                            a name that clearly conveys the intent, by doing what it is supposed to - no more no less.
+                        </aside>
+                    </section>
+
+                </section>
+
 				<section style="text-align: left;">
-					<h1>THE END</h1>
 					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+						- <a href="https://www.youtube.com/watch?v=--L0bS8n5ow">Anne-Julia Scheuermann - Naming Things </a> <br>
+						- <a href="https://speakerdeck.com/kiennt/clean-code">Clean code presentation </a> <br>
+						- <a href="https://speakerdeck.com/danielkummer/clean-code">Daniel Kummer - Clean code </a> <br>
+						- <a href="https://speakerdeck.com/srihari82/clean-code">Sridhari Sridharan - Clean code </a> <br>
 					</p>
 				</section>
 
