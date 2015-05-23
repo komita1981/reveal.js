@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Vagrant & Ansible hand by hand</title>
+
+    <meta name="description" content="Vagrant & Ansible overview">
+    <meta name="author" content="Milan Popović">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/presentation/vagrant_ansible_internal.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+    <h1>
+        <img src="img/vagrant_ansible_internal/vagrant_ansible.png" alt="Vagrant Ansible" title="Vagrant Ansible">
+    </h1>
+
+    <p>
+        <small><a target="_blank" href="http://www.milanpopovic.me">Milan Popović</a> / <a target="_blank"
+                                                                                           href="http://twitter.com/komita1981">@komita1981</a>
+        </small>
+    </p>
+</section>
+
+<section>
+    <h2>Agenda</h2>
+
+    <ul>
+        <li>Automatization importance</li>
+        <li>Vagrant</li>
+        <li>Setting up vagrant</li>
+        <li>Ansible intro</li>
+        <li>Organizing ansible playbooks</li>
+        <li>What's next?</li>
+    </ul>
+
+</section>
+
+<section>
+    <section>
+        <h2>
+            Automatization importance
+        </h2>
+    </section>
+    <section>
+        <h2>Obsolete workflows</h2>
+        <p class="fragment">
+            Using shared development center (expensive, no team collab...)
+        </p>
+        <p class="fragment">
+            Running MAMP, WAMP, LAMP on localhost (no automation, long error prone install guides, no team collab, not shareable, not isolated...)
+        </p>
+    </section>
+    <section>
+        <h2>What we don't want?</h2>
+        <p class="fragment">
+            Not all developers want to be sysadmins
+        </p>
+        <p class="fragment">
+            Install software manually over and over again
+        </p>
+        <p class="fragment">
+            Helping others to install software manualy over and over again
+        </p>
+        <p class="fragment">
+            <img src="img/vagrant_ansible_internal/works_on_my_machine.jpg" alt="Works on my machine" title="Works on my machine">
+        </p>
+    </section>
+    <section>
+        <h2>What do we want?</h2>
+        <p class="fragment">
+            We really need to develop on the same OS, architecture, package versions and configuration as production
+        </p>
+        <p class="fragment">
+            We want to have working code all around
+        </p>
+        <p class="fragment">
+            Scripting is better, having a set-it-and-forget-it service is best
+        </p>
+        <p class="fragment">
+            I want to write code to tell the computer how to set up itself
+        </p>
+        <p class="fragment">
+            Virtualization & Configuration management
+        </p>
+    </section>
+    <section>
+        <p>
+            <img src="img/vagrant_ansible_internal/automate_all.png" alt="Automate all" title="Automate all">
+        </p>
+    </section>
+    <section>
+        <h2>
+            VAGRANT AS RESCUE
+        </h2>
+        <p>
+            <img src="img/vagrant_ansible_internal/vagrant.jpg" alt="Vagrant" title="Vagrant">
+        </p>
+    </section>
+</section>
+<section>
+    <section>
+        <h2>Basic info</h2>
+        <p>
+            Free and open source - <a href="https://github.com/mitchellh/vagrant">https://github.com/mitchellh/vagrant</a>
+        </p>
+        <p>
+            Works on Linux, MAC OS, Windows
+        </p>
+        <p>
+            Written in Rubby
+        </p>
+        <p>
+            Started on 21.1.2010 by Mitchell Hashimoto and John Bender
+        </p>
+        <p>
+            7.3.2010 - first release - 0.1.0
+        </p>
+        <p>
+            30.5.2014 - latest release - 1.6.3
+        </p>
+    </section>
+    <section>
+        <h2>Why vagrant</h2>
+        <p>
+            Create and configure leightweight, reproducible and portable development environments.
+        </p>
+        <p>
+            Describe VM resource in Configuration share via VSC
+        </p>
+        <p>
+            Lowers development environment setup time
+        </p>
+        <p>
+            Maximises dev/prod parity
+        </p>
+        <p>
+            Makes the "works on my machine" excuse a relic of the past
+        </p>
+            Easy to distribute and update
+        </p>
+    </section>
+    <section>
+        <img src="img/vagrant_ansible_internal/vagrant_provider_provisioner.jpg" alt="Vagrant provider provisioner" title="Vagrant provider provisioner">
+    </section>
+    <section>
+        <img src="img/vagrant_ansible_internal/vagrant_usage_steps.jpg" alt="Vagrant usage steps" title="Vagrant usage steps">
+    </section>
+    <section>
+        <img src="img/vagrant_ansible_internal/vagrant_options.png" alt="Vagrant options" title="Vagrant options">
+    </section>
+    <section>
+        <pre>
+            <code>
+            ##################################################
+            # Generated by phansible.com
+            ##################################################
+
+            Vagrant.configure("2") do |config|
+
+            config.vm.provider :virtualbox do |v|
+            v.name = "Score"
+            v.customize ["modifyvm", :id, "--memory", 512]
+            end
+
+            config.vm.box = "precise64"
+            config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+
+            #
+            config.vm.network :private_network, ip: "192.168.3.234"
+            config.vm.network "forwarded_port", guest: 80, host: 8080
+
+            config.ssh.forward_agent = true
+
+            #############################################################
+            # Ansible provisioning (you need to have ansible installed)
+            #############################################################
+
+            config.vm.provision "ansible" do |ansible|
+            ansible.playbook = "ansible/playbook.yml"
+            end
+
+            config.vm.synced_folder "./", "/var/www", id: "vagrant-root", :mount_options => ['dmode=777', 'fmode=777']
+
+            end
+            </code>
+        </pre>
+    </section>
+</section>
+<section>
+    <section>
+        <img src="img/vagrant_ansible_internal/ansibleLogo_transparent_web.jpg" alt="Ansible logo" title="Ansible logo">
+    </section>
+    <section>
+        <h2>Basic facts</h2>
+        <p>IT orchestration engine that automates configuration management, application deployment, and many other IT needs.</p>
+        <p>Open source</p>
+        <p>Free software</p>
+        <p>Written in Python</p>
+        <p>Agent-less</p>
+        <p>Commercial version</p>
+        <p>Enterprise support</p>
+        <p>Comunity growth - 3. provisioner by number of usage in Vagrant</p>
+    </section>
+    <section>
+        <h2>Ansible modules</h2>
+        <p>Built in & Custom modules</p>
+        <p>Run commands</p>
+        <p>Transfer files</p>
+        <p>Install packages</p>
+        <p>Manage deamons</p>
+        <p>Manage users and groups</p>
+        <p>Gather facts</p>
+        <p>Manage DBs</p>
+    </section>
+    <section>
+        <h2>Ansible playbooks</h2>
+        <p>Configuration, deployment, and orchestration language</p>
+        <p>Yaml files & Jinja 2 templating language</p>
+        <p>Designed to be human-readable and are developed in a basic text language</p>
+        <p>Executed in order it is written</p>
+        <p>http://phansible.com/ - online generator for playbooks</p>
+        <p>Idempotent operations</p>
+    </section>
+</section>
+<section>
+    <h2>Our new workflow</h2>
+    <p class="fragment">
+        All team members will have to install Vagrant, VirtualBox & Ansible
+    </p>
+    <p class="fragment">
+        At least one person will be responsible for writing the Vagrantfile and the provisioning scripts
+    </p>
+    <p class="fragment">
+        Vagrantfile & Ansible scripts are part of version control system
+    </p>
+</section>
+<section>
+    <h1>One rule</h1>
+    <p class="fragment">
+        Using localhost is strictly forbidden!!!
+    </p>
+</section>
+<section>
+    <h1>The End</h1>
+
+    <h3>Milan Popović / milanpopovic.me</h3>
+</section>
+<section>
+    <img src="img/vagrant_ansible_internal/question.jpg" alt="Questions" title="Questions">
+</section>
+</div>
+
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+        ]
+    });
+
+</script>
+
+</body>
+</html>
