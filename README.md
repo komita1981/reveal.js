@@ -10,6 +10,7 @@ reveal.js comes with a broad range of features including [nested slides](https:/
 - [Changelog](https://github.com/hakimel/reveal.js/releases): Up-to-date version history.
 - [Examples](https://github.com/hakimel/reveal.js/wiki/Example-Presentations): Presentations created with reveal.js, add your own!
 - [Browser Support](https://github.com/hakimel/reveal.js/wiki/Browser-Support): Explanation of browser support and fallbacks.
+- [Plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware): A list of plugins that can be used to extend reveal.js.
 
 ## Online Editor
 
@@ -173,8 +174,12 @@ Reveal.initialize({
 	parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
 	// Parallax background size
-	parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+	parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
 
+	// Amount to move parallax background (horizontal and vertical) on slide change
+	// Number, e.g. 100
+	parallaxBackgroundHorizontal: '',
+	parallaxBackgroundVertical: ''
 
 });
 ```
@@ -271,7 +276,7 @@ Reveal.initialize({
 
 ### Auto-sliding
 
-Presentations can be configure to progress through slides automatically, without any user input. To enable this you will need to tell the framework how many milliseconds it should wait between slides:
+Presentations can be configured to progress through slides automatically, without any user input. To enable this you will need to tell the framework how many milliseconds it should wait between slides:
 
 ```javascript
 // Slide every five seconds
@@ -312,12 +317,12 @@ Reveal.configure({
 
 When working on presentation with a lot of media or iframe content it's important to load lazily. Lazy loading means that reveal.js will only load content for the few slides nearest to the current slide. The number of slides that are preloaded is determined by the `viewDistance` configuration option.
 
-To enable lazy loading all you need to do is change your "src" attributes to "data-src" as shown below. This is supported for image, video, audio and iframe elements.
+To enable lazy loading all you need to do is change your "src" attributes to "data-src" as shown below. This is supported for image, video, audio and iframe elements. Lazy loaded iframes will also unload when the containing slide is no longer visible.
 
 ```html
 <section>
   <img data-src="image.png">
-  <iframe data-src="http://slides.com"></iframe>
+  <iframe data-src="http://hakim.se"></iframe>
   <video>
     <source data-src="video.webm" type="video/webm" />
     <source data-src="video.mp4" type="video/mp4" />
@@ -374,7 +379,7 @@ Reveal.isAutoSliding();
 
 ### Slide Changed Event
 
-An 'slidechanged' event is fired each time the slide is changed (regardless of state). The event object holds the index values of the current slide as well as a reference to the previous and current slide HTML nodes.
+A 'slidechanged' event is fired each time the slide is changed (regardless of state). The event object holds the index values of the current slide as well as a reference to the previous and current slide HTML nodes.
 
 Some libraries, like MathJax (see [#226](https://github.com/hakimel/reveal.js/issues/226#issuecomment-10261609)), get confused by the transforms and display states of slides. Often times, this can be fixed by calling their update or render function from this callback.
 
@@ -427,8 +432,8 @@ Slides are contained within a limited portion of the screen by default to allow 
 <section data-background="http://example.com/image.png" data-background-size="100px" data-background-repeat="repeat">
 	<h2>This background image will be sized to 100px and repeated.</h2>
 </section>
-<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm">
-	<h2>Video. Multiple sources can be defined using a comma separated list.</h2>
+<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-video-loop>
+	<h2>Video. Multiple sources can be defined using a comma separated list. Video will loop when the data-background-video-loop attribute is provided.</h2>
 </section>
 <section data-background-iframe="https://slides.com">
 	<h2>Embeds a web page as a background. Note that the page won't be interactive.</h2>
@@ -440,7 +445,7 @@ Backgrounds transition using a fade animation by default. This can be changed to
 
 ### Parallax Background
 
-If you want to use a parallax scrolling background, set the two following config properties when initializing reveal.js (the third one is optional).
+If you want to use a parallax scrolling background, set the first two config properties below when initializing reveal.js (the other two are optional).
 
 ```javascript
 Reveal.initialize({
@@ -451,8 +456,11 @@ Reveal.initialize({
 	// Parallax background size
 	parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
 
-	// This slide transition gives best results:
-	transition: 'slide'
+	// Amount of pixels to move the parallax background per slide step,
+	// a value of 0 disables movement along the given axis
+	// These are optional, if they aren't specified they'll be calculated automatically
+	parallaxBackgroundHorizontal: 200,
+	parallaxBackgroundVertical: 50
 
 });
 ```
@@ -473,6 +481,27 @@ The global presentation transition is set using the ```transition``` config valu
 	<h2>Choose from three transition speeds: default, fast or slow!</h2>
 </section>
 ```
+
+You can also use different in and out transitions for the same slide:
+
+```html
+<section data-transition="slide">
+    The train goes on … 
+</section>
+<section data-transition="slide"> 
+    and on … 
+</section>
+<section data-transition="slide-in fade-out"> 
+    and stops.
+</section>
+<section data-transition="fade-in slide-out"> 
+    (Passengers entering and leaving)
+</section>
+<section data-transition="slide">
+    And it starts again.
+</section>
+```
+
 
 Note that this does not work with the page and cube transitions.
 
@@ -507,7 +536,6 @@ The default fragment style is to start out invisible and fade in. This style can
 <section>
 	<p class="fragment grow">grow</p>
 	<p class="fragment shrink">shrink</p>
-	<p class="fragment roll-in">roll-in</p>
 	<p class="fragment fade-out">fade-out</p>
 	<p class="fragment current-visible">visible only once</p>
 	<p class="fragment highlight-current-blue">blue only once</p>
@@ -572,7 +600,16 @@ By default, Reveal is configured with [highlight.js](http://softwaremaniacs.org/
 If you would like to display the page number of the current slide you can do so using the ```slideNumber``` configuration value.
 
 ```javascript
+// Shows the slide number using default formatting
 Reveal.configure({ slideNumber: true });
+
+// Slide number formatting can be configured using these variables:
+//  h: current slide's horizontal index
+//  v: current slide's vertical index
+//  c: current slide index (flattened)
+//  t: total number of slides (flattened)
+Reveal.configure({ slideNumber: 'c / t' });
+
 ```
 
 
@@ -655,7 +692,7 @@ Reveal.initialize({
 
 ## PDF Export
 
-Presentations can be exported to PDF via a special print stylesheet. This feature requires that you use [Google Chrome](http://google.com/chrome).
+Presentations can be exported to PDF via a special print stylesheet. This feature requires that you use [Google Chrome](http://google.com/chrome) or [Chromium](https://www.chromium.org/Home).
 Here's an example of an exported presentation that's been uploaded to SlideShare: http://www.slideshare.net/hakimel/revealjs-300.
 
 1. Open your presentation with `print-pdf` included anywhere in the query string. This triggers the default index HTML to load the PDF print stylesheet ([css/print/pdf.css](https://github.com/hakimel/reveal.js/blob/master/css/print/pdf.css)). You can test this with [lab.hakim.se/reveal-js?print-pdf](http://lab.hakim.se/reveal-js?print-pdf).
@@ -667,6 +704,8 @@ Here's an example of an exported presentation that's been uploaded to SlideShare
 
 ![Chrome Print Settings](https://s3.amazonaws.com/hakim-static/reveal-js/pdf-print-settings.png)
 
+Alternatively you can use the [decktape](https://github.com/astefanutti/decktape) project.
+
 ## Theming
 
 The framework comes with a few different themes included:
@@ -675,7 +714,7 @@ The framework comes with a few different themes included:
 - white: White background, black text, blue links
 - league: Gray background, white text, blue links (default theme for reveal.js < 3.0.0)
 - beige: Beige background, dark text, brown links
-- sky: Blue background, thin white text, blue links
+- sky: Blue background, thin dark text, blue links
 - night: Black background, thick white text, orange links
 - serif: Cappuccino background, gray text, brown links
 - simple: White background, black text, blue links
