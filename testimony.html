@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Test your applications</title>
+		<title>Testimony</title>
 
 		<meta name="description" content="A short guide how to test your Laravel 4 application">
 		<meta name="author" content="Milan Popovic">
@@ -42,7 +42,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Testimony about testing</h1>
+					<h1>Testimony</h1>
 					<p>
 						<small>Presented by <a href="http://milanpopovic.me">Milan Popović</a> / <a href="http://twitter.com/komita1981">@komita1981</a></small>
 					</p>
@@ -50,53 +50,25 @@
 
                 <section>
                     <h2>Me</h2>
-                    <p>
+                    <p class="left_align">
                         PHP developer
                     </p>
-                    <p>
-                        7 years in PHP development
+                    <p class="left_align">
+                        Work for Nano Interactive
                     </p>
-                    <p>
-                        Work for 12 Mnkys
-                    </p>
-                    <p>
+                    <p class="left_align">
                         I like to learn and share knowledge
                     </p>
-                    <p>
+                    <p class="left_align">
                         Active member of PHP Srbija
                     </p>
                 </section>
 
                 <section>
-                    <h2>You?</h2>
-                    <p class="fragment">
-                        Who are you?
-                    </p>
-                    <p class="fragment">
-                        What's your experience in programming?
-                    </p>
-                    <p class="fragment">
-                        What's your experience in testing?
-                    </p>
-                    <p class="fragment">
-                        What are your expectations?
-                    </p>
-                </section>
-
-                <section>
-                    <h2>
-                        What is testing?
-                    </h2>
+                    <h2>What is testing?</h2>
                     <p class="fragment">
                         Testing is the activity of finding out whether a piece of code produces the intended behavior
                     </p>
-                    <aside class="notes">
-                        It better for you that you find your bugs than your client.
-
-                        Quality is everyone’s responsibility—especially - ours - developer’s.
-
-                        You are not good developer if you are not good tester.
-                    </aside>
                 </section>
 
                 <section>
@@ -145,16 +117,16 @@
                     </section>
 
                     <section>
-                        <p>
+                        <p class="left_align">
                             Time consuming
                         </p>
-                        <p>
+                        <p class="left_align">
                             Testing is hard
                         </p>
-                        <p>
+                        <p class="left_align">
                             Steep learning curve
                         </p>
-                        <p>
+                        <p class="left_align">
                             Don’t make anybody any money
                         </p>
                     </section>
@@ -167,16 +139,6 @@
                 </section>
 
                 <section>
-                    <blockquote>
-                        "The problem is that people think that code quality is a short term loss but a long term benefit.
-                        They’re wrong about the first part."
-                    </blockquote>
-                    <p>
-                        Uncle Bob Martin
-                    </p>
-                </section>
-
-                <section>
                     <p>
                         <img class="noframes" src="img/testimony/results_or_excuses.jpg">
                     </p>
@@ -185,96 +147,139 @@
                 <section>
                     <h2>What testing really is?</h2>
 
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Prove you've done your work
                     </p>
 
-                    <p class="fragment">
-                        Help you check much faster if you're work is done
+                    <p class="fragment left_align">
+                        Facilitate change
                     </p>
 
-                    <p class="fragment">
-                        Enable change - protect you from breaking things - regression bugs
-                    </p>
-
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Help you make better code design - easier to maintain
                     </p>
 
-                    <p class="fragment">
-                        Let you apply changes with less worries - refactoring will improve things without breaking anything
-                    </p>
-
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Ensures stable, long lasting application
                     </p>
 
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Enhance security
                     </p>
 
-                    <p class="fragment">
-                        Free documentation
+                    <p class="fragment left_align">
+                        Provide free documentation
                     </p>
 
                     <aside class="notes">
-                        4. Keep your code flexible, maintainable and reusable
+                        Prove you've done your work - Help you check much faster if you're work is done. Testing is an
+                        insurance that the system works. Let you apply changes with less worries - refactoring will
+                        improve things without breaking anything.
 
-                        Keep in mind that testing code is important as production code - maybe more important. It must
-                        be clean as production code. Code changes and that means that your tests also changes - if you
-                        write them bad than you have big problem - double problem. You are not safe anymore. You will start
-                        writing code without tests.
+                        Facilitates change - protect you from breaking things - guard from regression bugs.
 
-                        Unit tests keep our code flexible, maintainable and reusable. Without them we loose everything.
-                        With good tests we can improve architecture and design without having the fear of introducing
-                        bugs.
+                        Having a bug in the code means carrying a
+                        risk. Utilising a set of unit tests, engineers can dramatically reduce number of bugs and the
+                        risk with untested code - It better for you that you find your bugs than your client.
 
+                        Quality is everyone’s responsibility—especially - ours - developer’s.
 
                     </aside>
                 </section>
                 <section>
                     <h2>Automated testing</h2>
-                    <p class="red_text">
+                    <p class="red_text left_align">
                         When I say testing I mean AUTOMATED testing
                     </p>
-                    <p>
+                    <p class="left_align">
                         Manual testing is time consuming and boring
                     </p>
-                    <p>
+                    <p class="left_align">
                         Automated testing is fun and a key point for software quality
                     </p>
                 </section>
 
                 <section>
-                    <h2>Test types</h2>
-                    <p class="fragment">
-                        Acceptance (end-to-end)<br/>
-                        Test as if end user would use the whole system/feature
-                    </p>
-                    <p class="fragment">
-                        Integration<br/>
-                        Test how different parts of system work together
-                    </p>
-                    <p class="fragment">
-                        Unit<br/>
-                        Test single unit of code - mock all dependencies
-                    </p>
-                </section>
+                    <section>
+                        <h2>Test types</h2>
+                        <p class="fragment">
+                            Acceptance (end-to-end)<br/>
+                            Test as if end user would use the whole system/feature
+                        </p>
+                        <p class="fragment">
+                            Integration<br/>
+                            Test how different parts of system work together
+                        </p>
+                        <p class="fragment">
+                            Unit<br/>
+                            Test single unit of code - mock all dependencies
+                        </p>
+                        <aside class="notes">
+                            Good ideas often fail in practice, and in the world of testing, one pervasive good idea that
+                            often fails in practice is a testing strategy built around end-to-end tests. Testers can
+                            invest their time in writing many types of automated tests, including unit tests,
+                            integration tests, and end-to-end tests, but this strategy invests mostly in end-to-end
+                            tests that verify the product or service as a whole. Typically, these tests simulate real
+                            user scenarios.
 
-                <section>
-                    <h2>What we need to define</h2>
-                    <p>
-                        What is unit testing?
-                    </p>
-                    <p>
-                        What is to be tested?
-                    </p>
-                    <p>
-                        What does not need to be tested?
-                    </p>
-                    <p>
-                        Unit testing
-                    </p>
+                            Unit tests do have one major disadvantage: even if the units work well in isolation, you do
+                            not know if they work well together. But even then, you do not necessarily need end-to-end
+                            tests. For that, you can use an integration test. An integration test takes a small group
+                            of units, often two units, and tests their behavior as a whole, verifying that they
+                            coherently work together. If two units do not integrate properly, why write an end-to-end
+                            test when you can write a much smaller, more focused integration test that will detect the
+                            same bug? While you do need to think larger, you only need to think a little larger to
+                            verify that units work together.
+                        </aside>
+                    </section>
+                    <section>
+                        <img class="noframes" src="img/testimony/testing_pyramid.png">
+                        <aside class="notes">
+                            Width = Number of tests
+                            The bulk of your tests are unit tests at the bottom of the pyramid. As you move up the
+                            pyramid, your tests gets larger, but at the same time the number of tests (the width of your
+                            pyramid) gets smaller.
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Google team suggest</h2>
+                        <ul>
+                            <li>
+                                E2E - 10 %
+                            </li>
+                            <li>
+                                Integration - 20%
+                            </li>
+                            <li>
+                                Unit - 70%
+                            </li>
+                        </ul>
+                        <aside class="notes">
+                            As a good first guess, Google often suggests a 70/20/10 split:
+                            70% unit tests, 20% integration tests, and 10% end-to-end tests. The exact mix will be
+                            different for each team, but in general, it should retain that pyramid shape
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Testing anti-patterns</h2>
+                    </section>
+                    <section>
+                            <img class="noframes" src="img/testimony/testing_inverted_pyramid.png">
+                            <p>Inverted pyramid/ice cream cone</p>
+                        <aside class="notes">
+                            Inverted pyramid - The team relies primarily on end-to-end tests, using few integration
+                            tests and even fewer unit tests.
+                        </aside>
+                    </section>
+                    <section>
+                            <img class="noframes" src="img/testimony/testing_hourglass.png">
+                            <p>Hourglass</p>
+                        <aside class="notes">
+                            Hourglass. The team starts with a lot of unit tests, then uses end-to-end tests where
+                            integration tests should be used. The hourglass has many unit tests at the bottom and many
+                            end-to-end tests at the top, but few integration tests in the middle.
+                        </aside>
+                    </section>
                 </section>
 
                 <section>
@@ -284,9 +289,22 @@
                     <p class="fragment">
                         A software testing method to test individual unit of source code - a method in class or a piece of code
                     </p>
-                    <p class="fragment">
-                        A real unit test verifies the behavior of a single code unit isolated from its dependencies
-                    </p>
+                    <aside class="notes">
+                        When writing unit tests we are focusing on describing one unit of behaviour at a time, and how
+                        objects communicate in order to achieve that behaviour.
+
+                        Each unit test sends a specific input to a method and verifies that the method returns the
+                        expected value, or takes the expected action. Unit tests prove that the code you are testing
+                        does in fact do what you expect it to do.
+
+                        The purpose of unit testing is not for finding bugs. It’s a specification for the expected
+                        behaviours of the code under test. The code under test is the implementation for those expected
+                        behaviours. So unit test and the code under test are used to check the correctness of each other,
+                        and protect each other. Later when someone changed the code under test, and it changed the
+                        behaviour that is expected by the original author, the test will fail. If you code is covered by
+                        reasonable unit test, you can maintain the code without breaking the existing feature.
+                        That’s why Michael Feathers define legacy code as code without unit test.
+                    </aside>
                 </section>
 
                 <section>
@@ -304,58 +322,104 @@
                     <h2>
                         What does not need to be tested?
                     </h2>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Getters/Setters
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Framework
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Third party packages
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Protected & private methods and properties
                     </p>
-                </section>
 
+                    <aside class="notes">
+                        Just because the testing of protected and private attributes and methods is possible does not
+                        mean that this is a "good thing".
+
+                        "In general, you don't want to break any encapsulation for the sake of testing (or as Mom used
+                        to say, "don't expose your privates!"). Most of the time, you should be able to test a class by
+                        exercising its public methods. If there is significant functionality that is hidden behind
+                        private or protected access, that might be a warning sign that there's another class in there
+                        struggling to get out."
+                        You shouldn’t test private methods and private properties because doing so will cause your unit
+                        tests to become a barrier to refactoring. If you ever do find yourself compelled to test a
+                        private or protected method, this is probably a strong indication that the method should be
+                        refactored in to its own stand-alone class.
+                    </aside>
+                </section>
 
                 <section>
                     <h2>
-                        Unit testing first principles
+                        Unit testing FIRST principles
                     </h2>
                     <p class="left_align">
                         <span class="red_text">F</span>ast - Be fast or be dead
                     </p>
                     <p class="left_align">
-                        <span class="red_text">I</span>ndependent - Run without dependency
+                        <span class="red_text">I</span>ndependent/Isolated - Run without dependency
                     </p>
                     <p class="left_align">
                         <span class="red_text">R</span>epeatable - Should be idempotent
                     </p>
                     <p class="left_align">
-                        <span class="red_text">S</span>elf-verifyng - Just pass or fail
+                        <span class="red_text">S</span>elf-verifying - Just pass or fail
                     </p>
                     <p class="left_align">
                         <span class="red_text">T</span>imely - Write test before production
                     </p>
                     <aside class="notes">
                         Fast - if tests are slow you wont run them frequently, you will start to avoid using it and you
-                        will rot your code
+                        will rot your code. A developer should not hesitate to run the tests as they are slow.
+                        If developer hesitates to run the tests after a simple one-liner change tests are far too slow.
+                        Make the tests so fast you don't have to consider them. The faster your tests run, the more often
+                        you’ll run them. All of these including setup, the actual test and tear down should execute really fast
+                        (milliseconds) as you may have thousands of tests in your entire project. Unit tests save you time
+                        by finding errors immediately after you make them.
 
-                        Independent - test should not depend on each other, no metter in which order you run them - they
-                        should always pass
+                        Independent - A unit test is a small automated test, coded by a programmer, that verifies
+                        whether or not a small piece of production code—a unit—works as expected in isolation. A real
+                        unit test verifies the behavior of a single code unit isolated from its dependencies. Each unit
+                        test should have a single reason to fail.
+                        You must design your tests to be independent not only of external factors, but of each other as
+                        well. When tests are interdependent, a change to one test can cause several others to fail in
+                        puzzling ways. Ordering unit tests to optimize their execution is a sign that isolation is poor.
+                        Test should not depend on each other, no matter in which order you run them - they
+                        should always pass. Tests must not have any order-of-run dependency. They should pass or fail
+                        the same way in suite or when run individually. Each suite should be re-runnable (every minute
+                        or so) even if tests are renamed or reordered randomly. Good tests interferes with no other
+                        tests in any way. They impose their initial state without aid from other tests. They clean up
+                        after themselves.
 
-                        Repeatable - No metter in environment you run your tests - they should pass - no excuses. If
-                        they are not - you have problem. They should pass on all machines. If they are not repeatable
-                        you will always have an excuse
+                        Repeatable - You should obtain the same results every time you run a test. No matter in
+                        environment you run your tests - they should pass - no excuses. If they are not - you have
+                        problem. They should pass on all machines. If they are not repeatable
+                        you will always have an excuse. A test method should NOT depend on any data in the
+                        environment/instance in which it is running. Each test should setup or arrange it's own data.
+                        What if a set of tests need some common data? Use Data Helper classes that can setup this data
+                        for re-usability.
 
-                        Self validating - Test should have boolean output - pass or fail. You should do everything
-                        automaticaly
+                        Self validating -  A good unit test fails or passes unambiguously. When all tests run green, you
+                        have high confidence that you can ship the code to the next level (likely the acceptance test
+                        automated suite). If any of the tests fail, you don’t proceed until they get fixed. The
+                        pass/fail nature of the automated testing system makes it viable even for large teams. When a
+                        test suite leaves some results open to human interpretation, validating them becomes a drag on
+                        the productivity of all programmers. Ambiguous tests fail to be helpful and fall into disuse.
+                        That means - no manual inspection required to check whether the test has passed or failed.
+                        You should do everything automatically. Test should have boolean output - pass or fail.
+                        Funny fact - Do programmers really write unit tests that test nothing? Sadly, yes. A recent SD
+                        Times article related this story: “One organization outsourced its test case implementation with
+                        the goal of achieving 80% test coverage. The test coverage went up, but because the tests were
+                        calling methods but not validating them, the outcome was useless.” (Morgan, Lisa. “Driving Higher
+                        Value from Build Management and Continuous Integration,” SD Times, October 2011.)
 
                         Timely - There is one good time when you have to write your tests - just before production code
-                        Code change requires new test
-
-
+                        Writing tests before the code encourages you to think of the use of the code before you think of
+                        its implementation. The tests are the very first client of the code you’re building. A clean
+                        unit test should make it very clear what the client code will look like. Hopefully you’ll do
+                        things like improve your function names and design simpler parameter lists as a result.
                     </aside>
                 </section>
 
@@ -363,12 +427,53 @@
                     <h2>
                         Write unit tests before or after code?
                     </h2>
-                    <p class="fragment">
-                        After - You test what you code - Test Last - <span class="red_text">DDT</span>
+                    <p class="fragment left_align">
+                        After - You test what you code - Test Last <br/>
+                        Development Driven Testing - <span class="red_text">DDT</span>
                     </p>
-                    <p class="fragment">
-                        Before - You code what you test - Test First - <span class="red_text">TDD</span>
+                    <p class="fragment left_align">
+                        Before - You code what you test - Test First<br/>
+                        Test Driven Development - <span class="red_text">TDD</span>
                     </p>
+
+                </section>
+
+                <section>
+                    <img class="noframes" src="img/testimony/ddt_circle_of_life.png">
+
+                    <aside class="notes">
+                        Test Last = Test-After Development (TAD)
+                        TAD programmers want to verify their code, too, but they typically have little interest in
+                        treating the tests as “specifications by example.” For them, the usually singular goal of unit
+                        testing is to verify whether or not some aspects of the code work. These unit tests typically
+                        cover up to two-thirds of the code base. Other forms of integration tests can increase effective
+                        coverage, but unit tests are the closest reliable documentation for the code you’re modifying.
+                        The real sticking point with TAD is productivity. When you don’t think about how to craft code
+                        so it’s testable, you’ll often end up with code that is near-impossible to test. The test-writer
+                        has to either rework it or use a lot of finesse to avoid rework. This makes testing feel like a
+                        waste of time. No wonder so few programmers have fully embraced unit-testing! We find TAD to be
+                        simply less fun, less beneficial, less productive, and more frustrating than TDD.
+                    </aside>
+
+                </section>
+
+                <section>
+                    <h2>
+                        The Three Laws of TDD
+                    </h2>
+
+                    <ol>
+                        <li>
+                            You may not write production code until you have written a failing unit test
+                        </li>
+                        <li>
+                            You may not write more of a unit test than is sufficient to fail
+                        </li>
+                        <li>
+                            You may not write more production code than is sufficient to pass the currently failing
+                            test
+                        </li>
+                    </ol>
                 </section>
 
                 <section>
@@ -377,11 +482,10 @@
                     <aside class="notes">
                         Only write code if you absolutely have to and always know what your code is supposed to do before
                         you start writing it - and that is what TDD approach provides for you
-                    </aside>
-                </section>
 
-                <section>
-                    <img class="noframes" src="img/testimony/ddt_circle_of_life.png">
+                        I’ve found that writing my unit tests first helps me better understand how clients of my code
+                        are going to use it.
+                    </aside>
                 </section>
 
                 <section>
@@ -394,108 +498,244 @@
                 </section>
 
                 <section>
-                    <p>
-                        By 2022 it will be not be possible to get a professional programming job if you do not practice TDD routinely
-                    </p>
+                    <blockquote>
+                        By 2022 it will be not be possible to get a professional programming job if you do not practice
+                        TDD routinely - Allan Kelly
+                    </blockquote>
                 </section>
 
                 <section>
                     <section>
-                        <h2>
-                            Testing environment
-                        </h2>
-
                         <p>
-                            Use Virtual Environments
+                            <img class="noframes" src="img/testimony/phpunit.png">
                         </p>
 
-                        <p>
-                            Create you development environment to be same as production
-                        </p>
                     </section>
-
                     <section>
-                        <p>
-                            <img class="noframes" src="img/testimony/vagrant_docker.png">
-                        </p>
-                    </section>
-                </section>
-
-                <section>
-                    <h2>Testing doubles</h2>
-                    <ul>
-                        <li class="fragment">Dummy</li>
-                        <li class="fragment">Fake</li>
-                        <li class="fragment">Stub</li>
-                        <li class="fragment">Mock</li>
-                        <li class="fragment">Spy</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Generation doubles doubles</h2>
-                    <ul>
-                        <li>phpunit/phpunit-mock-object</li>
-                        <li>phpspec/prophecy</li>
-                        <li>mockery/mockery</li>
-                        <li>phake/phake</li>
-                        <li>codeception/aspect-mock</li>
-                        <li>php-vci/php-vci</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <p>
-                        <img class="noframes" src="img/testimony/phpunit.png">
-                    </p>
-                    <p>
-                        <img class="noframes" src="img/testimony/mockery.jpg">
-                    </p>
-                </section>
-
-                <section>
-                    <section>
-                        <h2>
-                            PHPUnit
-                        </h2>
-
-                        <p>
+                        <p class="left_align">
                             Member of xUnit family
                         </p>
 
-                        <p>
+                        <p class="left_align">
                             Created by Sebastian Bergmann and contributors
                         </p>
 
-                        <p>
+                        <p class="left_align">
                             Integrated/Supported by all modern frameworks
                         </p>
 
-                        <p>
-                            Integrated in most IDE (PHPStorm, Netbeans, Eclipse, Zend Studio)
+                        <p class="left_align">
+                            Integrated in most IDE (PHPStorm, Netbeans, Eclipse, ZS)
                         </p>
 
-                        <p>
-
-                    </section>
-                    <section>
-                        <p>
+                        <p class="left_align">
                             Written for PHP 5.x
                         </p>
-                        <p>
-                        Install using composer or phar
+
+                        <p class="left_align">
+                            Install using composer or phar
 
                     <pre><code data-trim contenteditable>
 "require-dev": {
-    "phpunit/phpunit": "4.2.*"
+    "phpunit/phpunit": "4.*"
 },
                     </code></pre>
                         </p>
-                        <p>
+                        <p class="left_align red_text">
                             PEAR install - not supported from 1.1.2015
                         </p>
-                        <p>
-                            Result can be ., F, E, I, S
+                    </section>
+
+
+                    <section>
+                        <h2>xUnit architecture</h2>
+                        <ol>
+                            <li>
+                                Test runner
+                            </li>
+                            <li>
+                                Test case
+                            </li>
+                            <li>
+                                Test fixtures
+                            </li>
+                            <li>
+                                Test suites
+                            </li>
+                            <li>
+                                Test executions
+                            </li>
+                            <li>
+                                Test result formatter
+                            </li>
+                            <li>
+                                Assertions
+                            </li>
+                        </ol>
+                        <aside class="notes">
+                            XUnit is the family name given to bunch of testing frameworks that have become widely known
+                            amongst software developers. The name is a derivation of JUnit, the first of these to be
+                            widely known. The origins of these frameworks actually started in Smalltalk. Kent Beck was
+                            a big fan of automated testing at the heart of software development. To help him, and his
+                            clients, do this he would build a simple framework to organize and run unit tests. The focus
+                            was on making it easy for programmers to define the tests using their regular smalltalk
+                            environment, and then to run either a subset or a full set of tests quickly. Kent and his
+                            followers would run unit tests after every change to the system going through a rapid edit
+                            and test cycle in the Smalltalk IDE.
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>
+                            1. Test runner
+                        </h2>
+                        <p class="left_align">
+                            Executable program that runs tests implemented using an xUnit framework and reports the
+                            test results
+                        </p>
+                        <p class="left_align">
+                            PhpUnit - phpunit/phpunit/phpunit file
+                        </p>
+                    </section>
+                    <section>
+                        <h2>
+                            2. Test case
+                        </h2>
+                        <p class="left_align">
+                            The most elemental class
+                        </p>
+                        <p class="left_align">
+                            All unit tests are inherited from this class
+                        </p>
+                        <p class="left_align">
+                            PhpUnit - PHPUnit_Framework_TestCase class
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>
+                            3. Test fixtures
+                        </h2>
+                        <p class="left_align">
+                            Set of preconditions or state needed to run a test
+                        </p>
+                        <p class="left_align">
+                            Known good state should be set up before the tests, and return to the original state after
+                            the tests
+                        </p>
+                        <p class="left_align">
+                            PhpUnit - setUp(), tearDown(), setUpBeforeClass() and tearDownAfterClass() methods
+                        </p>
+                        <pre><code data-trim contenteditable>
+protected function setUp()
+{
+    // preconditions or DRY code
+}
+protected function tearDown()
+{
+    // clear all after tests
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>
+                            4. Test suites
+                        </h2>
+                        <p class="left_align">
+                            Set of tests that all share the same fixture
+                        </p>
+                        <p class="left_align">
+                            PhpUnit - testsuites options in phpunit.xml
+                        </p>
+                        <pre><code data-trim contenteditable>
+// part of phpunit.xml file
+<testsuite name="Unit">
+    <directory>./app/tests/Unit/</directory>
+</testsuite>
+
+// from the command line
+phpunit --testsuite Unit
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>
+                            5. Test execution
+                        </h2>
+                        <pre><code data-trim contenteditable>
+setUp();
+...
+/* Body of test - Tested class - System Under Tests */
+...
+tearDown(); */
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>
+                            6. Test result formatter
+                        </h2>
+                        <p class="left_align">
+                            Produces results in one or more output formats
+                        </p>
+                        <p class="left_align">
+                            PhpUnit test results:
+                        </p>
+                        <p class="left_align">
+                            . - Test succeeds
+                        </p>
+                        <p class="left_align">
+                            F - Assertion fails while running the test method
+                        </p>
+                        <p class="left_align">
+                            E - Error occurs while running the test method
+                        </p>
+                        <p class="left_align">
+                            R - Test has been marked as risky
+                        </p>
+                        <p class="left_align">
+                            S - Test has been skipped
+                        </p>
+                        <p class="left_align">
+                            I - Test is marked as being incomplete or not yet implemented
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>
+                            7. Assertions
+                        </h2>
+
+                        <p class="left_align">
+                            Function that verifies the behavior (or the state) of the unit under test
+                        </p>
+
+                        <p class="left_align">
+                            Usually result is bool
+                        </p>
+
+                        <p class="left_align">
+                            PhpUnit examples
+                        </p>
+
+                        <p class="left_align">
+                            <span class="red_text">assertTrue</span> - Check the input to verify it equals true
+                        </p>
+
+                        <p class="left_align">
+                            <span class="red_text">assertFalse</span> - Check the input to verify it equals false
+                        </p>
+
+                        <p class="left_align">
+                            <span class="red_text">assertEquals</span> - Check the result against another input for a match
+                        </p>
+
+                        <p class="left_align">
+                            <span class="red_text">assertContains</span> - Check that the input contains a certain value
+                        </p>
+
+                        <p class="left_align">
+                            Many more asserts - official documentation...
                         </p>
                     </section>
 
@@ -504,31 +744,31 @@
                             PHPUnit's test goals
                         </h2>
 
-                        <p class="fragment">
+                        <p class="left_align">
                             Easy to learn to write
                         </p>
 
-                        <p class="fragment">
+                        <p class="left_align">
                             Easy to write
                         </p>
 
-                        <p class="fragment">
+                        <p class="left_align">
                             Easy to read
                         </p>
 
-                        <p class="fragment">
+                        <p class="left_align">
                             Easy to execute
                         </p>
 
-                        <p class="fragment">
+                        <p class="left_align">
                             Quick to execute
                         </p>
 
-                        <p class="fragment">
+                        <p class="left_align">
                             Isolated
                         </p>
 
-                        <p class="fragment">
+                        <p class="left_align">
                             Composable
                         </p>
 
@@ -536,670 +776,494 @@
 
                     <section>
                         <h2>
-                            Test config & structure
+                            Test config
                         </h2>
-
-                        <p>
+                        <p class="left_align">
                             Configured in <span class="red_text">phpunit.xml</span>  file
                         </p>
 
-                        <p>
-                            The tests for a class <span class="red_text">Class</span> go into a class <span class="red_text">ClassTest</span>
-                        </p>
-
-                        <p>
-                            ClassTest inherits (most of the time) from <span class="red_text">PHPUnit_Framework_TestCase</span>
-                        </p>
-
-                        <p>
-                            The tests are public methods that are named <span class="red_text">test*</span>
-                        </p>
-
-                        <p>
-                            Inside the test methods assertion methods are used - <span class="red_text">assert*</span>
-                        </p>
-
-                    </section>
-
-                    <section>
                         <pre><code data-trim contenteditable>
-<phpunit backupGlobals="false"
+<phpunit bootstrap="bootstrap/autoload.php"
+
+         backupGlobals="false"
+
          backupStaticAttributes="false"
-         bootstrap="bootstrap/autoload.php"
+
          colors="true"
+
          convertErrorsToExceptions="true"
+
          convertNoticesToExceptions="true"
+
          convertWarningsToExceptions="true"
+
          processIsolation="false"
+
          stopOnFailure="false"
+
          syntaxCheck="false"
         >
     <testsuites>
-        <testsuite name="Libraries">
-            <directory>./app/tests/Unit/Libraries/</directory>
-        </testsuite>
         <testsuite name="Unit">
             <directory>./app/tests/Unit/</directory>
         </testsuite>
         <testsuite name="Integration">
             <directory>./app/tests/Integration/</directory>
         </testsuite>
-        <testsuite name="RunAll">
-            <directory>./app/tests/</directory>
-        </testsuite>
     </testsuites>
 </phpunit>
-                    </code></pre>
-
-                    </section>
-
-                    <section>
-                        <h2 class="cc_logo_fix_50">
-                            Assertion methods examples
-                        </h2>
-
-                        <p>
-                            <span class="red_text">AssertTrue</span> - Check the input to verify it equals true
-                        </p>
-
-                        <p>
-                            <span class="red_text">AssertFalse</span> - Check the input to verify it equals false
-                        </p>
-
-                        <p>
-                            <span class="red_text">AssertEquals</span> - Check the result against another input for a match
-                        </p>
-
-                        <p>
-                            <span class="red_text">AssertContains</span> - Check that the input contains a certain value
-                        </p>
-
-                        <p>
-                            Many more asserts - official documentation...
-                        </p>
-
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <pre><code data-trim contenteditable>
-
-class Calculator
-{
-    public function add($a, $b)
-    {
-        return $a + $b;
-    }
-}
                         </code></pre>
 
                     </section>
+                    <section>
+                        <p class="left_align">
+                            Bootstrap example (Laravel)
+                        </p>
+                        <p class="left_align">
+                            Runs before all tests
+                        </p>
+                        <pre><code data-trim contenteditable>
+require __DIR__.'/vendor/autoload.php';
+
+date_default_timezone_set('UTC');
+Carbon\Carbon::setTestNow(Carbon\Carbon::now());
+                        </code></pre>
+                    </section>
 
                     <section>
-                    <pre><code data-trim contenteditable>
-class CalculatorTest extends PHPUnit_Framework_TestCase
+                        <img class="noframes" src="img/testimony/phpunit_directory_structure.jpg">
+                    </section>
+                    <section>
+                        <h2>
+                            Test structure
+                        </h2>
+
+                        <p class="left_align">
+                            The tests for a class <span class="red_text">Class</span> go into a class <span class="red_text">ClassTest</span>
+                        </p>
+
+                        <p class="left_align">
+                            ClassTest inherits (most of the time) from <span class="red_text">PHPUnit_Framework_TestCase</span>
+                        </p>
+
+                        <p class="left_align">
+                            The tests are public methods that are named <span class="red_text">test*</span>
+                        </p>
+
+                        <p class="left_align">
+                            Inside the test methods assertion methods are used - <span class="red_text">assert*</span>
+                        </p>
+
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            PhpUnit test example (Laravel ConsoleScheduledEventTest)
+                        </p>
+                        <pre><code data-trim contenteditable>
+// Some parts of code removed intentionaly
+class ConsoleScheduledEventTest extends PHPUnit_Framework_TestCase
 {
-    protected $calculator;
+/**
+    * The default configuration timezone.
+    *
+    * @var string
+    */
+    protected $defaultTimezone;
 
     public function setUp()
     {
-        $this->calculator = new Calculator();
-        parent::setUp();
-    }
-
-    public function testSuccessfulAdd()
-    {
-        $this->assertEquals(9, $this->calculator->add(3, 6));
+        $this->defaultTimezone = date_default_timezone_get();
+        date_default_timezone_set('UTC');
     }
 
     public function tearDown()
     {
-    parent::tearDown();
+        date_default_timezone_set($this->defaultTimezone);
+        Carbon::setTestNow(null);
+        m::close();
+    }
+
+    public function testEventIsDueCheck()
+    {
+        $app = m::mock('Illuminate\Foundation\Application[isDownForMaintenance,environment]');
+        $app->shouldReceive('isDownForMaintenance')->andReturn(false);
+        $app->shouldReceive('environment')->andReturn('production');
+        Carbon::setTestNow(Carbon::create(2015, 1, 1, 0, 0, 0));
+
+        $event = new Event('php foo');
+        $this->assertEquals('* * * * 4 *', $event->thursdays()->getExpression());
+        $this->assertTrue($event->isDue($app));
+
+        $event = new Event('php foo');
+        $this->assertEquals('0 19 * * 3 *', $event->wednesdays()->at('19:00')->timezone('EST')->getExpression());
+        $this->assertTrue($event->isDue($app));
     }
 }
                         </code></pre>
+                    </section>
+                </section>
 
+                <section>
+                    <section>
+                        <h2>Testing doubles</h2>
+                        <ul>
+                            <li class="left_align">Dummy</li>
+                            <li class="left_align">Fake</li>
+                            <li class="left_align">Stub</li>
+                            <li class="left_align">Mock</li>
+                            <li class="left_align">Spy</li>
+                        </ul>
+                        <aside class="notes">
+                            Test doubles are a way of replacing all classes in our tests other than the one we are
+                            testing. They give us control on direct and indirect outputs that would have been generated
+                            by those classes. Understanding the role of the test double helps us to write better tests,
+                            and thus better code. If we manage to isolate the “collaborators” (the other objects
+                            involved in our test) using doubles and test our objects in isolation, then we have achieved
+                            modularity: our code is decoupled and the communication between objects is documented by our
+                            tests.
+                        </aside>
                     </section>
 
                     <section>
+                        <h2>Generation doubles doubles</h2>
+                        <ul>
+                            <li>phpunit/phpunit-mock-object</li>
+                            <li>phpspec/prophecy</li>
+                            <li>mockery/mockery</li>
+                            <li>phake/phake</li>
+                            <li>codeception/aspect-mock</li>
+                            <li>php-vci/php-vci</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Prophecy</h2>
+                        <p class="left_align">
+                            Highly opinionated mocking framework for PHP 5.3+
+                        </p>
+                        <p class="left_align">
+                            Created by Konstantin Kudryashov and contributors
+                        </p>
+                        <p class="left_align">
+                            Initially it was created to fulfil phpspec2 needs
+                        </p>
+                        <p class="left_align">
+                            From version 4.5 PHPUnit is the out-of-the-box support for Prophecy
+                        </p>
+                        <p class="left_align">
+                            Developers will be encouraged to use Prophecy instead of the PHPUnit mocks
+                        </p>
                         <p>
-                            <img class="noframes" src="img/testimony/test_1.png">
+                            <pre><code data-trim contenteditable>
+"require-dev": {
+    "phpspec/prophecy": "~1.0"
+},
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <p class="left_align">
+                            Every word has a logical meaning, even the name of the library itself (Prophecy)
+                        </p>
+                        <blockquote cite="https://github.com/phpspec/prophecy">
+                            &ldquo;Prophecy has been named that way because it concentrates on describing the future
+                            behavior of objects with very limited knowledge about them. But as with any other prophecy,
+                            those object prophecies can't create themselves - there should be a Prophet&rdquo;
+                        </blockquote>
+
+                        <p>
+                            <pre><code data-trim contenteditable>
+$prophet = new Prophecy\Prophet;
+                            </code></pre>
                         </p>
                     </section>
 
                     <section>
-                        <pre><code data-trim contenteditable>
-/**
-* @dataProvider getSuccessfulAddData
-*/
-public function testSuccessfulAdd($data)
-{
-    $this->assertEquals($data['result'],
-                        $this->calculator->add($data['a'], $data['b']));
-}
-
-public function getSuccessfulAddData()
-{
-    return array(
-        array(
-            array('a' => 1, 'b' => 2, 'result' => 3),
-            array('a' => 2, 'b' => 1, 'result' => 3),
-            array('a' => 0, 'b' => 1, 'result' => 1),
-            array('a' => 1, 'b' => 0, 'result' => 1),
-        )
-    );
-}
-                        </code></pre>
-
-                    </section>
-                    <section>
-                        <pre><code data-trim contenteditable>
-/**
-* @dataProvider getUnsuccessfulAddData
-*/
-public function testUnsuccessfulAdd($data)
-{
-    $this->setExpectedException($data['expectedException']);
-    $this->calculator->add($data['a'], $data['b']);
-}
-
-public function getUnsuccessfulAddData()
-{
-    return array(
-        array(
-            array('a' => 'string', 'b' => 2, 'result' => 2, 'expectedException' => 'Exception'),
-            array('a' => 2, 'b' => 'string', 'expectedException' => 'Exception'),
-            array('a' => 'string', 'b' => 'string', 'expectedException' => 'Exception'),
-        )
-    );
-}
-                        </code></pre>
-
-                    </section>
-
-                    <section>
-                        <p>
-                            <img class="noframes" src="img/testimony/test_2.png">
+                        <blockquote cite="http://thephp.cc/news/2015/02/phpunit-4-5-and-prophecy">
+                            &ldquo;The prophet creates prophecies by prophesizing them. Test double objects are then
+                            created by revealing their respective prophecy. You can think of a prophecy as the
+                            configuration for a test double that is stored in an object separate from the object
+                            (revelation) that acts as the test double.&rdquo;
+                        </blockquote>
+                        <p class="fragment">
+                            <span class="red_text">
+                                Confused?
+                            </span>
+                        </p>
+                        <p class="fragment">
+                            Show me some examples
                         </p>
                     </section>
-
                     <section>
-                        <pre><code data-trim contenteditable>
-class Calculator
+                        <h2>Dummy</h2>
+                        <p>
+                            Objects are passed around but never actually used
+                        </p>
+                    <pre><code data-trim contenteditable>
+class CustomerCardPrinter
 {
-    public function add($a, $b)
+    private $printer;
+    private $customer;
+
+    public function __construct(PrinterInterface $printer, CustomerInterface $customer)
     {
-        if (! is_int($a) or ! is_int($b)){
-            throw new Exception('Only integers allowed');
+        $this->printer = $printer;
+        $this->customer = $customer;
+    }
+
+    public function print()
+    {
+        if (! $this->printer->isAvailable()){
+            return false;
         }
-
-        return $a + $b;
     }
 }
-                        </code></pre>
 
+// Test
+public function testPrinterNotAvailable()
+{
+    $printerProphet = $this->prophesize('\SomeNamespace\SomePackage\PrinterInterface');
+    $printerProphet->isAvailable()->shouldBeCalled()->willReturn(false);
+
+    $dummyCustomerProphet = $this->prophesize('\SomeNamespace\SomeOtherPackage\CustomerInterface');
+
+    $customerCardPrinter = new CustomerCardPrinter($someDriverProphet->reveal(), $dummyPrinterProphet->reveal());
+
+    $printResult = $customerCardPrinter->print();
+
+    $this->assertFalse($expectedResult, $testResult);
+}
+                    </code></pre>
+                        <aside class="notes">
+                            Dummy objects just fills parameter lists
+                        </aside>
                     </section>
 
+                </section>
+
+                <section>
                     <section>
-                        <p>
-                            <img class="noframes" src="img/testimony/test_3.png">
+                        <h2>3 A of Unit testing</h2>
+                        <p class="left_align">
+                            <span class="red_text">A</span>rrange
+                        </p>
+                        <p class="left_align">
+                            <span class="red_text">A</span>ct
+                        </p>
+                        <p class="left_align">
+                            <span class="red_text">A</span>ssert
                         </p>
                     </section>
-
-
                     <section>
-                        <pre><code data-trim contenteditable>
-class ScientificCalculator
-{
-    public function complex($a)
-    {
-        return "Too complex $a";
-    }
-}
-
-class Calculator
-{
-    public function complex($a)
-    {
-        $scientificCalculator = new ScientificCalculator();
-
-        return $scientificCalculator->complex($a);
-    }
-}
-                        </code></pre>
-
-                    </section>
-
-                    <section>
-                        <p>
-                            <img class="noframes" src="img/testimony/wrong.jpg">
+                        <p class="left_align">
+                            Arrange = Setup
                         </p>
-                    </section>
-
-                    <section>
-                        <pre><code data-trim contenteditable>
-class ScientificCalculator
-{
-    public function complex($a)
-    {
-        return "Too complex $a";
-    }
-}
-
-class Calculator
-{
-    protected $scientificCalculator;
-
-    public function __construct(ScientificCalculator $scientificCalculator)
-    {
-        $this->scientificCalculator = $scientificCalculator;
-    }
-
-    public function complex($a)
-    {
-        return $this->scientificCalculator->complex($a);
-    }
-}
-                        </code></pre>
-
-                    </section>
-
-                    <section>
-                        <pre><code data-trim contenteditable>
-class CalculatorTest extends PHPUnit_Framework_TestCase
-{
-    protected $calculator;
-
-    public function setUp()
-    {
-        $this->calculator = new Calculator(new ScientificCalculator());
-        parent::setUp();
-    }
-    ...
-                        </code></pre>
-
-                    </section>
-
-                    <section>
-                        <p>
-                            <img class="noframes" src="img/testimony/wrong.jpg">
+                        <p class="left_align">
+                            Act = Poke
                         </p>
-                    </section>
-
-                    <section>
-                        <pre><code data-trim contenteditable>
-class CalculatorTest extends PHPUnit_Framework_TestCase
-{
-    protected $calculator;
-    protected $scientificCalculatorMock;
-
-    public function setUp()
-    {
-        $this->scientificCalculatorMock = $this->getMockBuilder('ScientificCalculator')->getMock();
-        $this->calculator = new Calculator($this->scientificCalculatorMock);
-        parent::setUp();
-    }
-
-
-public function testSuccessfulComplex()
-{
-    $a = 1;
-    $returnValue = "Something";
-
-    $this->scientificCalculatorMock
-        ->expects($this->once())
-        ->method('complex')
-        ->with($this->equalTo($a))
-        ->will($this->returnValue($returnValue));
-
-    $this->assertEquals($returnValue, $this->calculator->complex($a));
-}
-                        </code></pre>
-
-                    </section>
-
-                    <section>
-                        <p>
-                            <img class="noframes" src="img/testimony/test_4.png">
+                        <p class="left_align">
+                            Assert = Verify
                         </p>
+
+                        <aside class="notes">
+                            Meszaros adds one more element - teardown (cleanup)
+                        </aside>
+                    </section>
+                    <section>
+                    <pre><code data-trim contenteditable>
+public function testSuccessful()
+{
+    // ARRANGE
+    $someDriverProphet = $this->prophesize('\SomeNamespace\SomePackage\SomeDriverInterface');
+    $someDriverProphet->doSomething()->shouldBeCalled()->willReturn('value');
+    $testedClass = new TestedClass($someDriverProphet);
+
+    // ACT
+    $testResult = $testedClass->testedMethod();
+
+    // ASSERT
+    $this->assertSomething($expectedResult, $testResult);
+}
+                    </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>
+                            Structuring Unit Tests
+                        </h2>
+                        <ul>
+                            <li>
+                                One test class per tested class
+                            </li>
+                            <li>
+                                One test class per method of tested class
+                            </li>
+                        </ul>
                     </section>
                 </section>
 
                 <section>
-                    <p>
-                        <img class="noframes" src="img/testimony/code-coverage.png">
-                    </p>
+                    <section>
+                        <img class="noframes" src="img/testimony/advice.jpg">
+                    </section>
+                    <section>
+                        <p>
+                            1. Try with writing tests after writing the code
+                        <p>
+                    </section>
+                    <section>
+                        <p>
+                            2. When you get confidence try to write tests before the code
+                        <p>
+                    </section>
+                    <section>
+                        <p>
+                            3. Treat test like your code - keep it "clean"
+                        <p>
+                        <p class="fragment">
+                            <ul>
+                                <li>
+                                    Be descriptive about what you are testing
+                                </li>
+                                <li>
+                                    Do not duplicate test code
+                                </li>
+                                <li>
+                                    Do not make tests complex
+                                </li>
+                            </ul>
+                        </p>
+                        <aside class="notes">
+                            Tests are clean if they are readable. What make them readable is clarity, simplicity and
+                            density of expression - Clean Code - Robert C Martin
+                            "What makes a clean test? Three things - Readability, readability, readability
+                            Readability is even more important than in production code
 
-                    <aside class="notes">
-                        The higher code coverage makes your confidence also high - less fear of change
-                    </aside>
-                </section>
+                            Keep in mind that testing code is important as production code - maybe more important. It must
+                            be clean as production code. Code changes and that means that your tests also changes - if you
+                            write them bad than you have big problem - double problem. You are not safe anymore. You will start
+                            writing code without tests.
 
-                <section>
-                    <p class="red_text">
-                        Test branch coverage not code coverage
+                            Unit tests keep our code flexible, maintainable and reusable. Without them we loose everything.
+                            With good tests we can improve architecture and design without having the fear of introducing
+                            bugs.
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            4. Number of asserts in a test ought to be minimized
+                        </p>
+                        <aside class="notes">
+                            One assert per test story...
+                            Better use Single Concept per Test
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            5. Use Virtual Environments
+                        </p>
+                        <p>
+                            <img class="noframes" src="img/testimony/vagrant_docker.png">
+                        </p>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            6. Run tests often
+                        </p>
+                        <aside class="notes">
+                            Run all your unit tests as often as possible, ideally every time the code is changed and
+                            before any commit. Running tests often gives you confidence that your changes didn't break
+                            anything and generally lowers the stress of programming in the dark. For larger systems,
+                            you may just run specific test suites that are relevant to the code you're working on. Run
+                            all your acceptance, integration, stress, and unit tests at least once per day (or night).
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            7. Test Boundary Conditions
+                        </p>
+                        <aside class="notes">
+                            Take care about testing boundary values
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            8. Use test saboteurs (Humbug project)
+                        </p>
+                        <aside class="notes">
+                            Mutation Testing is, in a nutshell, giving your unit tests a run for their money. It
+                            involves injecting small defects into source code and then checking if the unit tests
+                            noticed. If they do, then your unit tests have "killed" the mutation. If not, the mutation
+                            has escaped detection. As unit tests are intended to prevent regressions, having a real
+                            regression pass unnoticed would be a bad thing! Whereas Code Coverage can tell you what code
+                            your tests are executing, Mutation Testing is intended to help you judge how well your unit
+                            tests actually perform and where they could be improved.
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            9. Use test coverage
+                        </p>
+                        <p>
+                            <img class="noframes" src="img/testimony/code-coverage.png">
+                        </p>
+
+                        <aside class="notes">
+                            The higher code coverage makes your confidence also high - less fear of change
+                        </aside>
+                    </section>
+
+                    <section>
+                        <p class="red_text">
+                            Test branch coverage not only code coverage
                         <pre><code data-trim contenteditable>
-sampleMethod(){
+sampleMethod()
+{
     if (a < 5 and b > 10){
-        return a + b;
+       return a + b;
     }
 
     return $a - $b;
 }
-                    </code></pre>
-                    </p>
-
-                </section>
-
-                <section>
-                    <section>
-                        <h2>Mockery</h2>
-                        <p>
-                            Created by Pádraic Brady and contributors
-                        </p>
-                        <p>
-                            Simple, powerful framework for creating Mock Objects
-                        </p>
-                        <p>
-                            Install through Composer
-                        </p>
-                        <pre><code data-trim contenteditable>
-"require-dev": {
-    "mockery/mockery": "0.9.*@dev"
-},
-                        </code></pre>
-                    </section>
-
-                    <section>
-                        <h2>
-                            Mock method
-                        </h2>
-                        <p>
-                        <pre><code data-trim contenteditable>
-$mockedObject = Mockery::mock('\Show\ExampleClass');
                         </code></pre>
                         </p>
-                        <p>Partial mocks</p>
-                        <p>
-                            <pre><code data-trim contenteditable>
-                            $mockedObject = Mockery::mock('\Show\ExampleClass[save, send]');
-                            </code></pre>
-                        </p>
-                        <p>
-                            <pre><code data-trim contenteditable>
-                            $mockedObject = Mockery::mock('\Show\ExampleClass')->makePartial();
-                            </code></pre>
-                        </p>
-                    </section>
 
-                    <section>
-                        <h2>Should Receive</h2>
-                            <p>
-                            <pre><code data-trim contenteditable>
-$this->mock->shouldReceive('methodName');
-                            </code></pre>
-                            </p>
                     </section>
                     <section>
-                        <h2>Once, Twice, Times(n), Never</h2>
                         <p>
-                            <pre><code data-trim contenteditable>
-$this->mock
-     ->shouldReceive('methodName')
-     ->once();
-                            </code></pre>
-                        </p>
-                        <p>
-                            <pre><code data-trim contenteditable>
-$this->mock
-     ->shouldReceive('methodName')
-     ->never();
-                            </code></pre>
+                            10. Test before refactoring
                         </p>
                     </section>
                     <section>
-                        <h2>With</h2>
                         <p>
-                            <pre><code data-trim contenteditable>
-$this->mock
-     ->shouldReceive('methodName')
-     ->once()
-     ->with($params);
-                            </code></pre>
+                            11. Write unit tests for each bug you are going to fix
                         </p>
                     </section>
                     <section>
-                        <h2>And Return</h2>
                         <p>
-                            <pre><code data-trim contenteditable>
-$mockedObject = Mockery::mock('\Show\ExampleClass');
-$mockedObject
-    ->shouldReceive('all')
-    ->once()
-    ->with($param)
-    ->andReturn('foo');
-                            </code></pre>
+                            Have fun testing :-)
                         </p>
                     </section>
                 </section>
-				<section>
-                    <h2>
-                        Testing in Laravel 4
-                    </h2>
 
-                    <p>
-                        Built with unit testing in mind
-                    </p>
+                    <section>
+                        <h2>Advices</h2>
 
-                    <p>
-                        Utilizes the Symfony HttpKernel, DomCrawler, and BrowserKit components
-                    </p>
+                        <p class="fragment">
+                            Use continuous integration server
+                        <p>
 
-                    <p>
-                        All tests inherit app/tests/TestCase.php file
-                    </p>
-				</section>
-                <section>
-                    <pre><code data-trim contenteditable>
-class TestCase extends Illuminate\Foundation\Testing\TestCase {
-    /**
-    * Creates the application.
-    *
-    * @return \Symfony\Component\HttpKernel\HttpKernelInterface
-    */
-    public function createApplication()
-    {
-        $unitTesting = true;
-        $testEnvironment = 'testing';
-        return require __DIR__.'/../../bootstrap/start.php';
-    }
-}
-                    </code></pre>
+                    </section>
+                    <aside class="notes">
+                        Test early, test often, test automatically
+
+                        When you test two related classes keep in mind that expectations meets actions and answers
+                        match assertions
+                    </aside>
                 </section>
-                <section>
-                    <pre><code data-trim contenteditable>
-abstract class TestCase extends \PHPUnit_Framework_TestCase {
-
-use ApplicationTrait, AssertionsTrait;
-                        ...
-                    </code></pre>
-                </section>
-				<section>
-                    <p>
-                        <span class="red_text">ApplicationTrait</span>
-                    </p>
-                    <p class="left_align">
-                        <span class="red_text">cal(...)</span> - Call the given URI and return the Response
-                    </p>
-
-                    <p class="left_align">
-                        <span class="red_text">action(...)</span> - Call a controller action and return the Response
-                    </p>
-
-                    <p class="left_align">
-                        <span class="red_text">route(...)</span> - Call a named route and return the Response
-                    </p>
-
-                    <p class="left_align">
-                        <span class="red_text">seed($class = 'DatabaseSeeder')</span> - Seed a given database connection
-                    </p>
-
-                    <p class="left_align">
-                        <span class="red_text">be(...)</span> - Set the currently logged in user for the application
-                    </p>
-				</section>
-				<section>
-                    <p class="cc_logo_fix_50">
-                        <span class="red_text">AssertionsTrait</span>
-                    </p>
-                    <p class="left_align">
-                        <span class="red_text">assertResponseOk()</span> - Assert that the client response has an OK status code
-                    </p>
-
-                    <p class="left_align">
-                        <span class="red_text">assertResponseStatus($code)</span> - Assert that the client response has a given code
-                    </p>
-
-                    <p class="left_align">
-                        <span class="red_text">assertViewHas($key, $value = null)</span> - Assert that the response view has a given piece of bound data
-                    </p>
-
-                    <p class="left_align">
-                        <span class="red_text">assertRedirectedTo($uri, $with = array())</span> - Assert whether the client was redirected to a given URI
-                    </p>
-				</section>
-                <section>
-                    <h2>Mocking facades</h2>
-                    <pre><code data-trim contenteditable>
-public function crypt()
-{
-    Crypt::setKey('someKey');
-}
-
-                    </code></pre>
-                    <pre><code data-trim contenteditable>
-public function testCrypt()
-{
-    Crypt::shouldReceive('setKey')->once()->with($key);
-}
-                    </code></pre>
-                    <p>
-                        shouldReceive method called on the facade return an instance of a Mockery mock
-                    </p>
-                </section>
-				<section>
-                    <pre><code data-trim contenteditable>
-public function __construct(User $userModel)
-{
-    $this->userModel = $userModel;
-}
-public function store()
-{
-    $userData = Input::all();
-
-    if(! $this->userModel->validate($userData)){
-        throw new StoreResourceFailedException($this->userModel->getErrors());
-    }
-
-    try{
-        $userModel = $this->userModel->create($userData);
-
-        if (! $userModel instanceof User){
-            throw new StoreResourceFailedException();
-        }
-
-        return $userModel;
-    }catch (Exception $e){
-        throw new StoreResourceFailedException('Failed');
-    }
-}
-                        </code></pre>
-				</section>
-
-				<section>
-				    <section>
-                        <pre><code data-trim contenteditable>
-use Mockery as m;
-
-class UserControllerTest extends TestCase
-{
-    public function setUp()
-    {
-        parent::setUp();
-        $this->userModel = m::mock('Eloquent', 'Api\Models\User');
-    }
-
-
-    public function tearDown()
-    {
-        parent::tearDown();
-        m::close();
-    }
-                            ...
-                        </code></pre>
-				    </section>
-				    <section>
-                        <pre><code data-trim contenteditable>
-public function testSuccessfulStore()
-{
-    $data = ['first_name' => 'John', 'last_name' => 'Doe', 'email' => 'john@johndoe.com'];
-
-    $this->userModel
-        ->shouldReceive('validate')
-        ->once()
-        ->with($data)
-        ->andReturn(true);
-
-    $mockedUserModel = m::mock('Eloquent', 'Api\Models\User');
-
-    $this->userModel
-        ->shouldReceive('create')
-        ->once()
-        ->andReturn($mockedUserModel);
-
-    $this->app->instance('Models\User', $this->userModel);
-
-    $response = $this->call('POST', $this->createUri('users'));
-
-    $this->assertResponseOk();
-    $this->assertContains(json_encode($data), $response->getContent());
-}
-                        </code></pre>
-				    </section>
-				    <section>
-                        <pre><code data-trim contenteditable>
-public function testUnsuccessfulStore()
-{
-    $data = ['first_name' => 'John', 'last_name' => 'Doe'];
-    $errorMessage = 'Error';
-
-    $this->userModel
-        ->shouldReceive('validate')
-        ->once()
-        ->with($data)
-        ->andReturn(false);
-
-    $this->userModel
-        ->shouldReceive('getErrors')
-        ->once()
-        ->andReturn($errorMessage);
-
-    $this->userModel
-        ->shouldReceive('create')
-        ->never();
-
-    $this->app->instance('Models\User', $this->userModel);
-
-    $response = $this->call('POST', $this->createUri('users'));
-
-    $this->assertResponseStatus(422);
-    $this->assertContains($errorMesage, $response->getContent());
-}
-                        </code></pre>
-				    </section>
-				</section>
-
                 <section>
                     <section>
                         <h2>Programming sins</h2>
@@ -1232,75 +1296,14 @@ public function testUnsuccessfulStore()
                 </section>
                 <section>
                     <section>
-                        <h2>Advices</h2>
-                        <p class="fragment">
-                           Try with writing tests after writing the code
-                        <p>
-                        <p class="fragment">
-                            Do not make tests complex
-                        <p>
-                        <p class="fragment">
-                            Do not duplicate test code
-                        <p>
-                        <p class="fragment">
-                            Be descriptive about what you are testing
-                        <p>
-                        <p class="fragment">
-                            Treat test like your code - keep it "clean"
-                        <p>
-
-                        <aside class="notes">
-                            Tests are clean if they are readable. What make them readable is clarity, simplicity and
-                            density of expression - Clean Code - Robert C Martin
-                            "What makes a clean test? Three things - Readability, readability, readability
-                            Readability is even more important than in production code
-                            One assert per test
-
-                        </aside>
-
-                    </section>
-
-                    <section>
-                        <h2>Advices</h2>
-
-                        <p class="fragment">
-                            Run tests often - after every change and before any commit
-                        <p>
-
-                        <p class="fragment">
-                            Test before refactoring
+                        <h2>Facts</h2>
+                        <p class="left_align">
+                            Once you start testing You wont want to write code without tests again
                         </p>
-
-                        <p class="fragment">
-                            Use test saboteurs (Humbug project)
-                        <p>
-
-                        <p class="fragment">
-                            When you get confidence try to write tests before the code
-                        <p>
+                        <p class="left_align">
+                            You are not good developer if you are not good tester
+                        </p>
                     </section>
-
-                    <section>
-                        <h2>Advices</h2>
-
-                        <p class="fragment">
-                            Use "learning tests" when you work with external API
-                        <p>
-
-                        <p class="fragment">
-                            Use continuous integration server
-                        <p>
-
-                    </section>
-                    <aside class="notes">
-                        Test early, test often, test automatically
-
-                        When you test two related classes keep in mind that expectations meets actions and answers
-                        match assertions
-
-                        Jim Newkirk introduced term learning tests. It's better to write tests for some external API
-                        while you are learning. Once API version change you can just run your tests.
-                    </aside>
                 </section>
 
                 <section>
@@ -1318,6 +1321,16 @@ public function testUnsuccessfulStore()
                             <li><a href="http://blog.typemock.com/2009/03/the-cost-of-test-driven-development.html">http://blog.typemock.com/2009/03/the-cost-of-test-driven-development.html</a></li>
                             <li><a href="http://lh5.ggpht.com/-jDpF-eS-6TE/UQo_mozEkkI/AAAAAAAAHUg/uu9F08Atq9I/wrong_thumb%25255B39%25255D.jpg?imgmax=800">http://lh5.ggpht.com/-jDpF-eS-6TE/UQo_mozEkkI/AAAAAAAAHUg/uu9F08Atq9I/wrong_thumb%25255B39%25255D.jpg?imgmax=800</a></li>
                             <li><a href="https://vimeo.com/63492364"></a>Sebastian Bergmann in Atlanta</li>
+                            <li><a href="https://github.com/ghsukumar/SFDC_Best_Practices/wiki/F.I.R.S.T-Principles-of-Unit-Testing"></a>F.I.R.S.T Principles of Unit Testing</li>
+                            <li><a href="http://agileinaflash.blogspot.de/2009/02/first.html"></a>First principles</li>
+                            <li><a href="https://pragprog.com/magazines/2012-01/unit-tests-are-first"></a>Prag prog blog</li>
+                            <li><a href="http://sqa.fyicenter.com/FAQ/JUnit/How_Often_Should_You_Run_Your_JUnit_Tests_.html"></a>How Often Should You Run Your JUnit Tests?</li>
+                            <li><a href="http://www.daedtech.com/"></a>Daed blog</li>
+                            <li><a href="https://developer.salesforce.com/page/How_to_Write_Good_Unit_Tests/"></a>Salesforce blog</li>
+                            <li><a href="http://googletesting.blogspot.co.uk/2015/04/just-say-no-to-more-end-to-end-tests.html"></a>Google testing blog</li>
+                            <li><a href="http://less.works/less/technical-excellence/unit-testing.html"></a>Unit testing blog</li>
+                            <li><a href="http://techportal.inviqa.com/2013/07/23/php-test-doubles-patterns-with-prophecy/"></a>Testing doubles</li>
+                            <li><a href="http://www.martinfowler.com/bliki/Xunit.html"></a>Martin Fowler about XUnit</li>
                         </ul>
                     </section>
                     <section>
@@ -1332,6 +1345,12 @@ public function testUnsuccessfulStore()
                             <li><a href="http://quotespics.com/wp-content/quote-images/i-dont-always-test-my-code.jpg">Testing code in production</a></li>
                             <li><a href="http://financialjuneteenth.com/wp-content/uploads/2015/02/hard-work.jpg">Hard work</a></li>
                             <li><a href="https://www.dashingd3js.com/assets/steep_learning_curve-7c6e27560aabbd16a3ddb4eca06fe2fb.jpg">Steep learning curve</a></li>
+                            <li><a href="https://cdn.psychologytoday.com/files/u570/5%3A25%3A10%20Getting%20Advice.jpg">Advice</a></li>
+                            <li><a href="http://toptradersunplugged.com/wp-content/uploads/2015/05/TrueFalse2.jpeg">True or false</a></li>
+                            <li><a href="http://2.bp.blogspot.com/-YTzv_O4TnkA/VTgexlumP1I/AAAAAAAAAJ8/57-rnwyvP6g/s1600/image02.png">Testing pyramid</a></li>
+                            <li><a href="http://magentys.io/wp-content/uploads/2015/07/inverted-pyramid.png">Inverted Testing pyramid</a></li>
+                            <li><a href="http://www.getautoma.com/img/blog/test_hour_glass.png">Hourglass</a></li>
+                            <li><a href="https://s3-us-west-2.amazonaws.com/lysender.junk/uploads/2010/02/kohana-phpunit-001-crop.jpg">Kohana testing structure</a></li>
                         </ul>
                     </section>
 				</section>
@@ -1378,7 +1397,3 @@ public function testUnsuccessfulStore()
 
 	</body>
 </html>
-<!--
-@todo
-Dodati jos neki primer za L4 - integration testing
--->
