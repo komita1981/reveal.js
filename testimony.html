@@ -172,6 +172,10 @@
                     </p>
 
                     <p class="fragment left_align">
+                        Reduce number of bugs
+                    </p>
+
+                    <p class="fragment left_align">
                         Facilitate change
                     </p>
 
@@ -184,6 +188,10 @@
                     </p>
 
                     <p class="fragment left_align">
+                        Improve understanding how clients are going to use your code
+                    </p>
+
+                    <p class="fragment left_align">
                         Enhance security
                     </p>
 
@@ -193,17 +201,14 @@
 
                     <aside class="notes">
                         Prove you've done your work - Help you check much faster if you're work is done. Testing is an
-                        insurance that the system works. Let you apply changes with less worries - refactoring will
-                        improve things without breaking anything.
+                        insurance that the system works.
 
-                        Facilitates change - protect you from breaking things - guard from regression bugs.
+                        Facilitates change - protect you from breaking things - guard from regression bugs. Let you apply
+                        changes with less worries - refactoring will improve things without breaking anything.
 
-                        Having a bug in the code means carrying a
+                        Reduce number of bugs - Having a bug in the code means carrying a
                         risk. Utilising a set of unit tests, engineers can dramatically reduce number of bugs and the
                         risk with untested code - It better for you that you find your bugs than your client.
-
-                        Quality is everyone’s responsibility—especially - ours - developer’s.
-
                     </aside>
                 </section>
                 <section>
@@ -236,11 +241,7 @@
                         </p>
                         <aside class="notes">
                             Good ideas often fail in practice, and in the world of testing, one pervasive good idea that
-                            often fails in practice is a testing strategy built around end-to-end tests. Testers can
-                            invest their time in writing many types of automated tests, including unit tests,
-                            integration tests, and end-to-end tests, but this strategy invests mostly in end-to-end
-                            tests that verify the product or service as a whole. Typically, these tests simulate real
-                            user scenarios.
+                            often fails in practice is a testing strategy built around end-to-end tests.
 
                             Unit tests do have one major disadvantage: even if the units work well in isolation, you do
                             not know if they work well together. But even then, you do not necessarily need end-to-end
@@ -306,8 +307,14 @@
                     <h2>
                         What is unit testing?
                     </h2>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         A software testing method to test individual unit of source code - a method in class or a piece of code
+                    </p>
+                    <p class="fragment left_align">
+                        The purpose of unit testing is not for finding bugs
+                    </p>
+                    <p class="fragment left_align">
+                        Specification for the expected behaviours of the code under test
                     </p>
                     <aside class="notes">
                         When writing unit tests we are focusing on describing one unit of behaviour at a time, and how
@@ -511,8 +518,8 @@
                         Only write code if you absolutely have to and always know what your code is supposed to do before
                         you start writing it - and that is what TDD approach provides for you
 
-                        I’ve found that writing my unit tests first helps me better understand how clients of my code
-                        are going to use it.
+                        “Red-Green-Refactor,” meaning that you start with a failing test, then pass it, and then make
+                        your code readable and more maintainable.
                     </aside>
                 </section>
 
@@ -1272,13 +1279,13 @@ function it_notifies_an_attached_subscriber()
                     <section>
                         <h2>3 A of Unit testing</h2>
                         <p class="left_align">
-                            <span class="red_text">A</span>rrange
+                            <span class="red_text">A</span>rrange objects, creating and setting them up as necessary.
                         </p>
                         <p class="left_align">
-                            <span class="red_text">A</span>ct
+                            <span class="red_text">A</span>ct on an object
                         </p>
                         <p class="left_align">
-                            <span class="red_text">A</span>ssert
+                            <span class="red_text">A</span>ssert that something is as expected
                         </p>
                     </section>
                     <section>
@@ -1516,12 +1523,33 @@ if ($account->getUser()->getRole()->IsAdmin()) {
                     </section>
                     <section>
                         <p class="left_align">
-                            19. Use continuous integration server
+                           19. Use data providers
                         </p>
+                        <pre><code data-trim contenteditable>
+/**
+* @dataProvider getSuccessfulAddData
+*/
+public function testSuccessfulAdd($a, $b, $result)
+{
+    $this->assertEquals($result,
+    $this->calculator->add($a, $b));
+}
+
+public function getSuccessfulAddData()
+{
+    return [
+        ['a' => 1, 'b' => 2, 'result' => 3],
+        ['a' => 2, 'b' => 1, 'result' => 3],
+        ['a' => 0, 'b' => 1, 'result' => 1],
+        ['a' => 1, 'b' => 0, 'result' => 1],
+    ];
+}
+                    </code></pre>
                     </section>
+
                     <section>
                         <p class="left_align">
-
+                            20. Use continuous integration server
                         </p>
                     </section>
                 </section>
@@ -1536,15 +1564,35 @@ if ($account->getUser()->getRole()->IsAdmin()) {
                             You are not good developer if you are not good tester
                         </p>
                         <p class="fragment left_align">
+                            Quality is everyone’s responsibility — especially ours - developer’s.
+                        </p>
+                        <p class="fragment left_align">
                             Testing is fun :-)
                         </p>
                     </section>
                 </section>
 
                 <section>
-                    <p>
-                        <img height="680" class="noframes" src="img/testimony/laravel_testing_decoded.jpg">
-                    </p>
+                    <section>
+                        <p>
+                            <img height="680" class="noframes" src="img/testimony/phpunit_documentation.jpg">
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <img height="680" class="noframes" src="img/testimony/test_driven_development_by_example.jpg">
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <img height="680" class="noframes" src="img/testimony/laravel_testing_decoded.jpg">
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <img height="680" class="noframes" src="img/testimony/the_art_of_unit_testing.png">
+                        </p>
+                    </section>
                 </section>
 				<section>
                     <section>
