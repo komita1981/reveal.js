@@ -133,18 +133,6 @@
                 </section>
 
                 <section>
-                    <p>
-                        <img class="noframes" src="img/testimony/true_or_false.png">
-                    </p>
-                </section>
-
-                <section>
-                    <p>
-                        <img class="noframes" src="img/testimony/results_or_excuses.jpg">
-                    </p>
-                </section>
-
-                <section>
                     <h2>What testing really is?</h2>
 
                     <p class="fragment left_align">
@@ -843,7 +831,7 @@ Carbon\Carbon::setTestNow(Carbon\Carbon::now());
                         </p>
 
                         <p class="left_align">
-                            ClassTest inherits (most of the time) from <span class="red_text">PHPUnit_Framework_TestCase</span>
+                            <span class="red_text">ClassTest</span> inherits from <span class="red_text">PHPUnit_Framework_TestCase</span>
                         </p>
 
                         <p class="left_align">
@@ -953,7 +941,8 @@ class ConsoleScheduledEventTest extends PHPUnit_Framework_TestCase
                         <p class="left_align">
                             Developers will be encouraged to use Prophecy instead of the PHPUnit mocks
                         </p>
-                        <p>
+                        <p class="left_align">
+                            Composer install
                             <pre><code data-trim contenteditable>
 "require-dev": {
     "phpspec/prophecy": "~1.0"
@@ -996,7 +985,7 @@ $prophet = new Prophecy\Prophet;
                     </section>
                     <section>
                         <h2>Dummy</h2>
-                        <p>
+                        <p class="left_align">
                             Objects are passed around but never actually used
                         </p>
                     <pre><code data-trim contenteditable>
@@ -1016,6 +1005,8 @@ class CustomerCardPrinter
         if (! $this->printer->isAvailable()){
             return false;
         }
+        $customerName = $customer->getName();
+        // some code goes here
     }
 }
 
@@ -1037,6 +1028,53 @@ public function testPrinterNotAvailable()
                         <aside class="notes">
                             Dummy objects just fills parameter lists
                         </aside>
+                    </section>
+                    <section>
+                        <h2>Fake</h2>
+                        <p class="left_align">
+                            The output of the method isn’t important
+                        </p>
+                        <p class="left_align">
+                            Prophecy will not tolerate faking a method that hasn’t been declared anywhere
+                        </p>
+                        <pre><code data-trim contenteditable>
+class MarkdownTest extends TestCase
+{
+    /** @test */
+    function it_attaches_default_events()
+    {
+        $eventDispatcher = $this->prophesize('Markdown\Event\EventDispatcher');
+        $eventDispatcher->addListener(Argument::type('Markdown\Event\EndOfLineListener'));
+        $markdown = new Markdown($eventDispatcher->reveal());
+        // continue with some assertions on $markdown...
+    }
+}
+                        </code></pre>
+
+                    </section>
+
+                    <section>
+                        <pre><code data-trim contenteditable>
+interface PrinterInterface
+{
+    public function isAvailable();
+}
+class Printer implements PrinterInterface
+{
+    public function isAvailable()
+    {
+        // some code goes here
+    }
+}
+
+class FakePrinter implements PrinterInterface
+{
+    public function isAvailable()
+    {
+        return true;
+    }
+}
+                        </code></pre>
                     </section>
 
                 </section>
@@ -1108,19 +1146,19 @@ public function testSuccessful()
                         <img class="noframes" src="img/testimony/advice.jpg">
                     </section>
                     <section>
-                        <p>
+                        <p class="left_align">
                             1. Try with writing tests after writing the code
-                        <p>
+                        <p class="left_align">
                     </section>
                     <section>
-                        <p>
+                        <p class="left_align">
                             2. When you get confidence try to write tests before the code
-                        <p>
+                        <p class="left_align">
                     </section>
                     <section>
-                        <p>
+                        <p class="left_align">
                             3. Treat test like your code - keep it "clean"
-                        <p>
+                        <p class="left_align">
                         <p class="fragment">
                             <ul>
                                 <li>
@@ -1151,7 +1189,7 @@ public function testSuccessful()
                         </aside>
                     </section>
                     <section>
-                        <p>
+                        <p class="left_align">
                             4. Number of asserts in a test ought to be minimized
                         </p>
                         <aside class="notes">
@@ -1160,17 +1198,17 @@ public function testSuccessful()
                         </aside>
                     </section>
                     <section>
-                        <p>
+                        <p class="left_align">
                             5. Use Virtual Environments
                         </p>
-                        <p>
+                        <p class="left_align">
                             <img class="noframes" src="img/testimony/vagrant_docker.png">
                         </p>
                         <aside class="notes">
                         </aside>
                     </section>
                     <section>
-                        <p>
+                        <p class="left_align">
                             6. Run tests often
                         </p>
                         <aside class="notes">
@@ -1182,7 +1220,7 @@ public function testSuccessful()
                         </aside>
                     </section>
                     <section>
-                        <p>
+                        <p class="left_align">
                             7. Test Boundary Conditions
                         </p>
                         <aside class="notes">
@@ -1190,7 +1228,7 @@ public function testSuccessful()
                         </aside>
                     </section>
                     <section>
-                        <p>
+                        <p class="left_align">
                             8. Use test saboteurs (Humbug project)
                         </p>
                         <aside class="notes">
@@ -1204,10 +1242,10 @@ public function testSuccessful()
                         </aside>
                     </section>
                     <section>
-                        <p>
+                        <p class="left_align">
                             9. Use test coverage
                         </p>
-                        <p>
+                        <p class="left_align">
                             <img class="noframes" src="img/testimony/code-coverage.png">
                         </p>
 
@@ -1233,67 +1271,57 @@ sampleMethod()
 
                     </section>
                     <section>
-                        <p>
+                        <p class="left_align">
                             10. Test before refactoring
                         </p>
                     </section>
                     <section>
-                        <p>
+                        <p class="left_align">
                             11. Write unit tests for each bug you are going to fix
                         </p>
                     </section>
                     <section>
-                        <p>
+                        <p class="left_align">
+                            12. Think twice before using New Operators - new ClassName()
+                        </p>
+                    </section>
+                    <section>
+                        <p class="left_align">
+                            13. Think twice before using statics - SomeClass::someMethod()
+                        </p>
+                    </section>
+                    <section>
+                        <p class="left_align">
+                            14. Avoid endless "anding" - Breaking SRP
+                        </p>
+                    </section>
+                    <section>
+                        <p class="left_align">
+                            15. Avoid using switch-case often - use design patterns instead
+                        </p>
+                    </section>
+                    <section>
+                        <p class="left_align">
+                            16. Avoid using too many dependencies - max 4 dependencies
+                        </p>
+                    </section>
+                    <section>
+                        <p class="left_align">
+                            17. Avoid logic in constructor - only assign variables
+                        </p>
+                    </section>
+                    <section>
+                        <p class="left_align">
+                            Use continuous integration server
+                        </p>
+                    </section>
+                    <section>
+                        <p class="left_align">
                             Have fun testing :-)
                         </p>
                     </section>
                 </section>
 
-                    <section>
-                        <h2>Advices</h2>
-
-                        <p class="fragment">
-                            Use continuous integration server
-                        <p>
-
-                    </section>
-                    <aside class="notes">
-                        Test early, test often, test automatically
-
-                        When you test two related classes keep in mind that expectations meets actions and answers
-                        match assertions
-                    </aside>
-                </section>
-                <section>
-                    <section>
-                        <h2>Programming sins</h2>
-                        <p class="fragment">
-                            <span class="red_text">New Operators - new ClassName()</span>
-                        </p>
-                        <p class="fragment">
-                            <span class="red_text">Using statics</span> - SomeClass::someMethod()
-                        </p>
-                        <p class="fragment">
-                            <span class="red_text">Endless "anding"</span> - Break SRP
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2>Programming sins</h2>
-
-                        <p class="fragment">
-                            <span class="red_text">Logic in constructor</span> - only assign variables
-                        </p>
-
-                        <p class="fragment">
-                            <span class="red_text">Using switch-case often</span> - use design patterns instead
-                        </p>
-
-                        <p class="fragment">
-                            <span class="red_text">Too many dependencies</span> - max 4 dependencies
-                        </p>
-                    </section>
-                </section>
                 <section>
                     <section>
                         <h2>Facts</h2>
@@ -1315,33 +1343,28 @@ sampleMethod()
                     <section>
                         <h2>Resources</h2>
                         <ul>
-                            <li><a href="http://www.redbubble.com/people/fitbys/works/10613559-results-or-excuses-fitness-slogan-retro?p=art-print">http://www.redbubble.com/people/fitbys/works/10613559-results-or-excuses-fitness-slogan-retro?p=art-print</a></li>
-                            <li><a href="http://www.slideshare.net/damiansromek/php-tests-tips">http://www.slideshare.net/damiansromek/php-tests-tips</a></li>
-                            <li><a href="http://www.slideshare.net/ChonlasithJucksripor/unit-test-39809217">http://www.slideshare.net/ChonlasithJucksripor/unit-test-39809217</a></li>
-                            <li><a href="http://blog.typemock.com/2009/03/the-cost-of-test-driven-development.html">http://blog.typemock.com/2009/03/the-cost-of-test-driven-development.html</a></li>
-                            <li><a href="http://lh5.ggpht.com/-jDpF-eS-6TE/UQo_mozEkkI/AAAAAAAAHUg/uu9F08Atq9I/wrong_thumb%25255B39%25255D.jpg?imgmax=800">http://lh5.ggpht.com/-jDpF-eS-6TE/UQo_mozEkkI/AAAAAAAAHUg/uu9F08Atq9I/wrong_thumb%25255B39%25255D.jpg?imgmax=800</a></li>
-                            <li><a href="https://vimeo.com/63492364"></a>Sebastian Bergmann in Atlanta</li>
-                            <li><a href="https://github.com/ghsukumar/SFDC_Best_Practices/wiki/F.I.R.S.T-Principles-of-Unit-Testing"></a>F.I.R.S.T Principles of Unit Testing</li>
-                            <li><a href="http://agileinaflash.blogspot.de/2009/02/first.html"></a>First principles</li>
-                            <li><a href="https://pragprog.com/magazines/2012-01/unit-tests-are-first"></a>Prag prog blog</li>
-                            <li><a href="http://sqa.fyicenter.com/FAQ/JUnit/How_Often_Should_You_Run_Your_JUnit_Tests_.html"></a>How Often Should You Run Your JUnit Tests?</li>
-                            <li><a href="http://www.daedtech.com/"></a>Daed blog</li>
-                            <li><a href="https://developer.salesforce.com/page/How_to_Write_Good_Unit_Tests/"></a>Salesforce blog</li>
-                            <li><a href="http://googletesting.blogspot.co.uk/2015/04/just-say-no-to-more-end-to-end-tests.html"></a>Google testing blog</li>
-                            <li><a href="http://less.works/less/technical-excellence/unit-testing.html"></a>Unit testing blog</li>
-                            <li><a href="http://techportal.inviqa.com/2013/07/23/php-test-doubles-patterns-with-prophecy/"></a>Testing doubles</li>
-                            <li><a href="http://www.martinfowler.com/bliki/Xunit.html"></a>Martin Fowler about XUnit</li>
+                            <li><a href="http://www.slideshare.net/damiansromek/php-tests-tips">Php tests tips</a></li>
+                            <li><a href="http://www.slideshare.net/ChonlasithJucksripor/unit-test-39809217">Unit test prez</a></li>
+                            <li><a href="http://blog.typemock.com/2009/03/the-cost-of-test-driven-development.html">Cost of tdd</a></li>
+                            <li><a href="https://vimeo.com/63492364">Sebastian Bergmann in Atlanta</a></li>
+                            <li><a href="https://github.com/ghsukumar/SFDC_Best_Practices/wiki/F.I.R.S.T-Principles-of-Unit-Testing">F.I.R.S.T Principles of Unit Testing</a></li>
+                            <li><a href="http://agileinaflash.blogspot.de/2009/02/first.html">First principles</a></li>
+                            <li><a href="https://pragprog.com/magazines/2012-01/unit-tests-are-first">Prag prog blog</a></li>
+                            <li><a href="http://sqa.fyicenter.com/FAQ/JUnit/How_Often_Should_You_Run_Your_JUnit_Tests_.html">How Often Should You Run Your JUnit Tests?</a></li>
+                            <li><a href="http://www.daedtech.com/">Daed blog</a></li>
+                            <li><a href="https://developer.salesforce.com/page/How_to_Write_Good_Unit_Tests/">Salesforce blog</a></li>
+                            <li><a href="http://googletesting.blogspot.co.uk/2015/04/just-say-no-to-more-end-to-end-tests.html">Google testing blog</a></li>
+                            <li><a href="http://less.works/less/technical-excellence/unit-testing.html">Unit testing blog</a></li>
+                            <li><a href="http://techportal.inviqa.com/2013/07/23/php-test-doubles-patterns-with-prophecy/">Testing doubles</a></li>
+                            <li><a href="http://www.martinfowler.com/bliki/Xunit.html">Martin Fowler about XUnit</a></li>
                         </ul>
                     </section>
                     <section>
                         <h2>Images</h2>
                         <ul>
-                            <li><a href="http://images.sodahead.com/polls/001599249/4445136897_Question_Mark_000007651615XSmall_answer_101_xlarge.jpeg">http://images.sodahead.com/polls/001599249/4445136897_Question_Mark_000007651615XSmall_answer_101_xlarge.jpeg</a></li>
-                            <li><a href="https://image-store.slidesharecdn.com/ebe9e374-6d3e-4f1a-8051-9591ef7ea7a3-original.jpeg">https://image-store.slidesharecdn.com/ebe9e374-6d3e-4f1a-8051-9591ef7ea7a3-original.jpeg</a></li>
-                            <li><a href="https://lh4.ggpht.com/W3DVtNTVIAvZfJ99kDT2hP5cxklxZfLMGehfox8WFCzVk49LOUW-exgVXifFxDKkPts=w300">https://lh4.ggpht.com/W3DVtNTVIAvZfJ99kDT2hP5cxklxZfLMGehfox8WFCzVk49LOUW-exgVXifFxDKkPts=w300</a></li>
-                            <li><a href="http://postd.cc/wp/wp-content/uploads/2014/07/vagrant_docker.png"></a>http://postd.cc/wp/wp-content/uploads/2014/07/vagrant_docker.png</li>
-                            <li><a href="http://blog.stuartherbert.com/php/wp-content/uploads/2011/03/ishot-23.png"></a>http://blog.stuartherbert.com/php/wp-content/uploads/2011/03/ishot-23.png</li>
-                            <li><a href="http://lh3.ggpht.com/-X8LPVvE5BYE/UHaLknLmMmI/AAAAAAAABg0/HDu3iZAs2yg/s1600-h/image7.png">http://lh3.ggpht.com/-X8LPVvE5BYE/UHaLknLmMmI/AAAAAAAABg0/HDu3iZAs2yg/s1600-h/image7.png</a></li>
+                            <li><a href="https://image-store.slidesharecdn.com/ebe9e374-6d3e-4f1a-8051-9591ef7ea7a3-original.jpeg">We are busy</a></li>
+                            <li><a href="http://postd.cc/wp/wp-content/uploads/2014/07/vagrant_docker.png">Vagrant & Docker</a></li>
+                            <li><a href="http://lh3.ggpht.com/-X8LPVvE5BYE/UHaLknLmMmI/AAAAAAAABg0/HDu3iZAs2yg/s1600-h/image7.png">TDD lifecyvle</a></li>
                             <li><a href="http://quotespics.com/wp-content/quote-images/i-dont-always-test-my-code.jpg">Testing code in production</a></li>
                             <li><a href="http://financialjuneteenth.com/wp-content/uploads/2015/02/hard-work.jpg">Hard work</a></li>
                             <li><a href="https://www.dashingd3js.com/assets/steep_learning_curve-7c6e27560aabbd16a3ddb4eca06fe2fb.jpg">Steep learning curve</a></li>
