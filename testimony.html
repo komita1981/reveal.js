@@ -42,6 +42,38 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
+                    <p class="left_align">
+                        What is main property of bad code?
+                    </p>
+                    <h2 class="fragment">
+                        <span class="red_text">
+                            It's untestable
+                        </span>
+                    </h2>
+                </section>
+                <section>
+                    <h2>Kent Beck's rules of simple code</h2>
+
+                    <ul>
+                        <ol>
+                            1. Runs all the tests
+                        </ol>
+                        <ol>
+                            2. Contains no duplication
+                        </ol>
+                        <ol>
+                            3. Express the intent of programmer
+                        </ol>
+                        <ol>
+                            4. Minimizes the number of classes and methods
+                        </ol>
+                    </ul>
+
+                    <p class="fragment red_text">
+                        Given in order of importance
+                    </p>
+                </section>
+				<section>
 					<h1>Testimony</h1>
 					<p>
 						<small>Presented by <a href="http://milanpopovic.me">Milan Popović</a> / <a href="http://twitter.com/komita1981">@komita1981</a></small>
@@ -302,6 +334,14 @@
                     <h2 class="fragment">
                         <span class="red_text">
                             EVERYTHING
+                        </span>
+                    </h2>
+                    <p class="fragment">
+                        To be more precise
+                    </p>
+                    <h2 class="fragment">
+                        <span class="red_text">
+                            EVERYTHING THAT COULD BREAK YOUR APP
                         </span>
                     </h2>
                 </section>
@@ -1010,19 +1050,21 @@ class CustomerCardPrinter
     }
 }
 
-// Test
-public function testPrinterNotAvailable()
+class CustomerCardPrinterTest
 {
-    $printerProphet = $this->prophesize('\SomeNamespace\SomePackage\PrinterInterface');
-    $printerProphet->isAvailable()->shouldBeCalled()->willReturn(false);
+    public function testPrinterNotAvailable()
+    {
+        $printerProphet = $this->prophesize('\SomeNamespace\SomePackage\PrinterInterface');
+        $printerProphet->isAvailable()->willReturn(false);
 
-    $dummyCustomerProphet = $this->prophesize('\SomeNamespace\SomeOtherPackage\CustomerInterface');
+        $dummyCustomerProphet = $this->prophesize('\SomeNamespace\SomeOtherPackage\CustomerInterface');
 
-    $customerCardPrinter = new CustomerCardPrinter($someDriverProphet->reveal(), $dummyPrinterProphet->reveal());
+        $customerCardPrinter = new CustomerCardPrinter($someDriverProphet->reveal(), $dummyPrinterProphet->reveal());
 
-    $printResult = $customerCardPrinter->print();
+        $printResult = $customerCardPrinter->print();
 
-    $this->assertFalse($expectedResult, $testResult);
+        $this->assertFalse($expectedResult, $testResult);
+    }
 }
                     </code></pre>
                         <aside class="notes">
@@ -1073,6 +1115,131 @@ class FakePrinter implements PrinterInterface
     {
         return true;
     }
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Stub</h2>
+                        <p class="left_align">
+                            It does not matter which arguments are provided when one of its methods is called
+                        </p>
+                        <p class="left_align">
+                            It does not matter how many times a method is called
+                        </p>
+                        <pre><code data-trim contenteditable>
+class CustomerCardPrinter
+{
+    private $printer;
+    private $customer;
+
+    public function __construct(PrinterInterface $printer, CustomerInterface $customer)
+    {
+        $this->printer = $printer;
+        $this->customer = $customer;
+    }
+
+    public function print()
+    {
+        if (! $this->printer->isAvailable()){
+            return false;
+        }
+
+        $customerName = $customer->getName();
+        // some code goes here
+    }
+}
+
+class CustomerCardPrinterTest
+{
+    public function testSuccessfulPrint()
+    {
+        $printerProphet = $this->prophesize('\SomeNamespace\SomePackage\PrinterInterface');
+        $printerProphet->isAvailable()->willReturn(true);
+
+        $dummyCustomerProphet = $this->prophesize('\SomeNamespace\SomeOtherPackage\CustomerInterface');
+        $dummyCustomerProphet->getName()->willReturn('SomeName');
+
+        $customerCardPrinter = new CustomerCardPrinter($someDriverProphet->reveal(), $dummyPrinterProphet->reveal());
+
+        $printResult = $customerCardPrinter->print();
+
+        $this->assertTrue($expectedResult, $testResult);
+    }
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Mock</h2>
+                        <p class="left_align">
+                            Describing what will happen in the future
+                        </p>
+                        <p class="left_align">
+                            Keeps track of method calls and their arguments
+                        </p>
+                        <p class="left_align">
+                            Validates method calls given a certain set of expectations
+                        </p>
+                    </section>
+                    <section>
+                        <pre><code data-trim contenteditable>
+class CustomerCardPrinter
+{
+    private $printer;
+    private $customer;
+
+    public function __construct(PrinterInterface $printer, CustomerInterface $customer)
+    {
+        $this->printer = $printer;
+        $this->customer = $customer;
+    }
+
+    public function print()
+    {
+        if (! $this->printer->isAvailable()){
+            return false;
+        }
+
+        $customerName = $customer->getName();
+        // some code goes here
+    }
+}
+
+class CustomerCardPrinterTest
+{
+    public function testSuccessfulPrint()
+    {
+        $printerProphet = $this->prophesize('\SomeNamespace\SomePackage\PrinterInterface');
+        $printerProphet->isAvailable()->shouldBeCalled()->willReturn(true);
+
+        $dummyCustomerProphet = $this->prophesize('\SomeNamespace\SomeOtherPackage\CustomerInterface');
+        $dummyCustomerProphet->getName()->shouldBeCalled()->willReturn('SomeName');
+
+        $customerCardPrinter = new CustomerCardPrinter($someDriverProphet->reveal(), $dummyPrinterProphet->reveal());
+
+        $printResult = $customerCardPrinter->print();
+
+        $this->assertTrue($expectedResult, $testResult);
+    }
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Spy</h2>
+                        <p class="left_align">
+                            Describing what has happened in the past
+                        </p>
+                        <pre><code data-trim contenteditable>
+function it_notifies_an_attached_subscriber()
+{
+    $parser = new ParserSubject;
+
+    $dummyEvent = $this->prophesize('Markdown\Event\Event')->reveal();
+    $subscriber = $this->prophesize('Markdown\Parser\Subscriber')->reveal();
+
+    $parser->notify($dummyEvent);
+
+    $subscriber->onChange($dummyEvent)->shouldHaveBeenCalled();
 }
                         </code></pre>
                     </section>
@@ -1312,24 +1479,42 @@ sampleMethod()
                     </section>
                     <section>
                         <p class="left_align">
-                            Use continuous integration server
+                            17. Do not break Law of Demeter
+                        </p>
+                        <pre><code data-trim contenteditable>
+if ($account->getUser()->getRole()->IsAdmin()) {
+    return false;
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <p class="left_align">
+                           18. Don’t Mock What You Don’t Own
                         </p>
                     </section>
                     <section>
                         <p class="left_align">
-                            Have fun testing :-)
+                            19. Use continuous integration server
+                        </p>
+                    </section>
+                    <section>
+                        <p class="left_align">
+
                         </p>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h2>Facts</h2>
-                        <p class="left_align">
+                        <h2>Testing Facts</h2>
+                        <p class="fragment left_align">
                             Once you start testing You wont want to write code without tests again
                         </p>
-                        <p class="left_align">
+                        <p class="fragment left_align">
                             You are not good developer if you are not good tester
+                        </p>
+                        <p class="fragment left_align">
+                            Testing is fun :-)
                         </p>
                     </section>
                 </section>
