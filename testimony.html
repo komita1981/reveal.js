@@ -1028,7 +1028,15 @@ $prophet = new Prophecy\Prophet;
                         <p class="left_align">
                             Objects are passed around but never actually used
                         </p>
-                    <pre><code data-trim contenteditable>
+                        <p class="left_align">
+                            Passed around for typehinting
+                        </p>
+                        <p class="left_align">
+                            No behaviour
+                        </p>
+                    </section>
+                    <section>
+                        <pre><code data-trim contenteditable>
 class CustomerCardPrinter
 {
     private $printer;
@@ -1066,11 +1074,9 @@ class CustomerCardPrinterTest
         $this->assertFalse($expectedResult, $testResult);
     }
 }
-                    </code></pre>
-                        <aside class="notes">
-                            Dummy objects just fills parameter lists
-                        </aside>
+                        </code></pre>
                     </section>
+
                     <section>
                         <h2>Fake</h2>
                         <p class="left_align">
@@ -1122,11 +1128,16 @@ class FakePrinter implements PrinterInterface
                     <section>
                         <h2>Stub</h2>
                         <p class="left_align">
-                            It does not matter which arguments are provided when one of its methods is called
+                            Has (basic) behaviour but no expectations
                         </p>
                         <p class="left_align">
-                            It does not matter how many times a method is called
+                            It does not matter how many times a method is called - Doesn't have to be called
                         </p>
+                        <p class="left_align">
+                            Promises it will always return the same thing (willReturn())
+                        </p>
+                    </section>
+                    <section>
                         <pre><code data-trim contenteditable>
 class CustomerCardPrinter
 {
@@ -1171,6 +1182,9 @@ class CustomerCardPrinterTest
                     </section>
                     <section>
                         <h2>Mock</h2>
+                        <p class="left_align">
+                            Define predictions (shouldBeCalled()), not promises
+                        </p>
                         <p class="left_align">
                             Describing what will happen in the future
                         </p>
@@ -1227,8 +1241,16 @@ class CustomerCardPrinterTest
                     <section>
                         <h2>Spy</h2>
                         <p class="left_align">
+                            Records behaviour
+                        </p>
+                        <p class="left_align">
                             Describing what has happened in the past
                         </p>
+                        <p class="left_align">
+                            Assertions happen afterwards (shouldHaveBeenCalled())
+                        </p>
+                    </section>
+                    <section>
                         <pre><code data-trim contenteditable>
 function it_notifies_an_attached_subscriber()
 {
@@ -1542,6 +1564,7 @@ if ($account->getUser()->getRole()->IsAdmin()) {
                             <li><a href="http://less.works/less/technical-excellence/unit-testing.html">Unit testing blog</a></li>
                             <li><a href="http://techportal.inviqa.com/2013/07/23/php-test-doubles-patterns-with-prophecy/">Testing doubles</a></li>
                             <li><a href="http://www.martinfowler.com/bliki/Xunit.html">Martin Fowler about XUnit</a></li>
+                            <li><a href="http://createopen.com/design/php/2014/10/30/designing-through-mocking.html">Notes on designing through mocking</a></li>
                         </ul>
                     </section>
                     <section>
@@ -1549,7 +1572,7 @@ if ($account->getUser()->getRole()->IsAdmin()) {
                         <ul>
                             <li><a href="https://image-store.slidesharecdn.com/ebe9e374-6d3e-4f1a-8051-9591ef7ea7a3-original.jpeg">We are busy</a></li>
                             <li><a href="http://postd.cc/wp/wp-content/uploads/2014/07/vagrant_docker.png">Vagrant & Docker</a></li>
-                            <li><a href="http://lh3.ggpht.com/-X8LPVvE5BYE/UHaLknLmMmI/AAAAAAAABg0/HDu3iZAs2yg/s1600-h/image7.png">TDD lifecyvle</a></li>
+                            <li><a href="http://lh3.ggpht.com/-X8LPVvE5BYE/UHaLknLmMmI/AAAAAAAABg0/HDu3iZAs2yg/s1600-h/image7.png">TDD lifecycle</a></li>
                             <li><a href="http://quotespics.com/wp-content/quote-images/i-dont-always-test-my-code.jpg">Testing code in production</a></li>
                             <li><a href="http://financialjuneteenth.com/wp-content/uploads/2015/02/hard-work.jpg">Hard work</a></li>
                             <li><a href="https://www.dashingd3js.com/assets/steep_learning_curve-7c6e27560aabbd16a3ddb4eca06fe2fb.jpg">Steep learning curve</a></li>
