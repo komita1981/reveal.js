@@ -67,8 +67,16 @@
 
 				<section>
                     <h2>What is programming?</h2>
-                    <p class="fragment red_text">
+                    <p class="fragment left_align">
                         Specifying requirements in such details that machine can execute it
+                    </p>
+                    <p class="fragment left_align">
+                        &ldquo;
+                        <q>
+                            Programming is the art of telling another human what one wants the computer to do.
+                        </q>
+                        &rdquo;
+                        Donald Knuth
                     </p>
                     <aside class="notes">
                         Programming definition is taken from Clean Code book
@@ -76,22 +84,24 @@
                 </section>
                 <section>
                     <h2>What is code?</h2>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Code is programming statement
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         A sequence of stored instructions
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Language in which we express the requirements
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         A piece of creative art
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Represent your understanding of requirements
                     </p>
                     <aside class="notes">
+                        "The problem is that too many of us think that we are done once the program works" - Uncle Bob
+
                         2. and 4. definition taken from python course
                     </aside>
 				</section>
@@ -100,11 +110,11 @@
                     <h2>
                         Whose code is that?
                     </h2>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Code always belongs to whole <span class="red_text">TEAM</span>
                     </p>
-                    <p class="fragment">
-                        <span class="red_text">Gold rule:</span><br/>
+                    <p class="fragment left_align">
+                        <span class="red_text">Good boy scout rule:</span><br/>
                         Leave the code cleaner than you found it
                     </p>
                     <aside class="notes">
@@ -118,7 +128,7 @@
 
                 <section>
                     <section>
-                        <p>
+                        <p class="left_align">
                             &ldquo;
                             <q>
                             Any fool can write code that a computer can understand. Good programmers write code
@@ -160,9 +170,9 @@
 
                             Speak about broken window problem
 
-                            Dont leave bad code behind you. Fix them as soon as you discover it. If you think there is
+                            Don't leave bad code behind you. Fix them as soon as you discover it. If you think there is
                             not enough time and that someone else will go around cleaning this mess - you are so wrong.
-                            Dont let entropy wins - clean your code - clean it now
+                            Don't let entropy wins - clean your code - clean it now
                         </aside>
                     </section>
 
@@ -170,23 +180,23 @@
                         <h2>
                             Bad code properties
                         </h2>
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Has tendency to be even worse
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Without formatting
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Tries to do everything
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Untestable
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Hard dependencies
                         </p>
                     </section>
@@ -208,20 +218,21 @@
 
 				<section>
                     <section>
-                        <h2>Clean code</h2>
+                        <h2>Good code</h2>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Why should we write it?
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Everyone wants to write code that other people can understand
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             We strive to be better programmer
                         </p>
                     </section>
+
                     <section>
                         <h2>Kent Beck's rules of simple code</h2>
 
@@ -254,7 +265,7 @@
                             2. Evil of every system. DRY - Dont repeat yourself
                             <br/>
                             3. Code should express all designs ideas that are in system. Think about maintenance - if your code
-                            reveal your intent people who work after you on that code will spend less time. Some desing patterns
+                            reveal your intent people who work after you on that code will spend less time. Some design patterns
                             solve this problem - Every time you duplicate your code you should create some kind of abstraction
                             Template, Strategy or Visitor pattern. Use if/else and switch case carefully
                             <br/>
@@ -265,34 +276,34 @@
                 </section>
                 <section>
                     <h2>Good code should be...</h2>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Testable
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Readable
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Clean
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Simple
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Consistent
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Maintainable
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Extendable
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Intuitive
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Elegant - well designed
                     </p>
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         Efficient
                     </p>
 
@@ -305,10 +316,31 @@
                         more quickly that means that you have to make it more readable. Easy to read is easy to write.
                         "It's OK to figure out murder mysteries, but you shouldn't need to figure out code. You should
                         be able to read it" - Steve C McConnell. It has story to tell.
+
+                        It is much more profitable losing a couple of minutes thinking what is the best name for a
+                        variable, or what is the best way to structure a class and get this extra time every time we
+                        have to read it, than using the first name or structure that comes to mind in order to save time
+                        having to spend it later trying to understand what a certain function does and how it does it.
+                        - Source - umprogramador.net/write-code-for-humans/
+
+                        Your code should read like a well-written story. The code should have a natural flow where each
+                        method describes an operation that has an entry and exit point. Each method should add to the
+                        overall story and written in such a way that it would make sense even to non-programmers
+                        - Source - https://www.microsoft.com/en-gb/developers/articles/week04aug15/a-software-developers-guide-to-clean-code/
+
+                        Minimizes the need for guesswork and possibility for misunderstandings.
                         <br/>
+
                         Clean
                         <br/>
                         Someone cared about it
+                        “Clean code is code that has been taken care of. Someone has taken the time to keep it simple and
+                        orderly. They have paid appropriate attention to details. They have cared.” But why should you care?
+                        What’s wrong with code that just works? You should care because code is (almost) never written
+                        just once and then forgotten. Most of the time you, or someone else, need to work on the code.
+                        And to be able to work on it efficiently you need to understand the code. And because people
+                        need to understand the code we write, we can say that the code we write is not intended
+                        only for the computer but also for humans.
                         <br/>
                         Simple
                         <br/>
@@ -316,11 +348,17 @@
                         <br/>
                         Extandable
                         <br/>
-                        Able to solve upcoming problem
+                        Able to solve upcoming problem. Code is easy to extend and refactor, and it’s easy to fix bugs in
+                        the codebase. This can be achieved if the person making the changes understands the code and
+                        also feels confident that the changes introduced in the code do not break any existing
+                        functionality.
                         <br/>
                         Efficient
                         <br/>
-                        Able to solve upcoming problem
+                        Performance is almost always important. Do not do premature optimization but do care about
+                        your code efficiency.
+                        As programmers, we seek to write code that not only does something, it does
+                        something well. We refer to this "wellness" as efficiency. - Source https://www.drupal.org/node/328206
 
                         If your code is well design, clean and elegant than everyone will take care of it also. No one
                         will try to make mess in that code.
@@ -330,7 +368,10 @@
 
                         Good code is solid, well written, tested and documented.
 
-                        Clever is the enemy of clear.
+                        Your goal is to write beautiful, functional and verbose code. In the words of Uncle Bob "your
+                        code should read like an article. There should be a beginning, middle and end, it should be
+                        self-documenting and should follow a logical order. By using verbose and purposeful wording you
+                        can ensure that your code is self-explanatory.
                     </aside>
 
                 </section>
@@ -368,147 +409,194 @@
                 <section>
                     <h2> 4 golden acronyms</h2>
 
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         KISS
                     </p>
 
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         YAGNI
                     </p>
 
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         DRY
                     </p>
 
-                    <p class="fragment">
+                    <p class="fragment left_align">
                         SOLID
                     </p>
 				</section>
 
                 <section>
-                    <p>
-                        Design principles + Design patterns = Clean Code
-                    </p>
-                    <aside class="notes">
-                        Beside this we can also add ability to feel and discover code smells
-                    </aside>
+                    <section>
+                        <p class="fragment red_text">
+                            Design principles + Design patterns = Clean Code
+                        </p>
+                    </section>
+
+                    <section>
+
+                        "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the
+                        code as cleverly as possible, you are, by definition, not smart enough to debug it."
+                        Brian Kernigham
+
+                        <aside class="notes">
+                            Clever is the enemy of clear.
+                            Every time you look at an algorithm you just developed with the feeling you are the smartest
+                            programmer you have ever met for doing something so complex and genius - write it again.
+                        </aside>
+                    </section>
                 </section>
 
 				<section>
-                    <h2>Power of good names</h2>
-                    <p class="fragment">
-                        <span class="red_text">Clarity is king</span>
-                    </p>
-                    <p class="fragment">
-                        Names should reveal intent
-                    </p>
-                    <p class="fragment">
-                        Good names does not require comments
-                    </p>
-                    <p class="fragment">
-                        Should be explicit not implicit
-                    </p>
-                    <p class="fragment">
-                        Be pragmatic - no (too) smart programmer
-                    </p>
-                    <aside class="notes">
-                        "Clarity is king" - taken from the book Clean code<br/><br/>
-                        You can easily understand code if you choose names carefully.
-                        Choosing good names takes time but it gives more value than it gets. Remember that
-                        code is 10x more read than written.<br/><br/>
-                        Readability is top priority
-                        Code is written for humans to read and to be executed by machine. Machine will execute your code
-                        but ask yourself - can human understand this
-                        Read your when you finish writing - if it is funny or not clear to your colleagues
-                        do refactoring.
-                        When you read entity name you should not be surprised of it's responsibilities
+				    <section>
+                        <h2>Power of good names</h2>
+                        <p class="fragment left_align">
+                            <span class="red_text">Clarity is king</span>
+                        </p>
+                        <p class="fragment left_align">
+                            Names should reveal intent
+                        </p>
+                        <p class="fragment left_align">
+                            Good names does not require comments
+                        </p>
+                        <p class="fragment left_align">
+                            Should be explicit not implicit
+                        </p>
+                        <p class="fragment left_align">
+                            Be pragmatic - no (too) smart programmer
+                        </p>
+                        <aside class="notes">
+                            "Clarity is king" - taken from the book Clean code<br/><br/>
+                            You can easily understand code if you choose names carefully.
+                            Choosing good names takes time but it gives more value than it gets. Remember that
+                            code is 10x more read than written.<br/><br/>
+                            Readability is top priority
+                            Code is written for humans to read and to be executed by machine. Machine will execute your code
+                            but ask yourself - can human understand this
+                            Read your when you finish writing - if it is funny or not clear to your colleagues
+                            do refactoring.
+                            When you read entity name you should not be surprised of it's responsibilities
 
-                        Name should be meaningful
+                            Name should be meaningful
 
-                        <br/><br/>
+                            <br/><br/>
 
-                        You will read code many many times but write only once.
+                            You will read code many many times but write only once.
 
-                        Worse than meaningless name is misleading name.
+                            Worse than meaningless name is misleading name.
 
-                        It’s impossible to write clean and easily understandable code unless you are good at naming
-                        variables, methods, classes, and anything else that you create which requires a name.
-                        http://simpleprogrammer.com/2015/02/16/joel-test-programmers-simple-programmer-test/
-                    </aside>
-				</section>
+                            It’s impossible to write clean and easily understandable code unless you are good at naming
+                            variables, methods, classes, and anything else that you create which requires a name.
+                            http://simpleprogrammer.com/2015/02/16/joel-test-programmers-simple-programmer-test/
+
+                            Debug a program was minimized when variables had names that averaged 10 to 16 characters.
+                            Pro- grams with names averaging 8 to 20 characters were almost as easy to debug. The guideline
+                            doesn’t mean that you should try to make all of your variable names 9 to 15 or 10 to 16
+                            characters long. It does mean that if you look over your code and see many names that are
+                            shorter, you should check to be sure that the names are as clear as they need to be. - Code
+                            complete
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Do not use</h2>
+                        <p class="fragment left_align">
+                            Abbreviations ($tmpl, $crt...)
+                        </p>
+                        <p class="fragment left_align">
+                            Big letter O and small letter L (similar to 0 and 1)
+                        </p>
+                        <p class="fragment left_align">
+                            Short names (only $i,$j as part of loop are acceptable)
+                        </p>
+                        <p class="fragment left_align">
+                            Too long similar names
+                        </p>
+                        <p class="fragment left_align">
+                           Incremental variable name (no a1, a2,...)
+                        </p>
+                        <p class="fragment left_align">
+                            Words like Manager, Info, Data
+                        </p>
+                        <p class="fragment left_align">
+                            Type (Int, String, Array) as part of the name
+                        </p>
+                        <p class="fragment left_align">
+                            Temporary variables names ($temp, $tmp)
+                        </p>
+
+                        <aside class="notes">
+                            1. Do not use unnecessary, unclear abbreviations
+
+                            2. Do you really see difference each time
+
+                            3. Avoid using variables with short names. Exception are variables used for loops. Bu if you
+                            use nested loops these variables are not recommended. You can also use subroutines instead
+                            of nested loops.
+
+                            4. A study by W. J. Hansen found that longer names are better for rarely used variables or global
+                            variables and shorter names are better for local variables or loop variables (Shneiderman 1980)
+                             - Code complete
+
+                            8. Most of the variables in your program are temporary. Calling a few of them temporary may
+                            indicate that you aren’t sure of their real pur- poses. - Code complete
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Use</h2>
+
+                        <p class="fragment left_align">
+                            English all the time
+                        </p>
+
+                        <p class="fragment left_align">
+                            Pronounceable names
+                        </p>
+
+                        <p class="fragment left_align">
+                            Noun as class name (Product, User...)
+                        </p>
+
+                        <p class="fragment left_align">
+                            Verb or verb phrase as method name (compute, getPage)
+                        </p>
+
+                        <p class="fragment left_align">
+                            Well known programmers terms (pattern names...)
+                        </p>
+
+                        <p class="fragment left_align">
+                            Constants instead magic numbers
+                        </p>
+
+                        <aside class="notes">
+                            1. English and only English no matter how much you love your language
+                            <br/>
+                            2. Avoid name like DtbRcrd12
+                            <br/>
+                            3&4. Be consistent use noun and verbs for class and methods
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Common Opposites</h2>
+                        <p class="left_align">begin/end</p>
+                        <p class="left_align">start/end</p>
+                        <p class="left_align">first/last</p>
+                        <p class="left_align">min/max</p>
+                        <p class="left_align">next/previous</p>
+                        <p class="left_align">old/new</p>
+                        <p class="left_align">opened/closed</p>
+
+                        <aside class="notes">
+                            Source - Code complete
+                        </aside>
+                    </section>
+                </section>
 
                 <section>
-                    <h2>Do not use</h2>
-                    <p class="fragment">
-                        Abbreviations ($tmpl, $crt...)
-                    </p>
-                    <p class="fragment">
-                        Big letter O and small letter L (similar to 0 and 1)
-                    </p>
-                    <p class="fragment">
-                        Short names (only i,j as part of loop are acceptable)
-                    </p>
-                    <p class="fragment">
-                        Too long similar names
-                    </p>
-                    <p class="fragment">
-                       Incremental variable name (no a1, a2,...)
-                    </p>
-                    <p class="fragment">
-                        Words like Manager, Info, Data
-                    </p>
-                    <p class="fragment">
-                        Type (Int, String, Array) as part of the name
-                    </p>
-
-                    <aside class="notes">
-                        1. Do not use unnecessary, unclear abbreviations
-
-                        2. Do you really see difference each time
-
-                        3. Avoid this variables. For nested loops use subroutines
-
-                        4.
-                    </aside>
-				</section>
-
-                <section>
-                    <h2>Use</h2>
-
-                    <p class="fragment">
-                        English all the time
-                    </p>
-
-                    <p class="fragment">
-                        Pronounceable names
-                    </p>
-
-                    <p class="fragment">
-                        Noun as class name (Product, User...)
-                    </p>
-
-                    <p class="fragment">
-                        Verb or verb phrase as method name (compute, getPage)
-                    </p>
-
-                    <p class="fragment">
-                        Well known programmers terms (pattern names...)
-                    </p>
-
-                    <p class="fragment">
-                        Constants instead magic numbers
-                    </p>
-
-                    <aside class="notes">
-                        1. English and only English no matter how much you love your language
-                        <br/>
-                        2. Avoid name like DtbRcrd12
-                        <br/>
-                        3&4. Be consistent use noun and verbs for class and methods
-
-                    </aside>
-				</section>
-				<section>
 				    <section>
                         <h2>Functions</h2>
                         <p>
@@ -525,31 +613,31 @@
 				    <section>
                         <h2>Functions should</h2>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                           be verb
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                           be small
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             do one thing - and do it well
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             have descriptive name
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             have up to 3 <arguments></arguments>
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             not contain more than one or two indents
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             not have side effects
                         </p>
                         <aside class="notes">
@@ -579,19 +667,19 @@
                     <section>
                         <h2>Few rules</h2>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Do not use boolean flags as function param
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Ask questions for booleans - isEmpty(), isEven()...
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Avoid redundancy - sendMessage($message), addItem($item)
                         </p>
 
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Kill dead functions
                         </p>
                         <aside class="notes">
@@ -648,9 +736,21 @@
                     </section>
 
                     <section>
-                        <p class="fragment">Knowledge should be in your code not comments</p>
-                        <p class="fragment">Express your thoughts through code not comments</p>
-                        <p class="fragment">Never explain what code does - explain why</p>
+                        <p class="fragment left_align">Knowledge should be in your code not comments</p>
+                        <p class="fragment left_align">Express your thoughts through code not comments</p>
+                        <p class="fragment left_align">Never explain what code does - explain why</p>
+                        <p class="fragment left_align">Comment is an apology</p>
+
+                        <aside class="notes">
+                            If you believe that there is a valid case for a comment because the code performs something
+                            really complicated or executes a very convoluted set of steps then your comment sounds like
+                            an apology. Instead of fixing the issue, you chose to comment over it and move on. You need
+                            to remember that the code you write is not only for compilers but for programmers too.
+                            Eventually your code will become someone else's code and you will, in turn, inherit someone
+                            else's work. If we all followed the same standards, then there would be no need to read
+                            apologies and instead we would be enjoying improving and building upon the right foundations
+                            laid before us. - Source https://cmatskas.com/comments-in-code-yay-or-nay/
+                        </aside>
                     </section>
 
                     <section>
@@ -659,46 +759,24 @@
 
                     <section>
                         <h2>
-                            Legal comments
-                        </h2>
-                        <ul>
-                            <ol>
-                                Informative (providing some basic information)
-                            </ol>
-                            <ol>
-                                Clarification (why programmer do something)
-                            </ol>
-                            <ol>
-                                Warnings (warnings of consequences)
-                            </ol>
-                            <ol>
-                                TODO comments
-                            </ol>
-                        </ul>
-                    </section>
-
-                    <section>
-
-                        <h2>
                             Illegal comments
                         </h2>
-                        <ul>
-                            <ol>
-                                Inappropriate information
-                            </ol>
-                            <ol>
-                                Obsolete comments
-                            </ol>
-                            <ol>
-                                Redundant comment
-                            </ol>
-                            <ol>
-                                Poorly written comment
-                            </ol>
-                            <ol>
-                                Commented out code
-                            </ol>
-                        </ul>
+
+                        <p class="left_align">
+                            Inappropriate information
+                        </p>
+                        <p class="left_align">
+                            Obsolete (Stale) comments
+                        </p>
+                        <p class="left_align">
+                            Redundant comment
+                        </p>
+                        <p class="left_align">
+                            Poorly written comment
+                        </p>
+                        <p class="left_align">
+                            Commented out code  (AAAAARGH!!!)
+                        </p>
 
                         <aside class="notes">
                             1. For example do not write comments about information that can be found in source control
@@ -712,39 +790,75 @@
                             5. DO NOT leave commented out piece of code NEVER. Please never - if you do not do this it
                             will stay there forever. You will write it better next time trust me :-)
 
+                            All this comments creates "noise". Even if there is a comment that could help you in
+                            troubleshooting or fixing something, there is a very good chance that you will miss it
+                            because it's obfuscated by the noise. - Source https://cmatskas.com/comments-in-code-yay-or-nay/
                         </aside>
                     </section>
 
+                    <section>
+                        <h2>
+                            Legal comments
+                        </h2>
+
+                        <p class="left_align">
+                            Informative (providing some basic information)
+                        </p>
+                        <p class="left_align">
+                            Clarification (why programmer do something)
+                        </p>
+                        <p class="left_align">
+                            Warnings (warnings of consequences)
+                        </p>
+                        <p class="left_align">
+                            TODO comments
+                        </p>
+                    </section>
 				</section>
 				<section>
-                    <h2>Refactoring</h2>
+				    <section>
+                        <h2>Refactoring</h2>
 
-                    <p>
-                        First make it work than make it wright
-                    </p>
+                        <p class="left_align">
+                            First make it work than make it wright
+                        </p>
 
-                    <p>
-                        Do not afraid to change your code to make it better - tests are your backbone
-                    </p>
+                        <p class="left_align">
+                            Do not afraid to change your code to make it better - tests are your backbone
+                        </p>
 
-                    <p>
-                        Review your code on every commit/merge
-                    </p>
+                        <p class="left_align">
+                            Review your code on every commit/merge
+                        </p>
 
-                    <aside class="notes">
-                        Start with bunch of code and than refactor
+                        <aside class="notes">
+                            Start with bunch of code and than refactor
 
-                        Adam Culp - “I write a novel and I make news article later in refactoring"
+                            Adam Culp - “I write a novel and I make news article later in refactoring"
 
-                        First write code that works - than do refactoring. Refine your code, split out functions,
-                        make it dry, make it more readable. First make it work than make it wright.
-                    </aside>
+                            First write code that works - than do refactoring. Refine your code, split out functions,
+                            make it dry, make it more readable. First make it work than make it wright.
+                        </aside>
+                    </section>
 
+                    <section>
+                        <h2>Refactoring mathematics</h2>
+                        <p class="fragment">
+                            Dev time = 60% reading and 40% writing.
+                        </p>
+                        <p class="fragment">
+                            Code refactor can reduce reading by 20%, improving 8 hours/week
+                        </p>
+                        <p class="fragment">
+                            That's 416 hours/year.
+                        </p>
+                    </section>
                 </section>
 
                 <section>
                     <section>
                         <h2>Debugging</h2>
+                        <p>Don't code today what you can't debug tomorrow</p>
                         <aside class="notes">
                             Some developers spend more time debugging than writing new code. They should do this
                             efficiently.
@@ -804,6 +918,46 @@
                     </section>
 
                 </section>
+                <section>
+                    <section>
+                        <h2>Interesting quotes</h2>
+                    </section>
+
+                    <section>
+                        <p class="fragment left_align">
+                            &ldquo;
+                            <q>
+                                Code is like humor. When you *have* to explain it, it’s bad.
+                            </q>
+                            &rdquo;
+                            Cory House
+                        </p>
+                    </section>
+
+                    <section>
+                        <p class="fragment left_align">
+                            &ldquo;
+                            <q>
+                                The cost of ownership for a program includes the time humans spend to understand it.
+                                Humans are costly, so optimize for understandability.
+                            </q>
+                            &rdquo;
+                            Mathias Verraes
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Time to say goodbye</h2>
+                    <aside class="notes">
+                        If you write clean code, then you are helping your future self and your co-workers. You are
+                        reducing the cost of maintenance of the application you are writing. You are making it easier to
+                        estimate the time needed for new features. You are making it easier to fix bugs. You are making
+                        it more enjoyable to work on the code for many years to come. Essentially you are making the life
+                        easier for everyone involved in the project. - Source - http://cvuorinen.net/2014/04/what-is-clean-code-and-why-should-you-care/
+                    </aside>
+
+                </section>
 
 				<section style="text-align: left;">
 					<p>
@@ -811,6 +965,10 @@
 						- <a href="https://speakerdeck.com/kiennt/clean-code">Clean code presentation </a> <br>
 						- <a href="https://speakerdeck.com/danielkummer/clean-code">Daniel Kummer - Clean code </a> <br>
 						- <a href="https://speakerdeck.com/srihari82/clean-code">Sridhari Sridharan - Clean code </a> <br>
+						- <a href="http://cvuorinen.net/2014/04/what-is-clean-code-and-why-should-you-care/">http://cvuorinen.net</a> <br>
+						- <a href="https://cmatskas.com/comments-in-code-yay-or-nay/">cmatskas.com</a> <br>
+						- <a href="umprogramador.net/write-code-for-humans/">umprogramador.net</a> <br>
+						- <a href="https://www.microsoft.com/en-gb/developers/articles/week04aug15/a-software-developers-guide-to-clean-code/">Microsoft blog</a> <br>
 					</p>
 				</section>
 
