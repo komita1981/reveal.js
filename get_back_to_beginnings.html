@@ -41,6 +41,28 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+                <section>
+
+                    <section>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                Any fool can write code that a computer can understand. Good programmers write code
+                                that humans can understand.
+                            </q>
+                            &rdquo; - Martin Fowler
+                        </p>
+                    </section>
+                    <section>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                Programming is the art of telling another human what one wants the computer to do.
+                            </q>
+                            &rdquo; - Donald Knuth
+                        </p>
+                    </section>
+                </section>
 				<section>
 					<h1>Get back to beginnings</h1>
 					<h3>Good code matters</h3>
@@ -65,23 +87,6 @@
                     </p>
                 </section>
 
-				<section>
-                    <h2>What is programming?</h2>
-                    <p class="fragment left_align">
-                        Specifying requirements in such details that machine can execute it
-                    </p>
-                    <p class="fragment left_align">
-                        &ldquo;
-                        <q>
-                            Programming is the art of telling another human what one wants the computer to do.
-                        </q>
-                        &rdquo;
-                        Donald Knuth
-                    </p>
-                    <aside class="notes">
-                        Programming definition is taken from Clean Code book
-                    </aside>
-                </section>
                 <section>
                     <h2>What is code?</h2>
                     <p class="fragment left_align">
@@ -114,7 +119,7 @@
                         Code always belongs to whole <span class="red_text">TEAM</span>
                     </p>
                     <p class="fragment left_align">
-                        <span class="red_text">Good boy scout rule:</span><br/>
+                        <span class="red_text">Boy scout rule:</span><br/>
                         Leave the code cleaner than you found it
                     </p>
                     <aside class="notes">
@@ -127,18 +132,6 @@
                 </section>
 
                 <section>
-                    <section>
-                        <p class="left_align">
-                            &ldquo;
-                            <q>
-                            Any fool can write code that a computer can understand. Good programmers write code
-                            that humans can understand.
-                            </q>
-                            &rdquo;
-                            Martin Fowler
-                        </p>
-                    </section>
-
                     <section>
                         <h2>
                             Bad code
@@ -208,6 +201,7 @@
                             <li>Productivity</li>
                             <li>Nerves</li>
                             <li>Projects</li>
+                            <li>Job lost</li>
                         </ol>
                         <aside class="notes">
                             It all about money
@@ -301,10 +295,16 @@
                         Intuitive
                     </p>
                     <p class="fragment left_align">
-                        Elegant - well designed
+                        Elegant
                     </p>
                     <p class="fragment left_align">
                         Efficient
+                    </p>
+                    <p class="fragment left_align">
+                        Not too smart
+                    </p>
+                    <p class="fragment left_align">
+                        expressive
                     </p>
 
                     <aside class="notes">
@@ -334,6 +334,7 @@
                         Clean
                         <br/>
                         Someone cared about it
+                        Design principles + Design patterns = Clean Code - IMPORTANT
                         “Clean code is code that has been taken care of. Someone has taken the time to keep it simple and
                         orderly. They have paid appropriate attention to details. They have cared.” But why should you care?
                         What’s wrong with code that just works? You should care because code is (almost) never written
@@ -353,12 +354,26 @@
                         also feels confident that the changes introduced in the code do not break any existing
                         functionality.
                         <br/>
+                        Intuitive
+                        <br/>
+                        Express its intent properly.
+                        <br/>
+                        Elegant - well designed
+                        <br/>
                         Efficient
                         <br/>
                         Performance is almost always important. Do not do premature optimization but do care about
                         your code efficiency.
                         As programmers, we seek to write code that not only does something, it does
                         something well. We refer to this "wellness" as efficiency. - Source https://www.drupal.org/node/328206
+                        <br/>
+                        Not too smart
+                        Clever is the enemy of clear.
+                        Every time you look at an algorithm you just developed with the feeling you are the smartest
+                        programmer you have ever met for doing something so complex and genius - write it again.
+                        <br/>
+                        Expressive
+                        It' code that has meaningful names. Names should express their intention.
 
                         If your code is well design, clean and elegant than everyone will take care of it also. No one
                         will try to make mess in that code.
@@ -426,32 +441,11 @@
                     </p>
 				</section>
 
-                <section>
-                    <section>
-                        <p class="fragment red_text">
-                            Design principles + Design patterns = Clean Code
-                        </p>
-                    </section>
-
-                    <section>
-
-                        "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the
-                        code as cleverly as possible, you are, by definition, not smart enough to debug it."
-                        Brian Kernigham
-
-                        <aside class="notes">
-                            Clever is the enemy of clear.
-                            Every time you look at an algorithm you just developed with the feeling you are the smartest
-                            programmer you have ever met for doing something so complex and genius - write it again.
-                        </aside>
-                    </section>
-                </section>
-
 				<section>
 				    <section>
                         <h2>Power of good names</h2>
                         <p class="fragment left_align">
-                            <span class="red_text">Clarity is king</span>
+                            Clarity is king
                         </p>
                         <p class="fragment left_align">
                             Names should reveal intent
@@ -464,6 +458,9 @@
                         </p>
                         <p class="fragment left_align">
                             Be pragmatic - no (too) smart programmer
+                        </p>
+                        <p class="fragment left_align">
+                            Keep it short but sufficient
                         </p>
                         <aside class="notes">
                             "Clarity is king" - taken from the book Clean code<br/><br/>
@@ -489,12 +486,6 @@
                             variables, methods, classes, and anything else that you create which requires a name.
                             http://simpleprogrammer.com/2015/02/16/joel-test-programmers-simple-programmer-test/
 
-                            Debug a program was minimized when variables had names that averaged 10 to 16 characters.
-                            Pro- grams with names averaging 8 to 20 characters were almost as easy to debug. The guideline
-                            doesn’t mean that you should try to make all of your variable names 9 to 15 or 10 to 16
-                            characters long. It does mean that if you look over your code and see many names that are
-                            shorter, you should check to be sure that the names are as clear as they need to be. - Code
-                            complete
                         </aside>
                     </section>
 
@@ -570,6 +561,10 @@
                             Constants instead magic numbers
                         </p>
 
+                        <p class="fragment left_align">
+                            Be consistent - do not use synonym interchangeably
+                        </p>
+
                         <aside class="notes">
                             1. English and only English no matter how much you love your language
                             <br/>
@@ -630,7 +625,7 @@
                         </p>
 
                         <p class="fragment left_align">
-                            have up to 3 <arguments></arguments>
+                            have up to 4 arguments
                         </p>
 
                         <p class="fragment left_align">
@@ -676,6 +671,10 @@
                         </p>
 
                         <p class="fragment left_align">
+                            Avoid negatives in boolean functions - - isNotEmpty(), isNotFull()...
+                        </p>
+
+                        <p class="fragment left_align">
                             Avoid redundancy - sendMessage($message), addItem($item)
                         </p>
 
@@ -689,6 +688,8 @@
 
                             2.<br/>
                             Do not use empty() - use name like isEmpty() - you should ask question
+                            In Code complete author use names like found, done instead isFound, isDone because it's
+                            easier to read in code
 
 
                             3. <br/>/
@@ -820,11 +821,19 @@
                         <h2>Refactoring</h2>
 
                         <p class="left_align">
+                            Unfortunately often not done
+                        </p>
+
+                        <p class="left_align">
                             First make it work than make it wright
                         </p>
 
                         <p class="left_align">
                             Do not afraid to change your code to make it better - tests are your backbone
+                        </p>
+
+                        <p class="left_align">
+                            The cheapest time to refactor code is right now.
                         </p>
 
                         <p class="left_align">
@@ -843,13 +852,13 @@
 
                     <section>
                         <h2>Refactoring mathematics</h2>
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Dev time = 60% reading and 40% writing.
                         </p>
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             Code refactor can reduce reading by 20%, improving 8 hours/week
                         </p>
-                        <p class="fragment">
+                        <p class="fragment left_align">
                             That's 416 hours/year.
                         </p>
                     </section>
@@ -862,12 +871,44 @@
                         <aside class="notes">
                             Some developers spend more time debugging than writing new code. They should do this
                             efficiently.
+
+                            Debug a program was minimized when variables had names that averaged 10 to 16 characters.
+                            Pro- grams with names averaging 8 to 20 characters were almost as easy to debug. The guideline
+                            doesn’t mean that you should try to make all of your variable names 9 to 15 or 10 to 16
+                            characters long. It does mean that if you look over your code and see many names that are
+                            shorter, you should check to be sure that the names are as clear as they need to be. - Code
+                            complete
                         </aside>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                Debugging is twice as hard as writing the code in the first place. Therefore, if you write the
+                                code as cleverly as possible, you are, by definition, not smart enough to debug it.                            </q>
+                            &rdquo; - Brian Kernigham
+                        </p>
                     </section>
                 </section>
 
                 <section>
                     <h2>Testing</h2>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Standards (Conventions)</h2>
+                        <p class="left_align">
+                            All members in team have to follow agreed standards
+                        </p>
+                        <p class="left_align">
+                            PSR - PHP Standard Recommendation
+                        </p>
+                    </section>
+                    <section>
+                        <img alt="Choose one" src="img/get_back_to_beginnings/tabs_vs_spaces.jpg">
+                    </section>
                 </section>
 
                 <section>
@@ -929,8 +970,7 @@
                             <q>
                                 Code is like humor. When you *have* to explain it, it’s bad.
                             </q>
-                            &rdquo;
-                            Cory House
+                            &rdquo; - Cory House
                         </p>
                     </section>
 
@@ -941,8 +981,7 @@
                                 The cost of ownership for a program includes the time humans spend to understand it.
                                 Humans are costly, so optimize for understandability.
                             </q>
-                            &rdquo;
-                            Mathias Verraes
+                            &rdquo; - Mathias Verraes
                         </p>
                     </section>
                 </section>
