@@ -522,15 +522,11 @@
                             bad code and code that is not designed properly you will notice it immediately in your tests.
                             . "The fact that we have these tests eliminates the fear that cleaning up
                             the code will break it". Good tests are also kind of good documentation.
-                            <br/>
-                            <br/>
-                            3. Code should express all designs ideas that are in system. Think about maintenance - if your code
-                            reveal your intent people who work after you on that code will spend less time. Some design patterns
-                            solve this problem - Every time you duplicate your code you should create some kind of abstraction
-                            Template, Strategy or Visitor pattern. Use if/else and switch case carefully
-                            <br/>
-                            4. Minimizes the number of entities such as classes, methods, functions, and the like.
 
+                            4.
+                            Most software defects are introduced when changing existing code. Developer can't fully grasp
+                            the effects of the changes made. Developer should be confident that the changes do not
+                            break any existing functionality
                         </aside>
                     </section>
                     <section>
@@ -593,6 +589,8 @@
                             most the structure and design decisions fall out of memory. It’s like looking at the project
                             with a fresh perspective. Not being able to understand your own code a few weeks later can
                             be a really depressing situation. Source - http://blog.pluralsight.com/7-reasons-clean-code-matters
+
+                            Minimises the risk of introducing defects by making the code as easy to understand as possible
                         </aside>
                     </section>
 
@@ -637,6 +635,10 @@
                         </p>
 
                         <p class="left_align">
+                            Complexity kill comprehension
+                        </p>
+
+                        <p class="left_align">
                             Don't introduce abstractions unless you have a valid need
                         </p>
                         <p class="left_align">
@@ -647,13 +649,24 @@
                             &rdquo; - Steve Bohlen
                         </p>
 
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                The ease of maintenance of any piece of software is proportional to the simplicity of
+                                its individual pieces.
+                            </q>
+                            &rdquo; - Max Kanat-Alexander
+                        </p>
+
                         <aside class="notes">
-                            Simple
-                            <br/>
-                            Build only what the customer asks for--don't add bells and whistles that they don't
-                            need. Don't introduce abstractions unless you have a valid need and don't build the
+                            Don't introduce abstractions unless you have a valid need and don't build the
                             all-encompassing infrastructure or design that will support every possible feature that could
                             come along. Source - agileinaflash.blogspot.com/2009/02/simple-design.html
+
+                            programming has to become the act of reducing complexity to simplicity. Other- wise, nobody
+                            could keep working on a program after it reached a certain level of com- plexity. The complex
+                            pieces of a program have to be organized in some simple way so that a programmer can work on
+                            it without having God-like mental abilities. - Source - Code Simplicity
                         </aside>
                     </section>
 
@@ -661,6 +674,10 @@
                         <h2>
                             Consistent
                         </h2>
+
+                        <p class="left_align">
+                            If you do something one way in one place, do it that way in every place.
+                        </p>
 
                         <p class="left_align">
                             Be consistent about naming
@@ -679,20 +696,24 @@
                         <h2>
                             Maintainable
                         </h2>
+
+                        <p class="left_align">
+                            Maintainable == Easy to change
+                        </p>
                         <p class="left_align">
                             The most fundamental principle in software is to write code that can handle change
                         </p>
                         <p class="left_align">
-                            Most software defects are introduced when changing existing code
+                            &ldquo;
+                            <q>
+                                The longer your program exists, the more probable it is that any piece of it will
+                                have to change
+                            </q>
+                            &rdquo; - Max Kanat-Alexander
                         </p>
-                        <p class="left_align">
-                            Developer can't fully grasp the effects of the changes made
-                        </p>
-                        <p class="left_align">
-                            Developer should be confident that the changes do not break any existing functionality
-                        </p>
+
                         <aside class="notes">
-                            Minimises the risk of introducing defects by making the code as easy to understand as possible
+                            Quote from book Code Simplicity
                         </aside>
                     </section>
 
@@ -771,7 +792,9 @@
                         </p>
 
                         <aside class="notes">
-                            Names should express their intention.
+                            Code should express all designs ideas that are in system. Think about maintenance - if your code
+                            reveal your intent people who work after you on that code will spend less time. Names should
+                            express their intention.
                         </aside>
                     </section>
 
@@ -783,7 +806,7 @@
                             efficiently.
 
                             Debug a program was minimized when variables had names that averaged 10 to 16 characters.
-                            Pro- grams with names averaging 8 to 20 characters were almost as easy to debug. The guideline
+                            Programs with names averaging 8 to 20 characters were almost as easy to debug. The guideline
                             doesn’t mean that you should try to make all of your variable names 9 to 15 or 10 to 16
                             characters long. It does mean that if you look over your code and see many names that are
                             shorter, you should check to be sure that the names are as clear as they need to be. - Code
@@ -905,13 +928,32 @@
                         <h2> YAGNI - You Ain't Gonna Need it</h2>
 
                         <p class="left_align">
-                            Do only what are you asked to do
+                            Do not write code before you actually need it
                         </p>
                         <p class="left_align">
                             Don't waste time planning for unknown future scenarios
                         </p>
 
                         <aside>
+                            You actually might need the code in the future, but since you can’t predict the future you
+                            don’t know how the code needs to work yet. If you write it now, before you need it, you’re
+                            going to have to redesign it for your real needs once you actually start using it. So save
+                            yourself that redesign time, and simply wait until you need the code before you write it.
+                            Another risk of writing code before you need it is that unused code tends to develop
+                            “bit rot.” Since the code never runs, it might slowly become out of sync with the rest of
+                            your system and thus develop bugs, and you’ll never know. Then, when you start to use it,
+                            you’ll have to spend time debugging it.
+
+                            There are lots of reasons people think that they should write code before it’s needed, or
+                            keep around code that isn’t being used. First off, some people believe they can get around
+                            the Law of Change by programming every feature that any user could ever possibly need, right
+                            now. Then, they think, the program won’t have to be changed or improved in the future. But
+                            this is wrong. It’s not possible to write a system that will never change, as long as that
+                            system continues to have users. Others believe that they are saving themselves time in the
+                            future by doing some extra work now. In some cases that philosophy works, but not when
+                            you’re writing code that isn’t needed. Even if that code ends up being needed in the future,
+                            you will almost certainly have to spend time redesigning it, so you’re actually wasting time.
+
                         </aside>
 				    </section>
 
@@ -929,6 +971,10 @@
                         </p>
                         <p class="left_align">
                             Probability of having problems rise exponentially in your next change
+                        </p>
+                        <p class="left_align">
+                            Every time you duplicate your code you should create some kind of abstraction
+                            Template, Strategy or Visitor pattern
                         </p>
 
                         <aside>
@@ -1109,6 +1155,16 @@
                         </p>
                     </section>
                     <section>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                Names should be long enough to fully communicate what something is or does without being
+                                so long that they become hard to read.
+                            </q>
+                            &rdquo; - Max Kanat-Alexander
+                        </p>
+                    </section>
+                    <section>
                         <p class="fragment left_align">
                             Clarity is king
                         </p>
@@ -1211,11 +1267,7 @@
                         </p>
 
                         <p class="fragment left_align">
-                            Noun as class name (Product, User...)
-                        </p>
-
-                        <p class="fragment left_align">
-                            Verb or verb phrase as method name (compute, getPage)
+                            Minimal scope
                         </p>
 
                         <p class="fragment left_align">
@@ -1239,7 +1291,7 @@
                             <br/>
                             2. Avoid name like DtbRcrd12
                             <br/>
-                            3&4. Be consistent use noun and verbs for class and methods
+                            4. Make your variable visible by as few lines of code as possible.
 
                         </aside>
                     </section>
@@ -1268,7 +1320,11 @@
                         <h2>Functions should</h2>
 
                         <p class="fragment left_align">
-                          be verb
+                            have descriptive name
+                        </p>
+
+                        <p class="fragment left_align">
+                          be verb or verb phrase (getPage()) or question (isValid())
                         </p>
 
                         <p class="fragment left_align">
@@ -1277,10 +1333,6 @@
 
                         <p class="fragment left_align">
                             do one thing - and do it well
-                        </p>
-
-                        <p class="fragment left_align">
-                            have descriptive name
                         </p>
 
                         <p class="fragment left_align">
@@ -1295,17 +1347,19 @@
                             not have side effects - does what says it does
                         </p>
                         <aside class="notes">
-                            First rule is that functions should be small. The second is that should be smaller than that (Clean code)
+                            Long descriptive name is better than short enigmatic name, better than long descriptive comment.
+                            Choosing good name is important - remember that you read 10x more than you write.
+
+                            Name reflects what function do - so that name should be verb
+
+                            First rule is that functions should be small. The second is that should be smaller than
+                            that. We measure size by counting physical lines.
+
                             Blocks within if-else and while statement should be one line long (Clean Code)
                             I also prefer this in all other loops
+
                             Functions should do one thing. They should do it well. They should do it only. (Clean Code)
-                            Functions should not have side effects - do in functions only one thing - what name of that
-                            function is - no more no less
-                            If you use try-catch - than it should be the only one block in function
-                            One level abstraction bellow name of the functions
-                            You know you are working on clean code when each routine turns out to be pretty much what you expected
-                            Long descriptive name is better than short enigmatic name, better than long descriptive comment
-                            Choosing good nae is important - remember that you read 10x more than you write
+
                             The ideal number of params is 0 - niladic functions
                             Next come with 1 param - monadic
                             Followed by 2 - dyadic
@@ -1313,8 +1367,15 @@
                             4 and more params - Polyadic - Think about rewriting your function (T. Otwel)
                             Try to pass object instead creating polyadic functions
 
-                            Side effects - do only one thing - described in name - not sudden effects
+                            If you use try-catch - than it should be the only one block in function
+                            One level abstraction bellow name of the functions
 
+                            Functions should not have side effects - do only one thing in functions - what name of that
+                            function is - no more no less. Side effects - do only one thing - described in name - not
+                            sudden effects. You know you are working on clean code when each routine turns out to be
+                            pretty much what you expected
+
+                            Source - Book Clean Code - mostly
                         </aside>
 				    </section>
 
@@ -1369,6 +1430,10 @@
                             Make function parameter orders obvious
                         </p>
 
+                        <p class="fragment left_align">
+                            Avoid else
+                        </p>
+
                         <aside class="notes">
                             1. <br/>
                             Do not afraid - source control is your friend
@@ -1397,39 +1462,90 @@
                         <p class="left_align">
                             Creating good interface means creating good abstractions
                         </p>
-                        <p class="left_align">
-                            Loose coupling
-                        </p>
-                        <p class="left_align">
-                            High cohesion
-                        </p>
-
                         <aside class="notes">
                             Abstraction is process of ignoring details
                             Details should be hidden behind abstraction.
                         </aside>
 				    </section>
 				    <section>
+                        <h2>
+                            Class should
+                        </h2>
                         <p class="left_align">
-                            Loose coupling
+                            be noun or noun phrase (Product, AddressValidator)
                         </p>
                         <p class="left_align">
-                            High cohesion
+                            be small (in number of responsibilities)
+                        </p>
+                        <p class="left_align">
+                            be described in 25 words
+                        </p>
+                        <p class="left_align">
+                            have only one reason for change
+                        </p>
+                        <p class="left_align">
+                            not be loosed coupled
+                        </p>
+                        <p class="left_align">
+                            have high cohesion
                         </p>
 
                         <aside class="notes">
-                            Loose coupling
+                            Noun or noun phrase best describes what responsibilities it fulfills
+
+                            The first rule of classes is that they should be small. The second rule of classes is that
+                            they should be smaller than that. We are actually counting number of responsibilities
+
+                            We should also be able to write a brief description of the class in about 25 words,
+                            without using the words “if,” “and,” “or,” or “but.”
+
+                            Do not break SRP. They should be organized for change.
+
                             Two classes, components or modules are coupled when at least one of them uses the other. The
                             less these items know about each other, the looser they are coupled. A component that is only
                             loosely coupled to its environment can be more easily changed or replaced than a strongly
                             coupled component.
+                            Source - http://www.coderquotes.com/clean-code-principles/
 
-                            High cohesion
                             Cohesion is the degree to which elements of a whole belong together. Methods and fields in a
                             single class and classes of a component should have high cohesion. High cohesion in classes
                             and components results in simpler, more easily understandable code structure and design.
-
                             Source - http://www.coderquotes.com/clean-code-principles/
+                        </aside>
+				    </section>
+
+                    <section>
+                        <h2>
+                            Recommendations
+                        </h2>
+                        <p class="left_align">
+                            200 lines per class
+                        </p>
+                        <p class="left_align">
+                            10 methods per class
+                        </p>
+                        <p class="left_align">
+                            10-15 lines per method
+                        </p>
+                        <p class="left_align">
+                            15 classes per package
+                        </p>
+
+                        <aside class="notes">
+
+                            Instead of minimizing the number of lines, a better metric is to minimize the time needed
+                            for someone to understand it.
+                        </aside>
+				    </section>
+
+				    <section>
+                        <h2>Few rules</h2>
+                        <p class="left_align">
+                            Private methods called by public methods should be right after that public method
+                        </p>
+
+                        <aside class="notes">
+                            Class should be readable like newspaper article
                         </aside>
 				    </section>
 				</section>
@@ -1467,6 +1583,8 @@
                     </section>
 
                     <section>
+                        <p class="fragment left_align">The purpose of commenting is to help the reader know as much as
+                            the writer did</p>
                         <p class="fragment left_align">Knowledge should be in your code not comments</p>
                         <p class="fragment left_align">Express your thoughts through code not comments</p>
                         <p class="fragment left_align">Never explain what code does - explain why</p>
@@ -1523,6 +1641,7 @@
                             3. For example - $i++ - increment i
                             <br/>
                             4. If you really want to write comment than let it be worth and good. Let it be clear.
+                            Don’t comment on facts that can be derived quickly from the code itself.
                             <br/>
                             5. Add clutter to the code
                             <br/>
@@ -1637,6 +1756,9 @@
                     </section>
                     <section>
                         <img alt="Choose one" src="img/get_back_to_beginnings/tabs_vs_spaces.jpg">
+                        <p class="left_align">
+                            Consistent style is more important than the “right” style. - The Art of readable code
+                        </p>
                     </section>
                     <section>
                         <h2>PSR</h2>
@@ -1776,6 +1898,9 @@
                         fire. The fire department rushed in to save the day—and his house. But before they dragged
                         their big, dirty hoses into the house, they stopped—with the fire raging—to roll out a mat
                         between the front door and the source of the fire. They didn't want to mess up the carpet.
+
+                        Use PIE instead NIH
+                        Proudly invented elsewhere instead Not Invented Here
                         </aside>
 
                 </section>
@@ -1800,6 +1925,7 @@
 						- <a href="http://blog.pluralsight.com/7-reasons-clean-code-matters">Pluralsight blog</a> <br>
 						- <a href="http://kevinlondon.com/2015/06/25/intro-to-code-reviews-talk.html">Kevin London blog</a> <br>
 						- <a href="http://www.burmatuk.com/2015/04/26/why-developers-ignore-software-design-principles/">Burmatuk blog</a> <br>
+						- <a href="http://www.slideshare.net/rdohms/">Rafael Dohms slides</a> <br>
 					</p>
 				</section>
 

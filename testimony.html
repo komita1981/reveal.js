@@ -73,6 +73,17 @@
                         Given in order of importance
                     </p>
                 </section>
+                <section>
+                    <p class="left_align">
+                        &ldquo;
+                        <q>
+                            The degree to which you know how your software behaves is the degree to which you have
+                            accurately tested it.
+                        </q>
+                        &rdquo; - Max Kanat-Alexander
+                    </p>
+
+                </section>
 				<section>
 					<h1>Testimony</h1>
 					<p>
@@ -306,34 +317,48 @@
                 </section>
 
                 <section>
-                    <h2>
-                        What is unit testing?
-                    </h2>
-                    <p class="fragment left_align">
-                        A software testing method to test individual unit of source code - a method in class or a piece of code
-                    </p>
-                    <p class="fragment left_align">
-                        The purpose of unit testing is not for finding bugs
-                    </p>
-                    <p class="fragment left_align">
-                        Specification for the expected behaviours of the code under test
-                    </p>
-                    <aside class="notes">
-                        When writing unit tests we are focusing on describing one unit of behaviour at a time, and how
-                        objects communicate in order to achieve that behaviour.
+                    <section>
+                        <h2>
+                            What is unit testing?
+                        </h2>
+                    </section>
+                    <section>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                A unit test is a piece of a code (usually a method) that invokes another piece of code and
+                                checks the correctness of some assumptions after- ward. If the assumptions turn out to be wrong,
+                                the unit test has failed. A unit is a method or function.                            </q>
+                            &rdquo; - Roy Osherove
+                        </p>
+                    </section>
+                    <section>
+                        <p class="fragment left_align">
+                            A software testing method to test individual unit of source code - a method in class or a piece of code
+                        </p>
+                        <p class="fragment left_align">
+                            The purpose of unit testing is not for finding bugs
+                        </p>
+                        <p class="fragment left_align">
+                            Specification for the expected behaviours of the code under test
+                        </p>
+                        <aside class="notes">
+                            When writing unit tests we are focusing on describing one unit of behaviour at a time, and how
+                            objects communicate in order to achieve that behaviour.
 
-                        Each unit test sends a specific input to a method and verifies that the method returns the
-                        expected value, or takes the expected action. Unit tests prove that the code you are testing
-                        does in fact do what you expect it to do.
+                            Each unit test sends a specific input to a method and verifies that the method returns the
+                            expected value, or takes the expected action. Unit tests prove that the code you are testing
+                            does in fact do what you expect it to do.
 
-                        The purpose of unit testing is not for finding bugs. It’s a specification for the expected
-                        behaviours of the code under test. The code under test is the implementation for those expected
-                        behaviours. So unit test and the code under test are used to check the correctness of each other,
-                        and protect each other. Later when someone changed the code under test, and it changed the
-                        behaviour that is expected by the original author, the test will fail. If you code is covered by
-                        reasonable unit test, you can maintain the code without breaking the existing feature.
-                        That’s why Michael Feathers define legacy code as code without unit test.
-                    </aside>
+                            The purpose of unit testing is not for finding bugs. It’s a specification for the expected
+                            behaviours of the code under test. The code under test is the implementation for those expected
+                            behaviours. So unit test and the code under test are used to check the correctness of each other,
+                            and protect each other. Later when someone changed the code under test, and it changed the
+                            behaviour that is expected by the original author, the test will fail. If you code is covered by
+                            reasonable unit test, you can maintain the code without breaking the existing feature.
+                            That’s why Michael Feathers define legacy code as code without unit test.
+                        </aside>
+                    </section>
                 </section>
 
                 <section>
