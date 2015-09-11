@@ -608,6 +608,7 @@
                         </p>
 
                         <aside class="notes">
+                            It's an expression about how much you care about others.
                             “Clean code is code that has been taken care of. Someone has taken the time to keep it simple and
                             orderly. They have paid appropriate attention to details. They have cared. But why should you care?
                             What’s wrong with code that just works? You should care because code is (almost) never written
@@ -727,6 +728,9 @@
                         <aside class="notes">
                             Code is easy to extend and refactor, and it’s easy to fix bugs in the codebase.
                         </aside>
+                        <aside class="notes">
+                            Open closed principle
+                        </aside>
                     </section>
 
                     <section>
@@ -736,6 +740,16 @@
                         <p class="left_align">
                             Well designed
                         </p>
+                        <p class="left_align">
+                            Apply design principles
+                        </p>
+                        <p class="left_align">
+                            Apply design patterns
+                        </p>
+
+                        <aside class="notes">
+                            Compare it with elegant women
+                        </aside>
                     </section>
 
                     <section>
@@ -914,13 +928,30 @@
                         <h2> KISS - Keep It Simple, Stupid</h2>
 
                         <p class="left_align">
+                            Also mean “Keep It Short and Simple”, “Keep It Simple and Straightforward”, “Keep It Smart and Simple”
+                        </p>
+
+                        <p class="left_align">
+                            It's about striving for simplicity
+                        </p>
+
+                        <p class="left_align">
+                            Simple solution is better than a complex one—even if the solution looks stupid
+                        </p>
+
+                        <p class="left_align">
                             Over-engineering code is as bad as under-engineering it
                         </p>
-                        <p class="left_align">
 
-                        </p>
 
                         <aside>
+                            Modern programming languages, frameworks and APIs have powerful means to create sophisticated
+                            solutions for various kinds of problems. Sometimes developers might feel tempted to write
+                            “clever” solutions that use all these complex features. The KISS principle states that a
+                            solution is better when it uses less inheritance, less polymorphism, fewer classes, etc.
+                            This does not mean that features like inheritance and polymorphism should not be used at all.
+                            Rather they should only be used when they are necessary or there is some substantial advantage
+                            in using them.
                         </aside>
 				    </section>
 
@@ -928,13 +959,21 @@
                         <h2> YAGNI - You Ain't Gonna Need it</h2>
 
                         <p class="left_align">
+                            We can't predict future
+                        </p>
+
+                        <p class="left_align">
                             Do not write code before you actually need it
                         </p>
+
                         <p class="left_align">
                             Don't waste time planning for unknown future scenarios
                         </p>
 
                         <aside>
+                            Code should be designed based on what you know now, not on what you think will happen in
+                            the future
+
                             You actually might need the code in the future, but since you can’t predict the future you
                             don’t know how the code needs to work yet. If you write it now, before you need it, you’re
                             going to have to redesign it for your real needs once you actually start using it. So save
@@ -1080,10 +1119,12 @@
                         </p>
 
                         <aside class="notes">
+                            When you know that the code isn’t just for you to look at, but that it will be viewed, used,
+                            maintained, and criticized by others, your approach tends to change. You’re less likely to
+                            make the quick-and-dirty fix that you’ll never have time to revise.
                             @TODO - read more about this
                         </aside>
 				    </section>
-
                     <section>
                         <p class="left_align">
                             &ldquo;
@@ -1093,6 +1134,33 @@
                             </q>
                             &rdquo; - Peter Norvig
                         </p>
+				    </section>
+				    <section>
+                        <h2>
+                            Code review types
+                        </h2>
+
+                        <p class="left_align">
+                            Personal
+                        </p>
+
+                        <p class="left_align">
+                            One on one
+                        </p>
+
+                        <p class="left_align">
+                            Formal (group)
+                        </p>
+
+                        <aside class="notes">
+                            The author carefully and methodically reviews his or her own work to make sure that it’s good.
+
+                            Two developers discuss about code
+
+                            Involving other programmers brings new expertise, more experience, and more eyeballs to the
+                            task and shifts the perspective from which the review is run. This usually takes place in a
+                            formal meeting, but it can be run as a virtual review: online, with no physical meeting.
+                        </aside>
 				    </section>
 
 				    <section>
@@ -1428,6 +1496,11 @@
 
                         <p class="fragment left_align">
                             Make function parameter orders obvious
+                        </p>
+
+                        <p class="fragment left_align">
+                            Whenever you feel the need to organize a method into parts, rather split it into more
+                            focused methods with meaningful names
                         </p>
 
                         <p class="fragment left_align">
@@ -1926,6 +1999,7 @@
 						- <a href="http://kevinlondon.com/2015/06/25/intro-to-code-reviews-talk.html">Kevin London blog</a> <br>
 						- <a href="http://www.burmatuk.com/2015/04/26/why-developers-ignore-software-design-principles/">Burmatuk blog</a> <br>
 						- <a href="http://www.slideshare.net/rdohms/">Rafael Dohms slides</a> <br>
+						- <a href="http://principles-wiki.net/principles:keep_it_simple_stupid">Principles wiki</a> <br>
 					</p>
 				</section>
 
