@@ -61,6 +61,11 @@
                             </q>
                             &rdquo; - Donald Knuth
                         </p>
+
+                        <aside class="notes">
+                            Programming is as much art as it is science. We are passionate about our work in much the
+                            §same way that artists are passionate about theirs.
+                        </aside>
                     </section>
                 </section>
 				<section>
@@ -292,6 +297,15 @@
                         <p class="fragment left_align">
                             Disregard principles of software design
                         </p>
+
+                        <p class="fragment left_align">
+                            Too smart
+                        </p>
+                        <aside class="notes">
+                            Clever is the enemy of clear.
+                            Every time you look at an algorithm you just developed with the feeling you are the smartest
+                            programmer you have ever met for doing something so complex and genius - write it again.
+                        </aside>
                     </section>
 
                     <section>
@@ -640,7 +654,7 @@
                         </p>
 
                         <p class="left_align">
-                            Don't introduce abstractions unless you have a valid need
+                            Complexity always grows over time
                         </p>
                         <p class="left_align">
                             &ldquo;
@@ -660,14 +674,27 @@
                         </p>
 
                         <aside class="notes">
+                            Everyone Loves Simple. That’s why people say “I just want things to be simple.” Who says
+                            “I just want things to be complicated”...ever? - Source - The Developers Code
+
                             Don't introduce abstractions unless you have a valid need and don't build the
                             all-encompassing infrastructure or design that will support every possible feature that could
                             come along. Source - agileinaflash.blogspot.com/2009/02/simple-design.html
 
-                            programming has to become the act of reducing complexity to simplicity. Other- wise, nobody
+                            Complexity always grows over time. It’s the unavoidable consequence of maturing software.
+                            Programming has to become the act of reducing complexity to simplicity.
+
+                            Other- wise, nobody
                             could keep working on a program after it reached a certain level of com- plexity. The complex
                             pieces of a program have to be organized in some simple way so that a programmer can work on
                             it without having God-like mental abilities. - Source - Code Simplicity
+
+                            Comment on last quote - “Hard to Code” Might Mean “Hard to Use”
+
+                            When details become egregiously hard to code, it may be a smell that the actual function of
+                            the system is difficult to understand. And while you may pat yourself on the back for
+                            successfully programming something really complex, others are punching you in the back after
+                            they use it.
                         </aside>
                     </section>
 
@@ -774,22 +801,6 @@
 
                     <section>
                         <h2>
-                            Not too smart
-                        </h2>
-                        <p class="left_align">
-                            Clever is the enemy of clear
-                        </p>
-                        <p class="left_align">
-                            Every time you feel like smartest programmer - write it again
-                        </p>
-                        <aside class="notes">
-                            Every time you look at an algorithm you just developed with the feeling you are the smartest
-                            programmer you have ever met for doing something so complex and genius - write it again.
-                        </aside>
-                    </section>
-
-                    <section>
-                        <h2>
                             Expressive
                         </h2>
 
@@ -813,7 +824,7 @@
                     </section>
 
                     <section>
-                        <h2>Easy to debugg</h2>
+                        <h2>Easy to debug</h2>
                         <p class="left_align">Don't code today what you can't debug tomorrow</p>
                         <aside class="notes">
                             Some developers spend more time debugging than writing new code. They should do this
@@ -904,16 +915,17 @@
                             Discipline
                         </h2>
                         <p class="left_align">
-                            Discipline makes strong developers
+                            Behavior in accord with rules of conduct
+                        </p>
+                        <p class="left_align">
+                            Behavior and order maintained by training and control
                         </p>
                         <p class="left_align">
                             Disciplined developer raise the level of productivity in others
                         </p>
-                        <p class="left_align">
-                            Discipline makes us more responsible
-                        </p>
 
                         <aside class="notes">
+                            First two are definitions from dictionary
                             Discipline Makes Strong Developers - title of codding horror blog post
                         </aside>
                     </section>
@@ -991,9 +1003,15 @@
                             Don't waste time planning for unknown future scenarios
                         </p>
 
+                        <p class="left_align">
+                            Anticipating logic in the future will lead to unintended complexity
+                        </p>
+
                         <aside>
                             Code should be designed based on what you know now, not on what you think will happen in
-                            the future
+                            the future.
+
+                            YAGNI prevents speculative development
 
                             You actually might need the code in the future, but since you can’t predict the future you
                             don’t know how the code needs to work yet. If you write it now, before you need it, you’re
@@ -1014,6 +1032,7 @@
                             you’re writing code that isn’t needed. Even if that code ends up being needed in the future,
                             you will almost certainly have to spend time redesigning it, so you’re actually wasting time.
 
+                            Anticipating logic in the future, more often than not, will lead to unintended complexity.
                         </aside>
 				    </section>
 
@@ -1021,7 +1040,7 @@
                         <h2> DRY - Dont repeat yourself</h2>
 
                         <p class="left_align">
-                            Evil of every system
+                            Repetition is the single most diminishing force in software development
                         </p>
                         <p class="left_align">
                             Number one rule when refactoring
@@ -1038,6 +1057,7 @@
                         </p>
 
                         <aside>
+                            It's evil of every system.
                         </aside>
 				    </section>
 
@@ -1638,8 +1658,18 @@
                             Private methods called by public methods should be right after that public method
                         </p>
 
+                        <p class="left_align">
+                            Respect of the Law Of Demeter
+                        </p>
+
                         <aside class="notes">
-                            Class should be readable like newspaper article
+                            Class should be readable like newspaper article - private and protected methods should be
+                            like squared text in newspaper.
+
+                            “Only talk to your closest friends.”. Methods should invoke:
+                            • The methods of the object itself
+                            • Parameters of the method
+                            • Any objects created within the method
                         </aside>
 				    </section>
 				</section>
@@ -1654,6 +1684,9 @@
                         <p class="left_align fragment">Bad code code requires lot of comments</p>
 
                         <aside class="notes">
+                            Long methods with lots of comments reek of a noncomposed solution. Refactor the comments
+                            to methods to get rid of them.
+
                             Use comments for high level explanation.
                             "Don't comment bad code - rewrite it." - B. Kernighan i Plaugher
                             Comments are, at best, necessary evil - Clean Code
@@ -1665,9 +1698,6 @@
                             Code should have comments, but having too much comments is as bad as too few. Comments discuss
                             why something is done but it' already explained in code - it DRY break
 
-                            Speak about using PHPdoc and writing comments in files describing variables and methods
-                            Speak about my preferable way of documenting even it is not pragmatic - writing doc block
-                            for protected methods and variables and header in every file
 
                             Comments should only really be written when it’s not possible to clearly communicate the intent
                             of a variable or method by using a name. The comment then serves an actual purpose that could
@@ -1791,6 +1821,9 @@
                             </q>
                             &rdquo; - <a href="https://twitter.com/rfletcherEW">@rfletcherEW</a>
                         </p>
+                        <p class="left_align fragment">
+                            Refactoring increases ease of change while reducing risk of change
+                        </p>
 				    </section>
 				    <section>
                         <p class="left_align">
@@ -1802,7 +1835,7 @@
                         </p>
 
                         <p class="left_align">
-                            Do not afraid to change your code to make it better - tests are your backbone
+                            Tests are backbone of refactoring
                         </p>
 
                         <p class="left_align">
@@ -1818,9 +1851,20 @@
 
                             Adam Culp - “I write a novel and I make news article later in refactoring"
 
+                            Refactoring Happens Now or Never.
                             First write code that works - than do refactoring. Refine your code, split out functions,
                             make it dry, make it more readable. First make it work than make it wright.
                         </aside>
+                    </section>
+
+                    <section>
+                            <h2>Code refactoring benefits</h2>
+                            <p class="left_align">Your code quality is much better</p>
+                            <p class="left_align">All people are much more happy</p>
+                            <p class="left_align">Your developers will gain knowledge</p>
+                            <p class="left_align">Your developers will have a better team spirit</p>
+                            <p class="left_align">Good way to integrate new developers</p>
+                            <p class="left_align">Lower costs more profit</p>
                     </section>
 
                     <section>
@@ -1844,6 +1888,9 @@
                             Software is not maintained whole life by the same people
                         </p>
                         <p class="left_align">
+                            Provide rules in team
+                        </p>
+                        <p class="left_align">
                             All members in team have to follow agreed standards
                         </p>
                         <p class="left_align">
@@ -1855,6 +1902,9 @@
                         <p class="left_align">
                             If you can't tell who wrote the code, you know you're doing it right
                         </p>
+                        <aside>
+                            Provide rules in team - for present and future team members. It's good for team spirit
+                        </aside>
                     </section>
                     <section>
                         <img alt="Choose one" src="img/get_back_to_beginnings/tabs_vs_spaces.jpg">
@@ -2029,6 +2079,7 @@
 						- <a href="http://www.burmatuk.com/2015/04/26/why-developers-ignore-software-design-principles/">Burmatuk blog</a> <br>
 						- <a href="http://www.slideshare.net/rdohms/">Rafael Dohms slides</a> <br>
 						- <a href="http://principles-wiki.net/principles:keep_it_simple_stupid">Principles wiki</a> <br>
+						- <a href="http://www.amazon.com/The-Developers-Code-Wai-Cheung/dp/1934356794">The Developers Code</a> <br>
 					</p>
 				</section>
 
