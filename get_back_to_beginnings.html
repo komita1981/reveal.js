@@ -132,8 +132,33 @@
                         &rdquo; - Anthony Ferrara
                     </p>
 
+                    <p class="left_align fragment">
+                        It’s not about coding
+                    </p>
+
+                    <p class="left_align fragment">
+                        It’s not about design
+                    </p>
+
+                    <p class="left_align fragment">
+                        It’s not about joy
+                    </p>
+
+                    <p class="left_align fragment">
+                        It’s not about making money
+                    </p>
+
+
+                    <p class="left_align fragment red_text">
+                        It’s all about value
+                    </p>
+
                     <aside class="notes">
                         It is not enough for code to work - Uncle Bob - we are expecting more from the code
+
+                        Value =  All other things included!
+
+                        When your coding skills will be smooth, you will start thinking about the value automatically
                     </aside>
 				</section>
 
@@ -529,7 +554,7 @@
                             It's not only about code - it's about process
 
                         <p class="left_align">
-                            Where and how to get the code?
+                            Git, GitFlow, Commit Messages,
                         </p>
 
                         <p class="left_align">
@@ -537,7 +562,7 @@
                         </p>
 
                         <p class="left_align">
-                            How to run tests?
+                            Tests, How to run tests?, CI, CD, QA
                         </p>
 
                         <p class="left_align">
@@ -545,11 +570,11 @@
                         </p>
 
                         <p class="left_align">
-                            How to write commit messages?
+                            How to do code review?
                         </p>
 
                         <p class="left_align">
-                            How to do code review?
+                            IDE, Text editors
                         </p>
 
                         <p class="left_align">
@@ -743,6 +768,16 @@
 
                         <p class="left_align">
                             Complexity always grows over time
+                        </p>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                Readability and simplicity is always better than no duplications and following best practices
+                            </q>
+                            &rdquo; - Alexey (Mr_Mig) Migutsky
                         </p>
                         <p class="left_align">
                             &ldquo;
@@ -1004,6 +1039,9 @@
                             Read your code, read other peoples code. Maybe someone is born with code-sense but most of the time
                             it's not. Talented football player is not the best football player. The best player is one who
                             trained a lot every day.
+
+                            Do not only learn and analyse - Get you hands dirty. Failure is the only source of experience -
+                            success is side effect. Experience is the only source of intuition
                         </aside>
                     </section>
                     <section>
@@ -1242,18 +1280,27 @@
                         <p class="left_align">
                             Discussion between two or more developers about changes to the code to address an issue
                         </p>
+
                         <p class="left_align">
                             Enable knowledge sharing
                         </p>
+
                         <p class="left_align">
                             Improve code quality
                         </p>
+
                         <p class="left_align">
                             Accelerate developer growth
                         </p>
+
                         <p class="left_align">
                             Reinforce good practices
                         </p>
+
+                        <p class="left_align">
+                            Review your code on every commit/merge
+                        </p>
+
 
                         <aside class="notes">
                             When you know that the code isn’t just for you to look at, but that it will be viewed, used,
@@ -1949,6 +1996,9 @@
                             Comments should document any side-effects that may not be obvious at first glance.
                         </aside>
                     </section>
+                    <section>
+                        <img alt="Get serial number" src="img/get_back_to_beginnings/get-serial-number.jpg">
+                    </section>
 				</section>
 				<section>
 				    <section>
@@ -1958,27 +2008,9 @@
                             Modifying or reorganizing the structure of your code without altering the intended behavior
                             of your system.
                         </p>
+
                         <p class="left_align">
                             Crucial to keeping a system’s codebase healthy and maintainable
-                        </p>
-                        <p class="left_align">
-                            &ldquo;
-                            <q>
-                                Stop saying “refactor” when you mean “change”. That’s not what refactoring is.
-                            </q>
-                            &rdquo; - <a href="https://twitter.com/rfletcherEW">@rfletcherEW</a>
-                        </p>
-                        <p class="left_align fragment">
-                            Refactoring increases ease of change while reducing risk of change
-
-                            Do not rewrite application just to clean code and application will remain the same
-                            - refactor it
-                        </p>
-				    </section>
-				    <section>
-                        <h2>Refactoring</h2>
-                        <p class="left_align">
-                            Unfortunately often not done
                         </p>
 
                         <p class="left_align">
@@ -1993,10 +2025,6 @@
                             The cheapest time to refactor code is right now.
                         </p>
 
-                        <p class="left_align">
-                            Review your code on every commit/merge
-                        </p>
-
                         <aside class="notes">
                             Start with bunch of code and than refactor
 
@@ -2006,6 +2034,47 @@
                             First write code that works - than do refactoring. Refine your code, split out functions,
                             make it dry, make it more readable. First make it work than make it wright.
                         </aside>
+				    </section>
+                        <h2>Refactoring</h2>
+
+                        <p class="left_align">
+                            Has no business value
+                        </p>
+
+                        <p class="left_align">
+                            Should not be part of backlog
+                        </p>
+
+                        <p class="left_align">
+                            Add time for refactoring in your estimates
+                        </p>
+
+                        <aside class="notes">
+                            Estimates -
+                            30% testing
+                            30% implementation
+                            10% logging and metrics
+                            30% refactoring
+                            Real estimate = 3 * implementation estimate
+                        </aside>
+				    <section>
+
+				    </section>
+
+				    <section>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                Stop saying “refactor” when you mean “change”. That’s not what refactoring is.
+                            </q>
+                            &rdquo; - <a href="https://twitter.com/rfletcherEW">@rfletcherEW</a>
+                        </p>
+                        <p class="left_align fragment">
+                            Refactoring increases ease of change while reducing risk of change
+
+                            Do not rewrite application just to clean code and application will remain the same
+                            - refactor it
+                        </p>
                     </section>
 
                     <section>
@@ -2055,6 +2124,8 @@
                         </p>
                         <aside class="notes">
                             Provide rules in team - for present and future team members. It's good for team spirit
+
+                            Communication is the purpose of formatting. Conventions enable common understanding
                         </aside>
                     </section>
                     <section>
@@ -2065,7 +2136,6 @@
                                 Consistent style is more important than the “right” style.
                             </q>
                             &rdquo; - The Art of readable code
-
                         </p>
                     </section>
                     <section>
@@ -2096,6 +2166,17 @@
                         </p>
                         <p class="left_align">
                             PSR-7 - HTTP message implementation
+                        </p>
+                    </section>
+                    <section>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                Do I like every PSR1/2 fact? No, but really I don't care. And I don't need to care. PSR1/2 have
+                                good readability and since I downloaded already prepared code formatter for PSR1/2 I had no
+                                problem to write all of my code in this new standard without any context switching in my head.
+                            </q>
+                            &rdquo; - The Art of readable code
                         </p>
                     </section>
                 </section>
@@ -2196,6 +2277,22 @@
                     <section>
                     <h2>Time to say goodbye</h2>
 
+                        <p class="left_align">
+                            Ask
+                        </p>
+
+                        <p class="left_align">
+                            Tell
+                        </p>
+
+                        <p class="left_align">
+                            Show
+                        </p>
+
+                        <p class="left_align fragment">
+                            Keep on learning
+                        </p>
+
                     <aside class="notes">
                         If you do not have plan you will not do it
 
@@ -2216,6 +2313,8 @@
 
                         Use PIE instead NIH
                         Proudly invented elsewhere instead Not Invented Here
+
+
                         </aside>
 
                     </section>
@@ -2265,6 +2364,7 @@
 						- <a href="http://principles-wiki.net/principles:keep_it_simple_stupid">Principles wiki</a> <br>
 						- <a href="http://www.amazon.com/The-Developers-Code-Wai-Cheung/dp/1934356794">The Developers Code</a> <br>
 						- <a href="https://tesarek.me/clean-code-for-beginners">Tesarek blog</a> <br>
+						- <a href="http://www.slideshare.net/alexeymigutsky/software-engineering-101">Software engineering 101</a> <br>
 					</p>
 				</section>
 
