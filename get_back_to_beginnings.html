@@ -52,21 +52,11 @@
                             </q>
                             &rdquo; - Martin Fowler
                         </p>
-                    </section>
-                    <section>
-                        <p class="left_align">
-                            &ldquo;
-                            <q>
-                                Programming is about understanding with precision - not about trying
-                                until it works
-                            </q>
-                            &rdquo; - Futurice
-                        </p>
 
                         <aside class="notes">
                             Programming is the art of telling another human what one wants the computer to do.  - Donald Knuth
                             Programming is as much art as it is science. We are passionate about our work in much the
-                            §same way that artists are passionate about theirs.
+                            same way that artists are passionate about theirs.
                         </aside>
                     </section>
 
@@ -119,8 +109,6 @@
                     </p>
                     <aside class="notes">
                         "The problem is that too many of us think that we are done once the program works" - Uncle Bob
-
-                        2. and 4. definition taken from python course
                     </aside>
 				</section>
 
@@ -148,17 +136,25 @@
                         It’s not about making money
                     </p>
 
-
                     <p class="left_align fragment red_text">
                         It’s all about value
                     </p>
 
+                    <p class="left_align fragment red_text">
+                        It doesn't matter how well you build the wrong thing
+                    </p>
+
                     <aside class="notes">
                         It is not enough for code to work - Uncle Bob - we are expecting more from the code
-
+                        <br/><br/>
                         Value =  All other things included!
-
+                        <br/><br/>
                         When your coding skills will be smooth, you will start thinking about the value automatically
+                        <br/><br/>
+                        Our goal is progress not perfection.
+                        <br/><br/>
+                        The real goal of the methodologies is to sell books, not to actually solve anybody's problem
+                        - Joel Spolsky
                     </aside>
 				</section>
 
@@ -173,6 +169,8 @@
 
                         <aside class="notes">
                             Entropy is amount of disorder in system. Entropy hits us hart.
+
+                            Most production code is mess. Messy code is the rule - not the exception.
                         </aside>
                     </section>
                     <section>
@@ -208,33 +206,16 @@
 
                         <aside class="notes">
                             1. You are worried about compatibility with the existing system.
-
+                            <br/><br/>
                             2.
-
+                            <br/><br/>
                             3. Existing developers have forgotten what a lot of the code does. They are afraid that
                             changes will worsen the system, new developers take too long to train. So hiring an army of
                             developer can't save you from bad code. And every day the system accumulates more bad code.
-
-                            4. The business becames hostage of the code state. Slower development costs time and money,
+                            <br/><br/>
+                            4. The business becomes hostage of the code state. Slower development costs time and money,
                             unpredictable integration periods make it harder to make sales promises, and quirky bugs can
                             make your customers lose faith.
-                        </aside>
-                    </section>
-                    <section>
-                        <h2>
-                            Whose fault is bad code?
-                        </h2>
-                        <p class="left_align">
-                            Managers job = defend schedule and features
-                        </p>
-                        <p class="left_align">
-                            Can we start from scratch?
-                        </p>
-                        <p class="left_align">
-                            Our job = defend the code
-                        </p>
-                        <aside class="notes">
-                            It is our responsibility to say “NO“ and provide good code
                         </aside>
                     </section>
 
@@ -277,13 +258,18 @@
                         <aside class="notes">
                             Code is getting worse as time passes. We should not wait - fix it all the time. That's
                             the only way you can prevent degradation.
-
+                            <br/><br/>
                             It's your job to defend your code - like doctor who is washing his hands before
                             surgery. It takes time but it is your duty. Your job as professional is to say no. Defend
                             your profession, defend your code quality. Your managers actually want better code - they
                             want to make it easier to develop new features. If some managers push you to write bad
                             code tell them story about american navy and canadian lighthouse. You should be like
                             lighthouse - you are defending your product - your code
+                            <br/><br/>
+                            Whose fault is bad code?
+                            Managers job = defend schedule and features
+                            Our job = defend the code
+                            It is our responsibility to say “NO“ and provide good code
                         </aside>
                     </section>
                     <section>
@@ -304,10 +290,10 @@
                         <aside class="notes">
                             Deadline is not excuse. Making mess is very unprofessional. The only way to go fast is
                             to keep code clean as much as possible all the time.
-
+                            <br/><br/>
                             Don't leave bad code behind you. Fix them as soon as you discover it. If you think there is
                             not enough time and that someone else will go around cleaning this mess - you are so wrong.
-
+                            <br/><br/>
                             Additional story
                             Everyone knows the previous co-worker whose name became a verb to describe dirty code.
                             “Oh man, this code has been Jimmy’d.”
@@ -390,17 +376,17 @@
                             appropriate to the programming paradigm in which we are working. This can result in sloppy
                             code and the accumulation of Technical Debt that we will “clear later”. Of course, later
                             usually means never.
-
+                            <br/><br/>
                             Sometimes it is simply lack of knowledge that prevents us from writing good code. In this
                             case the solution is to get that knowledge but not all developer’s want it. Our jobs as
                             professionals and colleagues is to persuade them that the knowledge will be worth it.
-
+                            <br/><br/>
                             Psychology tells us that our environment shapes our behaviour so we can’t expect a developer
                             to actively apply a set of principles independently of her environment. What do I mean by
                             this? I am referring to the effect that morale and organisational ‘red-tape’ has on a
                             developer’s ability to code. If a developer is unmotivated or constrained by strict policies
                             then he may have no desire to write well-designed code.
-
+                            <br/><br/>
                             Another factor that affects a developer’s environment is the availability of competent and
                             more experienced developers. When developer’s have access to more experienced senior
                             developers a mentoring culture can emerge and the quality of code can improve through
@@ -450,7 +436,7 @@
                             susceptible. We need to be careful that we aren’t seeing our designs through
                             rose-tinted glasses by seeking out the opinions of others and through code reviews
                             and pair-programming.
-
+                            <br/><br/>
                             Priming is an unconscious memory effect in which exposure to one stimulus influences
                             our response to another stimulus. For instance, if a person reads a list of words that
                             includes the word ‘computer’, and is later asked to state a word that begins with
@@ -461,7 +447,7 @@
                             developers before jumping straight into coding. If the outcome of such discussion involves
                             any redesign then we will then be primed to make positive changes rather than unconsciously
                             re-apply bad design. Priming is exacerbated by Informational Conformity.
-
+                            <br/><br/>
                             When reading perplexing code it is sometimes possible to think that the developer that wrote
                             it ‘knows something that we don’t’. Based on this assumption we adhere to the current
                             behaviour of the code because we’re unsure of how to change it. Essentially, we copy existing
@@ -470,7 +456,7 @@
                             a certain way then we should ask the developer that wrote it, if they are available.
                             Otherwise we should talk to our peers and discuss alternative designs or approaches to
                             make the design cleaner and more coherent.
-
+                            <br/><br/>
                             Closely related to Informational Conformity is the Halo effect. We take the code written by
                             a developer that we perceive as more competent than us as having a good design even if that
                             code is bad. We consequently fail to challenge or change it and we even copy it. Imitation
@@ -480,21 +466,21 @@
                             need to be careful we don’t apply the reverse-halo affect by dismissing ideas from developers
                             that we perceive as less competent. We need to remember that everybody has something to
                             contribute.
-
+                            <br/><br/>
                             As a developer we act in favour of the present state of the code over investing in the future,
                             i.e. refactoring into a better design because we want the reward of it being finished now.
                             This effect is compounded by the fact that we suffer from another cognitive bias: procrastination.
                             We will remove that duplication later! Moreover, the Principle of Least Effort tells us that
                             we are inherently lazy. If there are several ways of achieving the same goal, we will opt
                             for the least demanding course of action. This usually means avoiding refactoring.
-
+                            <br/><br/>
                             Reactance occurs when we feel that someone or something is taking away our choices or limiting
                             the range of alternatives available to us. So we do the opposite of what the rules (or principles)
                             suggest to prove our freedom of choice. We ignore software design principles because we want
                             to do our own thing. This bias can make us commit to an opinion more strongly when we are
                             challenged or pressured to adopt another viewpoint. Sometimes our responses are justified but
                             sometimes we may just be being irrational.
-
+                            <br/><br/>
                             Have you ever worked with a developer that grossly over-estimates their own technical ability?
                             The Dunning-Kruger effect occurs when people fail to adequately assess their level of competence
                             at a task and thus consider themselves more skilled than everyone else. Not only this but
@@ -537,10 +523,10 @@
                             books and courses about clean code start with an explanation of the design patterns or
                             writing tests. But these are just tools. If you don't understand the underlying motivation to
                             use these tools, they will not help you very much.
-
+                            <br/>
                             Don't be intimidated by the thought of learning something new. Writing clean code is a skill
                             like any other, you have to spend some time studying as well as practicing it.
-
+                            <br/>
                             Professional code isn't about creating the perfect code. It's not possible! There's no such
                             thing. Professional code is about accepting that fact. All software has bugs. Every line of
                             code is subject to change. If you write clean code, you are trying to make it easy to find
@@ -548,7 +534,7 @@
                         </aside>
                     </section>
                     <section>
-                        <h2>Professional code</h2>
+                        <h2>Professional code (coding)</h2>
 
                         <p class="left_align">
                             It's not only about code - it's about process
@@ -640,12 +626,13 @@
                         </p>
                         <aside class="notes">
                             System that are not testable should not be deployed because they can't be verified.
-                            Personal experience - when I started writing tests
-                            I also started writing better code because I could not test bad code and when you write piece of
-                            bad code and code that is not designed properly you will notice it immediately in your tests.
-                            . "The fact that we have these tests eliminates the fear that cleaning up
+                            Personal experience - when I started writing tests I also started writing better code because
+                            I could not test bad code and when you write piece of bad code and code that is not designed
+                            properly you will notice it immediately in your tests.
+                            <br/><br/>
+                            "The fact that we have these tests eliminates the fear that cleaning up
                             the code will break it". Good tests are also kind of good documentation.
-
+                            <br/><br/>
                             4.
                             Most software defects are introduced when changing existing code. Developer can't fully grasp
                             the effects of the changes made. Developer should be confident that the changes do not
@@ -669,29 +656,24 @@
                             Should look like English
                         </p>
                         <p class="left_align">
-                            &ldquo;
-                            <q>
-                                It's OK to figure out murder mysteries, but you shouldn't need to figure out code. You should
-                                be able to read it
-                            </q>
-                            &rdquo; - Steve C McConnell
+                            How fast can you read your code?
                         </p>
 
                         <aside class="notes">
                             We are constantly reading old code. If you want to write code more quickly that means that you
                             have to make it more readable. It has story to tell.
-
+                            <br/><br/>
                             It is much more profitable losing a couple of minutes thinking what is the best name for a
                             variable, or what is the best way to structure a class and get this extra time every time we
                             have to read it, than using the first name or structure that comes to mind in order to save time
                             having to spend it later trying to understand what a certain function does and how it does it.
                             - Source - umprogramador.net/write-code-for-humans/
-
+                            <br/><br/>
                             Your code should read like a well-written story. The code should have a natural flow where each
                             method describes an operation that has an entry and exit point. Each method should add to the
                             overall story and written in such a way that it would make sense even to non-programmers
                             - Source - https://www.microsoft.com/en-gb/developers/articles/week04aug15/a-software-developers-guide-to-clean-code/
-
+                            <br/><br/>
                             Good syntax is understandable syntax. Understandable syntax normally doesn't look like code.
                             Code is cryptic and unnatural to follow. Instead, understandable syntax should look like English.
                             English is easier to read, is easier to talk and reason verbally, and most importantly, it can
@@ -699,12 +681,12 @@
                             less cryptic and more like English, that's a good sign. I will now run through a list of
                             bite-sized tips which will make it easier to write code like English.
                             Source - sevenstrokes.net/learn-how-write-good-code
-
+                            <br/><br/>
                             Your goal is to write beautiful, functional and verbose code. In the words of Uncle Bob "your
                             code should read like an article. There should be a beginning, middle and end, it should be
                             self-documenting and should follow a logical order. By using verbose and purposeful wording you
                             can ensure that your code is self-explanatory.
-
+                            <br/><br/>
                             Many developers are tempted to rewrite rather than do the hard work of reading and
                             comprehending existing code. Since reading code is naturally challenging, if you write code
                             that you’re barely able to follow as you write it, you’ll find you’re unable to comprehend it
@@ -712,9 +694,59 @@
                             most the structure and design decisions fall out of memory. It’s like looking at the project
                             with a fresh perspective. Not being able to understand your own code a few weeks later can
                             be a really depressing situation. Source - http://blog.pluralsight.com/7-reasons-clean-code-matters
-
+                            <br/><br/>
                             Minimises the risk of introducing defects by making the code as easy to understand as possible
+
                         </aside>
+                    </section>
+
+                    <section>
+                        <h2>How readable is my code</h2>
+
+                        <p class="left_align">
+                            <span class="red_text">L</span>ocation our code is easy
+                        </p>
+
+                        <p class="left_align">
+                            <span class="red_text">I</span>dentify code at glance
+                        </p>
+
+                        <p class="left_align">
+                            <span class="red_text">F</span>lat structure as long as we can
+                        </p>
+
+                        <p class="left_align">
+                            <span class="red_text">T</span>ry to stay DRY
+                        </p>
+
+                        <p class="left_align">
+                            AngularJs - John Papa
+                        </p>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                It's OK to figure out murder mysteries, but you shouldn't need to figure out code. You should
+                                be able to read it
+                            </q>
+                            &rdquo; - Steve C McConnell
+                        </p>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                Nothing starts readable - Write dirty code, then clean it
+                            </q>
+                            &rdquo; - John Papa
+                        </p>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                How can you enhance code if you cant read it?
+                            </q>
+                            &rdquo; - John Papa
+                        </p>
                     </section>
 
                     <section>
@@ -727,15 +759,18 @@
                         </p>
 
                         <p class="left_align">
+                            It's an expression about how much you care about others
+                        </p>
+
+                        <p class="left_align">
+                            Paid appropriate attention to details
+                        </p>
+
+                        <p class="left_align">
                             Clean Code = Design principles + Design patterns
                         </p>
 
-                        <p>
-                            <img class="noframes" alt="Clean Code" src="img/get_back_to_beginnings/dave_thomas_clean_code.png">
-                        </p>
-
                         <aside class="notes">
-                            It's an expression about how much you care about others.
                             “Clean code is code that has been taken care of. Someone has taken the time to keep it simple and
                             orderly. They have paid appropriate attention to details. They have cared. But why should you care?
                             What’s wrong with code that just works? You should care because code is (almost) never written
@@ -743,10 +778,30 @@
                             And to be able to work on it efficiently you need to understand the code. And because people
                             need to understand the code we write, we can say that the code we write is not intended
                             only for the computer but also for humans.
-
+                            <br/><br/>
                             If your code is well design, clean and elegant than everyone will take care of it also. No one
                             will try to make mess in that code.
                         </aside>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                Clean code is the secret to your application's long and healthy life
+                            </q>
+                            &rdquo; - John Papa
+                        </p>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                Clean code can be read and enhanced by a developer other than it's original author.
+                                It has unit and acceptance tests. It has meaningful names. It provides one way rather than
+                                many ways for doing one thing. It has minimal dependencies, whic ahre explicitely defined,
+                                and provides clear and minimal API.
+                            </q>
+                            &rdquo; - Dave Thomas
+                        </p>
                     </section>
 
                     <section>
@@ -759,16 +814,26 @@
                         </p>
 
                         <p class="left_align">
-                            Don't build complexity into the system where it's not needed
-                        </p>
-
-                        <p class="left_align">
                             Complexity kill comprehension
                         </p>
 
                         <p class="left_align">
                             Complexity always grows over time
                         </p>
+
+                        <p class="left_align">
+                            Poor usages of control structure increases complexity
+                        </p>
+
+                        <aside class="notes">
+                            Complicated code is a sign that you don't understand your program well enough to make it
+                            simple. - Steve McConnell
+                            <br/><br/>
+                            Don't build complexity into the system where it's not needed
+                            <br/><br/>
+                            The three components in structured programming are sequence, selection and iteration.
+                            Control structures  - break, continue, return, try-catch
+                        </aside>
                     </section>
 
                     <section>
@@ -799,21 +864,18 @@
                         <aside class="notes">
                             Everyone Loves Simple. That’s why people say “I just want things to be simple.” Who says
                             “I just want things to be complicated”...ever? - Source - The Developers Code
-
+                            <br/><br/>
                             Don't introduce abstractions unless you have a valid need and don't build the
                             all-encompassing infrastructure or design that will support every possible feature that could
                             come along. Source - agileinaflash.blogspot.com/2009/02/simple-design.html
-
+                            <br/><br/>
                             Complexity always grows over time. It’s the unavoidable consequence of maturing software.
-                            Programming has to become the act of reducing complexity to simplicity.
-
-                            Other- wise, nobody
-                            could keep working on a program after it reached a certain level of com- plexity. The complex
+                            Programming has to become the act of reducing complexity to simplicity.Other- wise, nobody
+                            could keep working on a program after it reached a certain level of complexity. The complex
                             pieces of a program have to be organized in some simple way so that a programmer can work on
                             it without having God-like mental abilities. - Source - Code Simplicity
-
-                            Comment on last quote - “Hard to Code” Might Mean “Hard to Use”
-
+                            <br/><br/>
+                            “Hard to Code” Might Mean “Hard to Use”
                             When details become egregiously hard to code, it may be a smell that the actual function of
                             the system is difficult to understand. And while you may pat yourself on the back for
                             successfully programming something really complex, others are punching you in the back after
@@ -854,14 +916,6 @@
                         <p class="left_align">
                             The most fundamental principle in software is to write code that can handle change
                         </p>
-                        <p class="left_align">
-                            &ldquo;
-                            <q>
-                                The longer your program exists, the more probable it is that any piece of it will
-                                have to change
-                            </q>
-                            &rdquo; - Max Kanat-Alexander
-                        </p>
 
                         <p class="left_align">
                             Embrace change or die!
@@ -875,16 +929,47 @@
                     </section>
 
                     <section>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                The longer your program exists, the more probable it is that any piece of it will
+                                have to change
+                            </q>
+                            &rdquo; - Max Kanat-Alexander
+                        </p>
+
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                All successful software gets changed
+                            </q>
+                            &rdquo; - Fred Brooks
+                        </p>
+
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                I think clean code is good friend of agile. Both based on "everything changes". Embrace change.
+                            </q>
+                            &rdquo; - Jakub Tesarek
+                        </p>
+                    </section>
+
+                    <section>
                         <h2>
                             Extendable
                         </h2>
+
                         <p class="left_align">
                             Able to solve upcoming problem
                         </p>
+
+                        <p class="left_align">
+                            Prepare your code to be extended
+                        </p>
                         <aside class="notes">
                             Code is easy to extend and refactor, and it’s easy to fix bugs in the codebase.
-                        </aside>
-                        <aside class="notes">
+
                             Open closed principle
 
                             Even though it seems trivial, you have to prepare for your code to be extended.
@@ -958,6 +1043,9 @@
                         <h2>Easy to debug</h2>
                         <p class="left_align">Don't code today what you can't debug tomorrow</p>
                         <aside class="notes">
+                            Debugging is a means of diagnosing and correcting the root causes of errors that have
+                            already been detected. - Code Complete
+
                             Some developers spend more time debugging than writing new code. They should do this
                             efficiently.
 
@@ -1022,13 +1110,24 @@
                             Hard work
                         </h2>
                         <p class="left_align">
+                            To become a better programmer you must invest time and effort
+                        </p>
+                        <p class="left_align">
                             Practice everything you learn
                         </p>
                         <p class="left_align">
-                            You have to write code
+                            &ldquo;
+                            <q>
+                                Read a lot. Write a lot.
+                            </q>
+                            &rdquo; - Stephen King
                         </p>
                         <p class="left_align">
-                            You have to read code
+                            &ldquo;
+                            <q>
+                                You won't see how to do it until you see yourself doing it
+                            </q>
+                            &rdquo; - David Allen
                         </p>
                         <aside class="notes">
                             It's like learning to ride bicycle from the book or learning to fight watching Bruce Lee movies.
@@ -1039,11 +1138,14 @@
                             Read your code, read other peoples code. Maybe someone is born with code-sense but most of the time
                             it's not. Talented football player is not the best football player. The best player is one who
                             trained a lot every day.
-
+                            <br/><br/>
                             Do not only learn and analyse - Get you hands dirty. Failure is the only source of experience -
                             success is side effect. Experience is the only source of intuition
+                            <br/><br/>
+                            You have to write code - You have to read code
                         </aside>
                     </section>
+
                     <section>
                         <h2>
                             Discipline
@@ -1057,10 +1159,20 @@
                         <p class="left_align">
                             Disciplined developer raise the level of productivity in others
                         </p>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                I expect a programmer to apply the appropriate amount of rigor, discipline and
+                                excellence to any situation.
+                            </q>
+                            &rdquo; - Dan North
+                        </p>
 
                         <aside class="notes">
                             First two are definitions from dictionary
                             Discipline Makes Strong Developers - title of codding horror blog post
+
+                            Appropriate is key word in Dan North quote
                         </aside>
                     </section>
                 </section>
@@ -1110,7 +1222,6 @@
                             Over-engineering code is as bad as under-engineering it
                         </p>
 
-
                         <aside class="notes">
                             Modern programming languages, frameworks and APIs have powerful means to create sophisticated
                             solutions for various kinds of problems. Sometimes developers might feel tempted to write
@@ -1155,7 +1266,7 @@
                             “bit rot.” Since the code never runs, it might slowly become out of sync with the rest of
                             your system and thus develop bugs, and you’ll never know. Then, when you start to use it,
                             you’ll have to spend time debugging it.
-
+                            <br/><br/>
                             There are lots of reasons people think that they should write code before it’s needed, or
                             keep around code that isn’t being used. First off, some people believe they can get around
                             the Law of Change by programming every feature that any user could ever possibly need, right
@@ -1165,8 +1276,10 @@
                             future by doing some extra work now. In some cases that philosophy works, but not when
                             you’re writing code that isn’t needed. Even if that code ends up being needed in the future,
                             you will almost certainly have to spend time redesigning it, so you’re actually wasting time.
-
+                            <br/><br/>
                             Anticipating logic in the future, more often than not, will lead to unintended complexity.
+                            <br/><br/>
+                            The world is changing fast - build for what you know now.
                         </aside>
 				    </section>
 
@@ -1175,9 +1288,6 @@
 
                         <p class="left_align">
                             Repetition is the single most diminishing force in software development
-                        </p>
-                        <p class="left_align">
-                            Number one rule when refactoring
                         </p>
                         <p class="left_align">
                             If code is copied once, it’s usually okay. If it’s copied again, it should be refactored
@@ -1189,9 +1299,12 @@
                             Every time you duplicate your code you should create some kind of abstraction
                             Template, Strategy or Visitor pattern
                         </p>
+                        <p class="left_align">
+                            Duplication is waste - eliminate waste. Say it once - say it well.
+                        </p>
 
                         <aside class="notes">
-                            It's evil of every system.
+                            It's evil of every system. Number one rule when refactoring
                         </aside>
 				    </section>
 
@@ -1405,9 +1518,7 @@
                             </q>
                             &rdquo; - James O. Coplien
                         </p>
-                    </section>
-                    <section>
-                        <p class="left_align">
+                        <p class="left_align fragment">
                             &ldquo;
                             <q>
                                 There are only two hard things in Computer Science: cache invalidation and naming things.
@@ -1447,7 +1558,8 @@
                         <aside class="notes">
                             You can easily understand code if you choose names carefully.
                             Choosing good names takes time but it gives more value than it gets. Remember that
-                            code is 10x more read than written.<br/><br/>
+                            code is 10x more read than written.
+                            <br/><br/>
                             Readability is top priority
                             Code is written for humans to read and to be executed by machine. Machine will execute your code
                             but ask yourself - can human understand this
@@ -1504,17 +1616,17 @@
                         <aside class="notes">
                             1. Do not use unnecessary, unclear abbreviations. Pronounceable names can be talked about
                             easily. Don't abbreviate unnecessarily.
-
+                            <br/><br/>
                             2. Do you really see difference each time
-
+                            <br/><br/>
                             3. Avoid using variables with short names. Exception are variables used for loops. Bu if you
                             use nested loops these variables are not recommended. You can also use subroutines instead
                             of nested loops.
-
+                            <br/><br/>
                             4. A study by W. J. Hansen found that longer names are better for rarely used variables or global
                             variables and shorter names are better for local variables or loop variables (Shneiderman 1980)
                              - Code complete
-
+                            <br/><br/>
                             8. Most of the variables in your program are temporary. Calling a few of them temporary may
                             indicate that you aren’t sure of their real pur- poses. - Code complete
                         </aside>
@@ -1528,7 +1640,7 @@
                         </p>
 
                         <p class="fragment left_align">
-                            Pronounceable names
+                            Pronounceable names (Avoid name like DtbRcrd12)
                         </p>
 
                         <p class="fragment left_align">
@@ -1540,11 +1652,11 @@
                         </p>
 
                         <p class="fragment left_align">
-                            Constants instead magic numbers
+                            Constants instead magic numbers (TOP_PRIORITY vs 100)
                         </p>
 
                         <p class="fragment left_align">
-                            Be consistent - do not use synonym interchangeably
+                            Be consistent - do not use synonym interchangeably (get, fetch, retrieve)
                         </p>
 
                         <p class="fragment left_align">
@@ -1553,11 +1665,8 @@
 
                         <aside class="notes">
                             1. English and only English no matter how much you love your language
-                            <br/>
-                            2. Avoid name like DtbRcrd12
-                            <br/>
-                            4. Make your variable visible by as few lines of code as possible.
-
+                            <br/><br/>
+                            3. Make your variable visible by as few lines of code as possible.
                         </aside>
                     </section>
 
@@ -1579,6 +1688,9 @@
                         </p>
                         <p class="left_align">
                             Keep on creating functions until you can't create any more
+                        </p>
+                        <p class="left_align">
+                            Verbs of every programming
                         </p>
                         <aside class="notes">
                             Functions are verbs of every programming language and the classes are nouns (Clean Code)
@@ -1620,32 +1732,31 @@
                         <aside class="notes">
                             Long descriptive name is better than short enigmatic name, better than long descriptive comment.
                             Choosing good name is important - remember that you read 10x more than you write.
-
+                            <br/><br/>
                             Name reflects what function do - so that name should be verb
-
+                            <br/><br/>
                             First rule is that functions should be small. The second is that should be smaller than
                             that. We measure size by counting physical lines.
-
+                            <br/><br/>
                             Blocks within if-else and while statement should be one line long (Clean Code)
                             I also prefer this in all other loops
-
+                            <br/><br/>
                             Functions should do one thing. They should do it well. They should do it only. (Clean Code)
-
+                            <br/><br/>
                             The ideal number of params is 0 - niladic functions
                             Next come with 1 param - monadic
                             Followed by 2 - dyadic
                             3 - Triadic - should be avoided
                             4 and more params - Polyadic - Think about rewriting your function (T. Otwel)
                             Try to pass object instead creating polyadic functions
-
+                            <br/><br/>
                             If you use try-catch - than it should be the only one block in function
                             One level abstraction bellow name of the functions
-
+                            <br/><br/>
                             Functions should not have side effects - do only one thing in functions - what name of that
                             function is - no more no less. Side effects - do only one thing - described in name - not
                             sudden effects. You know you are working on clean code when each routine turns out to be
                             pretty much what you expected
-
                             Source - Book Clean Code - mostly
                         </aside>
 				    </section>
@@ -1673,17 +1784,16 @@
                             <br/>
                             I mean Boolean flags create separate functions instead - when you set boolean value and than
                             decide what function will do.
-
+                            <br/><br/>
                             2.
                             <br/>
                             Do not use empty() - use name like isEmpty() - you should ask question
                             In Code complete author use names like found, done instead isFound, isDone because it's
                             easier to read in code
-
-
+                            <br/><br/>
                             3.
-
-                            4.
+                            <br/><br/>
+                            4. Context is already added - do not duplicate it
                         </aside>
 				    </section>
 
@@ -1713,10 +1823,12 @@
                         <aside class="notes">
                             1. <br/>
                             Do not afraid - source control is your friend
+                            <br/><br/>
                             2. <br/>
                             Functions generally either process or retrieve things. If they are doing both,
                             they are doing too many things. What functions retrieve can be described by the
                             function name.
+                            <br/><br/>
                             3. <br/>
                             Try to make it obvious what the parameters and their order is from the function name.
                             Also keep order consistent, so if you usually ask for $user_id as the first parameter,
@@ -1724,7 +1836,6 @@
 
                             $database->update_user_email($user_id, $email);
                             $database->update_user_first_name($user_id, $first_name);
-
                         </aside>
 				    </section>
 				    <section>
@@ -1747,6 +1858,10 @@
                         <p class="left_align">
                             Creating good interface means creating good abstractions
                         </p>
+                        <p class="left_align">
+                            Nouns of every programming language
+                        </p>
+
                         <aside class="notes">
                             Abstraction is process of ignoring details
                             Details should be hidden behind abstraction.
@@ -1777,19 +1892,20 @@
 
                         <aside class="notes">
                             Noun or noun phrase best describes what responsibilities it fulfills
-
+                            <br/><br/>
                             The first rule of classes is that they should be small. The second rule of classes is that
                             they should be smaller than that. We are actually counting number of responsibilities
-
+                            <br/><br/>
                             We should also be able to write a brief description of the class in about 25 words,
                             without using the words “if,” “and,” “or,” or “but.”
-
+                            <br/><br/>
                             Do not break SRP. They should be organized for change.
-
+                            <br/><br/>
                             Two classes, components or modules are coupled when at least one of them uses the other. The
                             less these items know about each other, the looser they are coupled. A component that is only
                             loosely coupled to its environment can be more easily changed or replaced than a strongly
                             coupled component.
+                            <br/><br/>
                             We can look at object oriented software as a bunch of classes that send messages (call
                             functions) between each other. Whenever a class sends a message to another class or receives
                             a message, there is a relationship between those classes. We can't simply change or delete
@@ -1797,7 +1913,7 @@
                             both at the same time. The more widely the class is used, the more changes in the rest of
                             the program we have to carry out when we need to change its behaviour. This is why we have
                             to be careful when designing relationships between our classes.
-
+                            <br/><br/>
                             Cohesion is the degree to which elements of a whole belong together. Methods and fields in a
                             single class and classes of a component should have high cohesion. High cohesion in classes
                             and components results in simpler, more easily understandable code structure and design.
@@ -1822,7 +1938,6 @@
                         </p>
 
                         <aside class="notes">
-
                             Instead of minimizing the number of lines, a better metric is to minimize the time needed
                             for someone to understand it.
                         </aside>
@@ -1870,11 +1985,10 @@
                             Every time you start to write a comment - think once more and try to make your code better.
                             They are often source of lie. That's because if you have a lot of comments you have to maintain
                             them as you maintain your .
-
+                            <br/><br/>
                             Code should have comments, but having too much comments is as bad as too few. Comments discuss
                             why something is done but it' already explained in code - it DRY break
-
-
+                            <br/><br/>
                             Comments should only really be written when it’s not possible to clearly communicate the intent
                             of a variable or method by using a name. The comment then serves an actual purpose that could
                             not be easily expressed in the code. - simpleprogrammer.com/2015/03/16/11-rules-all-programmers-should-live-by/
@@ -1899,10 +2013,10 @@
                             else's work. If we all followed the same standards, then there would be no need to read
                             apologies and instead we would be enjoying improving and building upon the right foundations
                             laid before us. - Source https://cmatskas.com/comments-in-code-yay-or-nay/
-
+                            <br/><br/>
                             Comments should state in high level terms what the expected result of the code is. Never
                             what the code is doing in low level terms.
-
+                            <br/><br/>
                             With too many comments, you may face the following issues:
                             1. Time consuming maintenance that may lead to comments that are no longer up to date. Then
                             comments go against their primary goal: they mislead the developer who will spend more time
@@ -1953,19 +2067,19 @@
 
                         <aside class="notes">
                             1. For example do not write comments about information that can be found in source control
-                            <br/>
+                            <br/><br/>
                             2. Comments tend to be obsolete - comments easily become old, non appropriate
-                            <br/>
+                            <br/><br/>
                             3. For example - $i++ - increment i
-                            <br/>
+                            <br/><br/>
                             4. If you really want to write comment than let it be worth and good. Let it be clear.
                             Don’t comment on facts that can be derived quickly from the code itself.
-                            <br/>
+                            <br/><br/>
                             5. Add clutter to the code
-                            <br/>
+                            <br/><br/>
                             6. DO NOT leave commented out piece of code NEVER. Please never - if you do not do this it
                             will stay there forever. You will write it better next time trust me :-)
-
+                            <br/><br/>
                             All this comments creates "noise". Even if there is a comment that could help you in
                             troubleshooting or fixing something, there is a very good chance that you will miss it
                             because it's obfuscated by the noise. - Source https://cmatskas.com/comments-in-code-yay-or-nay/
@@ -2035,6 +2149,7 @@
                             make it dry, make it more readable. First make it work than make it wright.
                         </aside>
 				    </section>
+				    <section>
                         <h2>Refactoring</h2>
 
                         <p class="left_align">
@@ -2057,8 +2172,6 @@
                             30% refactoring
                             Real estimate = 3 * implementation estimate
                         </aside>
-				    <section>
-
 				    </section>
 
 				    <section>
@@ -2069,11 +2182,37 @@
                             </q>
                             &rdquo; - <a href="https://twitter.com/rfletcherEW">@rfletcherEW</a>
                         </p>
-                        <p class="left_align fragment">
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                Refactoring is a specific way to change code by a series of tiny behavior-preserving
+                                transformations. It is not just moving code arround
+                            </q>
+                            &rdquo; - Martin Fowler
+                        </p>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                When you finally realize what your program is doing, you have to go back and make it
+                                look like you knew that all along. Make it look like it was easy to write this program,
+                                even if it wasn't.
+                            </q>
+                            &rdquo; - Ward Cunningham
+                        </p>
+                        <aside class="notes">
                             Refactoring increases ease of change while reducing risk of change
 
                             Do not rewrite application just to clean code and application will remain the same
                             - refactor it
+                            <br/><br/>
+                            Frequently in software development, we solve a problem, check in the code and release it.
+                            Unfortunately, this means that we release the first draft of our solution. One of the main
+                            lessons of writing workshops and classes is to write in small chunks .and revise ruthlessly.
+                            By releasing our first drafts, we increase the maintenance cost of our application by making
+                            it harder for the next developer to understand the initial intent of the our solution. In
+                            this session, we will explore concepts from the craft of writing such as small assignments,
+                            shitty first drafts, where ideas come from and the three types of drafts as they apply to
+                            the practice of software development. - Alan Stevens
                         </p>
                     </section>
 
@@ -2087,18 +2226,6 @@
                             <p class="left_align">Lower costs more profit</p>
                     </section>
 
-                    <section>
-                        <h2>Refactoring mathematics</h2>
-                        <p class="fragment left_align">
-                            Dev time = 60% reading and 40% writing.
-                        </p>
-                        <p class="fragment left_align">
-                            Code refactor can reduce reading by 20%, improving 8 hours/week
-                        </p>
-                        <p class="fragment left_align">
-                            That's 416 hours/year.
-                        </p>
-                    </section>
                 </section>
 
                 <section>
@@ -2176,7 +2303,7 @@
                                 good readability and since I downloaded already prepared code formatter for PSR1/2 I had no
                                 problem to write all of my code in this new standard without any context switching in my head.
                             </q>
-                            &rdquo; - The Art of readable code
+                            &rdquo; - Miro Svrtan
                         </p>
                     </section>
                 </section>
@@ -2255,6 +2382,15 @@
                         <p class="left_align">
                             &ldquo;
                             <q>
+                                Programming is about understanding with precision - not about trying
+                                until it works
+                            </q>
+                            &rdquo; - Futurice
+                        </p>
+
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
                                 Code is like humor. When you *have* to explain it, it’s bad.
                             </q>
                             &rdquo; - Cory House
@@ -2293,28 +2429,26 @@
                             Keep on learning
                         </p>
 
-                    <aside class="notes">
-                        If you do not have plan you will not do it
-
-                        If you write clean code, then you are helping your future self and your co-workers. You are
-                        reducing the cost of maintenance of the application you are writing. You are making it easier to
-                        estimate the time needed for new features. You are making it easier to fix bugs. You are making
-                        it more enjoyable to work on the code for many years to come. Essentially you are making the life
-                        easier for everyone involved in the project. - Source - http://cvuorinen.net/2014/04/what-is-clean-code-and-why-should-you-care/
-
-                        Try to write it as good as possible. Imagine you code is building. What happens with building
-                        when you stop caring about it. The same happens to the code.
-
-                        Some house was immaculate, beautiful, loaded with priceless antiques, objets d'art, and so on.
-                        One day, a tapestry that was hanging a little too close to his living room fireplace caught on
-                        fire. The fire department rushed in to save the day—and his house. But before they dragged
-                        their big, dirty hoses into the house, they stopped—with the fire raging—to roll out a mat
-                        between the front door and the source of the fire. They didn't want to mess up the carpet.
-
-                        Use PIE instead NIH
-                        Proudly invented elsewhere instead Not Invented Here
-
-
+                        <aside class="notes">
+                            If you do not have plan you will not do it
+                            <br/><br/>
+                            If you write clean code, then you are helping your future self and your co-workers. You are
+                            reducing the cost of maintenance of the application you are writing. You are making it easier to
+                            estimate the time needed for new features. You are making it easier to fix bugs. You are making
+                            it more enjoyable to work on the code for many years to come. Essentially you are making the life
+                            easier for everyone involved in the project. - Source - http://cvuorinen.net/2014/04/what-is-clean-code-and-why-should-you-care/
+                            <br/><br/>
+                            Try to write it as good as possible. Imagine you code is building. What happens with building
+                            when you stop caring about it. The same happens to the code.
+                            <br/><br/>
+                            Some house was immaculate, beautiful, loaded with priceless antiques, objets d'art, and so on.
+                            One day, a tapestry that was hanging a little too close to his living room fireplace caught on
+                            fire. The fire department rushed in to save the day—and his house. But before they dragged
+                            their big, dirty hoses into the house, they stopped—with the fire raging—to roll out a mat
+                            between the front door and the source of the fire. They didn't want to mess up the carpet.
+                            <br/><br/>
+                            Use PIE instead NIH
+                            Proudly invented elsewhere instead Not Invented Here
                         </aside>
 
                     </section>
@@ -2365,6 +2499,8 @@
 						- <a href="http://www.amazon.com/The-Developers-Code-Wai-Cheung/dp/1934356794">The Developers Code</a> <br>
 						- <a href="https://tesarek.me/clean-code-for-beginners">Tesarek blog</a> <br>
 						- <a href="http://www.slideshare.net/alexeymigutsky/software-engineering-101">Software engineering 101</a> <br>
+						- <a href="https://speakerdeck.com/johnpapa/readable-code">Readable code</a> <br>
+						- <a href="https://speakerdeck.com/alanstevens/does-your-code-tell-a-story">Does your code tell a story</a> <br>
 					</p>
 				</section>
 
