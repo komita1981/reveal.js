@@ -72,6 +72,12 @@
                     <p class="fragment red_text">
                         Given in order of importance
                     </p>
+
+                    <aside class="notes">
+                        Kent also said in his book TDD by example:
+                        "No software engineers release even the tiniest change without testing, except the very
+                        confident and the very sloppy"
+                    </aside>
                 </section>
                 <section>
                     <p class="left_align">
@@ -97,7 +103,7 @@
                         PHP developer
                     </p>
                     <p class="left_align">
-                        Work for Nano Interactive
+                        Work for Navus Consulting
                     </p>
                     <p class="left_align">
                         I like to learn and share knowledge
@@ -1331,6 +1337,8 @@ function it_notifies_an_attached_subscriber()
 
                         <aside class="notes">
                             Meszaros adds one more element - teardown (cleanup)
+
+                            Bill Wake coined this as 3 A - TDD by example book
                         </aside>
                     </section>
                     <section>
@@ -1548,8 +1556,17 @@ if ($account->getUser()->getRole()->IsAdmin()) {
                     </section>
                     <section>
                         <p class="left_align">
-                           18. Don’t Mock What You Don’t Own
+                           18. Do Not Mock What You Do not Own
                         </p>
+
+                        <aside class="notes">
+                            Wrap 3rd party.
+                            A framework or third party object often has to provide a large interface to solve a large
+                            number of needs, of which you only need a subset. When you write your wrapper don't try and
+                            write everything it does, write the operations you need, with the interface you want. If
+                            you're using the language of your domain, rather than the language of the third party object,
+                            this is much simpler.
+                        </aside>
                     </section>
                     <section>
                         <p class="left_align">
@@ -1585,8 +1602,25 @@ public function getSuccessfulAddData()
 
                     <section>
                         <p>
+                            21.
                             <img class="noframes" src="img/testimony/unit-testing-mvc.png">
                         </p>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            22. Programming by Wishful Thinking
+                        </p>
+
+                        <aside class="notes">
+                            Write some code that uses a component, before you implement the component. This helps to
+                            discover what functions and data you need, and following this discovery will lead you to more
+                            simple and useful APIs.
+                            I write acceptance tests using a fixture I wish I had, and then implement the feature using
+                            collaborators I wish I had.
+                            Defer the decision about how to represent your data by imagining you have any function you
+                            wish you had in order to solve your problem in the simplest way possible.
+                        </aside>
                     </section>
                 </section>
 
@@ -1655,6 +1689,8 @@ public function getSuccessfulAddData()
                             <li><a href="http://techportal.inviqa.com/2013/07/23/php-test-doubles-patterns-with-prophecy/">Testing doubles</a></li>
                             <li><a href="http://www.martinfowler.com/bliki/Xunit.html">Martin Fowler about XUnit</a></li>
                             <li><a href="http://createopen.com/design/php/2014/10/30/designing-through-mocking.html">Notes on designing through mocking</a></li>
+                            <li><a href="https://blog.thesoftwarecraft.com/2013/11/wishful-programming.html">Wishful Programming</a></li>
+                            <li><a href="https://blog.8thlight.com/eric-smith/2011/10/27/thats-not-yours.html">That's Not Yours</a></li>
                         </ul>
                     </section>
                     <section>
