@@ -455,20 +455,346 @@ public function route($method, $name, $routeParameters = [], $parameters = [], $
                         <h2>
                             Packages & Tools
                         </h2>
+
+                        <p class="left_align">
+                            Dingo API
+                        </p>
+
+                        <p class="left_align">
+                            Repositories
+                        </p>
+
+                        <p class="left_align">
+                            CORS
+                        </p>
                     </section>
+                </section>
+
+                <section>
                     <section>
                         <h2>
                             Dingo API
                         </h2>
+
+                        <p class="left_align">
+                            <pre>
+                                <code data-trim contenteditable>
+"require": {
+    "dingo/api": "1.0.*@dev"
+}
+                                </code>
+                            </pre>
+                        </p>
+
+                        <p class="left_align">
+                            Provides set of tools to easily and quickly build your own API
+                        </p>
+
+                        <p class="left_align">
+                            Requires Laravel 5.1+ or Lumen 5.1+ and PHP 5.5.9+
+                        </p>
                     </section>
 
+                    <section>
+                        <h3>
+                            Configuration
+                        </h3>
+
+                        <p class="left_align">
+                            Much of the package comes preconfigured
+                        </p>
+
+                        <p class="left_align">
+                            Use your .env file to configure most of the package
+                        </p>
+
+                        <p class="left_align">
+                            Finer tuning of the package will require publishing the configuration file
+                        </p>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            Configure:
+                        </p>
+
+                        <p class="left_align">
+                            Name
+                        </p>
+
+                        <p class="left_align">
+                            Default Version
+                        </p>
+
+                        <p class="left_align">
+                            Authentication Provider
+                        </p>
+
+                        <p class="left_align">
+                            Throttling / Rate Limiting (Disabled by default)
+                        </p>
+
+                        <p class="left_align">
+                            Response Transformer (Fractal is the default)
+                        </p>
+
+                        <p class="left_align">
+                            Response Format (JSON and a JSON response format is registered by default)
+                        </p>
+
+                        <p class="left_align">
+                            Error Format
+                        </p>
+
+                    </section>
+
+                    <section>
+                        <h3>
+                            Creating API Endpoints
+                        </h3>
+
+                        <p class="left_align">
+                            <pre>
+                                <code data-trim contenteditable>
+// To avoid complications with your main application routes this package utilizes its own router.
+$api = app('Dingo\Api\Routing\Router');
+
+$api->version(
+    'v1',
+    function ($api) {
+        $api->post('register', 'SampleApi\Http\Controllers\RegisterController@process');
+        $api->post('login', 'SampleApi\Http\Controllers\LoginController@login');
+
+        $api->get('blocks', 'SampleApi\Http\Controllers\BlocksController@getAll');
+        $api->get('blocks/{id}', 'SampleApi\Http\Controllers\BlocksController@get');
+        $api->post('blocks', 'SampleApi\Http\Controllers\BlocksController@create');
+        $api->put('blocks/{id}', 'SampleApi\Http\Controllers\BlocksController@update');
+        $api->delete('blocks/{id}', 'SampleApi\Http\Controllers\BlocksController@delete');
+    }
+);
+
+//protected with JWT
+$api->version(
+    'v1',
+    ['middleware' => 'api.auth'],
+    function ($api) {
+    $api->post('logout', 'Ematerials\Api\Http\Controllers\LoginController@logout');
+}
+);
+                                </code>
+                            </pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Responses
+                        </h3>
+
+                        <p class="left_align">
+                            There's a number of different ways to return responses
+                        </p>
+
+                        <p class="left_align">
+                            Use Response Builder
+                        </p>
+
+                        <p class="left_align">
+                            Provides a fluent interface to easily build a more customizable response
+                        </p>
+
+                        <p class="left_align">
+                            Generally used in conjunction with transformers.
+                        </p>
+
+                        <p class="left_align">
+                            Use the Dingo\Api\Routing\Helpers trait
+                        </p>
+
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            <pre>
+                                <code data-trim contenteditable>
+use Dingo\Api\Routing\Helpers;
+use Illuminate\Routing\Controller;
+
+class ApiController extends Controller
+{
+    use Helpers;
+}
+                                </code>
+                            </pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Responding With An Array
+                        </h3>
+
+                        <p class="left_align">
+                            <pre>
+                                <code data-trim contenteditable>
+public function show($id)
+{
+    $block = $this->block->find($id);
+
+    return $this->response->array($block->toArray());
+}
+                                </code>
+                            </pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Responding With A Single Item
+                        </h3>
+
+                        <p class="left_align">
+                            <pre>
+                                <code data-trim contenteditable>
+public function show($id)
+{
+                                    $block = $this->block->find($id);
+
+    return $this->response->item($block, new BlockTransformer);
+}
+                                </code>
+                            </pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Responding With A Collection Of Items
+                        </h3>
+
+                        <p class="left_align">
+                            <pre>
+                                <code data-trim contenteditable>
+public function show($id)
+{
+    $blocks = $this->block->find($id);
+
+    return $this->response->collection($blocks, new BlockTransformer);
+}
+                                </code>
+                            </pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Responding With Paginated Items
+                        </h3>
+
+                        <p class="left_align">
+                            <pre>
+                                <code data-trim contenteditable>
+public function show($id)
+{
+    $blocks = $this->block->find($id);
+
+    return $this->response->pagination($blocks, new BlockTransformer);
+}
+                                </code>
+                            </pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Other responses
+                        </h3>
+
+                        <p class="left_align">
+                            <pre>
+                                <code data-trim contenteditable>
+// Responding With No Content
+return $this->response->noContent();
+
+// Responding With Created Response
+return $this->response->created();
+
+// A generic error with custom message and status code.
+return $this->response->error('This is an error.', 404);
+
+// A not found error with an optional message as the first parameter.
+return $this->response->errorNotFound();
+
+// There are also errorBadRequest, errorForbidden, errorInternal, errorUnauthorized
+                                </code>
+                            </pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            Adding Additional Headers
+                            <pre>
+                                <code data-trim contenteditable>
+return $this->response->item($user, new UserTransformer)->withHeader('X-Foo', 'Bar');
+                                </code>
+                            </pre>
+                        </p>
+                        <p class="left_align">
+                            Adding Meta Data
+                            <pre>
+                                <code data-trim contenteditable>
+return $this->response->item($user, new UserTransformer)->addMeta('foo', 'bar');
+
+//  set an array of meta data instead of chaining multiple method calls
+return $this->response->item($user, new UserTransformer)->setMeta($meta)
+                                </code>
+                            </pre>
+                        </p>
+                        <p class="left_align">
+                            Setting Response Status Code
+                            <pre>
+                                <code data-trim contenteditable>
+return $this->response->item($user, new UserTransformer)->setStatusCode(200);
+                                </code>
+                            </pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Transformers
+                        </h3>
+
+                        <p class="left_align">
+                            Easily and consistently transform objects into an array
+                        </p>
+
+                        <p class="left_align">
+                            Type-cast integers and booleans, include pagination results, and nest relationships
+                        </p>
+
+                        <p class="left_align">
+                            Fractal is the default transformation layer used by Dingo
+                        </p>
+                    </section>
+
+                </section>
+
+                <section>
                     <section>
                         <h2>
                             Repositories
                         </h2>
 
                         <p class="left_align">
-                            bosnadev/repositories
+                            <pre>
+                                <code data-trim contenteditable>
+"require": {
+    "bosnadev/repositories": "0.*"
+}
+                                </code>
+                            </pre>
                         </p>
 
                         <p class="left_align">
@@ -481,7 +807,7 @@ public function route($method, $name, $routeParameters = [], $parameters = [], $
 
                         <aside class="notes">
                             We allow business logic to access the data object without having knowledge of underlying data access architecture.
-                        </p>
+                        </aside>
 
                     </section>
 
@@ -604,6 +930,7 @@ class FilmsController extends Controller
                             </code>
                         </pre>
                     </section>
+                </section>
 
                     <section>
                         <h2>
@@ -611,7 +938,13 @@ class FilmsController extends Controller
                         </h2>
 
                         <p class="left_align">
-                            barryvdh/laravel-cors
+                            <pre>
+                                <code data-trim contenteditable>
+"require": {
+    "barryvdh/laravel-cors": "^0.7.2"
+}
+                                </code>
+                            </pre>
                         </p>
 
                         <p class="left_align">
