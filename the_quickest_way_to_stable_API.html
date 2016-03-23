@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The quickest way to stable API</title>
+
+		<meta name="description" content="The quickest way to stable API using Laravel framework">
+		<meta name="author" content="Milan Popovic">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="css/presentation/the_quickest_way_to_stable_API.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>The quickest way to stable API</h1>
+					<h3>Using Laravel framework</h3>
+					<p>
+                        <small>Presented by <a href="http://milanpopovic.me">Milan Popović</a> / <a href="http://twitter.com/komita1981">@komita1981</a></small>
+					</p>
+				</section>
+
+                <section>
+                    <h2>Me</h2>
+                    <p class="left_align">
+                        PHP developer
+                    </p>
+                    <p class="left_align">
+                        Work for Navus Consulting Gmbh
+                    </p>
+                    <p class="left_align">
+                        I like to learn and share knowledge
+                    </p>
+                    <p class="left_align"   >
+                        Active member of PHP Srbija
+                    </p>
+                </section>
+
+                <section>
+                    <p class="left_align">
+                        Why framework?
+                    </p>
+                    <p class="left_align fragment">
+                        A software framework is 80% of your application already written for you.
+                    </p>
+                </section>
+
+                <section>
+                    <p class="left_align">
+                        Why Laravel?
+                    </p>
+                    <p class="left_align fragment">
+                        Enables rapid development
+                    </p>
+                    <p class="left_align fragment">
+                        Stable and well tested
+                    </p>
+                    <p class="left_align fragment">
+                        Community support
+                    </p>
+                    <p class="left_align fragment">
+                        Documentation
+                    </p>
+                    <p class="left_align fragment">
+                        Learning resources
+                    </p>
+                    <p class="left_align fragment">
+                        Easy to recruit developers
+                    </p>
+                    <p class="left_align fragment">
+                        LTS
+                    </p>
+                </section>
+
+                <section>
+                    <p class="left_align">
+                        Why Laravel for quick API development?
+                    </p>
+                    <p class="left_align">
+                        DB Migration
+                    </p>
+                    <p class="left_align">
+                        DB seeding
+                    </p>
+                    <p class="left_align">
+                        Model factory
+                    </p>
+                    <p class="left_align">
+                        Form request
+                    </p>
+                    <p class="left_align">
+                        Testing
+                    </p>
+                    <p class="left_align">
+                        3rd Party Packages
+                    </p>
+                </section>
+
+                <section>
+                    <h2>
+                        DB Migration
+                    </h2>
+
+                    <p class="left_align">
+                        Version control for you DB schema
+                    </p>
+
+                    <p class="left_align">
+                        Laravel Schema facade provides database agnostic support for creating and manipulating tables
+                    </p>
+
+                    <pre>
+                        <code data-trim contenteditable>
+// Create new migration
+php artisan make:migration create_users_table
+
+// Run migration
+php artisan migrate
+
+// Rollback migration
+php artisan migrate
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h2>
+                        DB Seed
+                    </h2>
+
+                    <p class="left_align">
+                        Sample/Test data for your DB
+                    </p>
+
+                    <pre>
+                        <code data-trim contenteditable>
+// Create new seeder
+php artisan make:seeder UsersTableSeeder
+
+// Run seeders
+php artisan db:seed
+
+// Run seeders v2
+php artisan migrate --seed
+
+// Run single seeder
+php artisan db:seed --class=UsersTableSeeder
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>
+                            Model Factory
+                        </h2>
+
+                        <p class="left_align">
+                            Default model attributes
+                        </p>
+
+                        <p class="left_align">
+                            Uses Faker for generating values
+                        </p>
+
+                        <pre>
+                            <code data-trim contenteditable>
+$factory->define(App\User::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'email' => $faker->email,
+        'password' => bcrypt(str_random(10)),
+        'remember_token' => str_random(10),
+    ];
+});
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            Multiple Factory Types - multiple factories for the same Eloquent model class
+                        </p>
+                        <pre>
+                            <code data-trim contenteditable>
+$factory->defineAs(App\User::class, 'admin', function ($faker) use ($factory) {
+    $user = $factory->raw(App\User::class);
+
+    return array_merge($user, ['admin' => true]);
+});
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            Attach relationships
+                        </p>
+                        <pre>
+                            <code data-trim contenteditable>
+$factory->define(App\Post::class, function ($faker) {
+    return [
+        'title' => $faker->title,
+        'content' => $faker->paragraph,
+        'user_id' => function () {
+            return factory(App\User::class)->create()->id;
+        },
+        'user_type' => function (array $post) {
+            return App\User::find($post['user_id'])->type;
+        }
+    ];
+});
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            Using factories
+                        </p>
+                        <pre>
+                            <code data-trim contenteditable>
+// Create three App\User instances...
+$users = factory(App\User::class, 3)->make();
+
+// Create three App\User "admin" instances...
+$users = factory(App\User::class, 'admin', 3)->make();
+
+// Create App\User user with given name...
+$user = factory(App\User::class)->make([
+    'name' => 'Abigail',
+]);
+
+// Persisting Factory Models
+$user = factory(App\User::class)->create();
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>
+                            Form Requests
+                        </h2>
+
+                        <p class="left_align">
+                            Special class for validating request params and authorizing
+                        </p>
+
+                        <p class="left_align">
+                            Each class has rules() (returns array) and authorize() (returns boolean) methods
+                        </p>
+
+                        <p class="left_align">
+                            Type Hinting in Controller methods
+                        </p>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code data-trim contenteditable>
+public function rules()
+{
+    return [
+        'title' => 'required|unique:posts|max:255',
+        'body' => 'required',
+    ];
+}
+
+public function authorize()
+{
+    $commentId = $this->route('comment');
+
+    return Comment::where('id', $commentId)
+    ->where('user_id', Auth::id())->exists();
+}
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>
+                            Testing
+                        </h2>
+
+                        <p class="left_align">
+                            PHPUnit is included out of the box
+                        </p>
+
+                        <p class="left_align">
+                            Laravel is built with testing in mind
+                        </p>
+
+                        <p class="left_align">
+                            It's also ships with convenient helper methods
+                        </p>
+
+                        <p class="left_align">
+                            Uses Mockery as mock object framework
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>
+                            Working with database
+                        </h2>
+
+                        <p class="left_align">
+                            Using Migrations - DatabaseMigrations trait
+                        </p>
+
+                        <p class="left_align">
+                            DatabaseTransactions - DatabaseTransactions trait
+                        </p>
+
+                        <p class="left_align">
+                            Model Factories
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>
+                            Working with database
+                        </h2>
+
+                        <p class="left_align">
+                            SeeInDatabase helper <br/>
+                            seeInDatabase($table, array $data, $connection = null)
+                        </p>
+
+                        <p class="left_align">
+                            NotSeeInDatabase helper <br/>
+                            notSeeInDatabase($table, array $data, $connection = null)
+                        </p>
+
+                        <p class="left_align">
+                            Seed (seed($class = 'DatabaseSeeder')
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>
+                            Creating HTTP request
+                        </h2>
+
+                        <p class="left_align">
+                            <pre>
+                                <code data-trim contenteditable>
+// Main method
+public function call($method, $uri, $parameters = [], $cookies = [], $files = [], $server = [], $content = null)
+
+// There are also methods for other http verbs
+public function post($uri, array $data = [], array $headers = [])
+
+// Visit the given URI with a JSON request.
+public function json($method, $uri, array $data = [], array $headers = [])
+{
+    // removed code from original method
+    $content = json_encode($data);
+
+    $headers = array_merge([
+    'CONTENT_LENGTH' => mb_strlen($content, '8bit'),
+    'CONTENT_TYPE' => 'application/json',
+    'Accept' => 'application/json',
+    ], $headers);
+}
+
+// Call a named route and return the Response.
+public function route($method, $name, $routeParameters = [], $parameters = [], $cookies = [], $files = [], $server = [], $content = null)
+                                </code>
+                            </pre>
+
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>
+                            PHPUnit Assertions for status code and headers
+                        </h2>
+
+                        <p class="left_align fragment">
+                            assertResponseOk()
+                        </p>
+
+                        <p class="left_align fragment">
+                            assertResponseStatus($code)
+                        </p>
+
+                        <p class="left_align fragment">
+                            seeStatusCode($status)
+                        </p>
+
+                        <p class="left_align fragment">
+                            seeHeader($headerName, $value)
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>
+                            PHPUnit Assertions for json
+                        </h2>
+
+                        <p class="left_align fragment">
+                            seeJsonEquals($data)
+                        </p>
+
+                        <p class="left_align fragment">
+                            seeJsonStructure($structure, $responseData)
+                        </p>
+
+                        <p class="left_align fragment">
+                            seeJsonContains($data, $negate)
+                        </p>
+
+                        <p class="left_align fragment">
+                            seeJsonSubset($data)
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>
+                            Packages & Tools
+                        </h2>
+                    </section>
+                    <section>
+                        <h2>
+                            Dingo API
+                        </h2>
+                    </section>
+
+                    <section>
+                        <h2>
+                            Repositories
+                        </h2>
+
+                        <p class="left_align">
+                            bosnadev/repositories
+                        </p>
+
+                        <p class="left_align">
+                            Container where data access logic is stored
+                        </p>
+
+                        <p class="left_align">
+                            Hides the details of data access logic from business logic
+                        </p>
+
+                        <aside class="notes">
+                            We allow business logic to access the data object without having knowledge of underlying data access architecture.
+                        </p>
+
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code data-trim contenteditable>
+interface RepositoryInterface
+{
+
+    public function all($columns = array('*'));
+
+    public function paginate($perPage = 15, $columns = array('*'));
+
+    public function create(array $data);
+
+    public function update(array $data, $id);
+
+    public function delete($id);
+
+    public function find($id, $columns = array('*'));
+
+    public function findBy($field, $value, $columns = array('*'));
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code data-trim contenteditable>
+use App\Repositories\FilmRepository as Film;
+
+class FilmsController extends Controller
+{
+    /**
+    * @var Film
+    */
+    private $film;
+
+    public function __construct(Film $film)
+    {
+        $this->film = $film;
+    }
+
+    public function index()
+    {
+        return \Response::json($this->film->all());
+    }
+}
+                            </code>
+                        </pre>
+                    </section>
+
+
+                    <section>
+                        <p class="left_align">
+                            Basic actions are just enough for simple querying
+                        </p>
+                        <p class="left_align">
+                            Added CriteriaInterface
+                        </p>
+
+                        <pre>
+                            <code data-trim contenteditable>
+interface CriteriaInterface
+{
+    public function skipCriteria($status = true);
+
+    public function getCriteria();
+
+    public function getByCriteria(Criteria $criteria);
+
+    public function pushCriteria(Criteria $criteria);
+
+    public function applyCriteria();
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code data-trim contenteditable>
+class LengthOverTwoHours implements CriteriaInterface
+{
+    public function apply($model, Repository $repository)
+    {
+        $query = $model->where('length', '>', 120);
+        return $query;
+    }
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code data-trim contenteditable>
+use App\Repositories\Criteria\Films\LengthOverTwoHours;
+use App\Repositories\FilmRepository as Film;
+
+class FilmsController extends Controller
+{
+    /**
+    * @var Film
+    */
+    private $film;
+
+    public function __construct(Film $film)
+    {
+        $this->film = $film;
+    }
+
+    public function index()
+    {
+        $this->film->pushCriteria(new LengthOverTwoHours());
+        return \Response::json($this->film->all());
+    }
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>
+                            CORS (Cross-Origin Resource Sharing)
+                        </h2>
+
+                        <p class="left_align">
+                            barryvdh/laravel-cors
+                        </p>
+
+                        <p class="left_align">
+                            Allows you to send CORS headers with ACL-style per-url configuration.
+                        </p>
+
+                        <p class="left_align">
+                            Supports Laravel & Lumen
+                        </p>
+
+                    </section>
+                </section>
+
+                <section style="text-align: left;">
+                    <h2>
+                        Resources
+                    </h2>
+                    <p>
+                        - <a href="laravel.com">Laravel documentation</a> <br>
+                        - <a href="www.slideshare.net/jdblackmore1/digpen-sw-why-choose-laravel">Why choose Laravel </a> <br>
+                        - <a href="https://bosnadev.com/2015/03/07/using-repository-pattern-in-laravel-5/">Using Repository </a> <br>
+                    </p>
+                </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
