@@ -67,15 +67,6 @@
 
                 <section>
                     <p class="left_align">
-                        Why framework?
-                    </p>
-                    <p class="left_align fragment">
-                        A software framework is 80% of your application already written for you.
-                    </p>
-                </section>
-
-                <section>
-                    <p class="left_align">
                         Why Laravel?
                     </p>
                     <p class="left_align fragment">
@@ -99,6 +90,10 @@
                     <p class="left_align fragment">
                         LTS
                     </p>
+
+                    <aside class="notes">
+                        Why framework? A software framework is 80% of your application already written for you.
+                    </aside>
                 </section>
 
                 <section>
@@ -461,6 +456,10 @@ public function route($method, $name, $routeParameters = [], $parameters = [], $
                         </p>
 
                         <p class="left_align">
+                            Dredd
+                        </p>
+
+                        <p class="left_align">
                             Repositories
                         </p>
 
@@ -779,6 +778,294 @@ return $this->response->item($user, new UserTransformer)->setStatusCode(200);
                         </p>
                     </section>
 
+                    <section>
+                        <p class="left_align">
+                            <pre>
+                                <code data-trim contenteditable>
+public function __construct()
+{
+    $this->availableIncludes = [
+        'presentations',
+        'block_settings',
+    ];
+                                    
+    $this->defaultIncludes = [
+        'block_settings',
+    ];
+}
+
+public function transform(Block $block)
+{
+    return [
+        'id' => (int)$block->id,
+        'name' => $block->name,
+        'start_at' => $block->start_at->toDateTimeString(),
+        'ends_at' => $block->ends_at->toDateTimeString(),
+        'code' => $block->code,
+    ];
+}
+
+public function includePresentations(BlockModel $block)
+{
+    return $this->collection($block->presentations, new PresentationTransformer());
+}
+
+public function includeBlockSettings(BlockModel $block)
+{
+    return $this->item($block->blockSettings, new BlockSettingsTransformer());
+}
+                                </code>
+                            </pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>
+                            <img class="noframes" alt="Exceptions" src="img/the_quickest_way_to_stable_API/exceptions.png">
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Form Request end Error Responses
+                        </h3>
+
+                        <p class="left_align">
+                            Extend the base API form request class
+                        </p>
+
+                        <p class="left_align">
+                            Implement your own class
+                        </p>
+
+                        <p class="left_align">
+                            Dingo\Api\Exception\ValidationHttpException should be thrown
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Authentication
+                        </h3>
+
+                        <p class="left_align">
+                            HTTP Basic (Dingo\Api\Auth\Provider\Basic)
+                        </p>
+
+                        <p class="left_align">
+                            JSON Web Tokens (Dingo\Api\Auth\Provider\JWT)
+                        </p>
+
+                        <p class="left_align">
+                            OAuth 2.0 (Dingo\Api\Auth\Provider\OAuth2)
+                        </p>
+
+                        <p class="left_align">
+                            Custom Authentication Providers
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Documentation
+                        </h3>
+
+                        <p class="left_align">
+                            API Blueprint Documentation
+                        </p>
+
+                        <p class="left_align">
+                            Annotate API controllers
+                        </p>
+
+                        <p class="left_align">
+                            Generate documentation using the Artisan command
+                        </p>
+
+                        <p class="left_align">
+                            But...
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>
+                            Dredd — HTTP API Testing Framework
+                        </h3>
+
+                        <p>
+                            <img class="noframes" alt="Exceptions" src="img/the_quickest_way_to_stable_API/dredd.png">
+                        </p>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            &ldquo;
+                            <q>
+                                Dredd is a language-agnostic command-line tool for validating API documentation written
+                                in API Blueprint format against its backend implementation.                            </q>
+                            &rdquo;
+                        </p>
+
+                        <p class="left_align">
+                            Dredd reads your API description
+                        </p>
+
+                        <p class="left_align">
+                            Validates whether API replies with expected responses
+                        </p>
+
+                        <p class="left_align">
+                            Continuous Integration Support
+                        </p>
+
+                        <p class="left_align">
+                            Hooks — a glue code for each test setup and teardown
+                        </p>
+
+                        <p class="left_align">
+                            Do not install dredd manually on Homestead - use after.sh
+                        </p>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            PHP Dredd hook handler
+                        </p>
+                        <p class="left_align">
+                            Provides a bridge between the Dredd API Testing Framework and PHP environment
+                        </p>
+                        <p class="left_align">
+                            <pre>
+                                <code data-trim contenteditable>
+"require-dev": {
+    "ddelnano/dredd-hooks-php": "~1.0.0",
+}
+                                </code>
+                            </pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>
+                           Hooks usage
+                        </h3>
+                        <p class="left_align">
+                            Loading db fixtures
+                        </p>
+                        <p class="left_align">
+                            Cleanup after test step or steps
+                        </p>
+                        <p class="left_align">
+                            Handling authentication and sessions
+                        </p>
+                        <p class="left_align">
+                            Passing data between transactions (saving state from responses to stash)
+                        </p>
+                        <p class="left_align">
+                            Modifying request generated from blueprint
+                        </p>
+                        <p class="left_align">
+                            Changing generated expectations
+                        </p>
+                        <p class="left_align">
+                            Setting custom expectations
+                        </p>
+                        <p class="left_align">
+                            Debugging via logging stuff
+                        </p>
+
+                    </section>
+                    <section>
+                        <h3>
+                            Hooks type
+                        </h3>
+
+                        <ul>
+                            <li>
+                                beforeEach
+                            </li>
+                            <li>
+                                afterEach
+                            </li>
+                            <li>
+                                beforeAll
+                            </li>
+                            <li>
+                                afterAll
+                            </li>
+                            <li>
+                                before
+                            </li>
+                            <li>
+                                after
+                            </li>
+                            </li>
+                            <li>
+                                beforeEachValidationHooks
+                            </li>
+                            <li>
+                                afterEachValidationHooks
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p class="left_align">
+                            <pre>
+                                <code data-trim contenteditable>
+require __DIR__ . '/../../../vendor/autoload.php';
+
+$app = require __DIR__ . '/../../../bootstrap/app.php';
+
+$app->make(\Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+
+Artisan::call('migrate');
+
+$user = factory(\Ematerials\Api\Models\User::class)->create([
+    'email' => 'knownuser@example.dev'
+]);
+
+Hooks::beforeEach(function (&$transaction) use ($app) {
+    $app->make('db')->beginTransaction();
+});
+
+Hooks::afterEach(function (&$transaction) use ($app) {
+    $app->make('db')->rollback();
+});
+
+Hooks::afterAll(function (&$transaction) use ($app) {
+    Artisan::call('migrate:rollback');
+});
+
+Hooks::before('Authentication > Logout', function (&$transaction) {
+    $transaction->skip = true;
+});
+
+Hooks::after('Block > Show', function (&$transaction) {
+    // Some actions to do
+});
+                                </code>
+                            </pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Run dredd
+                        </h3>
+                        <pre>
+                            <code data-trim contenteditable>
+dredd documentation.apib
+    http://localhost:8001
+    --server "php -S 0.0.0.0:8001 -t public/"
+    --language vendor/bin/dredd-hooks-php
+    --hookfiles tests/dredd/hooks/hookfile.php
+                            </code>
+                        </pre>
+                    </section>
+
                 </section>
 
                 <section>
@@ -816,7 +1103,6 @@ return $this->response->item($user, new UserTransformer)->setStatusCode(200);
                             <code data-trim contenteditable>
 interface RepositoryInterface
 {
-
     public function all($columns = array('*'));
 
     public function paginate($perPage = 15, $columns = array('*'));
