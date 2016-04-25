@@ -7,6 +7,10 @@
     text-align: left !important;
 }
 
+.right_align{
+    text-align: right !important;
+}
+
 .red_text{
     color: red;
 }

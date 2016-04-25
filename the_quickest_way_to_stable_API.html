@@ -925,8 +925,56 @@ public function includeBlockSettings(BlockModel $block)
                         </p>
 
                         <p class="left_align">
+                            Use of Gavel.js library
+                        </p>
+
+                        <p class="left_align">
                             Do not install dredd manually on Homestead - use after.sh
                         </p>
+
+                        <aside class="notes">
+                            Generates expectations on HTTP responses based on examples in the blueprint with use of Gavel.js library
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Headers Expectations
+                        </h3>
+                        <ul>
+                            <li>
+                                All headers given in example must be present in the response
+                            </li>
+                            <li>
+                                Only values of headers significant for content negotiation are validated
+                            </li>
+                            <li>
+                                All other headers values can differ
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>
+                            Body Expectations
+                        </h3>
+                        <ul>
+                            <li>
+                                All JSON keys on any level given in the example must be present in the response JSON
+                            </li>
+                            <li>
+                                Response JSON values must be of the same JSON primitive type
+                            </li>
+                            <li>
+                                All JSON values can differ
+                            </li>
+                            <li>
+                                Arrays can have additional items, type or structure is not validated.
+                            </li>
+                            <li>
+                                Plain text must match perfectly
+                            </li>
+                        </ul>
                     </section>
 
                     <section>
