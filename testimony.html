@@ -1632,6 +1632,17 @@ public function getSuccessfulAddData()
                             Commands should be mocked - queries should be stubbed
                         </aside>
                     </section>
+
+                    <section>
+                        <p class="left_align">
+                            24. Before asserting through loop use assertCount
+                        </p>
+
+                        <aside class="notes">
+                            Foreach on empty will assert nothing and we will have false positive test
+                        </aside>
+
+                    </section>
                 </section>
 
                 <section>
