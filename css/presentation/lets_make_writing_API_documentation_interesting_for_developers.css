@@ -1,0 +1,16 @@
+.noframes{
+	border: none !important;
+	box-shadow: none !important;
+}
+
+.left_align{
+	text-align: left !important;
+}
+
+.right_align{
+	text-align: right !important;
+}
+
+.red_text{
+	color: red;
+}

@@ -1,0 +1,873 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Let's make writing API documentation interesting for developers</title>
+
+    <meta name="description" content="Let's make writing API documentation interesting for developers">
+    <meta name="author" content="Milan Popovic">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <link rel="stylesheet" href="css/presentation/lets_make_writing_API_documentation_interesting_for_developers.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Let's make writing API documentation interesting for developers</h1>
+            <p>
+                <small>Presented by <a href="http://milanpopovic.me">Milan Popović</a> / <a
+                        href="http://twitter.com/komita1981">@komita1981</a></small>
+            </p>
+        </section>
+        <section>
+            <h2>
+                API
+            </h2>
+            <p class="left_align">
+                At the core of modern software development and architecture
+            </p>
+            <p class="left_align">
+                Massive market
+            </p>
+            <p class="left_align">
+                Tens of millions of microservices
+            </p>
+            <p class="left_align">
+                Millions of private APIs
+            </p>
+            <p class="left_align">
+                100000s of public APIs
+            </p>
+            <aside class="notes">
+                @source
+                https://www.slideshare.net/DialexaLLC/building-an-api-using-api-documentation-to-overcome-4-key-challenge
+            </aside>
+        </section>
+        <section>
+            <p class="left_align">
+                <q>
+                    An API Is Only As Good As Its Documentation
+                </q>
+            </p>
+
+            <p class="right_align">
+                Unknown hero
+            </p>
+
+            <aside class="notes">
+            </aside>
+        </section>
+        <section>
+            <p class="left_align">
+                <q>
+                    I'll write the documentation tomorrow...
+                </q>
+            </p>
+
+            <p class="right_align">
+                Unknown coward :-)
+            </p>
+
+            <aside class="notes">
+                @source https://speakerdeck.com/loonypandora/documentation-for-fun-and-profit
+
+                Speak with audience:
+                Hands up - who say this all the time
+
+                Who hates to write documentation?
+
+                Do you document your API?
+
+                Developers who love to write documentation are pretty rare
+            </aside>
+        </section>
+        <section>
+            <h2>
+                Documentation is...
+            </h2>
+            <p class="left_align">
+                About communication
+            </p>
+            <p class="left_align">
+                Important for all team members
+            </p>
+            <p class="left_align">
+                Complex
+            </p>
+            <p class="left_align">
+                Discipline
+            </p>
+            <p class="left_align">
+                A critical component to the usability of your API – and thus critical to its success
+            </p>
+            <p class="left_align">
+                UI for your API
+            </p>
+            <p class="left_align">
+                More than tool
+            </p>
+            <p class="left_align">
+                Last thing on the list :-)
+            </p>
+            <aside class="notes">
+                @source https://speakerdeck.com/katherinemwhite/documentation-for-developers
+                @source https://speakerdeck.com/ericholscher/documentation-as-empathy
+                I can't say I'm self taught. I've been taught by the people who wrote the documentation
+                @soulshake
+
+                @source https://speakerdeck.com/lucas/documentation-for-fun-and-profit
+
+                @source https://speakerdeck.com/apistrat/a-developers-approach-to-documentation-by-gregory-koberger
+
+                @source https://speakerdeck.com/adekunleoduye/documentation-driven-design-systems
+
+                @source https://www.slideshare.net/wojtassj/pycon-pl-2014-executable-api
+
+                It's more than tool because it represents that you care about your consumers (and
+                your colleagues)
+            </aside>
+        </section>
+        <section>
+            <h2>
+                Documentation is not..
+            </h2>
+            <p class="left_align">
+                One man job
+            </p>
+            <p class="left_align">
+                About your API - it’s about your users
+            </p>
+        </section>
+        <section>
+            <h2>
+                Good Documentation Should Be:
+            </h2>
+            <p class="left_align">
+                Easy to understand
+            </p>
+            <p class="left_align">
+                Reliable
+            </p>
+            <p class="left_align">
+                Readable (readable === useful)
+            </p>
+            <p class="left_align">
+                Be readable (readable === useful)
+            </p>
+            <p class="left_align">
+                Complete
+            </p>
+            <p class="left_align">
+                Concise
+            </p>
+            <p class="left_align">
+                Consistent
+            </p>
+            <p class="left_align">
+                Provide valid and working examples
+            </p>
+            <p class="left_align">
+                Always be up-to-date
+            </p>
+            <p class="left_align">
+                Structured properly
+            </p>
+            <p class="left_align">
+                Within that structure it's clear and consistent
+            </p>
+            <p class="left_align">
+                Be part of development process
+            </p>
+            <p class="left_align">
+                Searchable
+            </p>
+            <p class="left_align">
+                Filled with examples
+            </p>
+            <p class="left_align">
+                Version controlled
+            </p>
+            <p class="left_align">
+                Canonical
+            </p>
+            <p class="left_align">
+                Something you want to do
+            </p>
+            <aside class="notes">
+                @source https://speakerdeck.com/evildmp/documentation-driven-development
+                Structured properly = how-to, tutorials
+
+                @source https://speakerdeck.com/kneath/documentation-is-freaking-awesome
+
+                @source https://speakerdeck.com/loonypandora/documentation-for-fun-and-profit
+
+                @source https://www.slideshare.net/eBrandingNinja/apithedocs-how-can-api-documentation-be-agile
+
+                @source https://www.slideshare.net/mikestowe/api-documentation-best-practices
+                Just as important as reliability is readability.
+
+                Code should not be shipped if it is not documented
+            </aside>
+        </section>
+        <section>
+            <h2>
+                Good Documentation Benefits:
+            </h2>
+            <p class="left_align">
+                Empower people to use your API in the most efficient and right way
+            </p>
+            <p class="left_align">
+                Makes product easier to understand
+            </p>
+            <p class="left_align">
+                More consumers
+            </p>
+            <p class="left_align">
+                Less support requests
+            </p>
+            <p class="left_align">
+                A great and important marketing tool
+            </p>
+            <p class="left_align">
+                You will become better writer
+            </p>
+            <p class="left_align">
+                Accelerate developer onboarding
+            </p>
+            <aside class="notes">
+                @source https://speakerdeck.com/danabrit/documentation-is-win-or-wtfm
+                Title in source is - Why is documentation win
+
+                @source https://speakerdeck.com/kneath/documentation-is-freaking-awesome
+            </aside>
+        </section>
+        <section>
+            <h2>
+                What should you document:
+            </h2>
+            <p class="left_align">
+                General description
+            </p>
+            <p class="left_align">
+                HTTP status codes
+            </p>
+            <p class="left_align">
+                HTTP verbs
+            </p>
+            <p class="left_align">
+                Headers
+            </p>
+            <p class="left_align">
+                Versioning
+            </p>
+            <p class="left_align">
+                Resources - input/output
+            </p>
+            <p class="left_align">
+                Responses - OK & errors
+            </p>
+            <p class="left_align">
+                Authentication and authorisation
+            </p>
+            <p class="left_align">
+                Rate limiting
+            </p>
+            <p class="left_align">
+                Pricing
+            </p>
+            <aside class="notes">
+                @source https://speakerdeck.com/ankinson/documenting-restful-apis-2
+                @source https://speakerdeck.com/ichesnokov/developing-documentation-for-restful-apis
+            </aside>
+        </section>
+        <section>
+            <section>
+                <h2>
+                    API Success
+                </h2>
+            </section>
+            <section>
+                <p class="left_align">
+                    <q>
+                        The way to a developer’s heart is great documentation.
+                    </q>
+                </p>
+
+                <p class="right_align">
+                    James Ju, Parse
+                </p>
+
+                <aside class="notes">
+                    @source https://www.slideshare.net/eBrandingNinja/right-ingredients-for-your-api-documentation
+                </aside>
+            </section>
+            <section>
+                <p class="left_align">
+                    Developer experience is the most important part of the API economy
+                </p>
+                <p class="left_align">
+                    The quality of your API's documentation dictates the developer experience
+                </p>
+                <p class="left_align">
+                    Designing an engaging experience around your API
+                </p>
+                <p class="left_align">
+                    With the popularity of microservices, developers are your decision makers
+                </p>
+                <p class="left_align">
+                    They will judge your API in a manner of seconds
+                </p>
+                <aside class="notes">
+                    @source https://www.slideshare.net/eBrandingNinja/right-ingredients-for-your-api-documentation
+
+                    Most important factor for usage of third party is complete and accurate documentation
+
+                    @source
+                    https://www.slideshare.net/DialexaLLC/building-an-api-using-api-documentation-to-overcome-4-key-challenges
+
+                    The quality of your API's documentation dictates the developer experience.
+
+                    @source https://www.slideshare.net/mikestowe/api-documentation-best-practices
+                </aside>
+            </section>
+            <section>
+                <p class="left_align">
+                    1. Good documentation can’t fix a bad API. A lot of people fix bad APIs by just writing a lot of
+                    documentation
+                </p>
+                <p class="left_align">
+                    2. A good API can’t be used without good documentation
+                </p>
+                <p class="left_align">
+                    Greg Koberger, ReadMe
+                </p>
+                <aside class="notes">
+                    @source https://www.slideshare.net/eBrandingNinja/right-ingredients-for-your-api-documentation
+                </aside>
+            </section>
+            <section>
+                <h2>
+                    Litmus test
+                </h2>
+                <p class="left_align">
+                    You have 3 minutes, 33 seconds to sell your API
+                </p>
+                <p class="left_align">
+                    Understand in 3 seconds what your API is for
+                </p>
+                <p class="left_align">
+                    Be able to identify the entry point in 30 seconds
+                </p>
+                <p class="left_align">
+                    Be able to create an account, call the system, and use the result in 3 minutes
+                </p>
+                <p class="left_align">
+                    Ori Pekelman, Platform.sh
+                </p>
+                <aside class="notes">
+                    @source https://www.slideshare.net/eBrandingNinja/right-ingredients-for-your-api-documentation
+                </aside>
+            </section>
+            <section>
+                <h2>
+                    Litmus test - The 3:30:3 goal
+                </h2>
+                <p class="left_align">
+                    You have 3 minutes, 33 seconds to sell your API
+                </p>
+                <p class="left_align">
+                    Understand in 3 seconds what your API is for
+                </p>
+                <p class="left_align">
+                    Be able to identify the entry point in 30 seconds
+                </p>
+                <p class="left_align">
+                    Be able to create an account, call the system, and use the result in 3 minutes
+                </p>
+                <p class="left_align">
+                    Ori Pekelman, Platform.sh
+                </p>
+                <aside class="notes">
+                    @source https://www.slideshare.net/eBrandingNinja/right-ingredients-for-your-api-documentation
+                </aside>
+            <section>
+                <p class="left_align">
+                    3 seconds - what it does
+                </p>
+                <p class="left_align">
+                    30 seconds - why you should use it
+                </p>
+                <p class="left_align">
+                    3 minutes - to do something
+                </p>
+                <aside class="notes">
+                    @source https://www.slideshare.net/ellispratt/moving-into-api-documentation-writing
+                </aside>
+            </section>
+            </section>
+        </section>
+
+        <section>
+            <h2>
+                How to write good documentation:
+            </h2>
+            <p class="left_align">
+                Treat documentation as you treat your code
+            </p>
+            <p class="left_align">
+                Integrate in review process
+            </p>
+            <p class="left_align">
+                Improve it constantly (do refactoring)
+            </p>
+            <p class="left_align">
+                Integrate in development cycle
+            </p>
+            <p class="left_align">
+                Allow tracking of documentation issues
+            </p>
+            <p class="left_align">
+                Add it to your acceptance criteria (done === documented)
+            </p>
+            <p class="left_align">
+                Provide some guarantees that the documentation is accurate - let's TDD
+            </p>
+            <p class="left_align">
+                Write like a human (for humans) not a machine
+            </p>
+            <aside class="notes">
+                @source https://speakerdeck.com/indigo/we-dont-need-no-documentation
+                @source https://speakerdeck.com/ankinson/documenting-restful-apis-2
+
+                TDD - test driven documentation
+
+                @todo Find some picture with tdd
+
+                More code we have - we need to invest more time for maintenance. The same is with
+                documentation.
+            </aside>
+        </section>
+        <section>
+            <h2>
+                Documentation problems
+            </h2>
+            <p class="left_align">
+                Does not exists
+            </p>
+            <p class="left_align">
+                Write documentations just to have it
+            </p>
+            <p class="left_align">
+                Outdated
+            </p>
+            <p class="left_align">
+                Costly to maintain
+            </p>
+            <p class="left_align">
+                Boring
+            </p>
+            <p class="left_align">
+                Time consuming
+            </p>
+            <p class="left_align">
+                It's just wrong
+            </p>
+            <p class="left_align">
+                Can get outdated easily
+            </p>
+            <p class="left_align">
+                Too complicated
+            </p>
+            <p class="left_align">
+                Lack of ownership
+            </p>
+            <p class="left_align">
+                People don't use API that do not have good documentation
+            </p>
+
+            <aside class="notes">
+                @source https://speakerdeck.com/danabrit/documentation-is-win-or-wtfm
+                Title in source is - The case against Documentation
+
+                @source https://speakerdeck.com/indigo/we-dont-need-no-documentation
+
+                @source https://speakerdeck.com/lucas/documentation-for-fun-and-profit
+                Can get outdated easily - Isn't easy to fix
+
+                @source https://www.slideshare.net/eBrandingNinja/apithedocs-how-can-api-documentation-be-agile
+
+                Complicated documentation is sign that your code is too complicated
+
+                Out of sync documentation isn’t only not useful, but detrimental to the usability of your API.
+            </aside>
+        </section>
+        <section>
+            <h2>
+                What API consumer wants:
+            </h2>
+            <p class="left_align">
+                To try your API before they write code
+            </p>
+            <p class="left_align">
+                To explore data/functionality you provide
+            </p>
+            <p class="left_align">
+                Accurate, clear, concise and up-to-date information
+            </p>
+            <p class="left_align">
+                To quickly implement API
+            </p>
+            <p class="left_align">
+                To understand what is happening
+            </p>
+            <p class="left_align">
+                Modern, usable UX
+            </p>
+            <p class="left_align">
+                Sendbox test environment
+            </p>
+            <p class="left_align">
+                Help (blogs, twitter, recent update info...)
+            </p>
+            <p class="left_align">
+                Client in the language of choice
+            </p>
+            <aside class="notes">
+                @source https://www.slideshare.net/biztalk360/api-documentation-77860485
+                @source https://www.slideshare.net/MartaRauch/rest-api-documentation-best-practices
+            </aside>
+        </section>
+        <section>
+            <h2>
+                Examples of Great API Documentation
+            </h2>
+            <p class="left_align">
+                Stripe
+            </p>
+            <p class="left_align">
+                Twilio
+            </p>
+            <p class="left_align">
+                Shopify
+            </p>
+            <p class="left_align">
+                Spotify
+            </p>
+            <p class="left_align">
+                Sendgrid
+            </p>
+            <p class="left_align">
+                Dropbox
+            </p>
+        </section>
+        <section>
+            <h2>
+                A few more things...
+            </h2>
+            <p class="left_align">
+                How to start? Just start writing
+            </p>
+            <p class="left_align">
+                Decide on set of conventions (naming, markup, capitalization, styles)
+            </p>
+            <p class="left_align">
+                Stick to conventions
+            </p>
+            <p class="left_align">
+                Assume no prior knowledge for users
+            </p>
+            <p class="left_align">
+                Provide examples (in several languages)
+            </p>
+            <p class="left_align">
+                Use gender-neutral language
+            </p>
+            <p class="left_align">
+                Cut down your content (2-3 sentences per paragraph)
+            </p>
+            <p class="left_align">
+                Make it easy to skim
+            </p>
+            <aside class="notes">
+                @source https://speakerdeck.com/danabrit/documentation-is-win-or-wtfm
+
+                Assume no prior knowledge for users - terms that are obvious to you might not be
+                obvious to others
+
+                @source https://speakerdeck.com/limedaring/nodeconf-budapest
+            </aside>
+        </section>
+        <section>
+            <h2>
+                A documentation-first approach
+            </h2>
+            <p class="left_align">
+                Creating a detailed explanation of what the API is meant to do and how systems will integrate
+                with your product
+            </p>
+            <p class="left_align">
+                Think of the API documentation as a contract between your product and these systems
+            </p>
+            <p class="left_align">
+                Taking a documentation-first approach to building APIs can eliminate all challenges and
+                improve the developer experience.
+            </p>
+            <p class="left_align">
+                By standardizing the communications between all parties (creating detailed contract)- you can actually
+                start to build the API.
+            </p>
+            <aside class="notes">
+                @source
+                https://www.slideshare.net/DialexaLLC/building-an-api-using-api-documentation-to-overcome-4-key-challenges
+            </aside>
+        </section>
+        <section>
+            <p>
+                <img class="noframes" alt="Checklist" src="img/lets_make_writing_API_documentation_interesting_for_developers/api-documentation-checklist.jpg">
+            </p>
+        </section>
+        <section>
+            <h2>
+                3 type of tools to the rescue
+            </h2>
+
+            <ul>
+                <li>Modelling tools</li>
+                <li>Testing tools</li>
+                <li>Display tools</li>
+            </ul>
+
+            <p class="left_align">
+                Using these tools to support that documentation, you can overcome the common challenges to building better APIs
+            </p>
+        </section>
+        <section>
+            <section>
+                <h2>
+                    Modelling tools
+                </h2>
+                <p class="left_align">
+                    API Blueprint
+                </p>
+                <p class="left_align">
+                    Swagger
+                </p>
+                <p class="left_align">
+                    RAML
+                </p>
+                <p class="left_align">
+                    I/O Docs
+                </p>
+                <p class="left_align">
+                    Apigee
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Api blueprint
+                </h2>
+                <p class="left_align">
+                    Maintained by Apiary
+                </p>
+                <p class="left_align">
+                    Focusing on documentation first
+                </p>
+                <p class="left_align">
+                    Allow us to prototype - write spec
+                </p>
+                <p class="left_align">
+                    Generate example snippets for requests and responses from documentation
+                </p>
+                <p class="left_align">
+                    Do not generate it from annotations!!!
+                </p>
+                <aside class="notes">
+                    @source https://www.slideshare.net/eBrandingNinja/apithedocs-how-can-api-documentation-be-agile
+                </aside>
+            </section>
+            <section>
+                <h2>
+                </h2>
+
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>
+                    Testing tools
+                </h2>
+            </section>
+            <section>
+                <h2>
+                    Dredd
+                </h2>
+                <p class="left_align">
+                    Like Test Driven Development - puts SHOULD before IS
+                </p>
+                <p class="left_align">
+                    Ensure accurate documentation (documentation matches implementation)
+                </p>
+                <p class="left_align">
+                    Tests fail when documentation is missing or out-of-date
+                </p>
+                <p class="left_align">
+                </p>
+                <aside class="notes">
+                    @source https://speakerdeck.com/jlstrater/test-driven-approaches-to-documenting-restful-apis-1
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>
+                    Display tools
+                </h2>
+            </section>
+            <section>
+                <h2>
+                    Apiary
+                </h2>
+                <p class="left_align">
+                    Hosted documentation
+                </p>
+                <p class="left_align">
+                    Supports API Blueprint and Swagger
+                </p>
+                <p class="left_align">
+                    Acts as mock server
+                </p>
+                <aside class="notes">
+                </aside>
+            </section>
+        </section>
+        <section>
+            <h2>
+                Documentation....
+            </h2>
+            <p class="left_align">
+                Forces us to slow down
+            </p>
+            <p class="left_align">
+                Puts us into different mindset
+            </p>
+            <p class="left_align">
+                Forces us to question our design
+            </p>
+            <p class="left_align">
+                Makes us think before we design
+            </p>
+            <p class="left_align">
+                Forces us to be in our API consumers shoes
+            </p>
+            <aside class="notes">
+                @todo CHANGE TITLE
+                @source https://speakerdeck.com/kneath/documentation-is-freaking-awesome
+
+                @source https://speakerdeck.com/loonypandora/documentation-for-fun-and-profit
+            </aside>
+        </section>
+        <section>
+            <h2>
+                Lets make it beautiful
+            </h2>
+            <p class="left_align">
+                We are engineers not designers...
+            </p>
+
+            <aside class="notes">
+                @source https://speakerdeck.com/loonypandora/documentation-for-fun-and-profit
+            </aside>
+        </section>
+        <section>
+            <h2>
+                Markdown
+            </h2>
+            <p class="left_align">
+                Widely supported by version control (GitHub, GitLab, BitBucket)
+            </p>
+            <p class="left_align">
+                Automagically formats for display
+            </p>
+            <p class="left_align">
+                Plain text format
+            </p>
+
+            <aside class="notes">
+                @source https://speakerdeck.com/katherinemwhite/documentation-for-developers
+            </aside>
+        </section>
+        <section>
+            <p class="left_align">
+                It's still hard but at least it's a little less painful now
+            </p>
+            <p class="left_align">
+                Lots of energy and opportunity in this field
+            </p>
+            <p class="left_align">
+                Always a chance to learn something new
+            </p>
+            <aside class="notes">
+                @source https://speakerdeck.com/jlstrater/test-driven-approaches-to-documenting-restful-apis-1
+
+                @source https://www.slideshare.net/loisbc/stc-summit-2015-api-documentation-an-examplebased-approach
+
+                New jobs on tech writer - 30$ per hour and plus
+            </aside>
+        </section>
+        <section>
+            <h2>Me</h2>
+            <p class="left_align">
+                PHP developer
+            </p>
+            <p class="left_align">
+                Work for Navus Consulting GmBH
+            </p>
+            <p class="left_align">
+                I like to learn and share knowledge
+            </p>
+            <p class="left_align">
+                Active member of PHP Srbija
+            </p>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
