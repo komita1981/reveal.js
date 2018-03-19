@@ -1,0 +1,1044 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Testimony</title>
+
+    <meta name="description" content="Testimony about testing">
+    <meta name="author" content="Milan Popovic">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/presentation/testimony_about_testing.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>Testimony <br/>(about testing)</h1>
+            <p>
+                <small>Presented by <a href="http://milanpopovic.me">Milan Popović</a> / <a
+                        href="http://twitter.com/komita1981">@komita1981</a></small>
+            </p>
+        </section>
+
+        <section>
+            <h2>Me</h2>
+            <p class="left_align">
+                PHP developer
+            </p>
+            <p class="left_align">
+                Work for Navus Consulting GMBH
+            </p>
+            <p class="left_align">
+                I like to learn and share knowledge
+            </p>
+            <p class="left_align">
+                Active member of PHP Srbija
+            </p>
+        </section>
+
+        <section>
+            <p class="left_align">
+                What is main property of bad code?
+            </p>
+            <h2 class="fragment">
+                <span class="red_text">
+                    It's untestable
+                </span>
+            </h2>
+        </section>
+        <section>
+            <h2>Kent Beck's rules of simple code</h2>
+
+            <ul>
+                <ol>
+                    1. Runs all the tests
+                </ol>
+                <ol>
+                    2. Contains no duplication
+                </ol>
+                <ol>
+                    3. Express the intent of programmer
+                </ol>
+                <ol>
+                    4. Minimizes the number of classes and methods
+                </ol>
+            </ul>
+
+            <p class="fragment red_text">
+                Given in order of importance
+            </p>
+
+            <aside class="notes">
+                Kent also said in his book TDD by example:
+                ""
+            </aside>
+        </section>
+        <section>
+            <p class="left_align">
+                <blockquote>
+                    No software engineers release even the tiniest change without testing, except the very
+                    confident and the very sloppy. - Kent Beck
+                </blockquote>
+            </p>
+        </section>
+        <section>
+            <blockquote>
+                The degree to which you know how your software behaves is the degree to which you have
+                accurately tested it. - Max Kanat-Alexander
+            </blockquote>
+        </section>
+
+        <section>
+            <section>
+                <h2>What do people think about testing?</h2>
+            </section>
+
+            <section>
+                <img class="noframes" src="img/testimony_about_testing/i-dont-always-test-my-code.jpg">
+            </section>
+
+            <section>
+                <p>
+                    <img class="noframes" src="img/testimony_about_testing/code_without_tests.jpeg">
+                </p>
+                <aside class="notes">
+                    Time consuming - Who has time to write tests???
+                </aside>
+            </section>
+
+            <section>
+                <p>
+                    <img class="noframes" src="img/testimony_about_testing/hard-work.jpg" height="600px" width="790px">
+                </p>
+                <aside class="notes">
+                    Testing is hard
+                </aside>
+            </section>
+
+            <section>
+                <p>
+                    <img class="noframes" src="img/testimony_about_testing/steep_learning_curve.jpg">
+                </p>
+                <aside class="notes">
+                    Steep learning curve
+                </aside>
+            </section>
+
+            <section>
+                <p>
+                    <img class="noframes" src="img/testimony_about_testing/no-money.jpg">
+                </p>
+                <aside class="notes">
+                    Don’t make anybody any money
+                </aside>
+            </section>
+
+            <section>
+                <p class="left_align">
+                    Time consuming
+                </p>
+                <p class="left_align">
+                    Testing is hard
+                </p>
+                <p class="left_align">
+                    Steep learning curve
+                </p>
+                <p class="left_align">
+                    Don’t make anybody any money
+                </p>
+                <aside class="notes">
+                    Why do we never have time to do it right but always have time to do it over?
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>What testing really is?</h2>
+
+                <p class="left_align red">
+                    Fundamental part of professional software development
+                </p>
+
+                <p class="left_align">
+                    Prove you've done your work
+                </p>
+
+                <p class="left_align">
+                    An insurance that the system works
+                </p>
+
+                <p class="left_align">
+                    Reduce number of bugs
+                </p>
+
+                <p class="left_align">
+                    Help you make better code design - easier to maintain - facilitating change
+                </p>
+
+                <aside class="notes">
+                    Prove you've done your work - Help you check much faster if you're work is done. Testing is an
+                    insurance that the system works.<br/><br/>
+
+                    Facilitates change - protect you from breaking things - guard from regression bugs. Let you apply
+                    changes with less worries - refactoring will improve things without breaking anything.<br/><br/>
+
+                    Reduce number of bugs - Having a bug in the code means carrying a
+                    risk. Utilising a set of unit tests, engineers can dramatically reduce number of bugs and the
+                    risk with untested code - It better for you that you find your bugs than your client.
+                </aside>
+            </section>
+            <section>
+                <h2>What testing really is?</h2>
+                <p class="left_align">
+                    Ensures stable, long lasting application
+                </p>
+
+                <p class="left_align">
+                    Improve understanding how clients are going to use your code
+                </p>
+
+                <p class="left_align">
+                    Enhance security
+                </p>
+
+                <p class="left_align">
+                    Provide free documentation
+                </p>
+            </section>
+        </section>
+
+        <section>
+            <h2>
+                Cost of not testing or late testing
+            </h2>
+            <p class="left_align">
+                Testing is expensive (event up to 40% of project's budget)
+            </p>
+            <p class="left_align">
+                Not testing is event more expensive
+            </p>
+            <p class="left_align">
+                Cost of testing increases exponentially if happens later
+            </p>
+        </section>
+
+        <section>
+            <h2>
+                What is to be tested?
+            </h2>
+            <h2 class="fragment">
+                <span class="red_text">
+                    EVERYTHING
+                </span>
+            </h2>
+            <p class="fragment">
+                To be more precise
+            </p>
+            <h2 class="fragment">
+                <span class="red_text">
+                    EVERYTHING THAT COULD BREAK YOUR APP
+                </span>
+            </h2>
+        </section>
+
+        <section>
+            <h2>
+                DDT vs TDD vs TFD vs BDD vs Whatever
+            </h2>
+            <aside class="notes">
+                https://twitter.com/samerbuna/status/969624942764482560 - picture TDD
+                <p class="fragment left_align">
+                    After - You test what you code - Test Last <br/>
+                    Development Driven Testing - <span class="red_text">DDT</span>
+                </p>
+                <p class="fragment left_align">
+                    Before - You code what you test - Test First<br/>
+                    Test Driven Development - <span class="red_text">TDD</span>
+                </p>
+            </aside>
+        </section>
+
+        <section>
+            <p>
+                <img class="noframes" src="img/testimony_about_testing/test_statistics.png">
+            </p>
+            <p>
+                IBM & Microsoft - TDD - 20-40% longer to complete but 40-90% fewer bugs in production
+            </p>
+        </section>
+
+        <section>
+            <blockquote>
+                By 2022 it will be not be possible to get a professional programming job if you do not practice
+                TDD routinely - Allan Kelly
+            </blockquote>
+        </section>
+
+        <section>
+            <h2>State of mind</h2>
+            <p class="left_align">
+                <img class="noframes" src="img/testimony_about_testing/make_it_brake_it.jpg">
+            </p>
+            <aside class="notes">
+                A tester has heart of a developer - in a jar on the desk. :-)
+            </aside>
+        </section>
+        <section>
+            <section>
+                <h2>
+                    Levels, types and methods of software testing
+                </h2>
+            </section>
+            <section>
+                <h3>
+                    Levels
+                </h3>
+                <p class="left_align">
+                    Unit
+                </p>
+                <p class="left_align">
+                    Integration
+                </p>
+                <p class="left_align">
+                    System
+                </p>
+                <p class="left_align">
+                    Acceptance
+                </p>
+                <aside class="notes">
+                    Unit - by developers
+                    Integration - by developers
+                    System - by testers
+                    Acceptance - by customers
+                </aside>
+            </section>
+            <section>
+                <h3>
+                    Types
+                </h3>
+                <p class="left_align">
+                    A/B
+                </p>
+                <p class="left_align">
+                    Acceptance
+                </p>
+                <p class="left_align">
+                    Accessibility
+                </p>
+                <p class="left_align">
+                    Alpha/Beta
+                </p>
+                <p class="left_align">
+                    Concurrent
+                </p>
+                <p class="left_align">
+                    Conformance and type
+                </p>
+            </section>
+            <section>
+                <h3>
+                    Types
+                </h3>
+                <p class="left_align">
+                    Compatibility
+                </p>
+                <p class="left_align">
+                    Destructive
+                </p>
+                <p class="left_align">
+                    Development
+                </p>
+                <p class="left_align">
+                    Documentation
+                </p>
+                <p class="left_align">
+                    Functional vs Non Functional
+                </p>
+                <p class="left_align">
+                    Internationalization & Localization
+                </p>
+            </section>
+            <section>
+                <h3>
+                    Types
+                </h3>
+                <p class="left_align">
+                    Installation
+                </p>
+                <p class="left_align">
+                    Performance
+                </p>
+                <p class="left_align">
+                    Regression
+                </p>
+                <p class="left_align">
+                    Smoke and Sanity
+                </p>
+                <p class="left_align">
+                    Security
+                </p>
+                <p class="left_align">
+                    Usability
+                </p>
+            </section>
+            <section>
+                <h3>
+                    Methods
+                </h3>
+                <p class="left_align">
+                    Static
+                </p>
+                <p class="left_align">
+                    Dynamic
+                </p>
+                <aside class="notes">
+                    Static - reviews, walkthroughs, inspections, cp detector, death code, code smell, coding standards
+
+                    Dynamic - executing programmed code with a given set of test cases
+                    White box & Black box testing
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <img class="noframes" src="img/testimony_about_testing/advice.jpg">
+            </section>
+            <section>
+                <p class="left_align">
+                    1. Try with writing tests after writing the code
+                <p class="left_align">
+            </section>
+            <section>
+                <p class="left_align">
+                    2. When you get confidence try to write tests before the code
+                <p class="left_align">
+            </section>
+            <section>
+                <p class="left_align">
+                    3. Treat test like your code - keep it "clean"
+                <p class="left_align">
+                <p class="fragment">
+                <ul>
+                    <li>
+                        Be descriptive about what you are testing
+                    </li>
+                    <li>
+                        Do not duplicate test code
+                    </li>
+                    <li>
+                        Do not make tests complex
+                    </li>
+                </ul>
+                </p>
+                <aside class="notes">
+                    Tests are clean if they are readable. What make them readable is clarity, simplicity and
+                    density of expression - Clean Code - Robert C Martin
+                    "What makes a clean test? Three things - Readability, readability, readability
+                    Readability is even more important than in production code
+
+                    Keep in mind that testing code is important as production code - maybe more important. It must
+                    be clean as production code. Code changes and that means that your tests also changes - if you
+                    write them bad than you have big problem - double problem. You are not safe anymore. You will start
+                    writing code without tests.
+
+                    Unit tests keep our code flexible, maintainable and reusable. Without them we loose everything.
+                    With good tests we can improve architecture and design without having the fear of introducing
+                    bugs.
+                </aside>
+            </section>
+            <section>
+                <p class="left_align">
+                    4. Number of asserts in a test ought to be minimized
+                </p>
+                <aside class="notes">
+                    One assert per test story...
+                    Better use Single Concept per Test
+                </aside>
+            </section>
+            <section>
+                <p class="left_align">
+                    5. Use Virtual Environments
+                </p>
+                <p class="left_align">
+                    <img class="noframes" src="img/testimony_about_testing/vagrant_docker.png">
+                </p>
+                <aside class="notes">
+                </aside>
+            </section>
+            <section>
+                <p class="left_align">
+                    6. Use continuous integration server
+                </p>
+                <p class="red_text left_align">
+                    When I say testing I mean AUTOMATED testing
+                </p>
+                <p class="left_align">
+                    Automated testing is key point for software quality and is preferred because of it's repeatability and
+                    easy of use
+                </p>
+                <p class="left_align">
+                    Manual testing is time consuming and boring allowed in some complex scenarios
+                </p>
+                <p class="left_align">
+                    Run tests often
+                </p>
+                <aside class="notes">
+                    Run all your unit tests as often as possible, ideally every time the code is changed and
+                    before any commit. Running tests often gives you confidence that your changes didn't break
+                    anything and generally lowers the stress of programming in the dark. For larger systems,
+                    you may just run specific test suites that are relevant to the code you're working on. Run
+                    all your acceptance, integration, stress, and unit tests at least once per day (or night).
+                </aside>
+            </section>
+            <section>
+                <p class="left_align">
+                    7. Test Boundary Conditions
+                </p>
+                <aside class="notes">
+                    Take care about testing boundary values
+                </aside>
+            </section>
+            <section>
+                <p class="left_align">
+                    8. Use test saboteurs
+                </p>
+                <p class="left_align">
+                    Humbug
+                </p>
+                <p class="left_align">
+                    Infection
+                </p>
+                <aside class="notes">
+                    Mutation Testing is, in a nutshell, giving your unit tests a run for their money. It
+                    involves injecting small defects into source code and then checking if the unit tests
+                    noticed. If they do, then your unit tests have "killed" the mutation. If not, the mutation
+                    has escaped detection. As unit tests are intended to prevent regressions, having a real
+                    regression pass unnoticed would be a bad thing! Whereas Code Coverage can tell you what code
+                    your tests are executing, Mutation Testing is intended to help you judge how well your unit
+                    tests actually perform and where they could be improved.
+                </aside>
+            </section>
+            <section>
+                <p class="left_align">
+                    9. Use test coverage properly
+                </p>
+                <p class="left_align">
+                    A rule of the thumb for test coverage related to cyclomatic complexity is to have
+                    test cases equal in number to the cyclomatic complexity value.
+                </p>
+
+                <p class="left_align">
+                    <img class="noframes" src="img/testimony_about_testing/code-coverage.jpg">
+                </p>
+
+                <aside class="notes">
+                    The higher code coverage makes your confidence also high - less fear of change
+                </aside>
+            </section>
+
+            <section>
+                <p class="red_text">
+                    Test branch coverage not only code coverage
+                <pre><code data-trim contenteditable>
+sampleMethod()
+{
+    if (a < 5 and b > 10){
+       return a + b;
+    }
+
+    return $a - $b;
+}
+                        </code></pre>
+                </p>
+
+            </section>
+            <section>
+                <p class="left_align">
+                    10. Test before refactoring
+                </p>
+            </section>
+            <section>
+                <p class="left_align">
+                    11. Write unit tests for each bug you are going to fix
+                </p>
+            </section>
+            <section>
+                <p class="left_align">
+                    12. Think twice before using New Operators - new ClassName()
+                </p>
+            </section>
+            <section>
+                <p class="left_align">
+                    13. Think twice before using statics - SomeClass::someMethod()
+                </p>
+            </section>
+            <section>
+                <p class="left_align">
+                    14. Avoid endless "anding" - Breaking SRP
+                </p>
+            </section>
+            <section>
+                <p class="left_align">
+                    15. Avoid using switch-case often - use design patterns instead
+                </p>
+            </section>
+            <section>
+                <p class="left_align">
+                    16. Avoid using too many dependencies - max 4 dependencies
+                </p>
+            </section>
+            <section>
+                <p class="left_align">
+                    17. Avoid logic in constructor - only assign variables
+                </p>
+                <aside class="notes">
+                    Do not do real work in constructor
+                </aside>
+            </section>
+            <section>
+                <p class="left_align">
+                    17. Do not break Law of Demeter
+                </p>
+                <pre><code data-trim contenteditable>
+if ($account->getUser()->getRole()->IsAdmin()) {
+    return false;
+}
+                        </code></pre>
+            </section>
+            <section>
+                <p class="left_align">
+                    18. Do Not Mock What You Do not Own
+                </p>
+
+                <aside class="notes">
+                    Wrap 3rd party.
+                    A framework or third party object often has to provide a large interface to solve a large
+                    number of needs, of which you only need a subset. When you write your wrapper don't try and
+                    write everything it does, write the operations you need, with the interface you want. If
+                    you're using the language of your domain, rather than the language of the third party object,
+                    this is much simpler.
+                </aside>
+            </section>
+            <section>
+                <p class="left_align">
+                    19. Use data providers
+                </p>
+                <pre><code data-trim contenteditable>
+/**
+* @dataProvider getSuccessfulAddData
+*/
+public function testSuccessfulAdd($a, $b, $result)
+{
+    $this->assertEquals($result,
+    $this->calculator->add($a, $b));
+}
+
+public function getSuccessfulAddData()
+{
+    return [
+        ['a' => 1, 'b' => 2, 'result' => 3],
+        ['a' => 2, 'b' => 1, 'result' => 3],
+        ['a' => 0, 'b' => 1, 'result' => 1],
+        ['a' => 1, 'b' => 0, 'result' => 1],
+    ];
+}
+                    </code></pre>
+            </section>
+
+            <section>
+                <p class="left_align">
+                    20. Respect 3A of Unit testing
+                </p>
+                <p class="left_align">
+                    <span class="red_text">A</span>rrange objects, creating and setting them up as necessary.
+                </p>
+                <p class="left_align">
+                    <span class="red_text">A</span>ct on an object
+                </p>
+                <p class="left_align">
+                    <span class="red_text">A</span>ssert that something is as expected
+                </p>
+                <aside class="notes">
+                    <p class="left_align">
+                        Arrange = Setup
+                    </p>
+                    <p class="left_align">
+                        Act = Poke
+                    </p>
+                    <p class="left_align">
+                        Assert = Verify
+                    </p>
+
+                    Meszaros adds one more element - teardown (cleanup)
+
+                    Bill Wake coined this as 3 A - TDD by example book
+                </aside>
+            </section>
+
+            <section>
+                <p>
+                    21.
+                    <img class="noframes" src="img/testimony_about_testing/unit-testing-mvc.png">
+                </p>
+            </section>
+
+            <section>
+                <p class="left_align">
+                    22. Programming by Wishful Thinking
+                </p>
+
+                <aside class="notes">
+                    Write some code that uses a component, before you implement the component. This helps to
+                    discover what functions and data you need, and following this discovery will lead you to more
+                    simple and useful APIs.
+                    I write acceptance tests using a fixture I wish I had, and then implement the feature using
+                    collaborators I wish I had.
+                    Defer the decision about how to represent your data by imagining you have any function you
+                    wish you had in order to solve your problem in the simplest way possible.
+                </aside>
+            </section>
+
+            <section>
+                <p class="left_align">
+                    23. Use test doubles properly
+                </p>
+                <p class="left_align">
+                    Dummy
+                </p>
+                <p class="left_align">
+                    Fake
+                </p>
+                <p class="left_align">
+                    Stub
+                </p>
+                <p class="left_align">
+                    Mock
+                </p>
+                <p class="left_align">
+                    Spy
+                </p>
+
+                <aside class="notes">
+                    Commands should be mocked - queries should be stubbed
+                </aside>
+            </section>
+
+            <section>
+                <p class="left_align">
+                    24. Before asserting through loop use assertCount
+                </p>
+
+                <aside class="notes">
+                    Foreach on empty will assert nothing and we will have false positive test
+                </aside>
+
+            </section>
+
+            <section>
+                <p class="left_align">
+                    25. Do not lie about your real dependencies - use DI
+                </p>
+                <p class="left_align">
+                    Don't look for things! Ask for things!
+                </p>
+
+                <aside class="notes">
+                </aside>
+
+            </section>
+            <section>
+                <p class="left_align">
+                    26. Smoke testing
+                </p>
+                <p class="left_align">
+                    Quick check if there are any problems
+                </p>
+                <p class="left_align">
+                    Check if application is running
+                </p>
+                <p class="left_align">
+                    Ping an important API endpoint
+                </p>
+                <aside class="notes">
+                </aside>
+            </section>
+            <section>
+                <p class="left_align">
+                    27. Add time for testing in your estimates
+                </p>
+
+                <ul>
+                    <li>
+                        30% testing
+                    </li>
+
+                    <li>
+                        30% implementation
+                    </li>
+
+                    <li>
+                        10% logging and metrics
+                    </li>
+                    <li>
+                        30% refactoring
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <p class="left_align">
+                    28. If you provide API use documentation testing
+                </p>
+                <p class="left_align">
+                    Dredd
+                </p>
+                <p class="left_align">
+                    Supports Swagger & API Blueprint
+                </p>
+            </section>
+            <section>
+                <p class="left_align">
+                    29. Run tests in parallel
+                </p>
+            </section>
+            <section>
+                <p class="left_align">
+                    30. Weeks of programming can save you hours of planning and writing tests
+                </p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <img height="680" class="noframes" src="img/testimony_about_testing/facts.gif">
+            </section>
+
+            <section>
+                <p class="left_align">
+                    Once you start testing You wont want to write code without tests again
+                </p>
+                <p class="fragment left_align">
+                    You are not good developer if you are not good tester
+                </p>
+                <p class="fragment left_align">
+                    Developers starts producing better code
+                </p>
+                <p class="fragment left_align">
+                    Testing makes developers complacent
+                </p>
+                <p class="fragment left_align">
+                    Writing code that is testable encourages best practices - such as SOLID
+                </p>
+                <p class="fragment left_align">
+                    Quality is everyone’s responsibility — especially ours - developer’s
+                </p>
+                <p class="fragment left_align">
+                    Testing is fun :-)
+                </p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <p>
+                    <img height="680" class="noframes"
+                         src="img/testimony_about_testing/test_driven_development_by_example.jpg">
+                </p>
+            </section>
+            <section>
+                <p>
+                    <img height="680" class="noframes" src="img/testimony_about_testing/the_art_of_unit_testing.png">
+                </p>
+            </section>
+        </section>
+        <section>
+            <p class="left_align">
+                f u cn rd ths, u cn gt a gd jb n sftwr tstng
+            </p>
+        </section>
+        <section>
+            <section>
+                <h2>Resources</h2>
+                <ul>
+                    <li><a href="http://www.slideshare.net/damiansromek/php-tests-tips">Php tests tips</a></li>
+                    <li><a href="http://www.slideshare.net/ChonlasithJucksripor/unit-test-39809217">Unit test prez</a>
+                    </li>
+                    <li><a href="http://blog.typemock.com/2009/03/the-cost-of-test-driven-development.html">Cost of
+                        tdd</a></li>
+                    <li><a href="https://vimeo.com/63492364">Sebastian Bergmann in Atlanta</a></li>
+                    <li>
+                        <a href="https://github.com/ghsukumar/SFDC_Best_Practices/wiki/F.I.R.S.T-Principles-of-Unit-Testing">F.I.R.S.T
+                            Principles of Unit Testing</a></li>
+                    <li><a href="http://agileinaflash.blogspot.de/2009/02/first.html">First principles</a></li>
+                    <li><a href="https://pragprog.com/magazines/2012-01/unit-tests-are-first">Prag prog blog</a></li>
+                    <li><a href="http://sqa.fyicenter.com/FAQ/JUnit/How_Often_Should_You_Run_Your_JUnit_Tests_.html">How
+                        Often Should You Run Your JUnit Tests?</a></li>
+                    <li><a href="http://www.daedtech.com/">Daed blog</a></li>
+                    <li><a href="https://developer.salesforce.com/page/How_to_Write_Good_Unit_Tests/">Salesforce
+                        blog</a></li>
+                    <li><a href="http://googletesting.blogspot.co.uk/2015/04/just-say-no-to-more-end-to-end-tests.html">Google
+                        testing blog</a></li>
+                    <li><a href="http://less.works/less/technical-excellence/unit-testing.html">Unit testing blog</a>
+                    </li>
+                    <li><a href="http://techportal.inviqa.com/2013/07/23/php-test-doubles-patterns-with-prophecy/">Testing
+                        doubles</a></li>
+                    <li><a href="http://www.martinfowler.com/bliki/Xunit.html">Martin Fowler about XUnit</a></li>
+                    <li><a href="http://createopen.com/design/php/2014/10/30/designing-through-mocking.html">Notes on
+                        designing through mocking</a></li>
+                    <li><a href="https://blog.thesoftwarecraft.com/2013/11/wishful-programming.html">Wishful
+                        Programming</a></li>
+                    <li><a href="https://blog.8thlight.com/eric-smith/2011/10/27/thats-not-yours.html">That's Not
+                        Yours</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Resources</h2>
+                <ul>
+                    <li><a href="https://speakerdeck.com/qaistc/testing-is-dead-long-live-testing">Testing is dead</a></li>
+                    <li><a href="https://speakerdeck.com/nickmccurdy/software-testing">Software Testing</a></li>
+                    <li><a href="https://speakerdeck.com/adroitlogic/software-testing">Software Testing</a></li>
+                    <li><a href="https://speakerdeck.com/abernstein/software-testing-concepts">Software Testing Concepts</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Images</h2>
+                <ul>
+                    <li>
+                        <a href="https://image-store.slidesharecdn.com/ebe9e374-6d3e-4f1a-8051-9591ef7ea7a3-original.jpeg">We
+                            are busy</a></li>
+                    <li><a href="http://postd.cc/wp/wp-content/uploads/2014/07/vagrant_docker.png">Vagrant & Docker</a>
+                    </li>
+                    <li>
+                        <a href="http://lh3.ggpht.com/-X8LPVvE5BYE/UHaLknLmMmI/AAAAAAAABg0/HDu3iZAs2yg/s1600-h/image7.png">TDD
+                            lifecycle</a></li>
+                    <li><a href="http://quotespics.com/wp-content/quote-images/i-dont-always-test-my-code.jpg">Testing
+                        code in production</a></li>
+                    <li><a href="http://financialjuneteenth.com/wp-content/uploads/2015/02/hard-work.jpg">Hard work</a>
+                    </li>
+                    <li>
+                        <a href="https://www.dashingd3js.com/assets/steep_learning_curve-7c6e27560aabbd16a3ddb4eca06fe2fb.jpg">Steep
+                            learning curve</a></li>
+                    <li>
+                        <a href="https://cdn.psychologytoday.com/files/u570/5%3A25%3A10%20Getting%20Advice.jpg">Advice</a>
+                    </li>
+                    <li><a href="http://toptradersunplugged.com/wp-content/uploads/2015/05/TrueFalse2.jpeg">True or
+                        false</a></li>
+                    <li>
+                        <a href="http://2.bp.blogspot.com/-YTzv_O4TnkA/VTgexlumP1I/AAAAAAAAAJ8/57-rnwyvP6g/s1600/image02.png">Testing
+                            pyramid</a></li>
+                    <li><a href="http://magentys.io/wp-content/uploads/2015/07/inverted-pyramid.png">Inverted Testing
+                        pyramid</a></li>
+                    <li><a href="http://www.getautoma.com/img/blog/test_hour_glass.png">Hourglass</a></li>
+                    <li>
+                        <a href="https://s3-us-west-2.amazonaws.com/lysender.junk/uploads/2010/02/kohana-phpunit-001-crop.jpg">Kohana
+                            testing structure</a></li>
+                    <li>
+                        <a href="http://www.kalispellchiropractic.com/wp-content/uploads/2015/02/chiropractic-images.gif">Facts</a>
+                    </li>
+                    <li><a href="http://www.adamtibi.net/wp-content/uploads/2013/06/unit-testing-mvc.png">Unit testing
+                        mvc</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Images</h2>
+                <ul>
+                    <li>
+                        <a href="http://geekshumor.com/how-can-i-make-it-vs-how-can-i-break-it/">
+                            Make it brake it
+                        </a>
+                    </li>
+
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <h1>THANK YOU</h1>
+        </section>
+
+        <section>
+            <h1>QUESTIONS?</h1>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            },
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>
