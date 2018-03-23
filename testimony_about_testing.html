@@ -255,6 +255,28 @@
 
         <section>
             <h2>
+                Why do so many developers not deliver tests with their code?
+            </h2>
+
+            <p class="left_align">
+                Habit is not established early
+            </p>
+
+            <p class="left_align">
+                The consequence of not writing unit tests is delayed
+            </p>
+
+            <p class="left_align">
+                The consequence is often suffered by other people, not the original author
+            </p>
+
+            <p class="left_align">
+                Informational Conformity
+            </p>
+        </section>
+
+        <section>
+            <h2>
                 What is to be tested?
             </h2>
             <h2 class="fragment">
@@ -307,7 +329,7 @@
 
         <section>
             <h2>State of mind</h2>
-            <p class="left_align">
+            <p>
                 <img class="noframes" src="img/testimony_about_testing/make_it_brake_it.jpg">
             </p>
             <aside class="notes">
@@ -341,6 +363,13 @@
                     Integration - by developers
                     System - by testers
                     Acceptance - by customers
+
+                    Unit:
+                    the return value of the subroutine (as mentioned previously)
+                    a change in the state of the object under test, or
+                    a request to change the state of some dependency.
+
+
                 </aside>
             </section>
             <section>
@@ -631,9 +660,7 @@ sampleMethod()
                     17. Do not break Law of Demeter
                 </p>
                 <pre><code data-trim contenteditable>
-if ($account->getUser()->getRole()->IsAdmin()) {
-    return false;
-}
+$company->getOwner()->getAccount()->getBank()...
                         </code></pre>
             </section>
             <section>
@@ -877,6 +904,24 @@ public function getSuccessfulAddData()
             </section>
             <section>
                 <p>
+                    <img height="680" class="noframes"
+                         src="img/testimony_about_testing/growing_oos_gbt.jpg">
+                </p>
+            </section>
+            <section>
+                <p>
+                    <img height="680" class="noframes"
+                         src="img/testimony_about_testing/continuous_delivery_book.jpg">
+                </p>
+            </section>
+            <section>
+                <p>
+                    <img height="680" class="noframes"
+                         src="img/testimony_about_testing/ci_book.jpg">
+                </p>
+            </section>
+            <section>
+                <p>
                     <img height="680" class="noframes" src="img/testimony_about_testing/the_art_of_unit_testing.png">
                 </p>
             </section>
@@ -919,11 +964,6 @@ public function getSuccessfulAddData()
                         Programming</a></li>
                     <li><a href="https://blog.8thlight.com/eric-smith/2011/10/27/thats-not-yours.html">That's Not
                         Yours</a></li>
-                </ul>
-            </section>
-            <section>
-                <h2>Resources</h2>
-                <ul>
                     <li><a href="https://speakerdeck.com/qaistc/testing-is-dead-long-live-testing">Testing is dead</a></li>
                     <li><a href="https://speakerdeck.com/nickmccurdy/software-testing">Software Testing</a></li>
                     <li><a href="https://speakerdeck.com/adroitlogic/software-testing">Software Testing</a></li>
@@ -967,17 +1007,11 @@ public function getSuccessfulAddData()
                     </li>
                     <li><a href="http://www.adamtibi.net/wp-content/uploads/2013/06/unit-testing-mvc.png">Unit testing
                         mvc</a></li>
-                </ul>
-            </section>
-            <section>
-                <h2>Images</h2>
-                <ul>
                     <li>
                         <a href="http://geekshumor.com/how-can-i-make-it-vs-how-can-i-break-it/">
                             Make it brake it
                         </a>
                     </li>
-
                 </ul>
             </section>
         </section>
