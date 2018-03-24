@@ -98,10 +98,6 @@
                 Given in order of importance
             </p>
 
-            <aside class="notes">
-                Kent also said in his book TDD by example:
-                ""
-            </aside>
         </section>
         <section>
             <p class="left_align">
@@ -307,13 +303,16 @@
                 </span>
             </h2>
         </section>
-
         <section>
-            <h2>
-                DDT vs TDD vs TFD vs BDD vs Whatever
-            </h2>
-            <aside class="notes">
-                https://twitter.com/samerbuna/status/969624942764482560 - picture TDD
+            <section>
+                <h2>
+                    DDT vs TDD vs TFD vs BDD vs Whatever
+                </h2>
+            </section>
+            <section>
+                <h2>
+                    Write unit tests before or after code?
+                </h2>
                 <p class="fragment left_align">
                     After - You test what you code - Test Last <br/>
                     Development Driven Testing - <span class="red_text">DDT</span>
@@ -322,23 +321,76 @@
                     Before - You code what you test - Test First<br/>
                     Test Driven Development - <span class="red_text">TDD</span>
                 </p>
-            </aside>
-        </section>
 
-        <section>
-            <p>
-                <img class="noframes" src="img/testimony_about_testing/test_statistics.png">
-            </p>
-            <p>
-                IBM & Microsoft - TDD - 20-40% longer to complete but 40-90% fewer bugs in production
-            </p>
-        </section>
+            </section>
 
-        <section>
-            <blockquote>
-                By 2022 it will be not be possible to get a professional programming job if you do not practice
-                TDD routinely - Allan Kelly
-            </blockquote>
+            <section>
+                <img class="noframes" src="img/testimony/ddt_circle_of_life.png">
+
+                <aside class="notes">
+                    Test Last = Test-After Development (TAD)
+                    TAD programmers want to verify their code, too, but they typically have little interest in
+                    treating the tests as “specifications by example.” For them, the usually singular goal of unit
+                    testing is to verify whether or not some aspects of the code work. These unit tests typically
+                    cover up to two-thirds of the code base. Other forms of integration tests can increase effective
+                    coverage, but unit tests are the closest reliable documentation for the code you’re modifying.
+                    The real sticking point with TAD is productivity. When you don’t think about how to craft code
+                    so it’s testable, you’ll often end up with code that is near-impossible to test. The test-writer
+                    has to either rework it or use a lot of finesse to avoid rework. This makes testing feel like a
+                    waste of time. No wonder so few programmers have fully embraced unit-testing! We find TAD to be
+                    simply less fun, less beneficial, less productive, and more frustrating than TDD.
+                </aside>
+
+            </section>
+
+            <section>
+                <h2>
+                    The Three Laws of TDD
+                </h2>
+
+                <ol>
+                    <li>
+                        You may not write production code until you have written a failing unit test
+                    </li>
+                    <li>
+                        You may not write more of a unit test than is sufficient to fail
+                    </li>
+                    <li>
+                        You may not write more production code than is sufficient to pass the currently failing
+                        test
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <img class="noframes" src="img/testimony/tdd_circle_of_life.png">
+
+                <aside class="notes">
+                    With TDD, every line of code has a reason to exist, with tests to back it up.
+
+                    Only write code if you absolutely have to and always know what your code is supposed to do before
+                    you start writing it - and that is what TDD approach provides for you
+
+                    “Red-Green-Refactor,” meaning that you start with a failing test, then pass it, and then make
+                    your code readable and more maintainable.
+                </aside>
+            </section>
+
+            <section>
+                <p>
+                    <img class="noframes" src="img/testimony_about_testing/test_statistics.png">
+                </p>
+                <p>
+                    IBM & Microsoft - TDD - 20-40% longer to complete but 40-90% fewer bugs in production
+                </p>
+            </section>
+
+            <section>
+                <blockquote>
+                    By 2022 it will be not be possible to get a professional programming job if you do not practice
+                    TDD routinely - Allan Kelly
+                </blockquote>
+            </section>
         </section>
 
         <section>
