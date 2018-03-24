@@ -1,3 +1,7 @@
+/* FontFace */
+
+@import url('https://fonts.googleapis.com/css?family=Oswald:500,600,700|Raleway:400,600');
+
 /*!
  * reveal.js
  * http://revealjs.com
@@ -1553,3 +1557,77 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
+
+
+/* Custom AddOn styling */
+
+.backgrounds .slide-background {
+  background-color: #fff;
+  background-image: radial-gradient(ellipse at center,#ffffff,#eae9ea);
+  color: #444;
+}
+
+.backgrounds .slide-background:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: transparent url('../img/medo-bg.png') repeat left top;
+}
+
+.reveal .slides > section h1 {
+  font: 700 2em/1.2 Oswald, Helvetica, sans-serif;
+}
+
+.reveal .slides > section h2 {
+  font: 700 1.75em/1.2 Oswald, Helvetica, sans-serif;
+}
+
+.reveal .slides > section h3 {
+  font: 700 1.2em/1.2 Oswald, Helvetica, sans-serif;
+}
+
+
+.reveal .slides > section li, .reveal .slides > section p {
+  font: 400 0.775em/1.45 Raleway, Helvetica, sans-serif;
+}
+
+.reveal .slides > section p {
+  margin: 0;
+}
+
+.reveal .slides > section p + p {
+  margin: 0.75em 0 0;
+}
+
+.reveal .slides > section ul {
+  display: block;
+  margin: 0 0 1em;
+  list-style: none;
+  padding: 0;
+}
+
+.reveal .slides > section ul li {
+  display: block;
+  padding: 0 0 0 40px;
+  margin: 0;
+}
+
+.reveal .slides > section ul li:before {
+  content: ' ';
+  display: block;
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin: 15px 0 0 -40px;
+  border-radius: 50%;
+  background-color: #42affa;
+}
+
+.reveal .slides > section ul li + li {
+  margin: 0.4em 0 0;
+}
+
